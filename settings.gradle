@@ -1,0 +1,3 @@
+rootProject.name = "units-of-measure"
+include 'annotations'
+include 'processor'
