@@ -2,7 +2,7 @@
 Type-safe dimensional analysis in Kotlin
 
 ### Gradle Installation
-```
+```groovy
 apply plugin: 'kotlin-kapt'
 
 repositories {
@@ -22,10 +22,12 @@ sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKot
 ### Usage
 Representing Velocity:
 ```kotlin
+// annotations can be placed anywhere in the project
 @Differentiate(
         x = UomData(metre = 1),
         withRespectTo = UomData(second = 1)
 )
+
 fun main(args: Array<String>) {
     val distance = metre(10.0)
     val time = second(3.14)
@@ -34,7 +36,7 @@ fun main(args: Array<String>) {
 ```
 Ohm's Law:
 ```kotlin
-// these annotations can be placed anywhere in the project
+// annotations can be placed anywhere in the project
 @Integrate(
         x = UomData(ampere = 1), // I
         withRespectTo = UomData(metre = 2, kilogram = 1, second = -3, ampere = -2) // R
@@ -61,6 +63,6 @@ fun bar(): ampere {
 
 ### Todo List
 - [x] Make it work.
-- [ ] Make annotations easier to write and manage
-- [ ] Generate implicit relationships (e.g. ``v=ir`` therefore ``v/i=r`` and ``v/r=i``)
-- [ ] Publish to Maven Central
+- [ ] Make annotations easier to write and manage.
+- [ ] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
+- [ ] Publish on Maven Central.
