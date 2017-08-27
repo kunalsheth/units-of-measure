@@ -21,6 +21,7 @@
           <option name="pluginClasspaths">
             <array />
           </option>
+          <option name="version" value="true" />
         </compilerArguments>
       </configuration>
     </facet>
