@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annotations.iml" filepath="$PROJECT_DIR$/.idea/modules/annotations.iml" group="annotations" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annotations_main.iml" filepath="$PROJECT_DIR$/.idea/modules/annotations_main.iml" group="annotations" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annotations_test.iml" filepath="$PROJECT_DIR$/.idea/modules/annotations_test.iml" group="annotations" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/processor.iml" filepath="$PROJECT_DIR$/.idea/modules/processor.iml" group="processor" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desktop-units-of-measure_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Desktop-units-of-measure_main.iml" group="units-of-measure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desktop-units-of-measure_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Desktop-units-of-measure_test.iml" group="units-of-measure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annotations/annotations.iml" filepath="$PROJECT_DIR$/.idea/modules/annotations/annotations.iml" group="annotations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annotations/annotations_main.iml" filepath="$PROJECT_DIR$/.idea/modules/annotations/annotations_main.iml" group="annotations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annotations/annotations_test.iml" filepath="$PROJECT_DIR$/.idea/modules/annotations/annotations_test.iml" group="annotations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/processor/processor.iml" filepath="$PROJECT_DIR$/.idea/modules/processor/processor.iml" group="processor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/processor/processor_main.iml" filepath="$PROJECT_DIR$/.idea/modules/processor/processor_main.iml" group="processor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/processor/processor_test.iml" filepath="$PROJECT_DIR$/.idea/modules/processor/processor_test.iml" group="processor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/units-of-measure.iml" filepath="$PROJECT_DIR$/.idea/modules/units-of-measure.iml" />

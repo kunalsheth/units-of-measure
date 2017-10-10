@@ -64,5 +64,5 @@ fun bar(): ampere {
 ### Todo List
 - [x] Make it work.
 - [ ] Make annotations easier to write and manage.
-- [ ] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
+- [x] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
 - [ ] Publish on Maven Central.

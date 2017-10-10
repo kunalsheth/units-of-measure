@@ -1,39 +1,7 @@
-package info.kunalsheth.units_of_measure
+package info.kunalsheth.unitsofmeasure.source
 
-import java.io.File
-import java.io.PrintWriter
-
-/**
- * Created by kunal on 8/5/17.
- */
-fun MetaUom.src() = """
-data class $this(override val quantity: Double) : Uom<$this>
-"""
-
-fun UomRelation.src() = when (method) {
-    UomRelation.Type.Derivative -> """
-operator fun $i1.div(that: $i2) = $o(this.quantity / that.quantity)
-"""
-    UomRelation.Type.Integral -> (if (i1 != i2)
-        "operator fun $i1.times(that: $i2) = $o(this.quantity * that.quantity)" else "") +
-            "\noperator fun $i2.times(that: $i1) = $o(this.quantity * that.quantity)"
-}
-
-val header = """
-package info.kunalsheth.units_of_measure
-"""
-
-fun writeKt(parent: File, simpleName: String): PrintWriter {
-    val out = File(parent, "$simpleName.kt").printWriter()
-    out.println(header)
-    return out
-}
-
-fun PrintWriter.done() {
-    flush()
-    close()
-}
-
+// parent of all UOM classes
+// allows for implementations to be "one-liners"
 val uomBase = """
 import java.io.Serializable
 

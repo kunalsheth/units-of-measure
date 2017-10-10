@@ -1,4 +1,6 @@
-package info.kunalsheth.units_of_measure
+package info.kunalsheth.unitsofmeasure.data
+
+import info.kunalsheth.unitsofmeasure.UomData
 
 /**
  * Created by kunal on 8/4/17.
@@ -42,7 +44,8 @@ data class MetaUom(
             candela = this.candela + that.candela
     )
 
-    override fun toString() = safeName
+    override fun toString()
+            = "data class $safeName(override val quantity: Double) : Uom<$safeName>"
 
     val unicodeName by lazy {
         mapOf(

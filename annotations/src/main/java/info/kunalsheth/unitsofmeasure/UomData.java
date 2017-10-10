@@ -1,4 +1,4 @@
-package info.kunalsheth.units_of_measure;
+package info.kunalsheth.unitsofmeasure;
 
 import java.lang.annotation.Target;
 
