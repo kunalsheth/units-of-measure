@@ -9,7 +9,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
-def unitsOfMeasureVersion = '1b9d6adbdd'
+def unitsOfMeasureVersion = 'c7c0dc1499'
 
 dependencies {
     compileOnly group: 'com.github.kunalsheth.units-of-measure', name: 'annotations', version: unitsOfMeasureVersion
@@ -23,9 +23,9 @@ sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKot
 Representing Velocity:
 ```kotlin
 // annotations can be placed anywhere in the project
-@Differentiate(
-        x = UomData(metre = 1),
-        withRespectTo = UomData(second = 1)
+@Relate(
+        a = UomData(metre = 1),
+        b = UomData(second = 1)
 )
 
 fun main(args: Array<String>) {
@@ -37,27 +37,23 @@ fun main(args: Array<String>) {
 Ohm's Law:
 ```kotlin
 // annotations can be placed anywhere in the project
-@Integrate(
-        x = UomData(ampere = 1), // I
-        withRespectTo = UomData(metre = 2, kilogram = 1, second = -3, ampere = -2) // R
-)
-@Differentiate(
-        x = UomData(metre = 2, kilogram = 1, second = -3, ampere = -1), // V
-        withRespectTo = UomData(metre = 2, kilogram = 1, second = -3, ampere = -2) // R
+@Relate(
+        a = UomData(ampere = 1), // I
+        b = UomData(metre = 2, kilogram = 1, second = -3, ampere = -2) // R
 )
 
 fun foo(): volt {
     val i = ampere(133.0)
     val r = ohm(0.0902)
     return i * r
-    // `r * i` compiles
+    // `return r * i` also compiles
 }
 
 fun bar(): ampere {
     val v = volt(12.0)
     val r = ohm(5.0)
     return v / r
-    // `r / v` doesn't compile
+    // `return r / v` doesn't compile
 }
 ```
 
