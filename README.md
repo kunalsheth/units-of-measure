@@ -32,6 +32,9 @@ fun main(args: Array<String>) {
     val distance = metre(10.0)
     val time = second(3.14)
     val speed: `m⋅s⁻¹` = distance / time
+    //                  `distance * time` doesn't compile
+    //                  `time / distance` doesn't compile
+    //                  `time * distance` doesn't compile
 }
 ```
 Ohm's Law:
@@ -46,14 +49,16 @@ fun foo(): volt {
     val i = ampere(133.0)
     val r = ohm(0.0902)
     return i * r
-    // `return r * i` also compiles
+    //    `r * i` also compiles
 }
 
 fun bar(): ampere {
     val v = volt(12.0)
     val r = ohm(5.0)
     return v / r
-    // `return r / v` doesn't compile
+    //    `v * r` doesn't compile
+    //    `r * v` doesn't compile
+    //    `r / v` doesn't compile
 }
 ```
 
