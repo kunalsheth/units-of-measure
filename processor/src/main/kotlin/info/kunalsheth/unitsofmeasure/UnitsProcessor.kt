@@ -50,11 +50,21 @@ class UnitsProcessor : Processor {
                 // convert annotation data to data class
                 .map { MetaUom(it.a) to MetaUom(it.b) }
                 .flatMap { (a, b) ->
+                    val aDb = MetaRelation(a, Divide, b)
+                    val aMb = MetaRelation(a, Multiply, b)
+                    val bDa = MetaRelation(b, Divide, a)
+                    val bMa = MetaRelation(b, Multiply, a)
+
+                    val aDbMb = MetaRelation(aDb.result, Multiply, b)
+                    val aMbDb = MetaRelation(aMb.result, Divide, b)
+                    val aMbDa = MetaRelation(aMb.result, Divide, a)
+                    val bDaMa = MetaRelation(bDa.result, Multiply, a)
+                    val bMaDa = MetaRelation(bMa.result, Divide, a)
+                    val bMaDb = MetaRelation(bMa.result, Divide, b)
+
                     setOf(
-                            MetaRelation(a, Divide, b),
-                            MetaRelation(a, Multiply, b),
-                            MetaRelation(b, Divide, a),
-                            MetaRelation(b, Multiply, a)
+                            aDb, aMb, bDa, bMa,
+                            aDbMb, aMbDb, aMbDa, bDaMa, bMaDa, bMaDb
                     )
                 }
                 .forEach {

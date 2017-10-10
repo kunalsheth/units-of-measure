@@ -5,7 +5,7 @@ plugins {
 
 allprojects {
     group 'info.kunalsheth.units-of-measure'
-    version '1.1.0'
+    version '1.1.2'
 
     apply plugin: 'org.jetbrains.kotlin.jvm'
 
