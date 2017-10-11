@@ -6,14 +6,12 @@ Type-safe dimensional analysis in Kotlin
 apply plugin: 'kotlin-kapt'
 
 repositories {
-    maven { url 'https://jitpack.io' }
+    maven { url 'http://repo.kunalsheth.info' }
 }
 
-def unitsOfMeasureVersion = 'c7c0dc1499'
-
 dependencies {
-    compileOnly group: 'com.github.kunalsheth.units-of-measure', name: 'annotations', version: unitsOfMeasureVersion
-    kapt group: 'com.github.kunalsheth.units-of-measure', name: 'processor', version: unitsOfMeasureVersion
+    compileOnly group: 'info.kunalsheth.units-of-measure', name: 'annotations', version: '1.1.2'
+    kapt group: 'info.kunalsheth.units-of-measure', name: 'processor', version: '1.1.2'
 }
 
 sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
@@ -66,4 +64,4 @@ fun bar(): ampere {
 - [x] Make it work.
 - [ ] Make annotations easier to write and manage.
 - [x] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
-- [ ] Publish on Maven Central.
+- [x] ~~Publish on Maven Central.~~
