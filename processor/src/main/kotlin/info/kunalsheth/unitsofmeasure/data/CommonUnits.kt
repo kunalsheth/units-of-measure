@@ -28,7 +28,6 @@ val commonUnits = mapOf(
         "weber" to MetaUom(/*kg⋅m2⋅s−2⋅A−1*/ kilogram = 1, metre = 2, second = -2, ampere = -1),
         "tesla" to MetaUom(/*kg⋅s−2⋅A−1*/ kilogram = 1, second = -2, ampere = -1),
         "henry" to MetaUom(/*kg⋅m2⋅s−2⋅A−2*/ kilogram = 1, metre = 2, second = -2, ampere = -2),
-        "celsius" to MetaUom(/*K*/ kelvin = 1),
         "lumen" to MetaUom(/*cd*/ candela = 1),
         "lux" to MetaUom(/*m−2⋅cd*/ metre = -2, candela = 1),
         "becquerel" to MetaUom(/*s−1*/ second = -1),

@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'info.kunalsheth.units-of-measure', name: 'annotations', version: '1.1.2'
-    kapt group: 'info.kunalsheth.units-of-measure', name: 'processor', version: '1.1.2'
+    compileOnly group: 'info.kunalsheth.units-of-measure', name: 'annotations', version: '1.1.3'
+    kapt group: 'info.kunalsheth.units-of-measure', name: 'processor', version: '1.1.3'
 }
 
 sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
@@ -62,6 +62,5 @@ fun bar(): ampere {
 
 ### Todo List
 - [x] Make it work.
-- [ ] Make annotations easier to write and manage.
 - [x] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
-- [x] ~~Publish on Maven Central.~~
+- [ ] Make annotations easier to write and manage.
