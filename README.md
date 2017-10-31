@@ -64,3 +64,9 @@ fun bar(): ampere {
 - [x] Make it work.
 - [x] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
 - [ ] Make annotations easier to write and manage.
+- [ ] Add support for unit conversions.
+    - Distinguish between dimension and units.
+    - Create @Convert annotation that takes a dimension and multiplier.
+    - Generate extension properties to convert SI and custom units.
+- [ ] Benchmark performance in contrast to primitives.
+- [ ] Write unit tests.
