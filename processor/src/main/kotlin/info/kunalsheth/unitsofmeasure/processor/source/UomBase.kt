@@ -1,4 +1,4 @@
-package info.kunalsheth.unitsofmeasure.source
+package info.kunalsheth.unitsofmeasure.processor.source
 
 // parent of all UOM classes
 // allows for implementations to be "one-liners"
@@ -33,3 +33,5 @@ interface Uom<This : Uom<This>> : Comparable<This>, Serializable {
     override fun compareTo(other: This) = this.quantity.compareTo(other.quantity)
 }
 """
+
+val

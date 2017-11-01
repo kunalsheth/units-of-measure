@@ -1,4 +1,4 @@
-package info.kunalsheth.unitsofmeasure
+package info.kunalsheth.unitsofmeasure.annotations
 
 /**
  * Created by kunal on 8/8/17.

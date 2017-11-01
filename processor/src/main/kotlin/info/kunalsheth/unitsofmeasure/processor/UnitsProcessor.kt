@@ -1,12 +1,13 @@
 package info.kunalsheth.unitsofmeasure
 
-import info.kunalsheth.unitsofmeasure.data.MetaRelation
-import info.kunalsheth.unitsofmeasure.data.MetaUom
-import info.kunalsheth.unitsofmeasure.data.RelationType.Divide
-import info.kunalsheth.unitsofmeasure.data.RelationType.Multiply
+import info.kunalsheth.unitsofmeasure.annotations.Relate
+import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
+import info.kunalsheth.unitsofmeasure.processor.data.MetaMeasure
+import info.kunalsheth.unitsofmeasure.processor.data.RelationType.Divide
+import info.kunalsheth.unitsofmeasure.processor.data.RelationType.Multiply
 import info.kunalsheth.unitsofmeasure.data.commonUnits
 import info.kunalsheth.unitsofmeasure.source.done
-import info.kunalsheth.unitsofmeasure.source.uomBase
+import info.kunalsheth.unitsofmeasure.processor.source.uomBase
 import info.kunalsheth.unitsofmeasure.source.writeKt
 import java.io.File
 import java.util.*
@@ -32,7 +33,7 @@ class UnitsProcessor : Processor {
     lateinit var generatedDir: File
     lateinit var env: ProcessingEnvironment
 
-    private val allUnits = HashSet<MetaUom>()
+    private val allUnits = HashSet<MetaMeasure>()
     private val allRelations = HashSet<MetaRelation<*>>()
 
     override fun getSupportedOptions() = setOf(kaptKotlinGeneratedOption)
@@ -48,7 +49,7 @@ class UnitsProcessor : Processor {
                 .flatMap { it.asIterable() }
 
                 // convert annotation data to data class
-                .map { MetaUom(it.a) to MetaUom(it.b) }
+                .map { MetaMeasure(it.a) to MetaMeasure(it.b) }
                 .flatMap { (a, b) ->
                     val aDb = MetaRelation(a, Divide, b)
                     val aMb = MetaRelation(a, Multiply, b)

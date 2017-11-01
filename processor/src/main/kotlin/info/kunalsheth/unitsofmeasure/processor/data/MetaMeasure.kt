@@ -1,61 +1,38 @@
-package info.kunalsheth.unitsofmeasure.data
+package info.kunalsheth.unitsofmeasure.processor.data
 
-import info.kunalsheth.unitsofmeasure.UomData
+import info.kunalsheth.unitsofmeasure.annotations.Measure
 
 /**
  * Created by kunal on 8/4/17.
  */
-data class MetaUom(
-        val metre: Int = 0,
-        val kilogram: Int = 0,
-        val second: Int = 0,
-        val ampere: Int = 0,
-        val kelvin: Int = 0,
-        val mole: Int = 0,
-        val candela: Int = 0
+data class MetaMeasure(
+        val length: Int = 0,
+        val mass: Int = 0,
+        val time: Int = 0,
+        val electricCurrent: Int = 0,
+        val thermodynamicTemperature: Int = 0,
+        val amountOfSubstance: Int = 0,
+        val luminousIntensity: Int = 0
 ) {
-    constructor(uomData: UomData) : this(
-            metre = uomData.metre,
-            kilogram = uomData.kilogram,
-            second = uomData.second,
-            ampere = uomData.ampere,
-            kelvin = uomData.kelvin,
-            mole = uomData.mole,
-            candela = uomData.candela
+    constructor(measure: Measure) : this(
+            length = measure.length,
+            mass = measure.mass,
+            time = measure.time,
+            electricCurrent = measure.electricCurrent,
+            thermodynamicTemperature = measure.thermodynamicTemperature,
+            amountOfSubstance = measure.amountOfSubstance,
+            luminousIntensity = measure.luminousIntensity
     )
-
-    operator fun div(that: MetaUom) = MetaUom(
-            metre = this.metre - that.metre,
-            kilogram = this.kilogram - that.kilogram,
-            second = this.second - that.second,
-            ampere = this.ampere - that.ampere,
-            kelvin = this.kelvin - that.kelvin,
-            mole = this.mole - that.mole,
-            candela = this.candela - that.candela
-    )
-
-    operator fun times(that: MetaUom) = MetaUom(
-            metre = this.metre + that.metre,
-            kilogram = this.kilogram + that.kilogram,
-            second = this.second + that.second,
-            ampere = this.ampere + that.ampere,
-            kelvin = this.kelvin + that.kelvin,
-            mole = this.mole + that.mole,
-            candela = this.candela + that.candela
-    )
-
-    override fun toString()
-            = "data class $safeName(override val quantity: Double) : Uom<$safeName>"
 
     val unicodeName by lazy {
         mapOf(
-                "m" to metre,
-                "kg" to kilogram,
-                "s" to second,
-                "A" to ampere,
-                "K" to kelvin,
-                "mol" to mole,
-                "cd" to candela
+                "L" to length,
+                "M" to mass,
+                "T" to time,
+                "I" to electricCurrent,
+                "Θ" to thermodynamicTemperature,
+                "N" to amountOfSubstance,
+                "J" to luminousIntensity
         )
                 .filterValues { it != 0 }
                 .mapValues { (_, power) ->
@@ -89,13 +66,13 @@ data class MetaUom(
 
     val safeName by lazy {
         val (numerator, denominator) = mapOf(
-                "m" to metre,
-                "kg" to kilogram,
-                "s" to second,
-                "A" to ampere,
-                "K" to kelvin,
-                "mol" to mole,
-                "cd" to candela
+                "L" to length,
+                "M" to mass,
+                "T" to time,
+                "I" to electricCurrent,
+                "Theta" to thermodynamicTemperature,
+                "N" to amountOfSubstance,
+                "J" to luminousIntensity
         )
                 .toList()
                 .filter { (_, power) -> power != 0 }
