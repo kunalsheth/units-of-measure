@@ -1,16 +1,10 @@
-package info.kunalsheth.unitsofmeasure
+package info.kunalsheth.unitsofmeasure.processor
 
-import info.kunalsheth.unitsofmeasure.annotations.Relate
+import info.kunalsheth.unitsofmeasure.annotations.*
 import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
+import info.kunalsheth.unitsofmeasure.processor.data.MetaConversion
 import info.kunalsheth.unitsofmeasure.processor.data.MetaMeasure
-import info.kunalsheth.unitsofmeasure.processor.data.RelationType.Divide
-import info.kunalsheth.unitsofmeasure.processor.data.RelationType.Multiply
-import info.kunalsheth.unitsofmeasure.data.commonUnits
-import info.kunalsheth.unitsofmeasure.source.done
-import info.kunalsheth.unitsofmeasure.processor.source.uomBase
-import info.kunalsheth.unitsofmeasure.source.writeKt
 import java.io.File
-import java.util.*
 import javax.annotation.processing.Completion
 import javax.annotation.processing.ProcessingEnvironment
 import javax.annotation.processing.Processor
@@ -33,76 +27,54 @@ class UnitsProcessor : Processor {
     lateinit var generatedDir: File
     lateinit var env: ProcessingEnvironment
 
-    private val allUnits = HashSet<MetaMeasure>()
-    private val allRelations = HashSet<MetaRelation<*>>()
+    var generateCommonUnits: Boolean = false
+    var dimensionalAnalysis = emptySet<MetaRelation>()
+    var unitConversions = emptySet<MetaConversion>()
 
     override fun getSupportedOptions() = setOf(kaptKotlinGeneratedOption)
 
-    override fun process(types: MutableSet<out TypeElement>, round: RoundEnvironment): Boolean {
-        if (round.getElementsAnnotatedWith(CommonUnits::class.java).isNotEmpty())
-            allUnits += commonUnits.values
+    override fun process(types: MutableSet<out TypeElement>, round: RoundEnvironment) = round.run {
+        val schema = getElementsAnnotatedWith(Schema::class.java)
+                .map { it.getAnnotationsByType(Schema::class.java) }
+                .flatMap(Array<Schema>::asIterable)
 
-        round.run {
-            getElementsAnnotatedWith(Relations::class.java) + getElementsAnnotatedWith(Relate::class.java)
-        }
-                .map { it.getAnnotationsByType(Relate::class.java) }
-                .flatMap { it.asIterable() }
+        generateCommonUnits = generateCommonUnits || schema
+                .any(Schema::generateCommonUnits)
 
-                // convert annotation data to data class
-                .map { MetaMeasure(it.a) to MetaMeasure(it.b) }
-                .flatMap { (a, b) ->
-                    val aDb = MetaRelation(a, Divide, b)
-                    val aMb = MetaRelation(a, Multiply, b)
-                    val bDa = MetaRelation(b, Divide, a)
-                    val bMa = MetaRelation(b, Multiply, a)
+        dimensionalAnalysis += schema
+                .map(Schema::dimensionalAnalysis)
+                .map(Relationships::value)
+                .flatMap(Array<out Relate>::asIterable)
+                .flatMap(MetaRelation.Companion::invoke)
+                .toSet()
 
-                    val aDbMb = MetaRelation(aDb.result, Multiply, b)
-                    val aMbDb = MetaRelation(aMb.result, Divide, b)
-                    val aMbDa = MetaRelation(aMb.result, Divide, a)
-                    val bDaMa = MetaRelation(bDa.result, Multiply, a)
-                    val bMaDa = MetaRelation(bMa.result, Divide, a)
-                    val bMaDb = MetaRelation(bMa.result, Divide, b)
+        unitConversions += schema
+                .map(Schema::unitConversions)
+                .map(Conversions::value)
+                .flatMap(Array<out Convert>::asIterable)
+                .map(::MetaConversion)
+                .toSet()
 
-                    setOf(
-                            aDb, aMb, bDa, bMa,
-                            aDbMb, aMbDb, aMbDa, bDaMa, bMaDa, bMaDb
-                    )
-                }
-                .forEach {
-                    allRelations += it
-                    allUnits += setOf(it.a, it.b, it.result)
-                }
-
-        if (round.processingOver()) {
+        if (processingOver()) {
             val src = writeKt(generatedDir, "UnitsOfMeasure")
-            // parent class of all UOM classes
-            src.println(uomBase)
-            // write all UOM implementation classes
-            allUnits.forEach(src::println)
-            // write all extension operator functions
-            allRelations.forEach(src::println)
-
-            // create type aliases for common unit names
-            commonUnits
-                    .filterValues { it in allUnits }
-                    .mapValues { (_, unit) -> unit.safeName }
-                    // avoid redeclaration
-                    .filter { (name, unit) -> name != unit }
-
-                    .map { (name, unit) -> "typealias $name = $unit" }
+            writeBases(src)
+            // todo: Generate Common Units ???
+            dimensionalAnalysis
+                    .flatMap { setOf(it.a, it.b, it.result) }
+                    .distinct()
+                    .map(MetaMeasure::src)
                     .forEach(src::println)
-
-            // create type aliases for unicode unit names
-            allUnits
-                    .map { it.unicodeName to it.safeName }
-                    .filter { (u, s) -> u != s }
-                    .map { (u, s) -> "typealias $u = $s" }
+            unitConversions
+                    .map(MetaConversion::src)
                     .forEach(src::println)
-
+            dimensionalAnalysis
+                    .map(MetaRelation::src)
+                    .forEach(src::println)
+            src.println(unitConversions.src())
             src.done()
         }
 
-        return true
+        true
     }
 
     override fun getCompletions(element: Element, annotation: AnnotationMirror, executable: ExecutableElement, userText: String) = emptySet<Completion>()
@@ -110,9 +82,9 @@ class UnitsProcessor : Processor {
     override fun getSupportedSourceVersion() = SourceVersion.latestSupported()!!
 
     override fun getSupportedAnnotationTypes() = setOf(
-            Relate::class,
-            Relations::class,
-            CommonUnits::class
+            Relate::class, Relationships::class,
+            Convert::class, Conversions::class,
+            Measure::class, Schema::class
     )
             .map { it.qualifiedName!! }
             .toSet()
