@@ -4,10 +4,10 @@
     <bytecodeTargetLevel>
       <module name="annotations_main" target="1.8" />
       <module name="annotations_test" target="1.8" />
-      <module name="Desktop-units-of-measure_main" target="1.8" />
-      <module name="Desktop-units-of-measure_test" target="1.8" />
       <module name="processor_main" target="1.8" />
       <module name="processor_test" target="1.8" />
+      <module name="units-of-measure_main" target="1.8" />
+      <module name="units-of-measure_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

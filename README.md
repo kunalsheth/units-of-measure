@@ -70,3 +70,7 @@ fun bar(): ampere {
     - Generate extension properties to convert SI and custom units.
 - [ ] Benchmark performance in contrast to primitives.
 - [ ] Write unit tests.
+
+### Sources
+- https://en.wikipedia.org/wiki/SI_base_unit
+- https://en.wikipedia.org/wiki/SI_derived_unit
