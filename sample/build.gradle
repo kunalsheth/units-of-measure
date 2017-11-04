@@ -1,0 +1,14 @@
+plugins {
+    id 'org.jetbrains.kotlin.kapt'
+    id 'application'
+}
+
+mainClassName = 'info.kunalsheth.unitsofmeasure.sample.SampleKt'
+
+dependencies {
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8'
+    compileOnly rootProject
+    kapt rootProject
+}
+
+sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"

@@ -1,4 +1,0 @@
-dependencies {
-    compile project(':annotations')
-    compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect'
-}
