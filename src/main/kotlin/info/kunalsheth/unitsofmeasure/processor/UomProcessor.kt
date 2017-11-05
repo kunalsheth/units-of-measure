@@ -2,8 +2,8 @@ package info.kunalsheth.unitsofmeasure.processor
 
 import info.kunalsheth.unitsofmeasure.annotations.*
 import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
-import info.kunalsheth.unitsofmeasure.processor.data.MetaConversion
-import info.kunalsheth.unitsofmeasure.processor.data.MetaMeasure
+import info.kunalsheth.unitsofmeasure.processor.data.MetaUnitOfMeasure
+import info.kunalsheth.unitsofmeasure.processor.data.MetaDimension
 import java.io.File
 import javax.annotation.processing.Completion
 import javax.annotation.processing.ProcessingEnvironment
@@ -18,7 +18,7 @@ import javax.lang.model.element.TypeElement
 /**
  * Created by kunal on 8/6/17.
  */
-class UnitsProcessor : Processor {
+class UomProcessor : Processor {
 
     // kapt's option to generate kotlin instead of java
     private val kaptKotlinGeneratedOption = "kapt.kotlin.generated"
@@ -29,7 +29,7 @@ class UnitsProcessor : Processor {
 
     var generateCommonUnits: Boolean = false
     var dimensionalAnalysis = emptySet<MetaRelation>()
-    var unitConversions = emptySet<MetaConversion>()
+    var unitConversions = emptySet<MetaUnitOfMeasure>()
 
     override fun getSupportedOptions() = setOf(kaptKotlinGeneratedOption)
 
@@ -49,10 +49,10 @@ class UnitsProcessor : Processor {
                 .toSet()
 
         unitConversions += schema
-                .map(Schema::unitConversions)
-                .map(Conversions::value)
-                .flatMap(Array<out Convert>::asIterable)
-                .map(::MetaConversion)
+                .map(Schema::unitsOfMeasure)
+                .map(UnitsOfMeasure::value)
+                .flatMap(Array<out UnitOfMeasure>::asIterable)
+                .map(::MetaUnitOfMeasure)
                 .toSet()
 
         if (processingOver()) {
@@ -62,10 +62,10 @@ class UnitsProcessor : Processor {
             dimensionalAnalysis
                     .flatMap { setOf(it.a, it.b, it.result) }
                     .distinct()
-                    .map(MetaMeasure::src)
+                    .map(MetaDimension::src)
                     .forEach(src::println)
 
-            src.println(unitConversions.src()) // (Base) -> Double
+            src.println(unitConversions.src())
 
             dimensionalAnalysis
                     .map(MetaRelation::src)
@@ -83,8 +83,8 @@ class UnitsProcessor : Processor {
 
     override fun getSupportedAnnotationTypes() = setOf(
             Relate::class, Relationships::class,
-            Convert::class, Conversions::class,
-            Measure::class, Schema::class
+            UnitOfMeasure::class, UnitsOfMeasure::class,
+            Dimension::class, Schema::class
     )
             .map { it.qualifiedName!! }
             .toSet()

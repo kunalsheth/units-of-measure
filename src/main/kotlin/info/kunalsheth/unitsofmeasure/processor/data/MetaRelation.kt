@@ -6,13 +6,13 @@ import info.kunalsheth.unitsofmeasure.processor.data.RelationType.*
 /**
  * Created by kunal on 8/5/17.
  */
-data class MetaRelation(val a: MetaMeasure, val f: RelationType, val b: MetaMeasure) {
+data class MetaRelation(val a: MetaDimension, val f: RelationType, val b: MetaDimension) {
     val result = f(a, b)
 
     companion object {
         operator fun invoke(relation: Relate) = relation.run {
-            val a = MetaMeasure(a)
-            val b = MetaMeasure(b)
+            val a = MetaDimension(a)
+            val b = MetaDimension(b)
 
             val aDb = MetaRelation(a, Divide, b)
             val aMb = MetaRelation(a, Multiply, b)
@@ -34,9 +34,9 @@ data class MetaRelation(val a: MetaMeasure, val f: RelationType, val b: MetaMeas
     }
 }
 
-enum class RelationType : (MetaMeasure, MetaMeasure) -> MetaMeasure {
+enum class RelationType : (MetaDimension, MetaDimension) -> MetaDimension {
     Divide {
-        override fun invoke(a: MetaMeasure, b: MetaMeasure) = MetaMeasure(
+        override fun invoke(a: MetaDimension, b: MetaDimension) = MetaDimension(
                 L = a.L - b.L,
                 M = a.M - b.M,
                 T = a.T - b.T,
@@ -47,7 +47,7 @@ enum class RelationType : (MetaMeasure, MetaMeasure) -> MetaMeasure {
         )
     },
     Multiply {
-        override fun invoke(a: MetaMeasure, b: MetaMeasure) = MetaMeasure(
+        override fun invoke(a: MetaDimension, b: MetaDimension) = MetaDimension(
                 L = a.L + b.L,
                 M = a.M + b.M,
                 T = a.T + b.T,

@@ -7,5 +7,5 @@ package info.kunalsheth.unitsofmeasure.annotations
 annotation class Schema(
         val generateCommonUnits: Boolean = false,
         val dimensionalAnalysis: Relationships = Relationships(),
-        val unitConversions: Conversions = Conversions()
+        val unitsOfMeasure: UnitsOfMeasure = UnitsOfMeasure()
 )

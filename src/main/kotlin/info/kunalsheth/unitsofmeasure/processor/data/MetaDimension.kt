@@ -1,11 +1,11 @@
 package info.kunalsheth.unitsofmeasure.processor.data
 
-import info.kunalsheth.unitsofmeasure.annotations.Measure
+import info.kunalsheth.unitsofmeasure.annotations.Dimension
 
 /**
  * Created by kunal on 8/4/17.
  */
-data class MetaMeasure(
+data class MetaDimension(
         val L: Int = 0,
         val M: Int = 0,
         val T: Int = 0,
@@ -14,14 +14,14 @@ data class MetaMeasure(
         val N: Int = 0,
         val J: Int = 0
 ) {
-    constructor(measure: Measure) : this(
-            L = measure.L,
-            M = measure.M,
-            T = measure.T,
-            I = measure.I,
-            Theta = measure.Theta,
-            N = measure.N,
-            J = measure.J
+    constructor(dimension: Dimension) : this(
+            L = dimension.L,
+            M = dimension.M,
+            T = dimension.T,
+            I = dimension.I,
+            Theta = dimension.Theta,
+            N = dimension.N,
+            J = dimension.J
     )
 
     val safeName = {

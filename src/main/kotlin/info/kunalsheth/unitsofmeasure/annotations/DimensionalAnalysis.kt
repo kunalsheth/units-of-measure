@@ -5,7 +5,7 @@ package info.kunalsheth.unitsofmeasure.annotations
  */
 @Target
 @Retention(AnnotationRetention.SOURCE)
-annotation class Relate(val a: Measure, val b: Measure)
+annotation class Relate(val a: Dimension, val b: Dimension)
 
 @Target
 @Retention(AnnotationRetention.SOURCE)

@@ -5,8 +5,8 @@ package info.kunalsheth.unitsofmeasure.annotations
  */
 @Target
 @Retention(AnnotationRetention.SOURCE)
-annotation class Convert(val name: String, val ratioToSI: Double, val measure: Measure)
+annotation class UnitOfMeasure(val name: String, val ratioToSI: Double, val dimension: Dimension)
 
 @Target
 @Retention(AnnotationRetention.SOURCE)
-annotation class Conversions(vararg val value: Convert)
+annotation class UnitsOfMeasure(vararg val value: UnitOfMeasure)

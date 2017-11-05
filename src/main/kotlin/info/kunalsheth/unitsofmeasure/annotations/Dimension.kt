@@ -5,7 +5,7 @@ package info.kunalsheth.unitsofmeasure.annotations
  */
 @Target
 @Retention(AnnotationRetention.SOURCE)
-annotation class Measure(
+annotation class Dimension(
         val L: Int = 0,
         val M: Int = 0,
         val T: Int = 0,

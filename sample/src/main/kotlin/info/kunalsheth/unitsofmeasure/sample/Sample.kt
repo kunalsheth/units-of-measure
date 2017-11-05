@@ -7,15 +7,15 @@ import info.kunalsheth.unitsofmeasure.generated.*
         generateCommonUnits = true,
         dimensionalAnalysis = Relationships(
                 Relate(
-                        Measure(L = 2, M = 1, T = -3, I = -2),
-                        Measure(I = 1)
+                        Dimension(L = 2, M = 1, T = -3, I = -2),
+                        Dimension(I = 1)
                 ),
-                Relate(Measure(L = 1), Measure(T = 1))
+                Relate(Dimension(L = 1), Dimension(T = 1))
         ),
-        unitConversions = Conversions(
-                Convert("foot", 3.28084, Measure(L = 1)),
-                Convert("second", 1.0, Measure(T = 1)),
-                Convert("feetPerSecond", 3.28084, Measure(L = 1, T = -1))
+        unitsOfMeasure = UnitsOfMeasure(
+                UnitOfMeasure("foot", 3.28084, Dimension(L = 1)),
+                UnitOfMeasure("second", 1.0, Dimension(T = 1)),
+                UnitOfMeasure("feetPerSecond", 3.28084, Dimension(L = 1, T = -1))
         )
 )
 fun main(args: Array<String>) {
