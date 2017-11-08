@@ -1,2 +1,3 @@
 rootProject.name = 'units-of-measure'
 include 'sample'
+include 'extractor'

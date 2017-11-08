@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor.iml" group="extractor" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/extractor_main.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/extractor_main.iml" group="extractor" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/extractor_test.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/extractor_test.iml" group="extractor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample.iml" group="sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/sample_main.iml" group="sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/sample_test.iml" group="sample" />

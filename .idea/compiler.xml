@@ -4,10 +4,16 @@
     <bytecodeTargetLevel>
       <module name="annotations_main" target="1.8" />
       <module name="annotations_test" target="1.8" />
+      <module name="common-units_main" target="1.8" />
+      <module name="common-units_test" target="1.8" />
+      <module name="extractor_main" target="1.8" />
+      <module name="extractor_test" target="1.8" />
       <module name="processor_main" target="1.8" />
       <module name="processor_test" target="1.8" />
       <module name="sample_main" target="1.8" />
       <module name="sample_test" target="1.8" />
+      <module name="squants-extractor_main" target="1.8" />
+      <module name="squants-extractor_test" target="1.8" />
       <module name="units-of-measure_main" target="1.8" />
       <module name="units-of-measure_test" target="1.8" />
       <module name="unitsofmeasure_main" target="1.8" />

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="Gradle 1" modules="common-units_main,common-units_test,squants-extractor_main,squants-extractor_test">
+      <option name="existentials" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <parameters>
+        <parameter value="-target:jvm-1.8" />
+      </parameters>
+    </profile>
+    <profile name="Gradle 2" modules="extractor_main,extractor_test">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <parameters>
+        <parameter value="-target:jvm-1.8" />
+      </parameters>
+    </profile>
+  </component>
+</project>
