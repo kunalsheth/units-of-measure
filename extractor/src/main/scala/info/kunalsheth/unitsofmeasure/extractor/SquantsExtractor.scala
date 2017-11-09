@@ -26,16 +26,19 @@ object SquantsExtractor extends App {
     .map(currentMirror.reflectModule)
     .map(_.instance)
     .map(_.asInstanceOf[Dimension[A] forSome {type A <: Quantity[A]}])
+    .sortBy(_.name)
     .foreach(i => printDimension(i))
 
   def printDimension[A <: Quantity[A]](d: Dimension[A]) = Try {
-    val si = d.siUnit(1)
     val dimensionName = d.name
-    d.units.foreach { u =>
-      val factorToSI = si to u
-      val unitName = u.getClass.getSimpleName replaceAll("\\$", "")
+    val si = d.siUnit
+    d.units.toList
+      .sortBy(_.symbol)
+      .foreach { u =>
+        val factorToSI = u(1) to si
+        val unitName = u.getClass.getSimpleName replaceAll("\\$", "")
 
-      println(s"$dimensionName\t$si\t$factorToSI\t$unitName")
-    }
+        println(s"$dimensionName\t${si(1)}\t$factorToSI\t$unitName")
+      }
   }
 }
