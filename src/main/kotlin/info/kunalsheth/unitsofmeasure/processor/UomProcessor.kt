@@ -62,7 +62,10 @@ class UomProcessor : Processor {
             val src = writeKt(generatedDir, "UnitsOfMeasure")
             writeBase(src, env.filer)
 
-            // todo: Generate Common Units ???
+            if (generateCommonUnits) {
+                quantities += commonQuantities
+                unitsOfMeasure += commonUnits
+            }
 
             var allDimensions = emptySet<MetaDimension>()
             allDimensions += relationships.flatMap { setOf(it.a, it.b, it.result) }

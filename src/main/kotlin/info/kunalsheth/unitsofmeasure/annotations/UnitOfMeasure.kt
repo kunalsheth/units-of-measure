@@ -5,4 +5,4 @@ package info.kunalsheth.unitsofmeasure.annotations
  */
 @Target
 @Retention(AnnotationRetention.SOURCE)
-annotation class UnitOfMeasure(val name: String, val ratioToSI: Double, val dimension: Dimension)
+annotation class UnitOfMeasure(val name: String, val factorToSI: Double, val dimension: Dimension)

@@ -2,10 +2,10 @@ package info.kunalsheth.unitsofmeasure.processor.data
 
 import info.kunalsheth.unitsofmeasure.annotations.UnitOfMeasure
 
-data class MetaUnitOfMeasure( val name: String, val ratioToSI: Double, val dimension: MetaDimension) {
+data class MetaUnitOfMeasure(val name: String, val factorToSI: Double, val dimension: MetaDimension) {
     constructor(unitOfMeasure: UnitOfMeasure) : this(
             name = "`${unitOfMeasure.name}`",
-            ratioToSI = unitOfMeasure.ratioToSI,
+            factorToSI = unitOfMeasure.factorToSI,
             dimension = MetaDimension(unitOfMeasure.dimension)
     )
 

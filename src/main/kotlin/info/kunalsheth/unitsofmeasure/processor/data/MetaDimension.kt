@@ -35,8 +35,7 @@ data class MetaDimension(
                 "J" to J
         )
                 .toList()
-                .filter { (_, power) -> power != 0 }
-                .partition { (_, power) -> power > 0 }
+                .partition { (_, power) -> power >= 0 }
 
         val numeratorString = numerator
                 .joinToString(separator = "") { (unit, power) -> unit + power }

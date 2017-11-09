@@ -2,86 +2,40 @@ package info.kunalsheth.unitsofmeasure.extractor
 
 import java.io.PrintStream
 
+import org.clapper.classutil.ClassFinder
+
+import scala.reflect.runtime._
 import squants._
-import squants.electro._
-import squants.energy.{Energy, _}
-import squants.information._
-import squants.mass.{ChemicalAmount, Density, Mass, _}
-import squants.motion.{Acceleration, MassFlow, Velocity, VolumeFlow, _}
-import squants.photo.{LuminousIntensity, _}
-import squants.radio._
-import squants.space.{Angle, SolidAngle, Volume, _}
-import squants.thermal.{Temperature, _}
-import squants.time.{Time, _}
+import squants.electro.Capacitance
+import squants.motion.Acceleration
+import squants.space.Length
 
 import scala.reflect.io.File
+import scala.util.Try
 
 object SquantsExtractor extends App {
 
   System.setOut(new PrintStream(File("common_units.tsv").outputStream()))
 
-  // copied from squants.experimental.unitgroups.ImplicitDimensions
-  print(Capacitance)
-  print(Conductivity)
-  print(ElectricalConductance)
-  print(ElectricalResistance)
-  print(ElectricCharge)
-  print(ElectricPotential)
-  print(Inductance)
-  print(MagneticFlux)
-  print(MagneticFluxDensity)
-  print(Resistivity)
-  print(Energy)
-  print(EnergyDensity)
-  print(Power)
-  print(PowerRamp)
-  print(SpecificEnergy)
-  print(DataRate)
-  print(Information)
-  print(AreaDensity)
-  print(ChemicalAmount)
-  print(Density)
-  print(Mass)
-  print(MomentOfInertia)
-  print(Acceleration)
-  print(AngularAcceleration)
-  print(AngularVelocity)
-  print(Force)
-  print(Jerk)
-  print(MassFlow)
-  print(Momentum)
-  print(Pressure)
-  print(PressureChange)
-  print(Torque)
-  print(Velocity)
-  print(VolumeFlow)
-  print(Yank)
-  print(Illuminance)
-  print(Luminance)
-  print(LuminousEnergy)
-  print(LuminousExposure)
-  print(LuminousFlux)
-  print(LuminousIntensity)
-  print(Irradiance)
-  print(Radiance)
-  print(RadiantIntensity)
-  print(SpectralIntensity)
-  print(SpectralIrradiance)
-  print(SpectralPower)
-  print(Angle)
-  print(Area)
-  print(Length)
-  print(SolidAngle)
-  print(Volume)
-  print(Temperature)
-  print(ThermalCapacity)
-  print(Frequency)
-  print(Time)
+  ClassFinder()
+    .getClasses()
+    .filter(_.isConcrete)
+    .filter(_.implements("squants.Dimension"))
+    .map(_.name)
+    .map(currentMirror.staticModule)
+    .map(currentMirror.reflectModule)
+    .map(_.instance)
+    .map(_.asInstanceOf[Dimension[A] forSome {type A <: Quantity[A]}])
+    .foreach(i => printDimension(i))
 
-  def print[A <: Quantity[A]](d: Dimension[A]) {
-    println(d.name)
+  def printDimension[A <: Quantity[A]](d: Dimension[A]) = Try {
     val si = d.siUnit(1)
-    d.units.foreach(u => println(s"$si\t${si to u}\t${u.getClass.getSimpleName}"))
-    println()
+    val dimensionName = d.name
+    d.units.foreach { u =>
+      val factorToSI = si to u
+      val unitName = u.getClass.getSimpleName replaceAll("\\$", "")
+
+      println(s"$dimensionName\t$si\t$factorToSI\t$unitName")
+    }
   }
 }
