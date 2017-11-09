@@ -75,3 +75,4 @@ fun bar(): ampere {
 - https://en.wikipedia.org/wiki/SI_base_unit
 - https://en.wikipedia.org/wiki/SI_derived_unit
 - http://www.squants.com
+- https://en.wikipedia.org/wiki/List_of_physical_quantities

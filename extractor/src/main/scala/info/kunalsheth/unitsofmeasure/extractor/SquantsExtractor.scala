@@ -4,15 +4,15 @@ import java.io.PrintStream
 
 import squants._
 import squants.electro._
-import squants.energy._
+import squants.energy.{Energy, _}
 import squants.information._
-import squants.mass._
-import squants.motion._
-import squants.photo._
+import squants.mass.{ChemicalAmount, Density, Mass, _}
+import squants.motion.{Acceleration, MassFlow, Velocity, VolumeFlow, _}
+import squants.photo.{LuminousIntensity, _}
 import squants.radio._
-import squants.space._
-import squants.thermal._
-import squants.time._
+import squants.space.{Angle, SolidAngle, Volume, _}
+import squants.thermal.{Temperature, _}
+import squants.time.{Time, _}
 
 import scala.reflect.io.File
 

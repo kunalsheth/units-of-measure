@@ -2,6 +2,7 @@ package info.kunalsheth.unitsofmeasure.processor
 
 import info.kunalsheth.unitsofmeasure.processor.data.MetaUnitOfMeasure
 import info.kunalsheth.unitsofmeasure.processor.data.MetaDimension
+import info.kunalsheth.unitsofmeasure.processor.data.MetaQuantity
 import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
 import info.kunalsheth.unitsofmeasure.processor.data.RelationType.*
 import java.io.File
@@ -32,16 +33,6 @@ fun MetaDimension.src() = """
     typealias $this = $safeName
 """
 
-fun Collection<MetaUnitOfMeasure>.src() = distinctBy(MetaUnitOfMeasure::toString)
-        .joinToString(separator = "\n") {
-            it.run {
-                """
-                fun $this(value: Double) = $dimensions(value / $ratioToSI)
-                val $dimensions.$this get() = $siValue * $ratioToSI
-                """
-            }
-        }
-
 fun MetaRelation.src() = when (f) {
     Divide -> """
         operator fun $a.div(that: $b) = $result(this.$siValue / that.$siValue)
@@ -50,6 +41,15 @@ fun MetaRelation.src() = when (f) {
         operator fun $a.times(that: $b) = $result(this.$siValue * that.$siValue)
 """
 }
+
+fun MetaQuantity.src() = """
+    typealias $this = $dimension
+"""
+
+fun MetaUnitOfMeasure.src() = """
+    fun $this(value: Double) = $dimension(value / $ratioToSI)
+    val $dimension.$this get() = $siValue * $ratioToSI
+"""
 
 fun PrintWriter.done() {
     flush()

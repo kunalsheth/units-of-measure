@@ -4,6 +4,7 @@ import info.kunalsheth.unitsofmeasure.annotations.*
 import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
 import info.kunalsheth.unitsofmeasure.processor.data.MetaUnitOfMeasure
 import info.kunalsheth.unitsofmeasure.processor.data.MetaDimension
+import info.kunalsheth.unitsofmeasure.processor.data.MetaQuantity
 import java.io.File
 import javax.annotation.processing.Completion
 import javax.annotation.processing.ProcessingEnvironment
@@ -28,8 +29,9 @@ class UomProcessor : Processor {
     lateinit var env: ProcessingEnvironment
 
     var generateCommonUnits: Boolean = false
-    var dimensionalAnalysis = emptySet<MetaRelation>()
-    var unitConversions = emptySet<MetaUnitOfMeasure>()
+    var relationships = emptySet<MetaRelation>()
+    var quantities = emptySet<MetaQuantity>()
+    var unitsOfMeasure = emptySet<MetaUnitOfMeasure>()
 
     override fun getSupportedOptions() = setOf(kaptKotlinGeneratedOption)
 
@@ -41,32 +43,46 @@ class UomProcessor : Processor {
         generateCommonUnits = generateCommonUnits || schema
                 .any(Schema::generateCommonUnits)
 
-        dimensionalAnalysis += schema
+        relationships += schema
                 .map(Schema::relationships)
                 .flatMap(Array<Relation>::asIterable)
                 .flatMap(MetaRelation.Companion::invoke)
-                .toSet()
 
-        unitConversions += schema
+        quantities += schema
+                .map(Schema::quantities)
+                .flatMap(Array<Quantity>::asIterable)
+                .map(::MetaQuantity)
+
+        unitsOfMeasure += schema
                 .map(Schema::unitsOfMeasure)
                 .flatMap(Array<UnitOfMeasure>::asIterable)
                 .map(::MetaUnitOfMeasure)
-                .toSet()
 
         if (processingOver()) {
             val src = writeKt(generatedDir, "UnitsOfMeasure")
             writeBase(src, env.filer)
+
             // todo: Generate Common Units ???
-            dimensionalAnalysis
-                    .flatMap { setOf(it.a, it.b, it.result) }
-                    .distinct()
+
+            var allDimensions = emptySet<MetaDimension>()
+            allDimensions += relationships.flatMap { setOf(it.a, it.b, it.result) }
+            allDimensions += quantities.map(MetaQuantity::dimension)
+            allDimensions += unitsOfMeasure.map(MetaUnitOfMeasure::dimension)
+            allDimensions
                     .map(MetaDimension::src)
                     .forEach(src::println)
 
-            src.println(unitConversions.src())
-
-            dimensionalAnalysis
+            relationships
                     .map(MetaRelation::src)
+                    .forEach(src::println)
+
+            quantities
+                    .map(MetaQuantity::src)
+                    .forEach(src::println)
+
+            unitsOfMeasure
+                    .distinctBy(MetaUnitOfMeasure::name)
+                    .map(MetaUnitOfMeasure::src)
                     .forEach(src::println)
 
             src.done()
