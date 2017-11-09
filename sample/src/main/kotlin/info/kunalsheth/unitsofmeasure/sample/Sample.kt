@@ -20,7 +20,8 @@ fun main(args: Array<String>) {
     val time = Seconds(2.0)
     val speed: Velocity = distance / time
     println(speed.KilometersPerHour)
-
     val acceleration: Acceleration = speed / time
     println(acceleration.MetersPerSecondSquared)
+
+
 }
