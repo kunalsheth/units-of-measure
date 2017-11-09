@@ -1,6 +1,6 @@
 package info.kunalsheth.unitsofmeasure.processor.data
 
-import info.kunalsheth.unitsofmeasure.annotations.Relate
+import info.kunalsheth.unitsofmeasure.annotations.Relation
 import info.kunalsheth.unitsofmeasure.processor.data.RelationType.*
 
 /**
@@ -10,7 +10,7 @@ data class MetaRelation(val a: MetaDimension, val f: RelationType, val b: MetaDi
     val result = f(a, b)
 
     companion object {
-        operator fun invoke(relation: Relate) = relation.run {
+        operator fun invoke(relation: Relation) = relation.run {
             val a = MetaDimension(a)
             val b = MetaDimension(b)
 

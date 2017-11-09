@@ -42,16 +42,14 @@ class UomProcessor : Processor {
                 .any(Schema::generateCommonUnits)
 
         dimensionalAnalysis += schema
-                .map(Schema::dimensionalAnalysis)
-                .map(Relationships::value)
-                .flatMap(Array<out Relate>::asIterable)
+                .map(Schema::relationships)
+                .flatMap(Array<Relation>::asIterable)
                 .flatMap(MetaRelation.Companion::invoke)
                 .toSet()
 
         unitConversions += schema
                 .map(Schema::unitsOfMeasure)
-                .map(UnitsOfMeasure::value)
-                .flatMap(Array<out UnitOfMeasure>::asIterable)
+                .flatMap(Array<UnitOfMeasure>::asIterable)
                 .map(::MetaUnitOfMeasure)
                 .toSet()
 
@@ -82,8 +80,8 @@ class UomProcessor : Processor {
     override fun getSupportedSourceVersion() = SourceVersion.latestSupported()!!
 
     override fun getSupportedAnnotationTypes() = setOf(
-            Relate::class, Relationships::class,
-            UnitOfMeasure::class, UnitsOfMeasure::class,
+            Relation::class,
+            UnitOfMeasure::class,
             Dimension::class, Schema::class
     )
             .map { it.qualifiedName!! }

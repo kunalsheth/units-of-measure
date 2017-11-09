@@ -7,7 +7,7 @@ allprojects {
     apply plugin: 'org.jetbrains.kotlin.jvm'
 
     group 'info.kunalsheth'
-    version 'TEST'
+    version '2'
 
     repositories.jcenter()
     dependencies.compileOnly group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8'

@@ -5,8 +5,4 @@ package info.kunalsheth.unitsofmeasure.annotations
  */
 @Target
 @Retention(AnnotationRetention.SOURCE)
-annotation class Relate(val a: Dimension, val b: Dimension)
-
-@Target
-@Retention(AnnotationRetention.SOURCE)
-annotation class Relationships(vararg val value: Relate)
+annotation class Relation(val a: Dimension, val b: Dimension)

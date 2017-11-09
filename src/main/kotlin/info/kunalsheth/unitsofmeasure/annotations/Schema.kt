@@ -6,6 +6,6 @@ package info.kunalsheth.unitsofmeasure.annotations
 @Retention(AnnotationRetention.SOURCE)
 annotation class Schema(
         val generateCommonUnits: Boolean = false,
-        val dimensionalAnalysis: Relationships = Relationships(),
-        val unitsOfMeasure: UnitsOfMeasure = UnitsOfMeasure()
+        val relationships: Array<Relation> = emptyArray(),
+        val unitsOfMeasure: Array<UnitOfMeasure> = emptyArray()
 )
