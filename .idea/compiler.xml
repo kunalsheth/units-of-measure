@@ -14,6 +14,10 @@
       <module name="sample_test" target="1.8" />
       <module name="squants-extractor_main" target="1.8" />
       <module name="squants-extractor_test" target="1.8" />
+      <module name="units-of-measure-extractor_main" target="1.8" />
+      <module name="units-of-measure-extractor_test" target="1.8" />
+      <module name="units-of-measure-sample_main" target="1.8" />
+      <module name="units-of-measure-sample_test" target="1.8" />
       <module name="units-of-measure_main" target="1.8" />
       <module name="units-of-measure_test" target="1.8" />
       <module name="unitsofmeasure_main" target="1.8" />

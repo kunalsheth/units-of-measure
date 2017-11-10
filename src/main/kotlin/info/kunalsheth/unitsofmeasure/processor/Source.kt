@@ -47,7 +47,7 @@ fun MetaQuantity.src() = """
 """
 
 fun MetaUnitOfMeasure.src() = """
-    fun $this(value: Double) = $dimension(value * $factorToSI)
+    val Number.$this get() = $dimension(this.toDouble() * $factorToSI)
     val $dimension.$this get() = $siValue / $factorToSI
 """
 

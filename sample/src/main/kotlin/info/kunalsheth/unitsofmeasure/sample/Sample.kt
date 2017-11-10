@@ -16,12 +16,15 @@ import info.kunalsheth.unitsofmeasure.generated.*
         )
 )
 fun main(args: Array<String>) {
-    val distance = Feet(10.0)
-    val time = Seconds(2.0)
-    val speed: Velocity = distance / time
+    val distance = 15.Feet
+    val time = 3.14.Seconds
+    val speed /*: Velocity*/ = distance / time
     println(speed.KilometersPerHour)
-    val acceleration: Acceleration = speed / time
+
+    val acceleration /*: Acceleration*/ = speed / time
     println(acceleration.MetersPerSecondSquared)
 
-
+    val v = 12.Volts
+    val i = 50.Amperes
+    val r /*: ElectricalResistance*/ = v / i
 }
