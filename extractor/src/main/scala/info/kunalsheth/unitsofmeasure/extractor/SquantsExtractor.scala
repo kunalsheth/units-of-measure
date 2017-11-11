@@ -6,9 +6,6 @@ import org.clapper.classutil.ClassFinder
 
 import scala.reflect.runtime._
 import squants._
-import squants.electro.Capacitance
-import squants.motion.Acceleration
-import squants.space.Length
 
 import scala.reflect.io.File
 import scala.util.Try

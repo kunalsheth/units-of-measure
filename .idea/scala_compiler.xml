@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
+    <option name="existentials" value="true" />
     <profile name="Gradle 1" modules="common-units_main,common-units_test,squants-extractor_main,squants-extractor_test">
       <option name="existentials" value="true" />
       <option name="deprecationWarnings" value="true" />
