@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor.iml" group="extractor" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/extractor.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/extractor.iml" group="extractor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/extractor_main.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/extractor_main.iml" group="extractor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/extractor_test.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/extractor_test.iml" group="extractor" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample.iml" group="sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/sample.iml" group="sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/sample_main.iml" group="sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/sample_test.iml" group="sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/units-of-measure.iml" filepath="$PROJECT_DIR$/.idea/modules/units-of-measure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/units-of-measure-extractor.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/units-of-measure-extractor.iml" group="extractor" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/units-of-measure-extractor_main.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/units-of-measure-extractor_main.iml" group="extractor" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extractor/units-of-measure-extractor_test.iml" filepath="$PROJECT_DIR$/.idea/modules/extractor/units-of-measure-extractor_test.iml" group="extractor" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/units-of-measure-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/units-of-measure-sample.iml" group="sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/units-of-measure-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/units-of-measure-sample_main.iml" group="sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/units-of-measure-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/units-of-measure-sample_test.iml" group="sample" />
+      <module fileurl="file://$PROJECT_DIR$/units-of-measure.iml" filepath="$PROJECT_DIR$/units-of-measure.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/units-of-measure_main.iml" filepath="$PROJECT_DIR$/.idea/modules/units-of-measure_main.iml" group="units-of-measure" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/units-of-measure_test.iml" filepath="$PROJECT_DIR$/.idea/modules/units-of-measure_test.iml" group="units-of-measure" />
     </modules>
