@@ -15,14 +15,15 @@ import info.kunalsheth.unitsofmeasure.generated.*
                 Relation(Dimension(L = 1, T = -1), Dimension(T = 1))
         ),
         quantities = arrayOf(
-                Quantity("FooQuantity", Dimension(1, 2, 3, 4, 5, 6, 7))
+                Quantity("FooQuantity", Dimension(L = 1, M = 2, T = 3, I = 4, Theta = 5, N = 6, J = 7))
         ),
         unitsOfMeasure = arrayOf(
-                UnitOfMeasure("FooUnit", 2.718, Dimension(1, 2, 3, 4, 5, 6, 7)),
-                UnitOfMeasure("BarUnit", 3.141, Dimension(1, 2, 3, 4, 5, 6, 7))
+                UnitOfMeasure("FooUnit", 2.718, Dimension(L = 1, M = 2, T = 3, I = 4, Theta = 5, N = 6, J = 7)),
+                UnitOfMeasure("BarUnit", 3.141, Dimension(L = 1, M = 2, T = 3, I = 4, Theta = 5, N = 6, J = 7))
         )
 )
 fun main(args: Array<String>) {
+
 
     // Available using only `generateCommonUnits` and `relationships`
 
@@ -42,11 +43,12 @@ fun main(args: Array<String>) {
     // Available using `quantities` and `unitsOfMeasure`
 
     val k1: FooQuantity = 9000.FooUnit
+    println(k1.BarUnit)
+
     val k2: FooQuantity = 9000.BarUnit
-    val k3: FooQuantity = k1 - k2
-    println(k1.BarUnit) // false: same number, different units
     println(k2.FooUnit)
 
-    println(k3.FooUnit) // != 0: same numbers, different units
-    println(k3.BarUnit) // != 0: same numbers, different units
+    val k3: FooQuantity = k1 - k2
+    println(k3.FooUnit)
+    println(k3.BarUnit)
 }
