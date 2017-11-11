@@ -1,0 +1,11 @@
+apply plugin: 'application'
+mainClassName = 'info.kunalsheth.unitsofmeasure.sample.SampleKt'
+
+apply plugin: 'kotlin-kapt'
+dependencies {
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8'
+    compileOnly rootProject
+    kapt rootProject
+}
+
+sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"

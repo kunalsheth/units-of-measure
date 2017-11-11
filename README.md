@@ -1,5 +1,5 @@
 # units-of-measure
-Type-safe dimensional analysis in Kotlin
+Type-safe dimensional analysis in Kotlin.
 
 ### Gradle Installation
 ```groovy
@@ -10,61 +10,46 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'info.kunalsheth.units-of-measure', name: 'annotations', version: '1.1.3'
-    kapt group: 'info.kunalsheth.units-of-measure', name: 'processor', version: '1.1.3'
+    compileOnly group: 'info.kunalsheth', name: 'units-of-measure', version: '2.0.0'
+    kapt group: 'info.kunalsheth', name: 'units-of-measure', version: '2.0.0'
 }
 
 sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
 ```
 
+### Background
+units-of-measure is not the first library to implement type-safe dimensional analysis in some form.
+On the JVM, there is already:
+- [JSR 275](https://jcp.org/en/jsr/detail?id=275) (Java)
+- [JSR 363](https://jcp.org/en/jsr/detail?id=363) (Java)
+- [Squants](http://www.squants.com) (Scala)
+
+<sup>These are all I could find with a Google search. Feel free to contribute to this list.</sup>
+
+However, units-of-measure takes a novel approach, _annotation processing_. I see numerous benefits to this:
+1) _Incredibly_ Extendable — Adding functionality is as simple as writing another annotation. No slow, tedious "hand-coding" is required.
+2) Small — You only generate what you need. You are not forced to bundle every conceivable unit, quantity, and dimension with your app.
+3) Bug Resistant — Programming such functionality by hand is error prone. Code generation can ensure correctness.
+
 ### Usage
-Representing Velocity:
-```kotlin
-// annotations can be placed anywhere in the project
-@Relate(
-        a = UomData(metre = 1),
-        b = UomData(second = 1)
-)
+First, we must tell units-of-measure what we want. This can be done using the `@Schema` annotation.
 
-fun main(args: Array<String>) {
-    val distance = metre(10.0)
-    val time = second(3.14)
-    val speed: `m⋅s⁻¹` = distance / time
-    //                  `distance * time` doesn't compile
-    //                  `time / distance` doesn't compile
-    //                  `time * distance` doesn't compile
-}
-```
-Ohm's Law:
-```kotlin
-// annotations can be placed anywhere in the project
-@Relate(
-        a = UomData(ampere = 1), // I
-        b = UomData(metre = 2, kilogram = 1, second = -3, ampere = -2) // R
-)
-
-fun foo(): volt {
-    val i = ampere(133.0)
-    val r = ohm(0.0902)
-    return i * r
-    //    `r * i` also compiles
-}
-
-fun bar(): ampere {
-    val v = volt(12.0)
-    val r = ohm(5.0)
-    return v / r
-    //    `v * r` doesn't compile
-    //    `r * v` doesn't compile
-    //    `r / v` doesn't compile
-}
-```
+`@Schema` takes up to four parameters:
+1) `generateCommonUnits` — Sometimes, you just want to go fast. By setting this flag to true, you can acquire almost all the units and quantities contained within [Squants](http://www.squants.com).
+2) `relationships` — Here you can describe dimensional analyses you would like to use. Unfortunately, you cannot divide `ElectricPotential` with `ElectricalResistance` unless you tell units-of-measure first.
+3) `quantities` — Here you can name your quantities. This allows you to call it `ElectricalResistance` instead of using cryptic names such as `L²⋅M⋅T⁻³⋅I⁻²` or `L2M1Theta0N0J0_per_T3I2`
+4) `unitsOfMeasure` — Here you can define your units. This allows you to say `length = number.Feet` or `number = length.Feet`. (Of course, everything is converted to SI internally.)
 
 ### Todo List
 - [x] Make it work.
-- [x] Generate implicit relationships as well. (e.g. if ``v=ir`` then ``v/i=r`` and ``v/r=i``)
-- [x] Make annotations easier to write and manage.
-- [x] Add support for unit conversions.
-    - [WIP] Documentation
+- [x] Generate implicit relationships as well. (e.g. if `v=ir` then `v/i=r`, `v/r=i`, etc.) (`@Relate`) 
+- [x] Make annotations easier to write and manage. (`@Schema`)
+- [x] Add support for unit conversions. (`@UnitOfMeasure`)
 - [ ] Benchmark performance in contrast to primitives.
 - [ ] Write unit tests.
+
+### Sources
+- https://en.wikipedia.org/wiki/SI_base_unit
+- https://en.wikipedia.org/wiki/SI_derived_unit
+- https://en.wikipedia.org/wiki/List_of_physical_quantities
+- http://www.squants.com
