@@ -32,13 +32,11 @@ However, units-of-measure takes a novel approach, _annotation processing_. I see
 3) Bug Resistant — Programming such functionality by hand is error prone. Code generation can ensure correctness.
 
 ### Usage
-Before getting started, I recommend browsing the Wikipedia articles listed [below](#sources).
+Before getting started, I recommend reading the Wikipedia articles listed [below](#sources). There, concepts such as dimension, quantity, and units are explained in detail.
 
-First, we must tell units-of-measure what we want. This can be done using the `@Schema` annotation.
-
-`@Schema` takes up to four parameters:
-1) `generateCommonUnits` — Sometimes, you just want to go fast. By setting this flag to true, you can quickly acquire almost all the units and quantities contained within [Squants](http://www.squants.com).
-2) `relationships` — Here you can describe dimensional analyses you would like to use. You cannot divide `ElectricPotential` with `ElectricalResistance` unless you tell units-of-measure first.
+Because units-of-measure is an annotation processor, we must first tell it what we want to generate. This can be done using the `@Schema` annotation. `@Schema` takes up to four parameters:
+1) `generateCommonUnits` — Sometimes, you want to go fast. By setting this flag to true, you can quickly acquire almost all the units and quantities contained within [Squants](http://www.squants.com).
+2) `relationships` — Here you can list the dimensional relationships you would like to use. You cannot divide `ElectricPotential` with `ElectricalResistance` until you tell units-of-measure to generate the required functions.
 3) `quantities` — Here you can name your quantities. This allows you to call it `ElectricalResistance` instead of the the cryptic `L²⋅M⋅T⁻³⋅I⁻²`.
 4) `unitsOfMeasure` — Here you can define your units. This allows you to say `length = number.Feet` or `number = length.Feet`. (Of course, everything is converted to SI internally.)
 
