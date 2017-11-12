@@ -79,10 +79,12 @@ fun custom() {
     val kunal = 846.Kunals
     val sheth = 864.Sheths
     val quotient: `L⁻¹⋅M²⋅T⁻³⋅I⁴⋅Θ⁻⁵⋅N⁶⋅J⁻⁷` = kunal / sheth
+    val product: `L⋅M²⋅T³⋅I⁴⋅Θ⁵⋅N⁶⋅J⁷` = kunal * sheth
 
-    // there is no unit of measure defined for L⁻¹⋅M²⋅T⁻³⋅I⁴⋅Θ⁻⁵⋅N⁶⋅J⁻⁷
+    // there is no unit of measure defined for L⁻¹⋅M²⋅T⁻³⋅I⁴⋅Θ⁻⁵⋅N⁶⋅J⁻⁷ or L⋅M²⋅T³⋅I⁴⋅Θ⁵⋅N⁶⋅J⁷
     // we are forced to use `it.siValue`
     assert(quotient.siValue in 1..2)
+    assert(product.siValue in 6240241..6240243)
 }
 
 fun main(args: Array<String>) {
