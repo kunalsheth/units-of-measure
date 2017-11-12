@@ -17,6 +17,7 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
 
     fun copy(siValue: Double): D
 
+    @Suppress("UNCHECKED_CAST")
     operator fun rangeTo(that: D) = object : ClosedRange<D> {
         override val start = (this@Quantity min that) as D
         override val endInclusive = (this@Quantity max that) as D
