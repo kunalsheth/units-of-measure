@@ -4,51 +4,38 @@ import info.kunalsheth.unitsofmeasure.annotations.*
 import info.kunalsheth.unitsofmeasure.annotations.Quantity
 import info.kunalsheth.unitsofmeasure.generated.*
 
+// you can use typealiases to make your schema less verbose
+typealias R = Relation
+typealias D = Dimension
 @Schema(
         generateCommonUnits = true,
         relationships = arrayOf(
-                Relation(
-                        Dimension(L = 2, M = 1, T = -3, I = -2),
-                        Dimension(I = 1)
-                ),
-                Relation(Dimension(L = 1), Dimension(T = 1)),
-                Relation(Dimension(L = 1, T = -1), Dimension(T = 1))
-        ),
-        quantities = arrayOf(
-                Quantity("FooQuantity", Dimension(L = 1, M = 2, T = 3, I = 4, Theta = 5, N = 6, J = 7))
-        ),
-        unitsOfMeasure = arrayOf(
-                UnitOfMeasure("FooUnit", 2.718, Dimension(L = 1, M = 2, T = 3, I = 4, Theta = 5, N = 6, J = 7)),
-                UnitOfMeasure("BarUnit", 3.141, Dimension(L = 1, M = 2, T = 3, I = 4, Theta = 5, N = 6, J = 7))
+                R(D(L = 1), D(L = 1)), // generates Len / Len (amongst others)
+                R(D(L = 1), D(T = 1)) // generates Velocity * Time & Len / Time (amongst others)
         )
 )
 fun main(args: Array<String>) {
+    val mass1 = 3.Kilograms
+    val mass2 = 14.Ounces
+    val sum = mass1 + mass2
+    // mass1 + 3.Days // will not compile
+
+    assert(sum in 7.4.Pounds..7.5.Pounds)
+    assert(sum in 3.3.Kilograms..7.5.Pounds) // this works (but is hard to understand)
+    // assert(sum in 7.4.Kilowatts..7.5.Pounds) // will not compile
 
 
-    // Available using only `generateCommonUnits` and `relationships`
-
-    val distance: Length = 15.Feet
-    val time: Time = 3.14.Seconds
-    val speed: Velocity = distance / time
-    println(speed.KilometersPerHour)
-
-    val acceleration: Acceleration = speed / time
-    println(acceleration.MetersPerSecondSquared)
-
-    val v: ElectricPotential = 12.Volts
-    val i: ElectricCurrent = 50.Amperes
-    val r: ElectricalResistance = v / i
+    val ratio = 2.Feet / 1.Meters
+    assert(ratio in 55.Percent..65.Percent)
+    assert(ratio.Percent in 55..65)
 
 
-    // Available using `quantities` and `unitsOfMeasure`
+    val speed = 65.UsMilesPerHour
+    val time = 27.Minutes
+    val distance = speed * time
+    val aBitFaster = distance / (27.Minutes - 30.Seconds)
 
-    val k1: FooQuantity = 9000.FooUnit
-    println(k1.BarUnit)
-
-    val k2: FooQuantity = 9000.BarUnit
-    println(k2.FooUnit)
-
-    val k3: FooQuantity = k1 - k2
-    println(k3.FooUnit)
-    println(k3.BarUnit)
+    assert(distance in 29.UsMiles..30.UsMiles)
+    assert(distance in 30.UsMiles..29.UsMiles) // this works too
+    assert(aBitFaster in speed..(speed + 4.KilometersPerHour))
 }

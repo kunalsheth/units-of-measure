@@ -1,5 +1,6 @@
 apply plugin: 'application'
 mainClassName = 'info.kunalsheth.unitsofmeasure.sample.SampleKt'
+applicationDefaultJvmArgs += '-ea'
 
 apply plugin: 'kotlin-kapt'
 dependencies {
