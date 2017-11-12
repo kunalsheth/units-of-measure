@@ -58,12 +58,12 @@ fun simple() {
                 UnitOfMeasure(
                         name = "Kunals",
                         prefixed = true, // generates MegaKunals (amongst others)
-                        factorToSI = 3.141, // 1 Kunal * 3.141 = 1 M²⋅I⁴⋅N⁶
+                        factorToSI = 3.141, // 1 Kunal * 3.141 = 1 kg²⋅A⁴⋅mol⁶
                         dimension = D(M = 2, I = 4, N = 6)
                 ),
                 UnitOfMeasure(
                         name = "Sheths",
-                        factorToSI = 2.718, // 1 Sheth * 2.718 = 1 L⋅T³⋅Θ⁵⋅J⁷
+                        factorToSI = 2.718, // 1 Sheth * 2.718 = 1 m⋅s³⋅K⁵⋅cd⁷
                         dimension = D(L = 1, T = 3, Theta = 5, J = 7)
                 )
         )
