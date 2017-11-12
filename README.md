@@ -51,7 +51,7 @@ Please look at this [sample code](http://kunalsheth.info/units-of-measure/blob/m
 - [x] Add support for unit conversions. (`@UnitOfMeasure`)
 - [ ] Add docs and comments.
 - [ ] Optimize for faster compilation.
-- [ ] Add metric prefixes.
+- [x] Add metric prefixes.
 - [ ] Benchmark performance in contrast to primitives.
 - [ ] Write unit tests.
 

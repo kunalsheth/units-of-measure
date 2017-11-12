@@ -21,7 +21,7 @@ fun simple() {
     // mass1 + 3.Days // will not compile
 
     assert(sum in 7.4.Pounds..7.5.Pounds)
-    assert(sum in 3.3.Kilograms..7.5.Pounds) // this works (but is hard to understand)
+    assert(sum in 3.3.Kilograms..7.5.Pounds) // this works (but it is hard to understand)
     // assert(sum in 7.4.Kilowatts..7.5.Pounds) // will not compile
 
 
@@ -57,18 +57,14 @@ fun simple() {
         unitsOfMeasure = arrayOf(
                 UnitOfMeasure(
                         name = "Kunals",
+                        prefixed = true, // generates MegaKunals (amongst others)
                         factorToSI = 3.141, // 1 Kunal * 3.141 = 1 M²⋅I⁴⋅N⁶
                         dimension = D(M = 2, I = 4, N = 6)
                 ),
                 UnitOfMeasure(
-                        "Sheths",
-                        2.718, // 1 Sheth * 2.718 = 1 L⋅T³⋅Θ⁵⋅J⁷
-                        D(L = 1, T = 3, Theta = 5, J = 7)
-                ),
-                UnitOfMeasure(
-                        "MegaKunals", // A more elegant prefix solution is coming soon!
-                        3.141 * 1_000_000,
-                        D(M = 2, I = 4, N = 6)
+                        name = "Sheths",
+                        factorToSI = 2.718, // 1 Sheth * 2.718 = 1 L⋅T³⋅Θ⁵⋅J⁷
+                        dimension = D(L = 1, T = 3, Theta = 5, J = 7)
                 )
         )
 )
@@ -84,7 +80,7 @@ fun custom() {
     val sheth = 864.Sheths
     val quotient: `L⁻¹⋅M²⋅T⁻³⋅I⁴⋅Θ⁻⁵⋅N⁶⋅J⁻⁷` = kunal / sheth
 
-    // this is no unit of measure defined for L⁻¹⋅M²⋅T⁻³⋅I⁴⋅Θ⁻⁵⋅N⁶⋅J⁻⁷
+    // there is no unit of measure defined for L⁻¹⋅M²⋅T⁻³⋅I⁴⋅Θ⁻⁵⋅N⁶⋅J⁻⁷
     // we are forced to use `it.siValue`
     assert(quotient.siValue in 1..2)
 }

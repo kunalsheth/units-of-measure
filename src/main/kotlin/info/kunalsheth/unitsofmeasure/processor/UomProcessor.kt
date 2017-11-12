@@ -56,7 +56,7 @@ class UomProcessor : Processor {
         unitsOfMeasure += schema
                 .map(Schema::unitsOfMeasure)
                 .flatMap(Array<UnitOfMeasure>::asIterable)
-                .map(::MetaUnitOfMeasure)
+                .flatMap(MetaUnitOfMeasure.Companion::invoke)
 
         if (processingOver()) {
             val src = writeKt(generatedDir, "UnitsOfMeasure")
