@@ -14,22 +14,32 @@ data class MetaRelation(val a: MetaDimension, val f: RelationType, val b: MetaDi
             val a = MetaDimension(a)
             val b = MetaDimension(b)
 
-            val aDb = MetaRelation(a, Divide, b)
-            val aMb = MetaRelation(a, Multiply, b)
-            val bDa = MetaRelation(b, Divide, a)
-            val bMa = MetaRelation(b, Multiply, a)
+            var newDimensions = setOf(a, b)
 
-            val aDbMb = MetaRelation(aDb.result, Multiply, b)
-            val aMbDb = MetaRelation(aMb.result, Divide, b)
-            val aMbDa = MetaRelation(aMb.result, Divide, a)
-            val bDaMa = MetaRelation(bDa.result, Multiply, a)
-            val bMaDa = MetaRelation(bMa.result, Divide, a)
-            val bMaDb = MetaRelation(bMa.result, Divide, b)
+            fun Set<MetaDimension>.allRelations() =
+                    flatMap { x ->
+                        flatMap { y ->
+                            setOf(
+                                    MetaRelation(x, Divide, x),
+                                    MetaRelation(x, Divide, y),
+                                    MetaRelation(x, Multiply, x),
+                                    MetaRelation(x, Multiply, y),
 
-            setOf(
-                    aDb, aMb, bDa, bMa,
-                    aDbMb, aMbDb, aMbDa, bDaMa, bMaDa, bMaDb
-            )
+                                    MetaRelation(y, Divide, x),
+                                    MetaRelation(y, Divide, y),
+                                    MetaRelation(y, Multiply, x),
+                                    MetaRelation(y, Multiply, y)
+                            )
+                        }
+                    }
+
+            newDimensions += newDimensions
+                    .allRelations()
+                    .map(MetaRelation::result)
+
+            newDimensions
+                    .allRelations()
+                    .filter { newDimensions.containsAll(setOf(it.a, it.b, it.result)) }
         }
     }
 }
