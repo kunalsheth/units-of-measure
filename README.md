@@ -34,7 +34,7 @@ sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKot
 ### Usage
 Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki).
 
-Please look at this [sample code](http://kunalsheth.info/units-of-measure/blob/master/sample/src/main/kotlin/info/kunalsheth/unitsofmeasure/sample/Sample.kt).
+Please look at this [sample code](http://kunalsheth.info/units-of-measure/tree/master/samples).
 
 ### Todo List
 - [x] Make it work.

@@ -1,4 +1,3 @@
 language: kotlin
 script:
-  - gradle :extractor:run
-  - gradle :sample:run
+  - gradle run

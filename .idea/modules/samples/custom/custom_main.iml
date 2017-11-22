@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":sample:main" external.linked.project.path="$MODULE_DIR$/../../../sample" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="info.kunalsheth" external.system.module.type="sourceSet" external.system.module.version="2.0.0" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":samples:custom:main" external.linked.project.path="$MODULE_DIR$/../../../../samples/custom" external.root.project.path="$MODULE_DIR$/../../../.." external.system.id="GRADLE" external.system.module.group="info.kunalsheth" external.system.module.type="sourceSet" external.system.module.version="2.0.0" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="3" platform="JVM 1.6" useProjectSettings="false">
         <compilerSettings />
         <compilerArguments>
-          <option name="destination" value="$MODULE_DIR$/../../../sample/build/classes/kotlin/main" />
+          <option name="destination" value="$MODULE_DIR$/../../../../samples/custom/build/classes/kotlin/main" />
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
-          <option name="moduleName" value="sample" />
+          <option name="moduleName" value="custom" />
           <option name="addCompilerBuiltIns" value="true" />
           <option name="loadBuiltInsFromDependencies" value="true" />
           <option name="languageVersion" value="1.1" />
@@ -24,23 +24,23 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../sample/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../../samples/custom/out/production/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../sample/build/generated/source/kaptKotlin/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../../sample/build/generated/source/kaptKotlin/main" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../../../samples/custom/build/generated/source/kaptKotlin/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../samples/custom/build/generated/source/kaptKotlin/main" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../../sample/src/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../../sample/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../sample/src/main/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../sample/src/main/resources" type="java-resource" />
+    <content url="file://$MODULE_DIR$/../../../../samples/custom/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../samples/custom/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../samples/custom/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../samples/custom/src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.51" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.51" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.51" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.1.51" level="project" />
     <orderEntry type="module" module-name="units-of-measure_main" scope="PROVIDED" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.1.51" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
   </component>
 </module>
