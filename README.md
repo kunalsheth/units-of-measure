@@ -1,6 +1,20 @@
 # units-of-measure
 Type-safe dimensional analysis in Kotlin.
 
+### Background
+units-of-measure is not the first library to implement type-safe dimensional analysis in some form.
+On the JVM, there is already:
+- [JSR 275](https://jcp.org/en/jsr/detail?id=275) (Java)
+- [JSR 363](https://jcp.org/en/jsr/detail?id=363) (Java)
+- [Squants](http://www.squants.com) (Scala)
+
+<sup>These are all I could find with a Google search. Feel free to contribute to this list.</sup>
+
+However, units-of-measure takes a novel approach, _annotation processing_. I see numerous benefits to this:
+1) _Incredibly_ Extendable — Adding functionality is as simple as writing another annotation. No slow, tedious "hand-coding" is required.
+2) Small — You only generate what you need. You are not forced to bundle every conceivable unit, quantity, and dimension with your app.
+3) Bug Resistant — Programming such functionality by hand is error prone. Code generation can ensure correctness.
+
 ### Gradle Installation
 ```groovy
 apply plugin: 'kotlin-kapt'
@@ -17,28 +31,8 @@ dependencies {
 sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
 ```
 
-### Background
-units-of-measure is not the first library to implement type-safe dimensional analysis in some form.
-On the JVM, there is already:
-- [JSR 275](https://jcp.org/en/jsr/detail?id=275) (Java)
-- [JSR 363](https://jcp.org/en/jsr/detail?id=363) (Java)
-- [Squants](http://www.squants.com) (Scala)
-
-<sup>These are all I could find with a Google search. Feel free to contribute to this list.</sup>
-
-However, units-of-measure takes a novel approach, _annotation processing_. I see numerous benefits to this:
-1) _Incredibly_ Extendable — Adding functionality is as simple as writing another annotation. No slow, tedious "hand-coding" is required.
-2) Small — You only generate what you need. You are not forced to bundle every conceivable unit, quantity, and dimension with your app.
-3) Bug Resistant — Programming such functionality by hand is error prone. Code generation can ensure correctness.
-
 ### Usage
-Before getting started, I recommend reading the Wikipedia articles listed [below](#sources). There, concepts such as dimension, quantity, and units are explained in detail.
-
-Because units-of-measure is an annotation processor, we must first tell it what we want to generate. This can be done using the `@Schema` annotation. `@Schema` takes up to four parameters:
-1) `generateCommonUnits` — Sometimes, you want to go fast. By setting this flag to true, you can quickly acquire almost all the units and quantities contained within [Squants](http://www.squants.com).
-2) `relationships` — Here you can list the dimensional relationships you would like to use. You cannot divide `ElectricPotential` with `ElectricalResistance` until you tell units-of-measure to generate the required functions.
-3) `quantities` — Here you can name your quantities. This allows you to call it `ElectricalResistance` instead of the the cryptic `L²⋅M⋅T⁻³⋅I⁻²`.
-4) `unitsOfMeasure` — Here you can define your units. This allows you to say `length = number.Feet` or `number = length.Feet`. (Of course, everything is converted to SI internally.)
+Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki).
 
 Please look at this [sample code](http://kunalsheth.info/units-of-measure/blob/master/sample/src/main/kotlin/info/kunalsheth/unitsofmeasure/sample/Sample.kt).
 
@@ -47,14 +41,7 @@ Please look at this [sample code](http://kunalsheth.info/units-of-measure/blob/m
 - [x] Generate implicit relationships as well. (e.g. if `v=ir` then `v/i=r`, `v/r=i`, etc.) (`@Relate`) 
 - [x] Make annotations easier to write and manage. (`@Schema`)
 - [x] Add support for unit conversions. (`@UnitOfMeasure`)
-- [ ] Add docs and comments.
-- [ ] Optimize for faster compilation.
+- [x] Add docs.(wiki)
 - [x] Add metric prefixes.
+- [ ] Optimize for faster compilation.
 - [ ] Benchmark performance in contrast to primitives.
-- [ ] Write unit tests.
-
-### <a name="sources">Sources</a>
-- https://en.wikipedia.org/wiki/SI_base_unit
-- https://en.wikipedia.org/wiki/SI_derived_unit
-- https://en.wikipedia.org/wiki/List_of_physical_quantities
-- http://www.squants.com
