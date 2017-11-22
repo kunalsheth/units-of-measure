@@ -102,3 +102,5 @@ fabric.properties
 
 ### Custom
 extractor/common_units.tsv
+!samples/basic/build/generated/source/kaptKotlin/main/
+!samples/custom/build/generated/source/kaptKotlin/main/

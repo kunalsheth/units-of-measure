@@ -1,3 +1,4 @@
 language: kotlin
 script:
+  - gradle clean
   - gradle run
