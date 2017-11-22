@@ -1,11 +1,17 @@
 package info.kunalsheth.unitsofmeasure.sample
 
 import info.kunalsheth.unitsofmeasure.annotations.*
+import info.kunalsheth.unitsofmeasure.annotations.Quantity
 import info.kunalsheth.unitsofmeasure.generated.*
 
 @Schema(
         relationships = arrayOf(
-                Relation(Dimension(L = 1), Dimension(T = 1))
+                Relation(Dimension(L = 1), Dimension(T = 1)),
+                Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
+        ),
+        quantities = arrayOf(
+                Quantity("Speed", Dimension(L = 1, T = -1)),
+                Quantity("Acceleration", Dimension(L = 1, T = -2))
         ),
         unitsOfMeasure = arrayOf(
                 UnitOfMeasure("Grams", true, 0.001, Dimension(M = 1)),
@@ -16,6 +22,7 @@ import info.kunalsheth.unitsofmeasure.generated.*
                 UnitOfMeasure("Percent", false, 0.01, Dimension()),
                 UnitOfMeasure("MilesPerHour", false, 0.44704, Dimension(L = 1, T = -1)),
                 UnitOfMeasure("Minutes", false, 60.0, Dimension(T = 1)),
+                UnitOfMeasure("Hours", false, 3600.0, Dimension(T = 1)),
                 UnitOfMeasure("Seconds", false, 1.0, Dimension(T = 1)),
                 UnitOfMeasure("Miles", false, 1609.34, Dimension(L = 1)),
                 UnitOfMeasure("MetresPerHour", true, 0.000277778, Dimension(L = 1, T = -1))
@@ -45,4 +52,11 @@ fun main(args: Array<String>) {
     assert(distance in 29.Miles..30.Miles)
     assert(distance in 30.Miles..29.Miles) // this works too
     assert(aBitFaster in speed..(speed + 4.KiloMetresPerHour))
+
+    val kunalsCar = Car(200.MilesPerHour, 62.Miles / 1.Hours / 3.1.Seconds)
+    assert(kunalsCar.zeroToSixty() < 3.2.Seconds)
+}
+
+data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
+    fun zeroToSixty() = 60.MilesPerHour / floorIt
 }
