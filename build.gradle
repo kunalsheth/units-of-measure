@@ -1,19 +1,11 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.1.51' apply false
-    id 'org.jetbrains.kotlin.kapt' version '1.1.51' apply false
+buildscript {
+    ext.kotlin_version = '1.2.10'
+    repositories { jcenter() }
+    dependencies { classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" }
 }
 
 allprojects {
-    apply plugin: 'kotlin'
-
     group 'info.kunalsheth'
-    version '2.0.0'
-
+    version '2.1.0'
     repositories.jcenter()
-    dependencies.compileOnly group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8'
 }
-
-dependencies.compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: '1.1.51'
-
-apply plugin: 'maven-publish'
-publishing.publications { mavenJava(MavenPublication).from components.java }

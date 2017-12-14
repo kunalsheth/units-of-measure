@@ -4,10 +4,11 @@ subprojects {
     applicationDefaultJvmArgs += '-ea'
 
     apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-platform-jvm'
     dependencies {
-        compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8'
-        compileOnly rootProject
-        kapt rootProject
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        expectedBy project(":units:annotations")
+        kapt project(":units:processor")
     }
 
     sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
