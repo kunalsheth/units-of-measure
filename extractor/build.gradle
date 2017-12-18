@@ -1,5 +1,5 @@
 apply plugin: 'application'
-mainClassName = 'info.kunalsheth.unitsofmeasure.extractor.SquantsExtractor'
+mainClassName = 'info.kunalsheth.units.extractor.SquantsExtractor'
 
 apply plugin: 'scala'
 dependencies {

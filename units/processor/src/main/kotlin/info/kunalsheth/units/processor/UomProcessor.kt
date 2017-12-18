@@ -1,10 +1,10 @@
-package info.kunalsheth.unitsofmeasure.processor
+package info.kunalsheth.units.processor
 
-import info.kunalsheth.unitsofmeasure.annotations.*
-import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
-import info.kunalsheth.unitsofmeasure.processor.data.MetaUnitOfMeasure
-import info.kunalsheth.unitsofmeasure.processor.data.MetaDimension
-import info.kunalsheth.unitsofmeasure.processor.data.MetaQuantity
+import info.kunalsheth.units.annotations.*
+import info.kunalsheth.units.processor.data.MetaDimension
+import info.kunalsheth.units.processor.data.MetaQuantity
+import info.kunalsheth.units.processor.data.MetaRelation
+import info.kunalsheth.units.processor.data.MetaUnitOfMeasure
 import java.io.File
 import javax.annotation.processing.Completion
 import javax.annotation.processing.ProcessingEnvironment

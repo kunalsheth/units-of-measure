@@ -1,6 +1,6 @@
 @file:Suppress("DATA_CLASS_OVERRIDE_DEFAULT_VALUES_WARNING")
 
-package info.kunalsheth.unitsofmeasure.generated
+package info.kunalsheth.units.generated
 
 import java.io.Serializable
 

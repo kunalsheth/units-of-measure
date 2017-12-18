@@ -5,7 +5,7 @@ buildscript {
 }
 
 allprojects {
-    group 'info.kunalsheth'
-    version '2.1.0'
+    group 'info.kunalsheth.units'
+    version '2.5.0'
     repositories.jcenter()
 }

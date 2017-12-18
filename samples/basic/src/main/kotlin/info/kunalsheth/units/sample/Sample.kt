@@ -1,7 +1,9 @@
-package info.kunalsheth.unitsofmeasure.sample
+package info.kunalsheth.units.sample
 
-import info.kunalsheth.unitsofmeasure.annotations.*
-import info.kunalsheth.unitsofmeasure.generated.*
+import info.kunalsheth.units.annotations.Dimension
+import info.kunalsheth.units.annotations.Relation
+import info.kunalsheth.units.annotations.Schema
+import info.kunalsheth.units.generated.*
 
 @Schema(
         generateCommonUnits = true,

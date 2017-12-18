@@ -1,6 +1,6 @@
-package info.kunalsheth.unitsofmeasure.processor.data
+package info.kunalsheth.units.processor.data
 
-import info.kunalsheth.unitsofmeasure.annotations.Dimension
+import info.kunalsheth.units.annotations.Dimension
 
 /**
  * Created by kunal on 8/4/17.

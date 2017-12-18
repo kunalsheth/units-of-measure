@@ -1,8 +1,8 @@
-package info.kunalsheth.unitsofmeasure.sample
+package info.kunalsheth.units.sample
 
-import info.kunalsheth.unitsofmeasure.annotations.*
-import info.kunalsheth.unitsofmeasure.annotations.Quantity
-import info.kunalsheth.unitsofmeasure.generated.*
+import info.kunalsheth.units.annotations.*
+import info.kunalsheth.units.annotations.Quantity
+import info.kunalsheth.units.generated.*
 
 @Schema(
         relationships = arrayOf(

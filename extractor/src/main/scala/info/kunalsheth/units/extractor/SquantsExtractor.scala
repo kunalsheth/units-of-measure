@@ -1,13 +1,12 @@
-package info.kunalsheth.unitsofmeasure.extractor
+package info.kunalsheth.units.extractor
 
 import java.io.PrintStream
 
 import org.clapper.classutil.ClassFinder
-
-import scala.reflect.runtime._
 import squants._
 
 import scala.reflect.io.File
+import scala.reflect.runtime._
 import scala.util.Try
 
 object SquantsExtractor extends App {

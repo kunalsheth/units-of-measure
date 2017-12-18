@@ -1,10 +1,11 @@
-package info.kunalsheth.unitsofmeasure.processor
+package info.kunalsheth.units.processor
 
-import info.kunalsheth.unitsofmeasure.processor.data.MetaUnitOfMeasure
-import info.kunalsheth.unitsofmeasure.processor.data.MetaDimension
-import info.kunalsheth.unitsofmeasure.processor.data.MetaQuantity
-import info.kunalsheth.unitsofmeasure.processor.data.MetaRelation
-import info.kunalsheth.unitsofmeasure.processor.data.RelationType.*
+import info.kunalsheth.units.processor.data.MetaDimension
+import info.kunalsheth.units.processor.data.MetaQuantity
+import info.kunalsheth.units.processor.data.MetaRelation
+import info.kunalsheth.units.processor.data.MetaUnitOfMeasure
+import info.kunalsheth.units.processor.data.RelationType.Divide
+import info.kunalsheth.units.processor.data.RelationType.Multiply
 import java.io.File
 import java.io.PrintWriter
 import javax.annotation.processing.Filer
@@ -18,7 +19,7 @@ fun writeKt(parent: File, simpleName: String)
 
 fun writeBase(printWriter: PrintWriter, filer: Filer) = filer.getResource(
         StandardLocation.ANNOTATION_PROCESSOR_PATH,
-        "info.kunalsheth.unitsofmeasure.generated",
+        "info.kunalsheth.units.generated",
         "Quantity.kt"
 )
         .openInputStream()

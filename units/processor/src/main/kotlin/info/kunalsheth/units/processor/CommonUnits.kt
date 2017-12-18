@@ -1,8 +1,8 @@
-package info.kunalsheth.unitsofmeasure.processor
+package info.kunalsheth.units.processor
 
-import info.kunalsheth.unitsofmeasure.processor.data.MetaDimension
-import info.kunalsheth.unitsofmeasure.processor.data.MetaQuantity
-import info.kunalsheth.unitsofmeasure.processor.data.MetaUnitOfMeasure
+import info.kunalsheth.units.processor.data.MetaDimension
+import info.kunalsheth.units.processor.data.MetaQuantity
+import info.kunalsheth.units.processor.data.MetaUnitOfMeasure
 
 val Length = MetaDimension(L = 1)
 val Mass = MetaDimension(M = 1)

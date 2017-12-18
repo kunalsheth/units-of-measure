@@ -1,7 +1,8 @@
-package info.kunalsheth.unitsofmeasure.processor.data
+package info.kunalsheth.units.processor.data
 
-import info.kunalsheth.unitsofmeasure.annotations.Relation
-import info.kunalsheth.unitsofmeasure.processor.data.RelationType.*
+import info.kunalsheth.units.annotations.Relation
+import info.kunalsheth.units.processor.data.RelationType.Divide
+import info.kunalsheth.units.processor.data.RelationType.Multiply
 
 /**
  * Created by kunal on 8/5/17.

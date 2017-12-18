@@ -1,8 +1,6 @@
-package info.kunalsheth.unitsofmeasure.processor.data
+package info.kunalsheth.units.processor.data
 
-import info.kunalsheth.unitsofmeasure.annotations.Relation
-import info.kunalsheth.unitsofmeasure.annotations.UnitOfMeasure
-import java.lang.Math.pow
+import info.kunalsheth.units.annotations.UnitOfMeasure
 
 data class MetaUnitOfMeasure(val name: String, val factorToSI: Double, val dimension: MetaDimension) {
     constructor(unitOfMeasure: UnitOfMeasure) : this(
