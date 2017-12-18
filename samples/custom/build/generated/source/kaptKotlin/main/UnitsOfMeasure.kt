@@ -1,3 +1,5 @@
+@file:Suppress("DATA_CLASS_OVERRIDE_DEFAULT_VALUES_WARNING")
+
 package info.kunalsheth.unitsofmeasure.generated
 
 import java.io.Serializable
@@ -32,6 +34,62 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
 
     override fun compareTo(other: D) = this.siValue.compareTo(other.siValue)
 }
+
+private val Number.d get() = toDouble()
+
+fun <N : Number, Q : Quantity<Q>> N.exa(f: Number.() -> Q) = f(d * 1000000000000000000)
+fun <N : Number, Q : Quantity<Q>> Q.exa(f: Q.() -> N) = f().d / 1000000000000000000
+
+fun <N : Number, Q : Quantity<Q>> N.peta(f: Number.() -> Q) = f(d * 1000000000000000)
+fun <N : Number, Q : Quantity<Q>> Q.peta(f: Q.() -> N) = f().d / 1000000000000000
+
+fun <N : Number, Q : Quantity<Q>> N.tera(f: Number.() -> Q) = f(d * 1000000000000)
+fun <N : Number, Q : Quantity<Q>> Q.tera(f: Q.() -> N) = f().d / 1000000000000
+
+fun <N : Number, Q : Quantity<Q>> N.giga(f: Number.() -> Q) = f(d * 1000000000)
+fun <N : Number, Q : Quantity<Q>> Q.giga(f: Q.() -> N) = f().d / 1000000000
+
+fun <N : Number, Q : Quantity<Q>> N.mega(f: Number.() -> Q) = f(d * 1000000)
+fun <N : Number, Q : Quantity<Q>> Q.mega(f: Q.() -> N) = f().d / 1000000
+
+fun <N : Number, Q : Quantity<Q>> N.kilo(f: Number.() -> Q) = f(d * 1000)
+fun <N : Number, Q : Quantity<Q>> Q.kilo(f: Q.() -> N) = f().d / 1000
+
+fun <N : Number, Q : Quantity<Q>> N.hecto(f: Number.() -> Q) = f(d * 100)
+fun <N : Number, Q : Quantity<Q>> Q.hecto(f: Q.() -> N) = f().d / 100
+
+fun <N : Number, Q : Quantity<Q>> N.deca(f: Number.() -> Q) = f(d * 10)
+fun <N : Number, Q : Quantity<Q>> Q.deca(f: Q.() -> N) = f().d / 10
+
+fun <N : Number, Q : Quantity<Q>> N.deci(f: Number.() -> Q) = f(d * 0.1)
+fun <N : Number, Q : Quantity<Q>> Q.deci(f: Q.() -> N) = f().d / 0.1
+
+fun <N : Number, Q : Quantity<Q>> N.centi(f: Number.() -> Q) = f(d * 0.01)
+fun <N : Number, Q : Quantity<Q>> Q.centi(f: Q.() -> N) = f().d / 0.01
+
+fun <N : Number, Q : Quantity<Q>> N.milli(f: Number.() -> Q) = f(d * 0.001)
+fun <N : Number, Q : Quantity<Q>> Q.milli(f: Q.() -> N) = f().d / 0.001
+
+fun <N : Number, Q : Quantity<Q>> N.micro(f: Number.() -> Q) = f(d * 0.000001)
+fun <N : Number, Q : Quantity<Q>> Q.micro(f: Q.() -> N) = f().d / 0.000001
+
+fun <N : Number, Q : Quantity<Q>> N.nano(f: Number.() -> Q) = f(d * 0.000000001)
+fun <N : Number, Q : Quantity<Q>> Q.nano(f: Q.() -> N) = f().d / 0.000000001
+
+fun <N : Number, Q : Quantity<Q>> N.pico(f: Number.() -> Q) = f(d * 0.000000000001)
+fun <N : Number, Q : Quantity<Q>> Q.pico(f: Q.() -> N) = f().d / 0.000000000001
+
+fun <N : Number, Q : Quantity<Q>> N.femto(f: Number.() -> Q) = f(d * 0.000000000000001)
+fun <N : Number, Q : Quantity<Q>> Q.femto(f: Q.() -> N) = f().d / 0.000000000000001
+
+fun <N : Number, Q : Quantity<Q>> N.atto(f: Number.() -> Q) = f(d * 0.000000000000000001)
+fun <N : Number, Q : Quantity<Q>> Q.atto(f: Q.() -> N) = f().d / 0.000000000000000001
+
+fun <N : Number, Q : Quantity<Q>> N.zepto(f: Number.() -> Q) = f(d * 0.000000000000000000001)
+fun <N : Number, Q : Quantity<Q>> Q.zepto(f: Q.() -> N) = f().d / 0.000000000000000000001
+
+fun <N : Number, Q : Quantity<Q>> N.yocto(f: Number.() -> Q) = f(d * 0.000000000000000000000001)
+fun <N : Number, Q : Quantity<Q>> Q.yocto(f: Q.() -> N) = f().d / 0.000000000000000000000001
 
     data class L1M0T0I0Theta0N0J0(override val siValue: Double) : Quantity<L1M0T0I0Theta0N0J0>
     typealias `L` = L1M0T0I0Theta0N0J0
@@ -461,64 +519,8 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
     typealias `Acceleration` = `L⋅T⁻²`
 
 
-    val Number.`PetaGrams` get() = `M`(this.toDouble() * 1.0E12)
-    val `M`.`PetaGrams` get() = siValue / 1.0E12
-
-
-    val Number.`TeraGrams` get() = `M`(this.toDouble() * 1.0E9)
-    val `M`.`TeraGrams` get() = siValue / 1.0E9
-
-
-    val Number.`GigaGrams` get() = `M`(this.toDouble() * 1000000.0)
-    val `M`.`GigaGrams` get() = siValue / 1000000.0
-
-
-    val Number.`MegaGrams` get() = `M`(this.toDouble() * 1000.0)
-    val `M`.`MegaGrams` get() = siValue / 1000.0
-
-
-    val Number.`KiloGrams` get() = `M`(this.toDouble() * 1.0)
-    val `M`.`KiloGrams` get() = siValue / 1.0
-
-
-    val Number.`HectoGrams` get() = `M`(this.toDouble() * 0.1)
-    val `M`.`HectoGrams` get() = siValue / 0.1
-
-
-    val Number.`DecaGrams` get() = `M`(this.toDouble() * 0.01)
-    val `M`.`DecaGrams` get() = siValue / 0.01
-
-
     val Number.`Grams` get() = `M`(this.toDouble() * 0.001)
     val `M`.`Grams` get() = siValue / 0.001
-
-
-    val Number.`DeciGrams` get() = `M`(this.toDouble() * 1.0E-4)
-    val `M`.`DeciGrams` get() = siValue / 1.0E-4
-
-
-    val Number.`CentiGrams` get() = `M`(this.toDouble() * 1.0E-5)
-    val `M`.`CentiGrams` get() = siValue / 1.0E-5
-
-
-    val Number.`MilliGrams` get() = `M`(this.toDouble() * 1.0E-6)
-    val `M`.`MilliGrams` get() = siValue / 1.0E-6
-
-
-    val Number.`MicroGrams` get() = `M`(this.toDouble() * 1.0E-9)
-    val `M`.`MicroGrams` get() = siValue / 1.0E-9
-
-
-    val Number.`NanoGrams` get() = `M`(this.toDouble() * 1.0000000000000002E-12)
-    val `M`.`NanoGrams` get() = siValue / 1.0000000000000002E-12
-
-
-    val Number.`PicoGrams` get() = `M`(this.toDouble() * 1.0E-15)
-    val `M`.`PicoGrams` get() = siValue / 1.0E-15
-
-
-    val Number.`FemtoGrams` get() = `M`(this.toDouble() * 1.0E-18)
-    val `M`.`FemtoGrams` get() = siValue / 1.0E-18
 
 
     val Number.`Ounces` get() = `M`(this.toDouble() * 0.0283495)
@@ -533,64 +535,8 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
     val `L`.`Feet` get() = siValue / 0.3048
 
 
-    val Number.`PetaMetres` get() = `L`(this.toDouble() * 1.0E15)
-    val `L`.`PetaMetres` get() = siValue / 1.0E15
-
-
-    val Number.`TeraMetres` get() = `L`(this.toDouble() * 1.0E12)
-    val `L`.`TeraMetres` get() = siValue / 1.0E12
-
-
-    val Number.`GigaMetres` get() = `L`(this.toDouble() * 1.0E9)
-    val `L`.`GigaMetres` get() = siValue / 1.0E9
-
-
-    val Number.`MegaMetres` get() = `L`(this.toDouble() * 1000000.0)
-    val `L`.`MegaMetres` get() = siValue / 1000000.0
-
-
-    val Number.`KiloMetres` get() = `L`(this.toDouble() * 1000.0)
-    val `L`.`KiloMetres` get() = siValue / 1000.0
-
-
-    val Number.`HectoMetres` get() = `L`(this.toDouble() * 100.0)
-    val `L`.`HectoMetres` get() = siValue / 100.0
-
-
-    val Number.`DecaMetres` get() = `L`(this.toDouble() * 10.0)
-    val `L`.`DecaMetres` get() = siValue / 10.0
-
-
     val Number.`Metres` get() = `L`(this.toDouble() * 1.0)
     val `L`.`Metres` get() = siValue / 1.0
-
-
-    val Number.`DeciMetres` get() = `L`(this.toDouble() * 0.1)
-    val `L`.`DeciMetres` get() = siValue / 0.1
-
-
-    val Number.`CentiMetres` get() = `L`(this.toDouble() * 0.01)
-    val `L`.`CentiMetres` get() = siValue / 0.01
-
-
-    val Number.`MilliMetres` get() = `L`(this.toDouble() * 0.001)
-    val `L`.`MilliMetres` get() = siValue / 0.001
-
-
-    val Number.`MicroMetres` get() = `L`(this.toDouble() * 1.0E-6)
-    val `L`.`MicroMetres` get() = siValue / 1.0E-6
-
-
-    val Number.`NanoMetres` get() = `L`(this.toDouble() * 1.0E-9)
-    val `L`.`NanoMetres` get() = siValue / 1.0E-9
-
-
-    val Number.`PicoMetres` get() = `L`(this.toDouble() * 1.0E-12)
-    val `L`.`PicoMetres` get() = siValue / 1.0E-12
-
-
-    val Number.`FemtoMetres` get() = `L`(this.toDouble() * 1.0E-15)
-    val `L`.`FemtoMetres` get() = siValue / 1.0E-15
 
 
     val Number.`Percent` get() = Dimensionless(this.toDouble() * 0.01)
@@ -617,62 +563,6 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
     val `L`.`Miles` get() = siValue / 1609.34
 
 
-    val Number.`PetaMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E11)
-    val `L⋅T⁻¹`.`PetaMetresPerHour` get() = siValue / 2.77778E11
-
-
-    val Number.`TeraMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E8)
-    val `L⋅T⁻¹`.`TeraMetresPerHour` get() = siValue / 2.77778E8
-
-
-    val Number.`GigaMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 277778.0)
-    val `L⋅T⁻¹`.`GigaMetresPerHour` get() = siValue / 277778.0
-
-
-    val Number.`MegaMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 277.778)
-    val `L⋅T⁻¹`.`MegaMetresPerHour` get() = siValue / 277.778
-
-
-    val Number.`KiloMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 0.277778)
-    val `L⋅T⁻¹`.`KiloMetresPerHour` get() = siValue / 0.277778
-
-
-    val Number.`HectoMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 0.027777800000000002)
-    val `L⋅T⁻¹`.`HectoMetresPerHour` get() = siValue / 0.027777800000000002
-
-
-    val Number.`DecaMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 0.00277778)
-    val `L⋅T⁻¹`.`DecaMetresPerHour` get() = siValue / 0.00277778
-
-
     val Number.`MetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E-4)
     val `L⋅T⁻¹`.`MetresPerHour` get() = siValue / 2.77778E-4
-
-
-    val Number.`DeciMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.7777800000000004E-5)
-    val `L⋅T⁻¹`.`DeciMetresPerHour` get() = siValue / 2.7777800000000004E-5
-
-
-    val Number.`CentiMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E-6)
-    val `L⋅T⁻¹`.`CentiMetresPerHour` get() = siValue / 2.77778E-6
-
-
-    val Number.`MilliMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.7777800000000004E-7)
-    val `L⋅T⁻¹`.`MilliMetresPerHour` get() = siValue / 2.7777800000000004E-7
-
-
-    val Number.`MicroMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E-10)
-    val `L⋅T⁻¹`.`MicroMetresPerHour` get() = siValue / 2.77778E-10
-
-
-    val Number.`NanoMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E-13)
-    val `L⋅T⁻¹`.`NanoMetresPerHour` get() = siValue / 2.77778E-13
-
-
-    val Number.`PicoMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E-16)
-    val `L⋅T⁻¹`.`PicoMetresPerHour` get() = siValue / 2.77778E-16
-
-
-    val Number.`FemtoMetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.7777800000000003E-19)
-    val `L⋅T⁻¹`.`FemtoMetresPerHour` get() = siValue / 2.7777800000000003E-19
 

@@ -7,7 +7,6 @@ package info.kunalsheth.unitsofmeasure.annotations
 @Retention(AnnotationRetention.SOURCE)
 annotation class UnitOfMeasure(
         val name: String,
-        val prefixed: Boolean = false,
         val factorToSI: Double,
         val dimension: Dimension
 )

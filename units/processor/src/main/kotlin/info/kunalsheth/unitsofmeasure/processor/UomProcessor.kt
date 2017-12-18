@@ -21,17 +21,14 @@ import javax.lang.model.element.TypeElement
  */
 class UomProcessor : Processor {
 
-    // kapt's option to generate kotlin instead of java
     private val kaptKotlinGeneratedOption = "kapt.kotlin.generated"
+    private lateinit var generatedDir: File
+    private lateinit var env: ProcessingEnvironment
 
-    // directory for generated source files
-    lateinit var generatedDir: File
-    lateinit var env: ProcessingEnvironment
-
-    var generateCommonUnits: Boolean = false
-    var relationships = emptySet<MetaRelation>()
-    var quantities = emptySet<MetaQuantity>()
-    var unitsOfMeasure = emptySet<MetaUnitOfMeasure>()
+    private var generateCommonUnits: Boolean = false
+    private var relationships = emptySet<MetaRelation>()
+    private var quantities = emptySet<MetaQuantity>()
+    private var unitsOfMeasure = emptySet<MetaUnitOfMeasure>()
 
     override fun getSupportedOptions() = setOf(kaptKotlinGeneratedOption)
 
@@ -56,11 +53,11 @@ class UomProcessor : Processor {
         unitsOfMeasure += schema
                 .map(Schema::unitsOfMeasure)
                 .flatMap(Array<UnitOfMeasure>::asIterable)
-                .flatMap(MetaUnitOfMeasure.Companion::invoke)
+                .map(::MetaUnitOfMeasure)
 
         if (processingOver()) {
-            val src = writeKt(generatedDir, "UnitsOfMeasure")
-            writeBase(src, env.filer)
+            val srcWriter = writeKt(generatedDir, "UnitsOfMeasure")
+            writeBase(srcWriter, env.filer)
 
             if (generateCommonUnits) {
                 quantities += commonQuantities
@@ -73,24 +70,23 @@ class UomProcessor : Processor {
             allDimensions += unitsOfMeasure.map(MetaUnitOfMeasure::dimension)
             allDimensions
                     .map(MetaDimension::src)
-                    .forEach(src::println)
+                    .forEach(srcWriter::println)
 
             relationships
                     .map(MetaRelation::src)
-                    .forEach(src::println)
+                    .forEach(srcWriter::println)
 
             quantities
                     .map(MetaQuantity::src)
-                    .forEach(src::println)
+                    .forEach(srcWriter::println)
 
             unitsOfMeasure
                     .distinctBy(MetaUnitOfMeasure::name)
                     .map(MetaUnitOfMeasure::src)
-                    .forEach(src::println)
+                    .forEach(srcWriter::println)
 
-            src.done()
+            srcWriter.done()
         }
-
         true
     }
 
