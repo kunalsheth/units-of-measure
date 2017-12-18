@@ -24,24 +24,35 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'info.kunalsheth', name: 'units-of-measure', version: '2.0.0'
-    kapt group: 'info.kunalsheth', name: 'units-of-measure', version: '2.0.0'
+    compileOnly group: 'info.kunalsheth.units', name: 'annotations', version: '2.5.0'
+    kapt group: 'info.kunalsheth.units', name: 'processor', version: '2.5.0'
 }
 
 sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
 ```
 
 ### Usage
-Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki).
-
-Please look at this [sample code](http://kunalsheth.info/units-of-measure/tree/master/samples).
+Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at this [sample code](http://kunalsheth.info/units-of-measure/tree/master/samples).
 
 ### Todo List
 - [x] Make it work.
 - [x] Generate implicit relationships as well. (e.g. if `v=ir` then `v/i=r`, `v/r=i`, etc.) (`@Relate`) 
 - [x] Make annotations easier to write and manage. (`@Schema`)
 - [x] Add support for unit conversions. (`@UnitOfMeasure`)
-- [x] Add docs.(wiki)
+- [x] Add docs. ([wiki](http://kunalsheth.info/units-of-measure/wiki))
 - [x] Add metric prefixes.
 - [ ] Optimize for faster compilation.
 - [ ] Benchmark performance in contrast to primitives.
+- [ ] Multiplatform
+
+### Notes
+I've been having a lot of difficulty with Gradle, Kotlin, and Kapt. The recent releases seem quite buggy. I frequently experience the following:
+- [Annotation processing is erroneously skipped.](https://www.youtube.com/watch?v=Xi20kyLAWv4 )
+- [`UnmarshalException`](https://youtrack.jetbrains.com/issue/KT-18016)
+- [`java.io.FileNotFoundException: JAR entry META-INF/services/javax.annotation.processing.Processor`](https://www.youtube.com/watch?v=Xi20kyLAWv4)
+
+Sometimes, I can resolve these issues with the following command:
+```bash
+gradle clean; rm -r build .gradle/; gradle --refresh-dependencies run;
+```
+If that doesn't work, you can try changing your Kotlin version. (e.g. from 1.2.10 to 1.2.0)

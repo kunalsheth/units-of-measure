@@ -7,7 +7,7 @@ subprojects {
     apply plugin: 'kotlin-platform-jvm'
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-        expectedBy project(":units:annotations")
+        compileOnly project(":units:annotations")
         kapt project(":units:processor")
     }
 
