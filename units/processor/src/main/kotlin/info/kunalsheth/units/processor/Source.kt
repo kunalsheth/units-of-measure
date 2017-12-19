@@ -20,7 +20,7 @@ fun writeKt(parent: File, simpleName: String)
 fun writeBase(printWriter: PrintWriter, filer: Filer) = filer.getResource(
         StandardLocation.ANNOTATION_PROCESSOR_PATH,
         "info.kunalsheth.units.generated",
-        "Quantity.kt"
+        "Base.kt"
 )
         .openInputStream()
         .bufferedReader()
@@ -30,7 +30,7 @@ fun writeBase(printWriter: PrintWriter, filer: Filer) = filer.getResource(
 val siValue = "siValue"
 
 fun MetaDimension.src() = """
-    data class $safeName(override val $siValue: Double) : Quantity<$safeName>
+    data class $safeName(override val $siValue: Double) : Quan<$safeName>
     typealias $this = $safeName
 """
 

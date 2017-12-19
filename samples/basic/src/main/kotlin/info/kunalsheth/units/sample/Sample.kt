@@ -7,10 +7,10 @@ import info.kunalsheth.units.generated.*
 
 @Schema(
         generateCommonUnits = true,
-        relationships = arrayOf(
-                Relation(Dimension(L = 1), Dimension(T = 1)),
-                Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
-        )
+        relationships = [
+            Relation(Dimension(L = 1), Dimension(T = 1)),
+            Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
+        ]
 )
 fun main(args: Array<String>) {
     val mass1 = 3.Kilograms

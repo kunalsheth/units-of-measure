@@ -1,32 +1,36 @@
 package info.kunalsheth.units.sample
 
 import info.kunalsheth.units.annotations.*
-import info.kunalsheth.units.annotations.Quantity
 import info.kunalsheth.units.generated.*
 
+typealias U = UnitOfMeasure
+typealias D = Dimension
+
 @Schema(
-        relationships = arrayOf(
-                Relation(Dimension(L = 1), Dimension(T = 1)),
-                Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
-        ),
-        quantities = arrayOf(
-                Quantity("Speed", Dimension(L = 1, T = -1)),
-                Quantity("Acceleration", Dimension(L = 1, T = -2))
-        ),
-        unitsOfMeasure = arrayOf(
-                UnitOfMeasure("Grams", 0.001, Dimension(M = 1)),
-                UnitOfMeasure("Ounces", 0.0283495, Dimension(M = 1)),
-                UnitOfMeasure("Pounds", 0.453592, Dimension(M = 1)),
-                UnitOfMeasure("Feet", 0.3048, Dimension(L = 1)),
-                UnitOfMeasure("Metres", 1.0, Dimension(L = 1)),
-                UnitOfMeasure("Percent", 0.01, Dimension()),
-                UnitOfMeasure("MilesPerHour", 0.44704, Dimension(L = 1, T = -1)),
-                UnitOfMeasure("Minutes", 60.0, Dimension(T = 1)),
-                UnitOfMeasure("Hours", 3600.0, Dimension(T = 1)),
-                UnitOfMeasure("Seconds", 1.0, Dimension(T = 1)),
-                UnitOfMeasure("Miles", 1609.34, Dimension(L = 1)),
-                UnitOfMeasure("MetresPerHour", 0.000277778, Dimension(L = 1, T = -1))
-        )
+        relationships = [
+            Relation(Dimension(L = 1), Dimension(T = 1)),
+            Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
+        ],
+        quantities = [
+            Quantity("Speed", Dimension(L = 1, T = -1)),
+            Quantity("Acceleration", Dimension(L = 1, T = -2))
+        ],
+        unitsOfMeasure = [
+            UnitOfMeasure("Grams", 0.001, Dimension(M = 1)),
+            UnitOfMeasure("Ounces", 0.0283495, Dimension(M = 1)),
+            UnitOfMeasure("Pounds", 0.453592, Dimension(M = 1)),
+
+            // to decrease verbosity, you can create typealiases or use `import ... as ...`
+            U("Feet", 0.3048, D(L = 1)),
+            U("Metres", 1.0, D(L = 1)),
+            U("Percent", 0.01, D()),
+            U("MilesPerHour", 0.44704, D(L = 1, T = -1)),
+            U("Minutes", 60.0, D(T = 1)),
+            U("Hours", 3600.0, D(T = 1)),
+            U("Seconds", 1.0, D(T = 1)),
+            U("Miles", 1609.34, D(L = 1)),
+            U("MetresPerHour", 0.000277778, D(L = 1, T = -1))
+        ]
 )
 fun main(args: Array<String>) {
     val mass1 = 3.kilo { Grams }

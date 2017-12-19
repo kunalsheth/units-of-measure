@@ -24,8 +24,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'info.kunalsheth.units', name: 'annotations', version: '2.5.0'
-    kapt group: 'info.kunalsheth.units', name: 'processor', version: '2.5.0'
+    compileOnly group: 'info.kunalsheth.units', name: 'annotations', version: '2.6.0'
+    kapt group: 'info.kunalsheth.units', name: 'processor', version: '2.6.0'
 }
 
 sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"

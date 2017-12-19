@@ -7,7 +7,7 @@ import java.io.Serializable
 /**
  * Created by kunal on 8/6/17.
  */
-interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
+interface Quan<D : Quan<D>> : Comparable<D>, Serializable {
     val siValue: Double
 
     operator fun unaryPlus() = this
@@ -21,8 +21,8 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
 
     @Suppress("UNCHECKED_CAST")
     operator fun rangeTo(that: D) = object : ClosedRange<D> {
-        override val start = (this@Quantity min that) as D
-        override val endInclusive = (this@Quantity max that) as D
+        override val start = (this@Quan min that) as D
+        override val endInclusive = (this@Quan max that) as D
     }
 
     infix fun min(that: D) = if (this < that) this else that
@@ -37,113 +37,113 @@ interface Quantity<D : Quantity<D>> : Comparable<D>, Serializable {
 
 private val Number.d get() = toDouble()
 
-fun <N : Number, Q : Quantity<Q>> N.exa(f: Number.() -> Q) = f(d * 1000000000000000000)
-fun <N : Number, Q : Quantity<Q>> Q.exa(f: Q.() -> N) = f().d / 1000000000000000000
+fun <N : Number, Q : Quan<Q>> N.exa(f: Number.() -> Q) = f(d * 1000000000000000000)
+fun <N : Number, Q : Quan<Q>> Q.exa(f: Q.() -> N) = f().d / 1000000000000000000
 
-fun <N : Number, Q : Quantity<Q>> N.peta(f: Number.() -> Q) = f(d * 1000000000000000)
-fun <N : Number, Q : Quantity<Q>> Q.peta(f: Q.() -> N) = f().d / 1000000000000000
+fun <N : Number, Q : Quan<Q>> N.peta(f: Number.() -> Q) = f(d * 1000000000000000)
+fun <N : Number, Q : Quan<Q>> Q.peta(f: Q.() -> N) = f().d / 1000000000000000
 
-fun <N : Number, Q : Quantity<Q>> N.tera(f: Number.() -> Q) = f(d * 1000000000000)
-fun <N : Number, Q : Quantity<Q>> Q.tera(f: Q.() -> N) = f().d / 1000000000000
+fun <N : Number, Q : Quan<Q>> N.tera(f: Number.() -> Q) = f(d * 1000000000000)
+fun <N : Number, Q : Quan<Q>> Q.tera(f: Q.() -> N) = f().d / 1000000000000
 
-fun <N : Number, Q : Quantity<Q>> N.giga(f: Number.() -> Q) = f(d * 1000000000)
-fun <N : Number, Q : Quantity<Q>> Q.giga(f: Q.() -> N) = f().d / 1000000000
+fun <N : Number, Q : Quan<Q>> N.giga(f: Number.() -> Q) = f(d * 1000000000)
+fun <N : Number, Q : Quan<Q>> Q.giga(f: Q.() -> N) = f().d / 1000000000
 
-fun <N : Number, Q : Quantity<Q>> N.mega(f: Number.() -> Q) = f(d * 1000000)
-fun <N : Number, Q : Quantity<Q>> Q.mega(f: Q.() -> N) = f().d / 1000000
+fun <N : Number, Q : Quan<Q>> N.mega(f: Number.() -> Q) = f(d * 1000000)
+fun <N : Number, Q : Quan<Q>> Q.mega(f: Q.() -> N) = f().d / 1000000
 
-fun <N : Number, Q : Quantity<Q>> N.kilo(f: Number.() -> Q) = f(d * 1000)
-fun <N : Number, Q : Quantity<Q>> Q.kilo(f: Q.() -> N) = f().d / 1000
+fun <N : Number, Q : Quan<Q>> N.kilo(f: Number.() -> Q) = f(d * 1000)
+fun <N : Number, Q : Quan<Q>> Q.kilo(f: Q.() -> N) = f().d / 1000
 
-fun <N : Number, Q : Quantity<Q>> N.hecto(f: Number.() -> Q) = f(d * 100)
-fun <N : Number, Q : Quantity<Q>> Q.hecto(f: Q.() -> N) = f().d / 100
+fun <N : Number, Q : Quan<Q>> N.hecto(f: Number.() -> Q) = f(d * 100)
+fun <N : Number, Q : Quan<Q>> Q.hecto(f: Q.() -> N) = f().d / 100
 
-fun <N : Number, Q : Quantity<Q>> N.deca(f: Number.() -> Q) = f(d * 10)
-fun <N : Number, Q : Quantity<Q>> Q.deca(f: Q.() -> N) = f().d / 10
+fun <N : Number, Q : Quan<Q>> N.deca(f: Number.() -> Q) = f(d * 10)
+fun <N : Number, Q : Quan<Q>> Q.deca(f: Q.() -> N) = f().d / 10
 
-fun <N : Number, Q : Quantity<Q>> N.deci(f: Number.() -> Q) = f(d * 0.1)
-fun <N : Number, Q : Quantity<Q>> Q.deci(f: Q.() -> N) = f().d / 0.1
+fun <N : Number, Q : Quan<Q>> N.deci(f: Number.() -> Q) = f(d * 0.1)
+fun <N : Number, Q : Quan<Q>> Q.deci(f: Q.() -> N) = f().d / 0.1
 
-fun <N : Number, Q : Quantity<Q>> N.centi(f: Number.() -> Q) = f(d * 0.01)
-fun <N : Number, Q : Quantity<Q>> Q.centi(f: Q.() -> N) = f().d / 0.01
+fun <N : Number, Q : Quan<Q>> N.centi(f: Number.() -> Q) = f(d * 0.01)
+fun <N : Number, Q : Quan<Q>> Q.centi(f: Q.() -> N) = f().d / 0.01
 
-fun <N : Number, Q : Quantity<Q>> N.milli(f: Number.() -> Q) = f(d * 0.001)
-fun <N : Number, Q : Quantity<Q>> Q.milli(f: Q.() -> N) = f().d / 0.001
+fun <N : Number, Q : Quan<Q>> N.milli(f: Number.() -> Q) = f(d * 0.001)
+fun <N : Number, Q : Quan<Q>> Q.milli(f: Q.() -> N) = f().d / 0.001
 
-fun <N : Number, Q : Quantity<Q>> N.micro(f: Number.() -> Q) = f(d * 0.000001)
-fun <N : Number, Q : Quantity<Q>> Q.micro(f: Q.() -> N) = f().d / 0.000001
+fun <N : Number, Q : Quan<Q>> N.micro(f: Number.() -> Q) = f(d * 0.000001)
+fun <N : Number, Q : Quan<Q>> Q.micro(f: Q.() -> N) = f().d / 0.000001
 
-fun <N : Number, Q : Quantity<Q>> N.nano(f: Number.() -> Q) = f(d * 0.000000001)
-fun <N : Number, Q : Quantity<Q>> Q.nano(f: Q.() -> N) = f().d / 0.000000001
+fun <N : Number, Q : Quan<Q>> N.nano(f: Number.() -> Q) = f(d * 0.000000001)
+fun <N : Number, Q : Quan<Q>> Q.nano(f: Q.() -> N) = f().d / 0.000000001
 
-fun <N : Number, Q : Quantity<Q>> N.pico(f: Number.() -> Q) = f(d * 0.000000000001)
-fun <N : Number, Q : Quantity<Q>> Q.pico(f: Q.() -> N) = f().d / 0.000000000001
+fun <N : Number, Q : Quan<Q>> N.pico(f: Number.() -> Q) = f(d * 0.000000000001)
+fun <N : Number, Q : Quan<Q>> Q.pico(f: Q.() -> N) = f().d / 0.000000000001
 
-fun <N : Number, Q : Quantity<Q>> N.femto(f: Number.() -> Q) = f(d * 0.000000000000001)
-fun <N : Number, Q : Quantity<Q>> Q.femto(f: Q.() -> N) = f().d / 0.000000000000001
+fun <N : Number, Q : Quan<Q>> N.femto(f: Number.() -> Q) = f(d * 0.000000000000001)
+fun <N : Number, Q : Quan<Q>> Q.femto(f: Q.() -> N) = f().d / 0.000000000000001
 
-fun <N : Number, Q : Quantity<Q>> N.atto(f: Number.() -> Q) = f(d * 0.000000000000000001)
-fun <N : Number, Q : Quantity<Q>> Q.atto(f: Q.() -> N) = f().d / 0.000000000000000001
+fun <N : Number, Q : Quan<Q>> N.atto(f: Number.() -> Q) = f(d * 0.000000000000000001)
+fun <N : Number, Q : Quan<Q>> Q.atto(f: Q.() -> N) = f().d / 0.000000000000000001
 
-fun <N : Number, Q : Quantity<Q>> N.zepto(f: Number.() -> Q) = f(d * 0.000000000000000000001)
-fun <N : Number, Q : Quantity<Q>> Q.zepto(f: Q.() -> N) = f().d / 0.000000000000000000001
+fun <N : Number, Q : Quan<Q>> N.zepto(f: Number.() -> Q) = f(d * 0.000000000000000000001)
+fun <N : Number, Q : Quan<Q>> Q.zepto(f: Q.() -> N) = f().d / 0.000000000000000000001
 
-fun <N : Number, Q : Quantity<Q>> N.yocto(f: Number.() -> Q) = f(d * 0.000000000000000000000001)
-fun <N : Number, Q : Quantity<Q>> Q.yocto(f: Q.() -> N) = f().d / 0.000000000000000000000001
+fun <N : Number, Q : Quan<Q>> N.yocto(f: Number.() -> Q) = f(d * 0.000000000000000000000001)
+fun <N : Number, Q : Quan<Q>> Q.yocto(f: Q.() -> N) = f().d / 0.000000000000000000000001
 
-    data class L1M0T0I0Theta0N0J0(override val siValue: Double) : Quantity<L1M0T0I0Theta0N0J0>
+    data class L1M0T0I0Theta0N0J0(override val siValue: Double) : Quan<L1M0T0I0Theta0N0J0>
     typealias `L` = L1M0T0I0Theta0N0J0
 
 
-    data class L0M0T0I0Theta0N0J0(override val siValue: Double) : Quantity<L0M0T0I0Theta0N0J0>
+    data class L0M0T0I0Theta0N0J0(override val siValue: Double) : Quan<L0M0T0I0Theta0N0J0>
     typealias Dimensionless = L0M0T0I0Theta0N0J0
 
 
-    data class L2M0T0I0Theta0N0J0(override val siValue: Double) : Quantity<L2M0T0I0Theta0N0J0>
+    data class L2M0T0I0Theta0N0J0(override val siValue: Double) : Quan<L2M0T0I0Theta0N0J0>
     typealias `L²` = L2M0T0I0Theta0N0J0
 
 
-    data class L0M0T1I0Theta0N0J0(override val siValue: Double) : Quantity<L0M0T1I0Theta0N0J0>
+    data class L0M0T1I0Theta0N0J0(override val siValue: Double) : Quan<L0M0T1I0Theta0N0J0>
     typealias `T` = L0M0T1I0Theta0N0J0
 
 
-    data class L1M0I0Theta0N0J0_per_T1(override val siValue: Double) : Quantity<L1M0I0Theta0N0J0_per_T1>
+    data class L1M0I0Theta0N0J0_per_T1(override val siValue: Double) : Quan<L1M0I0Theta0N0J0_per_T1>
     typealias `L⋅T⁻¹` = L1M0I0Theta0N0J0_per_T1
 
 
-    data class L1M0T1I0Theta0N0J0(override val siValue: Double) : Quantity<L1M0T1I0Theta0N0J0>
+    data class L1M0T1I0Theta0N0J0(override val siValue: Double) : Quan<L1M0T1I0Theta0N0J0>
     typealias `L⋅T` = L1M0T1I0Theta0N0J0
 
 
-    data class M0T1I0Theta0N0J0_per_L1(override val siValue: Double) : Quantity<M0T1I0Theta0N0J0_per_L1>
+    data class M0T1I0Theta0N0J0_per_L1(override val siValue: Double) : Quan<M0T1I0Theta0N0J0_per_L1>
     typealias `L⁻¹⋅T` = M0T1I0Theta0N0J0_per_L1
 
 
-    data class L0M0T2I0Theta0N0J0(override val siValue: Double) : Quantity<L0M0T2I0Theta0N0J0>
+    data class L0M0T2I0Theta0N0J0(override val siValue: Double) : Quan<L0M0T2I0Theta0N0J0>
     typealias `T²` = L0M0T2I0Theta0N0J0
 
 
-    data class L2M0I0Theta0N0J0_per_T2(override val siValue: Double) : Quantity<L2M0I0Theta0N0J0_per_T2>
+    data class L2M0I0Theta0N0J0_per_T2(override val siValue: Double) : Quan<L2M0I0Theta0N0J0_per_T2>
     typealias `L²⋅T⁻²` = L2M0I0Theta0N0J0_per_T2
 
 
-    data class L1M0I0Theta0N0J0_per_T2(override val siValue: Double) : Quantity<L1M0I0Theta0N0J0_per_T2>
+    data class L1M0I0Theta0N0J0_per_T2(override val siValue: Double) : Quan<L1M0I0Theta0N0J0_per_T2>
     typealias `L⋅T⁻²` = L1M0I0Theta0N0J0_per_T2
 
 
-    data class L2M0I0Theta0N0J0_per_T3(override val siValue: Double) : Quantity<L2M0I0Theta0N0J0_per_T3>
+    data class L2M0I0Theta0N0J0_per_T3(override val siValue: Double) : Quan<L2M0I0Theta0N0J0_per_T3>
     typealias `L²⋅T⁻³` = L2M0I0Theta0N0J0_per_T3
 
 
-    data class L0M0I0Theta0N0J0_per_T1(override val siValue: Double) : Quantity<L0M0I0Theta0N0J0_per_T1>
+    data class L0M0I0Theta0N0J0_per_T1(override val siValue: Double) : Quan<L0M0I0Theta0N0J0_per_T1>
     typealias `T⁻¹` = L0M0I0Theta0N0J0_per_T1
 
 
-    data class L2M0I0Theta0N0J0_per_T4(override val siValue: Double) : Quantity<L2M0I0Theta0N0J0_per_T4>
+    data class L2M0I0Theta0N0J0_per_T4(override val siValue: Double) : Quan<L2M0I0Theta0N0J0_per_T4>
     typealias `L²⋅T⁻⁴` = L2M0I0Theta0N0J0_per_T4
 
 
-    data class L0M1T0I0Theta0N0J0(override val siValue: Double) : Quantity<L0M1T0I0Theta0N0J0>
+    data class L0M1T0I0Theta0N0J0(override val siValue: Double) : Quan<L0M1T0I0Theta0N0J0>
     typealias `M` = L0M1T0I0Theta0N0J0
 
 
