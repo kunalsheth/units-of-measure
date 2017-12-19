@@ -48,6 +48,11 @@ fun main(args: Array<String>) {
     assert(ratio.Percent in 55..65)
 
 
+    assert(1.kilo { Grams } == 1000.Grams)
+    assert(10.milli { Metres } == 1.centi { Metres })
+    assert(60000.milli { Seconds } == 1.Minutes)
+
+
     val speed = 65.MilesPerHour
     val time = 27.Minutes
     val distance = speed * time
@@ -56,6 +61,7 @@ fun main(args: Array<String>) {
     assert(distance in 29.Miles..30.Miles)
     assert(distance in 30.Miles..29.Miles) // this works too
     assert(aBitFaster in speed..(speed + 4.kilo { MetresPerHour }))
+
 
     val kunalsCar = Car(200.MilesPerHour, 62.Miles / 1.Hours / 3.1.Seconds)
     assert(kunalsCar.zeroToSixty() < 3.2.Seconds)
