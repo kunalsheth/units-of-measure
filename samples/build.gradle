@@ -1,10 +1,15 @@
-subprojects {
-    apply plugin: 'application'
-    mainClassName = 'info.kunalsheth.units.sample.SampleKt'
-    applicationDefaultJvmArgs += '-ea'
+buildscript {
+    repositories { maven { url "https://plugins.gradle.org/m2/" } }
+    dependencies { classpath "me.champeau.gradle:jmh-gradle-plugin:0.4.5" }
+}
 
-    apply plugin: 'kotlin-kapt'
-    apply plugin: 'kotlin-platform-jvm'
+subprojects {
+    apply plugin: "application"
+    mainClassName = "info.kunalsheth.units.sample.SampleKt"
+    applicationDefaultJvmArgs += "-ea"
+
+    apply plugin: "kotlin-kapt"
+    apply plugin: "kotlin-platform-jvm"
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
         compileOnly project(":units:annotations")

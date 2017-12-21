@@ -1,8 +1,9 @@
-rootProject.name = 'units-of-measure'
+rootProject.name = "units-of-measure"
 
-include 'units:annotations'
-include 'units:processor'
-include 'extractor'
+include "units:annotations"
+include "units:processor"
+include "extractor"
 
-include 'samples:basic'
-include 'samples:custom'
+include "samples:primitives"
+include "samples:basic"
+include "samples:custom"
