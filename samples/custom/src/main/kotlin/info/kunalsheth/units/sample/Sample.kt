@@ -29,7 +29,7 @@ typealias D = Dimension
             U("Hours", 3600.0, D(T = 1)),
             U("Seconds", 1.0, D(T = 1)),
             U("Miles", 1609.34, D(L = 1)),
-            U("MetresPerHour", 0.000277778, D(L = 1, T = -1))
+            U("MetresPerHour", 0.0002777777778, D(L = 1, T = -1))
         ]
 )
 fun main(args: Array<String>) {

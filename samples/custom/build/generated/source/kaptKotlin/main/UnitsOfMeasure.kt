@@ -37,59 +37,53 @@ interface Quan<D : Quan<D>> : Comparable<D>, Serializable {
 
 private val Number.d get() = toDouble()
 
-fun <N : Number, Q : Quan<Q>> N.exa(f: Number.() -> Q) = f(d * 1000000000000000000)
-fun <N : Number, Q : Quan<Q>> Q.exa(f: Q.() -> N) = f().d / 1000000000000000000
+fun <N : Number, Q : Quan<Q>> N.exa(f: Number.() -> Q) = f(d * 1E18)
+fun <N : Number, Q : Quan<Q>> Q.exa(f: Q.() -> N) = f().d * 1E-18
 
-fun <N : Number, Q : Quan<Q>> N.peta(f: Number.() -> Q) = f(d * 1000000000000000)
-fun <N : Number, Q : Quan<Q>> Q.peta(f: Q.() -> N) = f().d / 1000000000000000
+fun <N : Number, Q : Quan<Q>> N.peta(f: Number.() -> Q) = f(d * 1E15)
+fun <N : Number, Q : Quan<Q>> Q.peta(f: Q.() -> N) = f().d * 1E-15
 
-fun <N : Number, Q : Quan<Q>> N.tera(f: Number.() -> Q) = f(d * 1000000000000)
-fun <N : Number, Q : Quan<Q>> Q.tera(f: Q.() -> N) = f().d / 1000000000000
+fun <N : Number, Q : Quan<Q>> N.tera(f: Number.() -> Q) = f(d * 1E12)
+fun <N : Number, Q : Quan<Q>> Q.tera(f: Q.() -> N) = f().d * 1E-12
 
-fun <N : Number, Q : Quan<Q>> N.giga(f: Number.() -> Q) = f(d * 1000000000)
-fun <N : Number, Q : Quan<Q>> Q.giga(f: Q.() -> N) = f().d / 1000000000
+fun <N : Number, Q : Quan<Q>> N.giga(f: Number.() -> Q) = f(d * 1E9)
+fun <N : Number, Q : Quan<Q>> Q.giga(f: Q.() -> N) = f().d * 1E-9
 
-fun <N : Number, Q : Quan<Q>> N.mega(f: Number.() -> Q) = f(d * 1000000)
-fun <N : Number, Q : Quan<Q>> Q.mega(f: Q.() -> N) = f().d / 1000000
+fun <N : Number, Q : Quan<Q>> N.mega(f: Number.() -> Q) = f(d * 1E6)
+fun <N : Number, Q : Quan<Q>> Q.mega(f: Q.() -> N) = f().d * 1E-6
 
-fun <N : Number, Q : Quan<Q>> N.kilo(f: Number.() -> Q) = f(d * 1000)
-fun <N : Number, Q : Quan<Q>> Q.kilo(f: Q.() -> N) = f().d / 1000
+fun <N : Number, Q : Quan<Q>> N.kilo(f: Number.() -> Q) = f(d * 1E3)
+fun <N : Number, Q : Quan<Q>> Q.kilo(f: Q.() -> N) = f().d * 1E-3
 
-fun <N : Number, Q : Quan<Q>> N.hecto(f: Number.() -> Q) = f(d * 100)
-fun <N : Number, Q : Quan<Q>> Q.hecto(f: Q.() -> N) = f().d / 100
+fun <N : Number, Q : Quan<Q>> N.hecto(f: Number.() -> Q) = f(d * 1E2)
+fun <N : Number, Q : Quan<Q>> Q.hecto(f: Q.() -> N) = f().d * 1E-2
 
-fun <N : Number, Q : Quan<Q>> N.deca(f: Number.() -> Q) = f(d * 10)
-fun <N : Number, Q : Quan<Q>> Q.deca(f: Q.() -> N) = f().d / 10
+fun <N : Number, Q : Quan<Q>> N.deca(f: Number.() -> Q) = f(d * 1E1)
+fun <N : Number, Q : Quan<Q>> Q.deca(f: Q.() -> N) = f().d * 1E-1
 
-fun <N : Number, Q : Quan<Q>> N.deci(f: Number.() -> Q) = f(d * 0.1)
-fun <N : Number, Q : Quan<Q>> Q.deci(f: Q.() -> N) = f().d / 0.1
+fun <N : Number, Q : Quan<Q>> N.deci(f: Number.() -> Q) = f(d * 1E-1)
+fun <N : Number, Q : Quan<Q>> Q.deci(f: Q.() -> N) = f().d * 1E1
 
-fun <N : Number, Q : Quan<Q>> N.centi(f: Number.() -> Q) = f(d * 0.01)
-fun <N : Number, Q : Quan<Q>> Q.centi(f: Q.() -> N) = f().d / 0.01
+fun <N : Number, Q : Quan<Q>> N.centi(f: Number.() -> Q) = f(d * 1E-2)
+fun <N : Number, Q : Quan<Q>> Q.centi(f: Q.() -> N) = f().d * 1E2
 
-fun <N : Number, Q : Quan<Q>> N.milli(f: Number.() -> Q) = f(d * 0.001)
-fun <N : Number, Q : Quan<Q>> Q.milli(f: Q.() -> N) = f().d / 0.001
+fun <N : Number, Q : Quan<Q>> N.milli(f: Number.() -> Q) = f(d * 1E-3)
+fun <N : Number, Q : Quan<Q>> Q.milli(f: Q.() -> N) = f().d * 1E3
 
-fun <N : Number, Q : Quan<Q>> N.micro(f: Number.() -> Q) = f(d * 0.000001)
-fun <N : Number, Q : Quan<Q>> Q.micro(f: Q.() -> N) = f().d / 0.000001
+fun <N : Number, Q : Quan<Q>> N.micro(f: Number.() -> Q) = f(d * 1E-6)
+fun <N : Number, Q : Quan<Q>> Q.micro(f: Q.() -> N) = f().d * 1E6
 
-fun <N : Number, Q : Quan<Q>> N.nano(f: Number.() -> Q) = f(d * 0.000000001)
-fun <N : Number, Q : Quan<Q>> Q.nano(f: Q.() -> N) = f().d / 0.000000001
+fun <N : Number, Q : Quan<Q>> N.nano(f: Number.() -> Q) = f(d * 1E-9)
+fun <N : Number, Q : Quan<Q>> Q.nano(f: Q.() -> N) = f().d * 1E9
 
-fun <N : Number, Q : Quan<Q>> N.pico(f: Number.() -> Q) = f(d * 0.000000000001)
-fun <N : Number, Q : Quan<Q>> Q.pico(f: Q.() -> N) = f().d / 0.000000000001
+fun <N : Number, Q : Quan<Q>> N.pico(f: Number.() -> Q) = f(d * 1E-12)
+fun <N : Number, Q : Quan<Q>> Q.pico(f: Q.() -> N) = f().d * 1E12
 
-fun <N : Number, Q : Quan<Q>> N.femto(f: Number.() -> Q) = f(d * 0.000000000000001)
-fun <N : Number, Q : Quan<Q>> Q.femto(f: Q.() -> N) = f().d / 0.000000000000001
+fun <N : Number, Q : Quan<Q>> N.femto(f: Number.() -> Q) = f(d * 1E-15)
+fun <N : Number, Q : Quan<Q>> Q.femto(f: Q.() -> N) = f().d * 1E15
 
-fun <N : Number, Q : Quan<Q>> N.atto(f: Number.() -> Q) = f(d * 0.000000000000000001)
-fun <N : Number, Q : Quan<Q>> Q.atto(f: Q.() -> N) = f().d / 0.000000000000000001
-
-fun <N : Number, Q : Quan<Q>> N.zepto(f: Number.() -> Q) = f(d * 0.000000000000000000001)
-fun <N : Number, Q : Quan<Q>> Q.zepto(f: Q.() -> N) = f().d / 0.000000000000000000001
-
-fun <N : Number, Q : Quan<Q>> N.yocto(f: Number.() -> Q) = f(d * 0.000000000000000000000001)
-fun <N : Number, Q : Quan<Q>> Q.yocto(f: Q.() -> N) = f().d / 0.000000000000000000000001
+fun <N : Number, Q : Quan<Q>> N.atto(f: Number.() -> Q) = f(d * 1E-18)
+fun <N : Number, Q : Quan<Q>> Q.atto(f: Q.() -> N) = f().d * 1E18
 
     data class L1M0T0I0Theta0N0J0(override val siValue: Double) : Quan<L1M0T0I0Theta0N0J0>
     typealias `L` = L1M0T0I0Theta0N0J0
@@ -519,50 +513,50 @@ fun <N : Number, Q : Quan<Q>> Q.yocto(f: Q.() -> N) = f().d / 0.0000000000000000
     typealias `Acceleration` = `L⋅T⁻²`
 
 
-    val Number.`Grams` get() = `M`(this.toDouble() * 0.001)
-    val `M`.`Grams` get() = siValue / 0.001
+    val Number.`Grams` get() = `M`(d * 0.001)
+    val `M`.`Grams` get() = siValue * 1000.0
 
 
-    val Number.`Ounces` get() = `M`(this.toDouble() * 0.0283495)
-    val `M`.`Ounces` get() = siValue / 0.0283495
+    val Number.`Ounces` get() = `M`(d * 0.0283495)
+    val `M`.`Ounces` get() = siValue * 35.27399072294044
 
 
-    val Number.`Pounds` get() = `M`(this.toDouble() * 0.453592)
-    val `M`.`Pounds` get() = siValue / 0.453592
+    val Number.`Pounds` get() = `M`(d * 0.453592)
+    val `M`.`Pounds` get() = siValue * 2.2046244201837775
 
 
-    val Number.`Feet` get() = `L`(this.toDouble() * 0.3048)
-    val `L`.`Feet` get() = siValue / 0.3048
+    val Number.`Feet` get() = `L`(d * 0.3048)
+    val `L`.`Feet` get() = siValue * 3.280839895013123
 
 
-    val Number.`Metres` get() = `L`(this.toDouble() * 1.0)
-    val `L`.`Metres` get() = siValue / 1.0
+    val Number.`Metres` get() = `L`(d * 1.0)
+    val `L`.`Metres` get() = siValue * 1.0
 
 
-    val Number.`Percent` get() = Dimensionless(this.toDouble() * 0.01)
-    val Dimensionless.`Percent` get() = siValue / 0.01
+    val Number.`Percent` get() = Dimensionless(d * 0.01)
+    val Dimensionless.`Percent` get() = siValue * 100.0
 
 
-    val Number.`MilesPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 0.44704)
-    val `L⋅T⁻¹`.`MilesPerHour` get() = siValue / 0.44704
+    val Number.`MilesPerHour` get() = `L⋅T⁻¹`(d * 0.44704)
+    val `L⋅T⁻¹`.`MilesPerHour` get() = siValue * 2.2369362920544025
 
 
-    val Number.`Minutes` get() = `T`(this.toDouble() * 60.0)
-    val `T`.`Minutes` get() = siValue / 60.0
+    val Number.`Minutes` get() = `T`(d * 60.0)
+    val `T`.`Minutes` get() = siValue * 0.016666666666666666
 
 
-    val Number.`Hours` get() = `T`(this.toDouble() * 3600.0)
-    val `T`.`Hours` get() = siValue / 3600.0
+    val Number.`Hours` get() = `T`(d * 3600.0)
+    val `T`.`Hours` get() = siValue * 2.777777777777778E-4
 
 
-    val Number.`Seconds` get() = `T`(this.toDouble() * 1.0)
-    val `T`.`Seconds` get() = siValue / 1.0
+    val Number.`Seconds` get() = `T`(d * 1.0)
+    val `T`.`Seconds` get() = siValue * 1.0
 
 
-    val Number.`Miles` get() = `L`(this.toDouble() * 1609.34)
-    val `L`.`Miles` get() = siValue / 1609.34
+    val Number.`Miles` get() = `L`(d * 1609.34)
+    val `L`.`Miles` get() = siValue * 6.213727366498068E-4
 
 
-    val Number.`MetresPerHour` get() = `L⋅T⁻¹`(this.toDouble() * 2.77778E-4)
-    val `L⋅T⁻¹`.`MetresPerHour` get() = siValue / 2.77778E-4
+    val Number.`MetresPerHour` get() = `L⋅T⁻¹`(d * 2.777777778E-4)
+    val `L⋅T⁻¹`.`MetresPerHour` get() = siValue * 3599.999999712
 

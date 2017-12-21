@@ -48,8 +48,8 @@ fun MetaQuantity.src() = """
 """
 
 fun MetaUnitOfMeasure.src() = """
-    val Number.$this get() = $dimension(this.toDouble() * $factorToSI)
-    val $dimension.$this get() = $siValue / $factorToSI
+    val Number.$this get() = $dimension(d * $factorToSI)
+    val $dimension.$this get() = $siValue * ${1 / factorToSI}
 """
 
 fun PrintWriter.done() {
