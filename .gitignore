@@ -103,7 +103,3 @@ fabric.properties
 ### Custom
 .idea
 *.iml
-
-extractor/common_units.tsv
-!samples/basic/build/generated/source/kaptKotlin/main/
-!samples/custom/build/generated/source/kaptKotlin/main/

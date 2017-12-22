@@ -41,8 +41,8 @@ Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at
 - [x] Add support for unit conversions. (`@UnitOfMeasure`)
 - [x] Add docs. ([wiki](http://kunalsheth.info/units-of-measure/wiki))
 - [x] Add metric prefixes.
+- [x] Benchmark performance in contrast to primitives.
 - [ ] Optimize for faster compilation.
-- [ ] Benchmark performance in contrast to primitives.
 - [ ] Multiplatform
 
 ### Notes
