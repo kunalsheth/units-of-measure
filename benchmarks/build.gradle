@@ -1,12 +1,19 @@
 buildscript {
+    ext.jmh_version = "1.19"
     repositories { maven { url "https://plugins.gradle.org/m2/" } }
-    dependencies { classpath "me.champeau.gradle:jmh-gradle-plugin:0.4.5" }
+    dependencies {
+        classpath "me.champeau.gradle:jmh-gradle-plugin:0.4.5"
+        classpath "gradle.plugin.io.morethan.jmhreport:gradle-jmh-report:0.7.0"
+    }
 }
 
 apply plugin: "kotlin-kapt"
 apply plugin: "kotlin-platform-jvm"
 apply plugin: "me.champeau.gradle.jmh"
 dependencies {
+    jmh "org.openjdk.jmh:jmh-core:$jmh_version"
+    jmh "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
+
     jmhCompile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     jmhCompileOnly project(":units:annotations")
     kaptJmh project(":units:processor")
@@ -18,5 +25,17 @@ jmh {
     profilers = ["comp", "gc", "stack"]
     timeOnIteration = "3s"
     warmup = "2s"
-    threads = 2
+    threads = 4
+    resultFormat = "JSON"
+
+    verbosity = "EXTRA"
+    jmhVersion = jmh_version
+    duplicateClassesStrategy = "WARN"
+}
+
+apply plugin: "io.morethan.jmhreport"
+tasks.jmh.finalizedBy tasks.jmhReport
+jmhReport {
+    jmhResultPath = project.file("${buildDir.absolutePath}/reports/jmh/results.txt")
+    jmhReportOutput = project.file("${buildDir.absolutePath}/reports/jmh")
 }
