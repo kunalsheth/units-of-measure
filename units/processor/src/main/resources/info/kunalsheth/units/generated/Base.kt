@@ -2,12 +2,12 @@
 
 package info.kunalsheth.units.generated
 
-import java.io.Serializable
+import kotlin.math.*
 
 /**
  * Created by kunal on 8/6/17.
  */
-interface Quan<D : Quan<D>> : Comparable<D>, Serializable {
+interface Quan<D : Quan<D>> : Comparable<D> {
     val siValue: Double
 
     operator fun unaryPlus() = this
@@ -15,7 +15,7 @@ interface Quan<D : Quan<D>> : Comparable<D>, Serializable {
 
     operator fun plus(that: D) = copy(this.siValue + that.siValue)
     operator fun minus(that: D) = copy(this.siValue - that.siValue)
-    val abs get() = copy(Math.abs(siValue))
+    val abs get() = copy(abs(siValue))
 
     fun copy(siValue: Double): D
 
@@ -28,7 +28,7 @@ interface Quan<D : Quan<D>> : Comparable<D>, Serializable {
     infix fun min(that: D) = if (this < that) this else that
     infix fun max(that: D) = if (this > that) this else that
 
-    val signum get() = Math.signum(siValue)
+    val signum get() = siValue.sign
     val isNegative: Boolean get() = siValue < 0
     val isPositive: Boolean get() = siValue > 0
 
