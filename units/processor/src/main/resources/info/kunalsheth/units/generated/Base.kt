@@ -2,37 +2,46 @@
 
 package info.kunalsheth.units.generated
 
-import kotlin.math.*
+import kotlin.math.abs
+import kotlin.math.sign
 
 /**
  * Created by kunal on 8/6/17.
  */
-interface Quan<D : Quan<D>> : Comparable<D> {
-    val siValue: Double
+abstract class Quan<Q : Quan<Q>> : Comparable<Q> {
+    abstract val siValue: Double
+    abstract val abrev: String
+    abstract val new: (Double) -> Q
 
     operator fun unaryPlus() = this
-    operator fun unaryMinus() = copy(-siValue)
+    operator fun unaryMinus() = new(-siValue)
 
-    operator fun plus(that: D) = copy(this.siValue + that.siValue)
-    operator fun minus(that: D) = copy(this.siValue - that.siValue)
-    val abs get() = copy(abs(siValue))
-
-    fun copy(siValue: Double): D
+    operator fun plus(that: Q) = new(this.siValue + that.siValue)
+    operator fun minus(that: Q) = new(this.siValue - that.siValue)
+    val abs get() = new(abs(siValue))
 
     @Suppress("UNCHECKED_CAST")
-    operator fun rangeTo(that: D) = object : ClosedRange<D> {
-        override val start = (this@Quan min that) as D
-        override val endInclusive = (this@Quan max that) as D
+    operator fun rangeTo(that: Q) = object : ClosedRange<Q> {
+        override val start = (this@Quan min that) as Q
+        override val endInclusive = (this@Quan max that) as Q
     }
 
-    infix fun min(that: D) = if (this < that) this else that
-    infix fun max(that: D) = if (this > that) this else that
+    infix fun min(that: Q) = if (this < that) this else that
+    infix fun max(that: Q) = if (this > that) this else that
 
     val signum get() = siValue.sign
     val isNegative: Boolean get() = siValue < 0
     val isPositive: Boolean get() = siValue > 0
 
-    override fun compareTo(other: D) = this.siValue.compareTo(other.siValue)
+    override fun compareTo(other: Q) = this.siValue.compareTo(other.siValue)
+
+    override fun hashCode() = (siValue to abrev).hashCode()
+    override fun toString() = "$siValue $abrev"
+}
+
+private inline fun <reified Q : Quan<Q>> Q.eq(that: Any?) = when (that) {
+    is Q -> this.siValue == that.siValue
+    else -> false
 }
 
 private val Number.d get() = toDouble()

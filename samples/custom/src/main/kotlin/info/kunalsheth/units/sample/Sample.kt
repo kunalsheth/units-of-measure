@@ -33,6 +33,7 @@ typealias D = Dimension
         ]
 )
 fun main(args: Array<String>) {
+    println("Custom")
     val mass1 = 3.kilo { Grams }
     val mass2 = 14.Ounces
     val sum = mass1 + mass2

@@ -27,29 +27,33 @@ fun writeBase(printWriter: PrintWriter, filer: Filer) = filer.getResource(
         .lineSequence()
         .forEach(printWriter::println)
 
-val siValue = "siValue"
+private const val siValue = "siValue"
 
 fun MetaDimension.src() = """
-    data class $safeName(override val $siValue: Double) : Quan<$safeName>
-    typealias $this = $safeName
+class $safeName(override val $siValue: Double) : Quan<$safeName>() {
+    override val abrev = "$metricUnitAbrev"
+    override val new = ::$this
+    override fun equals(other: Any?) = eq(other)
+}
+typealias $this = $safeName
 """
 
 fun MetaRelation.src() = when (f) {
     Divide -> """
-        operator fun $a.div(that: $b) = $result(this.$siValue / that.$siValue)
+operator fun $a.div(that: $b) = $result(this.$siValue / that.$siValue)
 """
     Multiply -> """
-        operator fun $a.times(that: $b) = $result(this.$siValue * that.$siValue)
+operator fun $a.times(that: $b) = $result(this.$siValue * that.$siValue)
 """
 }
 
 fun MetaQuantity.src() = """
-    typealias $this = $dimension
+typealias $this = $dimension
 """
 
 fun MetaUnitOfMeasure.src() = """
-    val Number.$this get() = $dimension(d * $factorToSI)
-    val $dimension.$this get() = $siValue * ${1 / factorToSI}
+val Number.$this get() = $dimension(d * $factorToSI)
+val $dimension.$this get() = $siValue * ${1 / factorToSI}
 """
 
 fun PrintWriter.done() {

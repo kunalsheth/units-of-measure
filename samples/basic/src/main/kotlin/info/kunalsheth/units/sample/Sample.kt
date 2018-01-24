@@ -13,6 +13,7 @@ import info.kunalsheth.units.generated.*
         ]
 )
 fun main(args: Array<String>) {
+    println("Basic")
     val mass1 = 3.Kilograms
     val mass2 = 14.Ounces
     val sum = mass1 + mass2

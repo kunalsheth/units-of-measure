@@ -7,9 +7,9 @@ import info.kunalsheth.units.annotations.Quantity
  */
 data class MetaQuantity(val name: String, val dimension: MetaDimension) {
     constructor(quantity: Quantity) : this(
-            name = "`${quantity.name}`",
+            name = quantity.name,
             dimension = MetaDimension(quantity.dimension)
     )
 
-    override fun toString() = name
+    override fun toString() = "`$name`"
 }

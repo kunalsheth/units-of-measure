@@ -24,7 +24,7 @@ data class MetaDimension(
             J = dimension.J
     )
 
-    val safeName = {
+    val safeName by lazy {
         val (numerator, denominator) = mapOf(
                 "L" to L,
                 "M" to M,
@@ -46,45 +46,58 @@ data class MetaDimension(
 
         (numeratorString + if (denominatorString.isNotEmpty()) "_per_$denominatorString" else "")
                 .takeUnless { it.isBlank() } ?: "Dimensionless"
-    }()
+    }
 
-    private val name = mapOf(
-            "L" to L,
-            "M" to M,
-            "T" to T,
-            "I" to I,
-            "Θ" to Theta,
-            "N" to N,
-            "J" to J
-    )
-            .filterValues { it != 0 }
-            .mapValues { (_, power) ->
-                power.toString()
-                        .map {
-                            mapOf(
-                                    '+' to '⁺',
-                                    '-' to '⁻',
-                                    '1' to '¹',
-                                    '2' to '²',
-                                    '3' to '³',
-                                    '4' to '⁴',
-                                    '5' to '⁵',
-                                    '6' to '⁶',
-                                    '7' to '⁷',
-                                    '8' to '⁸',
-                                    '9' to '⁹'
-                            )[it] ?: it
-                        }
-                        .joinToString(separator = "")
-                        .takeUnless { it == "¹" } ?: ""
-            }
-            .map { (base, power) -> base + power }
-            .joinToString(
-                    separator = "⋅",
-                    prefix = "`",
-                    postfix = "`"
-            )
-            .takeUnless { it == "``" } ?: "Dimensionless"
+    val fullName by lazy {
+        mapOf(
+                "L" to L,
+                "M" to M,
+                "T" to T,
+                "I" to I,
+                "Θ" to Theta,
+                "N" to N,
+                "J" to J
+        ).factorizedString
+                .takeUnless(String::isBlank) ?: "Dimensionless"
+    }
 
-    override fun toString() = name
+    val metricUnitAbrev by lazy {
+        mapOf(
+                "m" to L,
+                "kg" to M,
+                "s" to T,
+                "A" to I,
+                "K" to Theta,
+                "mol" to N,
+                "cd" to J
+        ).factorizedString
+    }
+
+    private val Map<String, Int>.factorizedString
+        get() = filterValues { it != 0 }
+                .mapValues { (_, power) ->
+                    power.toString()
+                            .map {
+                                when (it) {
+                                    '+' -> '⁺'
+                                    '-' -> '⁻'
+                                    '1' -> '¹'
+                                    '2' -> '²'
+                                    '3' -> '³'
+                                    '4' -> '⁴'
+                                    '5' -> '⁵'
+                                    '6' -> '⁶'
+                                    '7' -> '⁷'
+                                    '8' -> '⁸'
+                                    '9' -> '⁹'
+                                    else -> it
+                                }
+                            }
+                            .joinToString(separator = "")
+                            .takeUnless { it == "¹" } ?: ""
+                }
+                .map { (base, power) -> base + power }
+                .joinToString(separator = "⋅")
+
+    override fun toString() = "`$fullName`"
 }

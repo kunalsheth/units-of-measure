@@ -1,6 +1,7 @@
 package info.kunalsheth.units.sample
 
 fun main(args: Array<String>) {
+    println("Primitives")
     val mass1 = 3 * 1000 * 0.001
     val mass2 = 14 * 0.0283495
     val sum = mass1 + mass2
