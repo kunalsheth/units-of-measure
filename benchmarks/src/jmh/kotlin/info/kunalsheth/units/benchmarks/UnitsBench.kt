@@ -2,7 +2,10 @@ package info.kunalsheth.units.benchmarks
 
 import info.kunalsheth.units.annotations.*
 import info.kunalsheth.units.generated.*
-import org.openjdk.jmh.annotations.*
+import org.openjdk.jmh.annotations.Benchmark
+import org.openjdk.jmh.annotations.Scope
+import org.openjdk.jmh.annotations.Setup
+import org.openjdk.jmh.annotations.State
 import org.openjdk.jmh.infra.Blackhole
 import java.util.*
 
@@ -12,23 +15,23 @@ typealias D = Dimension
 typealias U = UnitOfMeasure
 
 @Schema(
-        relationships = [
-            R(D(L = 1), D(T = 1)),
-            R(D(L = 1, T = -1), D(L = 1, T = -2))
-        ],
-        unitsOfMeasure = [
-            U("Grams", 0.001, D(M = 1)),
-            U("Ounces", 0.0283495, D(M = 1)),
-            U("Pounds", 0.453592, D(M = 1)),
-            U("Feet", 0.3048, D(L = 1)),
-            U("Metres", 1.0, D(L = 1)),
-            U("Percent", 0.01, D()),
-            U("MilesPerHour", 0.44704, D(L = 1, T = -1)),
-            U("Minutes", 60.0, D(T = 1)),
-            U("Seconds", 1.0, D(T = 1)),
-            U("Miles", 1609.34, D(L = 1)),
-            U("MetresPerHour", 0.0002777777778, D(L = 1, T = -1))
-        ]
+    relationships = [
+        R(D(L = 1), D(T = 1)),
+        R(D(L = 1, T = -1), D(L = 1, T = -2))
+    ],
+    unitsOfMeasure = [
+        U("Grams", 0.001, D(M = 1)),
+        U("Ounces", 0.0283495, D(M = 1)),
+        U("Pounds", 0.453592, D(M = 1)),
+        U("Feet", 0.3048, D(L = 1)),
+        U("Metres", 1.0, D(L = 1)),
+        U("Percent", 0.01, D()),
+        U("MilesPerHour", 0.44704, D(L = 1, T = -1)),
+        U("Minutes", 60.0, D(T = 1)),
+        U("Seconds", 1.0, D(T = 1)),
+        U("Miles", 1609.34, D(L = 1)),
+        U("MetresPerHour", 0.0002777777778, D(L = 1, T = -1))
+    ]
 )
 @State(Scope.Thread)
 open class KotlinBenchmark {

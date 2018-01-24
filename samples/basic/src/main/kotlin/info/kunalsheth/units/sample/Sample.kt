@@ -6,11 +6,11 @@ import info.kunalsheth.units.annotations.Schema
 import info.kunalsheth.units.generated.*
 
 @Schema(
-        generateCommonUnits = true,
-        relationships = [
-            Relation(Dimension(L = 1), Dimension(T = 1)),
-            Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
-        ]
+    generateCommonUnits = true,
+    relationships = [
+        Relation(Dimension(L = 1), Dimension(T = 1)),
+        Relation(Dimension(L = 1, T = -1), Dimension(L = 1, T = -2))
+    ]
 )
 fun main(args: Array<String>) {
     println("Basic")

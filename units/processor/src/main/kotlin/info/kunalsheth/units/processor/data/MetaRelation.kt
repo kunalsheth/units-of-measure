@@ -18,29 +18,29 @@ data class MetaRelation(val a: MetaDimension, val f: RelationType, val b: MetaDi
             var newDimensions = setOf(a, b)
 
             fun Set<MetaDimension>.allRelations() =
-                    flatMap { x ->
-                        flatMap { y ->
-                            setOf(
-                                    MetaRelation(x, Divide, x),
-                                    MetaRelation(x, Divide, y),
-                                    MetaRelation(x, Multiply, x),
-                                    MetaRelation(x, Multiply, y),
+                flatMap { x ->
+                    flatMap { y ->
+                        setOf(
+                            MetaRelation(x, Divide, x),
+                            MetaRelation(x, Divide, y),
+                            MetaRelation(x, Multiply, x),
+                            MetaRelation(x, Multiply, y),
 
-                                    MetaRelation(y, Divide, x),
-                                    MetaRelation(y, Divide, y),
-                                    MetaRelation(y, Multiply, x),
-                                    MetaRelation(y, Multiply, y)
-                            )
-                        }
+                            MetaRelation(y, Divide, x),
+                            MetaRelation(y, Divide, y),
+                            MetaRelation(y, Multiply, x),
+                            MetaRelation(y, Multiply, y)
+                        )
                     }
+                }
 
             newDimensions += newDimensions
-                    .allRelations()
-                    .map(MetaRelation::result)
+                .allRelations()
+                .map(MetaRelation::result)
 
             newDimensions
-                    .allRelations()
-                    .filter { newDimensions.containsAll(setOf(it.a, it.b, it.result)) }
+                .allRelations()
+                .filter { newDimensions.containsAll(setOf(it.a, it.b, it.result)) }
         }
     }
 }
@@ -48,24 +48,24 @@ data class MetaRelation(val a: MetaDimension, val f: RelationType, val b: MetaDi
 enum class RelationType : (MetaDimension, MetaDimension) -> MetaDimension {
     Divide {
         override fun invoke(a: MetaDimension, b: MetaDimension) = MetaDimension(
-                L = a.L - b.L,
-                M = a.M - b.M,
-                T = a.T - b.T,
-                I = a.I - b.I,
-                Theta = a.Theta - b.Theta,
-                N = a.N - b.N,
-                J = a.J - b.J
+            L = a.L - b.L,
+            M = a.M - b.M,
+            T = a.T - b.T,
+            I = a.I - b.I,
+            Theta = a.Theta - b.Theta,
+            N = a.N - b.N,
+            J = a.J - b.J
         )
     },
     Multiply {
         override fun invoke(a: MetaDimension, b: MetaDimension) = MetaDimension(
-                L = a.L + b.L,
-                M = a.M + b.M,
-                T = a.T + b.T,
-                I = a.I + b.I,
-                Theta = a.Theta + b.Theta,
-                N = a.N + b.N,
-                J = a.J + b.J
+            L = a.L + b.L,
+            M = a.M + b.M,
+            T = a.T + b.T,
+            I = a.I + b.I,
+            Theta = a.Theta + b.Theta,
+            N = a.N + b.N,
+            J = a.J + b.J
         )
     }
 }

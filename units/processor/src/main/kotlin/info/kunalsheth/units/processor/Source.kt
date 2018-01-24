@@ -14,18 +14,17 @@ import javax.tools.StandardLocation
 /**
  * Created by kunal on 8/5/17.
  */
-fun writeKt(parent: File, simpleName: String)
-        = File(parent, "$simpleName.kt").printWriter()
+fun writeKt(parent: File, simpleName: String) = File(parent, "$simpleName.kt").printWriter()
 
 fun writeBase(printWriter: PrintWriter, filer: Filer) = filer.getResource(
-        StandardLocation.ANNOTATION_PROCESSOR_PATH,
-        "info.kunalsheth.units.generated",
-        "Base.kt"
+    StandardLocation.ANNOTATION_PROCESSOR_PATH,
+    "info.kunalsheth.units.generated",
+    "Base.kt"
 )
-        .openInputStream()
-        .bufferedReader()
-        .lineSequence()
-        .forEach(printWriter::println)
+    .openInputStream()
+    .bufferedReader()
+    .lineSequence()
+    .forEach(printWriter::println)
 
 private const val siValue = "siValue"
 

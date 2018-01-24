@@ -34,26 +34,26 @@ class UomProcessor : Processor {
 
     override fun process(types: MutableSet<out TypeElement>, round: RoundEnvironment) = round.run {
         val schema = getElementsAnnotatedWith(Schema::class.java)
-                .map { it.getAnnotationsByType(Schema::class.java) }
-                .flatMap(Array<Schema>::asIterable)
+            .map { it.getAnnotationsByType(Schema::class.java) }
+            .flatMap(Array<Schema>::asIterable)
 
         generateCommonUnits = generateCommonUnits || schema
-                .any(Schema::generateCommonUnits)
+            .any(Schema::generateCommonUnits)
 
         relationships += schema
-                .map(Schema::relationships)
-                .flatMap(Array<Relation>::asIterable)
-                .flatMap(MetaRelation.Companion::invoke)
+            .map(Schema::relationships)
+            .flatMap(Array<Relation>::asIterable)
+            .flatMap(MetaRelation.Companion::invoke)
 
         quantities += schema
-                .map(Schema::quantities)
-                .flatMap(Array<Quantity>::asIterable)
-                .map(::MetaQuantity)
+            .map(Schema::quantities)
+            .flatMap(Array<Quantity>::asIterable)
+            .map(::MetaQuantity)
 
         unitsOfMeasure += schema
-                .map(Schema::unitsOfMeasure)
-                .flatMap(Array<UnitOfMeasure>::asIterable)
-                .map(::MetaUnitOfMeasure)
+            .map(Schema::unitsOfMeasure)
+            .flatMap(Array<UnitOfMeasure>::asIterable)
+            .map(::MetaUnitOfMeasure)
 
         if (processingOver()) {
             val srcWriter = writeKt(generatedDir, "UnitsOfMeasure")
@@ -69,38 +69,43 @@ class UomProcessor : Processor {
             allDimensions += quantities.map(MetaQuantity::dimension)
             allDimensions += unitsOfMeasure.map(MetaUnitOfMeasure::dimension)
             allDimensions
-                    .map(MetaDimension::src)
-                    .forEach(srcWriter::println)
+                .map(MetaDimension::src)
+                .forEach(srcWriter::println)
 
             relationships
-                    .map(MetaRelation::src)
-                    .forEach(srcWriter::println)
+                .map(MetaRelation::src)
+                .forEach(srcWriter::println)
 
             quantities
-                    .map(MetaQuantity::src)
-                    .forEach(srcWriter::println)
+                .map(MetaQuantity::src)
+                .forEach(srcWriter::println)
 
             unitsOfMeasure
-                    .distinctBy(MetaUnitOfMeasure::name)
-                    .map(MetaUnitOfMeasure::src)
-                    .forEach(srcWriter::println)
+                .distinctBy(MetaUnitOfMeasure::name)
+                .map(MetaUnitOfMeasure::src)
+                .forEach(srcWriter::println)
 
             srcWriter.done()
         }
         true
     }
 
-    override fun getCompletions(element: Element, annotation: AnnotationMirror, executable: ExecutableElement, userText: String) = emptySet<Completion>()
+    override fun getCompletions(
+        element: Element,
+        annotation: AnnotationMirror,
+        executable: ExecutableElement,
+        userText: String
+    ) = emptySet<Completion>()
 
     override fun getSupportedSourceVersion() = SourceVersion.latestSupported()!!
 
     override fun getSupportedAnnotationTypes() = setOf(
-            Relation::class,
-            UnitOfMeasure::class,
-            Dimension::class, Schema::class
+        Relation::class,
+        UnitOfMeasure::class,
+        Dimension::class, Schema::class
     )
-            .map { it.qualifiedName!! }
-            .toSet()
+        .map { it.qualifiedName!! }
+        .toSet()
 
     override fun init(env: ProcessingEnvironment) {
         this.env = env
