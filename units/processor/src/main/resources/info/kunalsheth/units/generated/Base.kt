@@ -1,5 +1,3 @@
-@file:Suppress("DATA_CLASS_OVERRIDE_DEFAULT_VALUES_WARNING")
-
 package info.kunalsheth.units.generated
 
 import kotlin.math.abs
