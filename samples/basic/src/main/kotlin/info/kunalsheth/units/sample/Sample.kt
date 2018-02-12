@@ -34,6 +34,7 @@ fun main(args: Array<String>) {
     val distance = speed * time
     val aBitFaster = distance / (time - 30.Seconds)
 
+    assert(distance == time * speed)
     assert(distance in 29.UsMiles..30.UsMiles)
     assert(distance in 30.UsMiles..29.UsMiles) // this works too
     assert(aBitFaster in speed..(speed + 4.KilometersPerHour))
