@@ -42,8 +42,10 @@ Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at
 - [x] Add docs. ([wiki](http://kunalsheth.info/units-of-measure/wiki))
 - [x] Add metric prefixes.
 - [x] Benchmark performance in contrast to primitives.
-- [ ] Optimize for faster compilation.
+- [ ] Stronger support for generic use (e.g. a `TimeDerivative<Q>` type)
 - [ ] Multiplatform
+- [ ] Completions
+- [ ] Optimize for faster compilation.
 
 ### Notes
 I've been having a lot of difficulty with Gradle, Kotlin, and Kapt. The recent releases seem quite buggy. I frequently experience the following:
