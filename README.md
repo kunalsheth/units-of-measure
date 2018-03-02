@@ -2,6 +2,11 @@
 Type-safe dimensional analysis in Kotlin.
 
 ### Background
+I believe that type-safe dimensional analysis and unit conversion is extremely beneficial for a team. From personal experience, type-safe calculations result in:
+- Faster Development — IDE autocomplete will provide meaningful predictions, rather than listing every number in scope.
+- Cleaner Code — You no longer have to add units to your variable names, that information is documented by the type. This is especially helpful to newer members who are less familiar with the code base.
+- Higher Confidence — Any and all unit/dimension related bugs will show up at compile time, rather than while testing, or in production. Such bugs can be extremely difficult and time-consuming to track down at runtime.
+
 units-of-measure is not the first library to implement type-safe dimensional analysis in some form.
 On the JVM, there is already:
 - [JSR 275](https://jcp.org/en/jsr/detail?id=275) (Java)
