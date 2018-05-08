@@ -1,10 +1,10 @@
 rootProject.name = "units-of-measure"
 
 include "units"
-include "extractor"
+//include "extractor"
 
-include "samples:primitives"
-include "samples:basic"
-include "samples:custom"
+//include "samples:primitives"
+//include "samples:basic"
+//include "samples:custom"
 
-include "benchmarks"
+//include "benchmarks"
