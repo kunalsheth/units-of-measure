@@ -1,0 +1,32 @@
+generateUnitsOfMeasure {
+    generateCommonUnits = false
+
+    relationships += relation(dimension(L: 1), dimension(T: 1)) +
+            relation(dimension(L: 1, T: -1), dimension(L: 1, T: -2))
+
+    quantities = [
+            quantity("Speed", dimension(L: 1, T: -1)),
+
+            // `q(..)` is short for `quantity(..)`
+            // `d(..)` is short for `dimension(..)`
+            q("Acceleration", d(L: 1, T: -2))
+    ].toSet()
+
+    unitsOfMeasure = [
+            unitOfMeasure("Grams", 0.001, dimension(M: 1)),
+            unitOfMeasure("Ounces", 0.0283495, dimension(M: 1)),
+            unitOfMeasure("Pounds", 0.453592, dimension(M: 1)),
+
+            // `u(..)` is short for `unitOfMeasure(..)`
+            // `d(..)` is short for `dimension(..)`
+            u("Feet", 0.3048, d(L: 1)),
+            u("Metres", 1.0, d(L: 1)),
+            u("Percent", 0.01, d()),
+            u("MilesPerHour", 0.44704, d(L: 1, T: -1)),
+            u("Minutes", 60.0, d(T: 1)),
+            u("Hours", 3600.0, d(T: 1)),
+            u("Seconds", 1.0, d(T: 1)),
+            u("Miles", 1609.34, d(L: 1)),
+            u("MetresPerHour", 0.0002777777778, d(L: 1, T: -1))
+    ].toSet()
+}

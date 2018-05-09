@@ -1,0 +1,9 @@
+generateUnitsOfMeasure {
+    generateCommonUnits = true
+    relationships +=
+            relation(dimension(L: 1), dimension(T: 1)) +
+
+                    // `r(..)` is short for `relation(..)`
+                    // `d(..)` is short for `dimension(..)`
+                    r(d(L: 1, T: -1), d(L: 1, T: -2))
+}
