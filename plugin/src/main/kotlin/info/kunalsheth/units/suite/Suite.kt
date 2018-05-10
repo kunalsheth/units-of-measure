@@ -9,6 +9,11 @@ sealed class Suite {
     abstract val quantities: Set<Quantity>
 }
 
+object NoSuite : Suite(), Serializable {
+    override val units get() = emptySet<UnitOfMeasure>()
+    override val quantities get() = emptySet<Quantity>()
+}
+
 class Squants(private val useUnits: Boolean = true, private val useQuantities: Boolean = true) : Suite(), Serializable {
     override val units get() = if (useUnits) SquantsExport.units else emptySet()
     override val quantities = if (useQuantities) SquantsExport.quantities else emptySet()
