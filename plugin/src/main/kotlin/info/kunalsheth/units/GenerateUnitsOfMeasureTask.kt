@@ -4,6 +4,7 @@ import info.kunalsheth.units.data.Dimension
 import info.kunalsheth.units.data.Quantity
 import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.UnitOfMeasure
+import info.kunalsheth.units.suite.Suite
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
 import org.gradle.api.tasks.Input
@@ -24,9 +25,9 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
         val srcWriter = generatedSrc.printWriter()
         writeBase(srcWriter)
 
-        if (generateCommonUnits) {
-            quantities += commonQuantities
-            unitsOfMeasure += commonUnits
+        suite?.also {
+            quantities += it.quantities
+            unitsOfMeasure += it.units
         }
 
         var allDimensions = emptySet<Dimension>()
@@ -43,7 +44,7 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
     }
 
     @Input
-    var generateCommonUnits = false
+    var suite: Suite? = null
 
     @Input
     var relationships: Set<Relation> = emptySet()
