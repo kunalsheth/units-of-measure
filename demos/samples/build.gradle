@@ -1,0 +1,15 @@
+subprojects {
+    apply plugin: "application"
+    mainClassName = "info.kunalsheth.units.sample.SampleKt"
+    applicationDefaultJvmArgs += "-ea"
+
+    apply plugin: "kotlin-platform-jvm"
+    apply plugin: "info.kunalsheth.units.gradle"
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    }
+
+    // each subproject (primitives, basic, custom) has its own generateUnitsOfMeasure configuration
+    sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir
+    compileKotlin.dependsOn(generateUnitsOfMeasure)
+}

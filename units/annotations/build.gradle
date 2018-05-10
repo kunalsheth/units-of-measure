@@ -1,8 +1,0 @@
-apply plugin: "kotlin-platform-jvm"
-
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-}
-
-apply plugin: "maven-publish"
-publishing.publications { mavenJava(MavenPublication).from components.java }

@@ -1,4 +1,6 @@
 language: kotlin
 script:
-  - ./gradlew clean
+  - cd plugin
+  - ./gradlew publishToMavenLocal
+  - cd ../demos
   - ./gradlew run

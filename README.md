@@ -2,10 +2,10 @@
 Type-safe dimensional analysis in Kotlin.
 
 ### Background
-I believe that type-safe dimensional analysis and unit conversion is extremely beneficial for a team. From personal experience, type-safe calculations result in:
-- Faster Development — IDE autocomplete will provide meaningful predictions, rather than listing every number in scope.
-- Cleaner Code — You no longer have to add units to your variable names, that information is documented by the type. This is especially helpful to newer members who are less familiar with the code base.
-- Higher Confidence — Any and all unit/dimension related bugs will show up at compile time, rather than while testing, or in production. Such bugs can be extremely difficult and time-consuming to track down at runtime.
+Type-safe dimensional analysis and unit conversion can be extremely beneficial to a team. From personal experience, using type-safe calculations result in:
+- Faster Development — IDE autocomplete provides meaningful predictions, rather than just listing every number in scope.
+- Cleaner Code — Variable names will be of a reasonable length now unit information is documented by the type.
+- Higher Confidence — All unit/dimension related bugs will show up at compile time. Debugging is less difficult and time-consuming.
 
 units-of-measure is not the first library to implement type-safe dimensional analysis in some form.
 On the JVM, there is already:
@@ -13,27 +13,34 @@ On the JVM, there is already:
 - [JSR 363](https://jcp.org/en/jsr/detail?id=363) (Java)
 - [Squants](http://www.squants.com) (Scala)
 
-<sup>These are all I could find with a Google search. Feel free to contribute to this list.</sup>
-
-However, units-of-measure takes a novel approach, _annotation processing_. I see numerous benefits to this:
-1) _Incredibly_ Extendable — Adding functionality is as simple as writing another annotation. No slow, tedious "hand-coding" is required.
-2) Small — You only generate what you need. You are not forced to bundle every conceivable unit, quantity, and dimension with your app.
-3) Bug Resistant — Programming such functionality by hand is error prone. Code generation can ensure correctness.
+However, units-of-measure takes a new approach: metaprogramming. I see numerous benefits to this:
+1) _Incredibly_ Extendable — Adding new functionality is as simple as adding a line to your build file. No tedious "hand-coding" is required.
+2) Small — You only generate what you need. You are not forced to bundle every conceivable unit, quantity, and dimension with your app. 
+3) Bug Resistant — Programming by hand is error prone and time-consuming. Code generation can ensure correctness.
 
 ### Gradle Installation
+In `./build.gradle`:
 ```groovy
-apply plugin: 'kotlin-kapt'
-
-repositories {
-    maven { url 'http://repo.kunalsheth.info' }
+buildscript {
+    repositories {
+        maven { url 'http://repo.kunalsheth.info/' }
+    }
+    dependencies {
+        classpath 'info.kunalsheth.units:plugin:3.1.0'
+    }
 }
+apply plugin: 'info.kunalsheth.units.gradle'
 
-dependencies {
-    compileOnly group: 'info.kunalsheth.units', name: 'annotations', version: '2.6.0'
-    kapt group: 'info.kunalsheth.units', name: 'processor', version: '2.6.0'
+apply from: 'units-of-measure.gradle'
+```
+
+In `./units-of-measure.gradle`:
+```groovy
+generateUnitsOfMeasure {
+    // do all configuration here
 }
-
-sourceSets.main.kotlin.srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/main"
+sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir
+compileKotlin.dependsOn(generateUnitsOfMeasure) // may vary
 ```
 
 ### Usage
@@ -47,7 +54,6 @@ Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at
 - [x] Add docs. ([wiki](http://kunalsheth.info/units-of-measure/wiki))
 - [x] Add metric prefixes.
 - [x] Benchmark performance in contrast to primitives.
+- [x] Multiplatform
 - [ ] Stronger support for generic use (e.g. a `TimeDerivative<Q>` type)
-- [ ] Multiplatform
-- [ ] Completions
 - [ ] Optimize for faster compilation.
