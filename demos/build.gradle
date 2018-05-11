@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "info.kunalsheth.units:plugin:3.1.0"
+        classpath "info.kunalsheth.units:plugin:3.1.1"
     }
 }
 

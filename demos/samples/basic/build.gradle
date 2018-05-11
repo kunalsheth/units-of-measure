@@ -1,5 +1,5 @@
 generateUnitsOfMeasure {
-    suite = new info.kunalsheth.units.suite.Squants()
+    suite = squants()
     relationships +=
             relation(dimension(L: 1), dimension(T: 1)) +
 

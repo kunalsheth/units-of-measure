@@ -5,6 +5,8 @@ import info.kunalsheth.units.data.Quantity
 import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.UnitOfMeasure
 import info.kunalsheth.units.suite.NoSuite
+import info.kunalsheth.units.suite.SI
+import info.kunalsheth.units.suite.Squants
 import info.kunalsheth.units.suite.Suite
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
@@ -86,4 +88,10 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
 
     fun unitOfMeasure(name: String, factorToSI: Double, dimension: Dimension) = UnitOfMeasure(name, factorToSI, dimension)
     fun u(name: String, factorToSI: Double, dimension: Dimension) = unitOfMeasure(name, factorToSI, dimension)
+
+    @JvmOverloads
+    fun squants(useUnits: Boolean = true, useQuantities: Boolean = true) = Squants(useUnits, useQuantities)
+
+    @JvmOverloads
+    fun si(useUnits: Boolean = true, useQuantities: Boolean = true) = SI(useUnits, useQuantities)
 }
