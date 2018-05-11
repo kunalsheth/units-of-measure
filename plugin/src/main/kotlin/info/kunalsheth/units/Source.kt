@@ -14,21 +14,24 @@ fun writeBase(printWriter: PrintWriter) = ::UnitsOfMeasurePlugin::class.java
 
 private const val siValue = "siValue"
 
-fun Dimension.src() = """
+fun Dimension.src(relation: Set<Relation>) = """
 class $safeName(override val $siValue: Double) : Quan<$safeName>() {
     override val abrev = "$metricUnitAbrev"
     override val new = ::$this
     override fun equals(other: Any?) = eq(other)
+    ${relation
+        .filter { it.a == this }
+        .joinToString { it.src() }}
 }
 typealias $this = $safeName
 """
 
 fun Relation.src() = when (f) {
     RelationType.Divide -> """
-operator fun $a.div(that: $b) = $result(this.$siValue / that.$siValue)
+operator fun div(that: $b) = $result(this.$siValue / that.$siValue)
 """
     RelationType.Multiply -> """
-operator fun $a.times(that: $b) = $result(this.$siValue * that.$siValue)
+operator fun times(that: $b) = $result(this.$siValue * that.$siValue)
 """
 }
 

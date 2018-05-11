@@ -5,6 +5,8 @@ import info.kunalsheth.units.data.Quantity
 import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.UnitOfMeasure
 import info.kunalsheth.units.suite.NoSuite
+import info.kunalsheth.units.suite.SI
+import info.kunalsheth.units.suite.Squants
 import info.kunalsheth.units.suite.Suite
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
@@ -31,13 +33,27 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
             unitsOfMeasure += it.units
         }
 
-        var allDimensions = emptySet<Dimension>()
-        allDimensions += relationships.flatMap { setOf(it.a, it.b, it.result) }
-        allDimensions += quantities.map(Quantity::dimension)
-        allDimensions += unitsOfMeasure.map(UnitOfMeasure::dimension)
+        val allDimensions = (relationships.flatMap { listOf(it.a, it.b, it.result) } +
+                quantities.map(Quantity::dimension) +
+                unitsOfMeasure.map(UnitOfMeasure::dimension) +
+                Dimension(T = 1))
+                .toSet()
 
-        allDimensions.map(Dimension::src).forEach(srcWriter::println)
-        relationships.map(Relation::src).forEach(srcWriter::println)
+        val graph = (allDimensions
+                .map { it to emptySet<Relation>() }
+                .toMap() +
+                relationships.groupBy { it.a })
+                .mapValues { it.value.toSet() }
+
+        graph
+                .map { (k, v) -> k.src(v) }
+                .forEach(srcWriter::println)
+
+//        allDimensions
+//                .map { it to (relationships[it] ?: emptySet()) }
+//                .map(Dimension::src).forEach(srcWriter::println)
+//        relationships.map(Relation::src).forEach(srcWriter::println)
+
         quantities.map(Quantity::src).forEach(srcWriter::println)
         unitsOfMeasure.map(UnitOfMeasure::src).forEach(srcWriter::println)
 
@@ -86,4 +102,10 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
 
     fun unitOfMeasure(name: String, factorToSI: Double, dimension: Dimension) = UnitOfMeasure(name, factorToSI, dimension)
     fun u(name: String, factorToSI: Double, dimension: Dimension) = unitOfMeasure(name, factorToSI, dimension)
+
+    @JvmOverloads
+    fun squants(useUnits: Boolean = true, useQuantities: Boolean = true) = Squants(useUnits, useQuantities)
+
+    @JvmOverloads
+    fun si(useUnits: Boolean = true, useQuantities: Boolean = true) = SI(useUnits, useQuantities)
 }
