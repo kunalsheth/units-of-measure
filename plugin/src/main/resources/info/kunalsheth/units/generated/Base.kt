@@ -16,6 +16,8 @@ abstract class Quan<Q : Quan<Q>> : Comparable<Q> {
 
     operator fun plus(that: Q) = new(this.siValue + that.siValue)
     operator fun minus(that: Q) = new(this.siValue - that.siValue)
+    operator fun times(that: Number) = new(this.siValue * that.toDouble())
+    operator fun div(that: Number) = new(this.siValue / that.toDouble())
     val abs get() = new(abs(siValue))
 
     @Suppress("UNCHECKED_CAST")
