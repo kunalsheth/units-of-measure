@@ -37,3 +37,18 @@ fun main(args: Array<String>) {
 data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
     fun zeroToSixty() = 60.UsMilesPerHour / floorIt
 }
+
+val timeSeq = generateSequence { System.currentTimeMillis() }
+        .map { it.milli { Seconds } }
+
+fun <Q, IQ> Sequence<IQ>.derivative(): Sequence<Q> where
+        IQ : Integral<Q, IQ>,
+        IQ : Quan<IQ> = timeSeq.zip(this)
+        .windowed(size = 2)
+        .map {
+            val (pt1, pt2) = it
+            val (x1, y1) = pt1
+            val (x2, y2) = pt2
+
+            (y1 - y2) / (x1 - x2)
+        }

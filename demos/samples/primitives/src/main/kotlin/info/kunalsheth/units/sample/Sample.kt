@@ -38,3 +38,15 @@ fun main(args: Array<String>) {
 data class Car(val topSpeed: Double, val floorIt: Double) {
     fun zeroToSixty() = (60 * 0.44704) / floorIt
 }
+
+val timeSeq = generateSequence { System.currentTimeMillis() }
+
+fun Sequence<Double>.derivative(): Sequence<Double> = timeSeq.zip(this)
+        .windowed(size = 2)
+        .map {
+            val (pt1, pt2) = it
+            val (x1, y1) = pt1
+            val (x2, y2) = pt2
+
+            (y1 - y2) / (x1 - x2)
+        }

@@ -4,4 +4,4 @@ include "samples:primitives"
 include "samples:basic"
 include "samples:custom"
 
-include "extractor"
+//include "extractor"

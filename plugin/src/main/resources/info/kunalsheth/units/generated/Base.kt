@@ -92,14 +92,18 @@ fun <Q : Quan<Q>> Q.femto(f: Q.() -> Double) = f() * 1E15
 fun <Q : Quan<Q>> Number.atto(f: Double.() -> Q) = f(d * 1E-18)
 fun <Q : Quan<Q>> Q.atto(f: Q.() -> Double) = f() * 1E18
 
-@Suppress("FINITE_BOUNDS_VIOLATION")
-interface TimeDerivative<Of> where
-Of : TimeIntegral<out TimeDerivative<Of>> {
-    operator fun times(t: L0M0T1I0Theta0N0J0): Of
+interface Derivative<Of, This> where
+Of : Integral<This, Of>,
+Of : Quan<Of>,
+This : Derivative<Of, This>,
+This : Quan<This> {
+    operator fun times(that: L0M0T1I0Theta0N0J0): Of
 }
 
-@Suppress("FINITE_BOUNDS_VIOLATION")
-interface TimeIntegral<Of> where
-Of : TimeDerivative<out TimeIntegral<Of>> {
-    operator fun div(t: L0M0T1I0Theta0N0J0): Of
+interface Integral<Of, This> where
+Of : Derivative<This, Of>,
+Of : Quan<Of>,
+This : Integral<Of, This>,
+This : Quan<This> {
+    operator fun div(that: L0M0T1I0Theta0N0J0): Of
 }
