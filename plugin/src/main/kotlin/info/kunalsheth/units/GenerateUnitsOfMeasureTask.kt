@@ -4,10 +4,7 @@ import info.kunalsheth.units.data.Dimension
 import info.kunalsheth.units.data.Quantity
 import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.UnitOfMeasure
-import info.kunalsheth.units.suite.NoSuite
-import info.kunalsheth.units.suite.SI
-import info.kunalsheth.units.suite.Squants
-import info.kunalsheth.units.suite.Suite
+import info.kunalsheth.units.suite.*
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
 import org.gradle.api.tasks.Input
@@ -27,11 +24,6 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
         generatedSrcDir.mkdirs()
         val srcWriter = generatedSrc.printWriter()
         writeBase(srcWriter)
-
-        suite.also {
-            quantities += it.quantities
-            unitsOfMeasure += it.units
-        }
 
         val allDimensions = (relationships.flatMap { listOf(it.a, it.b, it.result) } +
                 quantities.map(Quantity::dimension) +
@@ -53,9 +45,6 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
 
         srcWriter.done()
     }
-
-    @Input
-    var suite: Suite = NoSuite
 
     @Input
     var relationships: Set<Relation> = emptySet()
@@ -97,9 +86,6 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
     fun unitOfMeasure(name: String, factorToSI: Double, dimension: Dimension) = UnitOfMeasure(name, factorToSI, dimension)
     fun u(name: String, factorToSI: Double, dimension: Dimension) = unitOfMeasure(name, factorToSI, dimension)
 
-    @JvmOverloads
-    fun squants(useUnits: Boolean = true, useQuantities: Boolean = true) = Squants(useUnits, useQuantities)
-
-    @JvmOverloads
-    fun si(useUnits: Boolean = true, useQuantities: Boolean = true) = SI(useUnits, useQuantities)
+    val squants = SquantsExport
+    val si = InternationalSystemOfUnits
 }
