@@ -7,17 +7,17 @@ import java.io.Serializable
 /**
  * Created by kunal on 8/5/17.
  */
-data class Relation(val a: Dimension, val f: RelationType, val b: Dimension): Serializable {
+data class Relation(val a: Dimension, val f: RelationType, val b: Dimension) : Serializable {
     val result = f(a, b)
 
     companion object {
         operator fun invoke(vararg d: Dimension): Set<Relation> {
-            var newDimensions = d.toSet()
+            val inputDimensions = d.toSet()
 
             fun Set<Dimension>.allRelations() =
                     flatMap { x ->
                         flatMap { y ->
-                            setOf(
+                            listOf(
                                     Relation(x, Divide, x),
                                     Relation(x, Divide, y),
                                     Relation(x, Multiply, x),
@@ -31,13 +31,12 @@ data class Relation(val a: Dimension, val f: RelationType, val b: Dimension): Se
                         }
                     }
 
-            newDimensions += newDimensions
-                    .allRelations()
-                    .map(Relation::result)
+            val newDimensions = inputDimensions +
+                    inputDimensions.allRelations().map(Relation::result)
 
             return newDimensions
                     .allRelations()
-                    .filter { newDimensions.containsAll(setOf(it.a, it.b, it.result)) }
+                    .filter { arrayOf(it.a, it.b, it.result).all { it in newDimensions } }
                     .toSet()
         }
     }

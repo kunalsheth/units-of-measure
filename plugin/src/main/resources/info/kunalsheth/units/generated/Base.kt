@@ -91,3 +91,19 @@ fun <Q : Quan<Q>> Q.femto(f: Q.() -> Double) = f() * 1E15
 
 fun <Q : Quan<Q>> Number.atto(f: Double.() -> Q) = f(d * 1E-18)
 fun <Q : Quan<Q>> Q.atto(f: Q.() -> Double) = f() * 1E18
+
+interface Derivative<Of, This> where
+Of : Integral<This, Of>,
+Of : Quan<Of>,
+This : Derivative<Of, This>,
+This : Quan<This> {
+    operator fun times(that: L0M0T1I0Theta0N0J0): Of
+}
+
+interface Integral<Of, This> where
+Of : Derivative<This, Of>,
+Of : Quan<Of>,
+This : Integral<Of, This>,
+This : Quan<This> {
+    operator fun div(that: L0M0T1I0Theta0N0J0): Of
+}

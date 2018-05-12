@@ -33,13 +33,21 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
             unitsOfMeasure += it.units
         }
 
-        var allDimensions = emptySet<Dimension>()
-        allDimensions += relationships.flatMap { setOf(it.a, it.b, it.result) }
-        allDimensions += quantities.map(Quantity::dimension)
-        allDimensions += unitsOfMeasure.map(UnitOfMeasure::dimension)
+        val allDimensions = (relationships.flatMap { listOf(it.a, it.b, it.result) } +
+                quantities.map(Quantity::dimension) +
+                unitsOfMeasure.map(UnitOfMeasure::dimension) +
+                Dimension(T = 1))
+                .toSet()
 
-        allDimensions.map(Dimension::src).forEach(srcWriter::println)
-        relationships.map(Relation::src).forEach(srcWriter::println)
+        val graph = (allDimensions
+                .map { it to emptySet<Relation>() }
+                .toMap() +
+                relationships.groupBy { it.a })
+                .mapValues { it.value.toSet() }
+
+        graph.map { (k, v) -> k.src(v) }
+                .forEach(srcWriter::println)
+
         quantities.map(Quantity::src).forEach(srcWriter::println)
         unitsOfMeasure.map(UnitOfMeasure::src).forEach(srcWriter::println)
 

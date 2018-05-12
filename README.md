@@ -55,5 +55,5 @@ Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at
 - [x] Add metric prefixes.
 - [x] Benchmark performance in contrast to primitives.
 - [x] Multiplatform
-- [ ] Stronger support for generic use (e.g. a `TimeDerivative<Q>` type)
+- [x] Stronger support for generic use (`Derivative<Q>`)
 - [ ] Optimize for faster compilation.
