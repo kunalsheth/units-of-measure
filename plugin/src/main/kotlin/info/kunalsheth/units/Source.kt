@@ -21,18 +21,16 @@ class $safeName(override val $siValue: Double) : Quan<$safeName>() {
     override fun equals(other: Any?) = eq(other)
     ${relation
         .filter { it.a == this }
-        .joinToString { it.src() }}
+        .joinToString(separator = "") { it.src() }}
 }
 typealias $this = $safeName
 """
 
 fun Relation.src() = when (f) {
     RelationType.Divide -> """
-operator fun div(that: $b) = $result(this.$siValue / that.$siValue)
-"""
+    operator fun div(that: $b) = $result(this.$siValue / that.$siValue)"""
     RelationType.Multiply -> """
-operator fun times(that: $b) = $result(this.$siValue * that.$siValue)
-"""
+    operator fun times(that: $b) = $result(this.$siValue * that.$siValue)"""
 }
 
 fun Quantity.src() = """
