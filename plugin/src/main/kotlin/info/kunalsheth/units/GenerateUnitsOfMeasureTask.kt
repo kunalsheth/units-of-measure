@@ -45,14 +45,8 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
                 relationships.groupBy { it.a })
                 .mapValues { it.value.toSet() }
 
-        graph
-                .map { (k, v) -> k.src(v) }
+        graph.map { (k, v) -> k.src(v) }
                 .forEach(srcWriter::println)
-
-//        allDimensions
-//                .map { it to (relationships[it] ?: emptySet()) }
-//                .map(Dimension::src).forEach(srcWriter::println)
-//        relationships.map(Relation::src).forEach(srcWriter::println)
 
         quantities.map(Quantity::src).forEach(srcWriter::println)
         unitsOfMeasure.map(UnitOfMeasure::src).forEach(srcWriter::println)
