@@ -1,5 +1,7 @@
 package info.kunalsheth.units.sample
 
+import info.kunalsheth.units.generated.Quantity
+
 fun main(args: Array<String>) {
     println("Primitives")
     val mass1 = 3 * 1000 * 0.001
@@ -33,20 +35,23 @@ fun main(args: Array<String>) {
 
     val kunalsCar = Car(200 * 0.44704, (62 * 1609.34) / (1 * 3600.0) / (3.1 * 1.0))
     assert(kunalsCar.zeroToSixty() < 3.2 * 1.0)
+
+    val threshold = 0.001 * 0.3048 / 1.0 / 1.0
+    sequenceOf(0, 1, 4, 9, 16, 25).map { it * 0.3048 }
+            .derivative()
+            .derivative()
+            .zipWithNext { a, b ->a in (b - threshold)..(b + threshold) }
+            .forEach { assert(it) }
 }
 
 data class Car(val topSpeed: Double, val floorIt: Double) {
     fun zeroToSixty() = (60 * 0.44704) / floorIt
 }
 
-val timeSeq = generateSequence { System.currentTimeMillis() }
+fun timeSeq() = generateSequence(0) { it + 1 }.map { it * 1.0 }
 
-fun Sequence<Double>.derivative(): Sequence<Double> = timeSeq.zip(this)
-        .windowed(size = 2)
-        .map {
-            val (pt1, pt2) = it
-            val (x1, y1) = pt1
-            val (x2, y2) = pt2
-
+fun Sequence<Double>.derivative(): Sequence<Double> = timeSeq()
+        .zip(this)
+        .zipWithNext { (x1, y1), (x2, y2) ->
             (y1 - y2) / (x1 - x2)
         }

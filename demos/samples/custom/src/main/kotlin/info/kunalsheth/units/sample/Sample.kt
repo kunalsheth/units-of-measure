@@ -36,23 +36,25 @@ fun main(args: Array<String>) {
 
     val kunalsCar = Car(200.MilesPerHour, 62.Miles / 1.Hours / 3.1.Seconds)
     assert(kunalsCar.zeroToSixty() < 3.2.Seconds)
+
+    val threshold = 0.001.Feet / 1.Seconds / 1.Seconds
+    sequenceOf(0, 1, 4, 9, 16, 25).map { it.Feet }
+            .derivative()
+            .derivative()
+            .zipWithNext { a, b -> a in b + threshold..b - threshold }
+            .forEach { assert(it) }
 }
 
 data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
     fun zeroToSixty() = 60.MilesPerHour / floorIt
 }
 
-val timeSeq = generateSequence { System.currentTimeMillis() }
-        .map { it.milli { Seconds } }
+fun timeSeq() = generateSequence(0) { it + 1 }.map { it.Seconds }
 
-fun <Q, IQ> Sequence<IQ>.derivative(): Sequence<Q> where
-        IQ : Integral<Q, IQ>,
-        IQ : Quan<IQ> = timeSeq.zip(this)
-        .windowed(size = 2)
-        .map {
-            val (pt1, pt2) = it
-            val (x1, y1) = pt1
-            val (x2, y2) = pt2
-
+fun <Q : Quantity<Q, *, DerivativeOfQ>, DerivativeOfQ> Sequence<Q>.derivative(): Sequence<DerivativeOfQ> = timeSeq()
+        .zip(this)
+        .zipWithNext { (x1, y1), (x2, y2) ->
             (y1 - y2) / (x1 - x2)
         }
+
+fun <Q : Quantity<Q, *, Nothing>> Sequence<Q>.derivative(): Nothing = error("Derivative out of generated boundaries")
