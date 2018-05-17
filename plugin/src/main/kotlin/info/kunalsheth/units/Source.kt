@@ -31,7 +31,7 @@ fun Dimension.src(relations: Set<Relation>): String {
             ?: nothing
 
     return """
-class $safeName(override val $siValue: Double) : Quantity<$safeName, $integral, $derivative> {
+class $safeName(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
     override val $abrev = "$metricUnitAbrev"
     override val new = ::$this
     override fun equals(other: Any?) = eq(other)

@@ -6,7 +6,7 @@ import kotlin.math.sign
 /**
  * Created by kunal on 8/6/17.
  */
-@Suppress("FINITE_BOUNDS_VIOLATION")
+@Suppress("FINITE_BOUNDS_VIOLATION", "UNCHECKED_CAST")
 interface Quantity<This, Integral, Derivative> : Comparable<This> where
 This : Quantity<This, Integral, Derivative>,
 Integral : Quantity<Integral, *, This>,
@@ -15,27 +15,27 @@ Derivative : Quantity<Derivative, This, *> {
     val abrev: String
     val new: (Double) -> This
 
-    operator fun unaryPlus() = this
-    operator fun unaryMinus() = new(-siValue)
+    operator fun unaryPlus(): This = this as This
+    operator fun unaryMinus(): This = new(-siValue)
 
-    operator fun plus(that: This) = new(this.siValue + that.siValue)
-    operator fun minus(that: This) = new(this.siValue - that.siValue)
-    operator fun times(that: Number) = new(this.siValue * that.toDouble())
-    operator fun div(that: Number) = new(this.siValue / that.toDouble())
+    operator fun plus(that: This): This = new(this.siValue + that.siValue)
+    operator fun minus(that: This): This = new(this.siValue - that.siValue)
+    operator fun times(that: Number): This = new(this.siValue * that.toDouble())
+    operator fun div(that: Number): This = new(this.siValue / that.toDouble())
 
     operator fun times(that: T): Integral = TODO()
     operator fun div(that: T): Derivative = TODO()
 
     @Suppress("UNCHECKED_CAST")
     operator fun rangeTo(that: This) = object : ClosedRange<This> {
-        override val start = (this@Quantity min that) as This
-        override val endInclusive = (this@Quantity max that) as This
+        override val start = (this@Quantity min that)
+        override val endInclusive = (this@Quantity max that)
     }
 
-    infix fun min(that: This) = if (this < that) this else that
-    infix fun max(that: This) = if (this > that) this else that
+    infix fun min(that: This): This = if (this < that) this as This else that
+    infix fun max(that: This): This = if (this > that) this as This else that
 
-    val abs get() = new(abs(siValue))
+    val abs: This get() = new(abs(siValue))
     val signum get() = siValue.sign
     val isNegative: Boolean get() = siValue < 0
     val isPositive: Boolean get() = siValue > 0
