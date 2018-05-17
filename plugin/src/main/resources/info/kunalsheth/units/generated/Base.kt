@@ -23,8 +23,8 @@ Derivative : Quantity<Derivative, This, *> {
     operator fun times(that: Number) = new(this.siValue * that.toDouble())
     operator fun div(that: Number) = new(this.siValue / that.toDouble())
 
-    operator fun times(that: L0M0T1I0Theta0N0J0): Integral = TODO()
-    operator fun div(that: L0M0T1I0Theta0N0J0): Derivative = TODO()
+    operator fun times(that: T): Integral = TODO()
+    operator fun div(that: T): Derivative = TODO()
 
     @Suppress("UNCHECKED_CAST")
     operator fun rangeTo(that: This) = object : ClosedRange<This> {
