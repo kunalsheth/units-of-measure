@@ -44,7 +44,7 @@ compileKotlin.dependsOn(generateUnitsOfMeasure) // may vary
 ```
 
 ### Usage
-Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at this [sample code](http://kunalsheth.info/units-of-measure/tree/master/samples).
+Please read the [wiki](http://kunalsheth.info/units-of-measure/wiki) and look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demos/samples/custom/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt).
 
 ### Todo List
 - [x] Make it work.
