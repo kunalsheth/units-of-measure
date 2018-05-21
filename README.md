@@ -26,7 +26,7 @@ buildscript {
         maven { url 'http://repo.kunalsheth.info/' }
     }
     dependencies {
-        classpath 'info.kunalsheth.units:plugin:3.1.0'
+        classpath 'info.kunalsheth.units:plugin:3.3.2'
     }
 }
 apply plugin: 'info.kunalsheth.units.gradle'
