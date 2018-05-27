@@ -7,7 +7,7 @@ apply plugin: "kotlin-platform-jvm"
 
 allprojects {
     group "info.kunalsheth.units"
-    version "3.3.3"
+    version "3.3.4"
     repositories.jcenter()
 }
 
@@ -18,5 +18,12 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
 
+task sourceJar(type: Jar) { from sourceSets.main.allSource }
+
 apply plugin: "maven-publish"
-publishing.publications { mavenJava(MavenPublication).from components.java }
+publishing.publications {
+    mavenJava(MavenPublication) {
+        from components.java
+        artifact sourceJar { classifier "sources" }
+    }
+}
