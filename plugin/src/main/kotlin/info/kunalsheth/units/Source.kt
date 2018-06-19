@@ -31,7 +31,7 @@ fun Dimension.src(relations: Set<Relation>): String {
             ?: nothing
 
     return """
-class $safeName(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
+class $safeName internal constructor(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
     override val $abrev = "$metricUnitAbrev"
     override val new = ::$this
     override fun equals(other: Any?) = eq(other)
@@ -48,8 +48,9 @@ class $safeName(override val $siValue: Double) : Quantity<$this, $integral, $der
             .filter { it.b != time }
             .joinToString(
                     separator = "\n    ",
-                    prefix = "\n", postfix = "\n"
-            ) { it.src() }}
+                    postfix = "\n",
+                    transform = Relation::src
+            )}
 }
 typealias $this = $safeName
 """
