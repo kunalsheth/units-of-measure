@@ -68,9 +68,9 @@ typealias $this = $dimension
 """
 
 fun UnitOfMeasure.src() = """
-val Number.$this: $this get() = $dimension(d * $factorToSI)
+val Number.$this get() = $dimension(d * $factorToSI)
 val $dimension.$this get() = $siValue * ${1 / factorToSI}
-typealias $this = $dimension
+${if (factorToSI == 1.0) "typealias $this = $dimension" else ""}
 """
 
 fun PrintWriter.done() {
