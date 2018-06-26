@@ -20,7 +20,7 @@ buildscript {
         maven { url 'http://repo.kunalsheth.info/' }
     }
     dependencies {
-        classpath 'info.kunalsheth.units:plugin:3.3.4'
+        classpath 'info.kunalsheth.units:plugin:3.4.0'
     }
 }
 apply plugin: 'info.kunalsheth.units.gradle'
