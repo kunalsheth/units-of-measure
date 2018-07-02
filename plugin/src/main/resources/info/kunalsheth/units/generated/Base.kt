@@ -101,5 +101,5 @@ fun <Q : Quantity<Q, *, *>> Q.atto(f: Q.() -> Double) = f() * 1E18
 interface UomConverter<Q : Quantity<Q, *, *>> {
     val unitName: String
     operator fun invoke(x: Number): Q
-    operator fun invoke(x: Q): Number
+    operator fun invoke(x: Q): Double
 }
