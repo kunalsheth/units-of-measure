@@ -97,3 +97,9 @@ fun <Q : Quantity<Q, *, *>> Q.femto(f: Q.() -> Double) = f() * 1E15
 
 fun <Q : Quantity<Q, *, *>> Number.atto(f: Double.() -> Q) = f(d * 1E-18)
 fun <Q : Quantity<Q, *, *>> Q.atto(f: Q.() -> Double) = f() * 1E18
+
+interface UomConverter<Q : Quantity<Q, *, *>> {
+    val unitName: String
+    operator fun invoke(x: Number): Q
+    operator fun invoke(x: Q): Number
+}

@@ -71,6 +71,11 @@ fun UnitOfMeasure.src() = """
 val Number.$this get() = $dimension(d * $factorToSI)
 val $dimension.$this get() = $siValue * ${1 / factorToSI}
 ${if (factorToSI == 1.0) "typealias $this = $dimension" else ""}
+object `To $name` : UomConverter<$dimension> {
+    override val unitName = "$name"
+    override fun invoke(x: Number) = x.$this
+    override fun invoke(x: $dimension) = x.$this
+}
 """
 
 fun PrintWriter.done() {
