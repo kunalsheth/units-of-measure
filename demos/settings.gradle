@@ -1,7 +1,3 @@
 rootProject.name = "demos"
-
-include "samples:primitives"
-include "samples:basic"
-include "samples:custom"
-
+include "sample"
 include "extractor"
