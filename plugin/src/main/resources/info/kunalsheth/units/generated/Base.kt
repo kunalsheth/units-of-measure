@@ -22,6 +22,7 @@ Derivative : Quantity<Derivative, This, *> {
     operator fun minus(that: This): This = new(this.siValue - that.siValue)
     operator fun times(that: Number): This = new(this.siValue * that.toDouble())
     operator fun div(that: Number): This = new(this.siValue / that.toDouble())
+    operator fun rem(that: This): This = new(this.siValue % that.siValue)
 
     operator fun times(that: T): Integral = TODO()
     operator fun div(that: T): Derivative = TODO()

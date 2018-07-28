@@ -17,6 +17,8 @@ generateUnitsOfMeasure {
 
             // `u(..)` is short for `unitOfMeasure(..)`
             // `d(..)` is short for `dimension(..)`
+            u("Degrees", 180 / Math.PI, d()),
+            u("Turns", 0.5 / Math.PI, d()),
             u("Feet", 0.3048, d(L: 1)),
             u("Metres", 1.0, d(L: 1)),
             u("Percent", 0.01, d()),

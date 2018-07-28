@@ -23,6 +23,9 @@ fun main(args: Array<String>) {
     assert(60000.milli { Seconds } == 1.Minutes)
 
 
+    assert(420.Degrees % 1.Turns == 60.Degrees)
+
+
     val speed = 65.MilesPerHour
     val time = 27.Minutes
     val distance = speed * time

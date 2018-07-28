@@ -1,7 +1,5 @@
 package info.kunalsheth.units.sample
 
-import info.kunalsheth.units.generated.Quantity
-
 fun main(args: Array<String>) {
     println("Primitives")
     val mass1 = 3 * 1000 * 0.001
@@ -40,7 +38,7 @@ fun main(args: Array<String>) {
     sequenceOf(0, 1, 4, 9, 16, 25).map { it * 0.3048 }
             .derivative()
             .derivative()
-            .zipWithNext { a, b ->a in (b - threshold)..(b + threshold) }
+            .zipWithNext { a, b -> a in (b - threshold)..(b + threshold) }
             .forEach { assert(it) }
 }
 
