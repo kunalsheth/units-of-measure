@@ -1,4 +1,4 @@
-package info.kunalsheth.units.suite
+package info.kunalsheth.units
 
 import info.kunalsheth.units.data.Dimension
 import info.kunalsheth.units.data.Quantity
@@ -278,13 +278,13 @@ object InternationalSystemOfUnits {
     )
 
     val units = setOf(
-            UnitOfMeasure("Metre", 1.0, Length ),
-            UnitOfMeasure("Kilogram", 1.0,Mass ),
-            UnitOfMeasure("Second", 1.0,Time ),
-            UnitOfMeasure("Ampere", 1.0, ElectricCurrent ),
+            UnitOfMeasure("Metre", 1.0, Length),
+            UnitOfMeasure("Kilogram", 1.0, Mass),
+            UnitOfMeasure("Second", 1.0, Time),
+            UnitOfMeasure("Ampere", 1.0, ElectricCurrent),
             UnitOfMeasure("Kelvin", 1.0, Temperature),
-            UnitOfMeasure("Mole", 1.0, AmountOfSubstance ),
-            UnitOfMeasure("Candela", 1.0, LuminousIntensity ),
+            UnitOfMeasure("Mole", 1.0, AmountOfSubstance),
+            UnitOfMeasure("Candela", 1.0, LuminousIntensity),
 
             UnitOfMeasure("Hertz", 1.0, Frequency),
             UnitOfMeasure("Radian", 1.0, Angle),

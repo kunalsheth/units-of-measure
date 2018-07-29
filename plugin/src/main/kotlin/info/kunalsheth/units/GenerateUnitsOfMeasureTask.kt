@@ -4,7 +4,6 @@ import info.kunalsheth.units.data.Dimension
 import info.kunalsheth.units.data.Quantity
 import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.UnitOfMeasure
-import info.kunalsheth.units.suite.*
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
 import org.gradle.api.tasks.Input
@@ -50,10 +49,10 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
     var relationships: Set<Relation> = emptySet()
 
     @Input
-    var quantities: Set<Quantity> = emptySet()
+    var quantities: Set<Quantity> = InternationalSystemOfUnits.quantities
 
     @Input
-    var unitsOfMeasure: Set<UnitOfMeasure> = emptySet()
+    var unitsOfMeasure: Set<UnitOfMeasure> = InternationalSystemOfUnits.units
 
     @OutputDirectory
     val generatedSrcDir = File(p.buildDir, "uom")
@@ -85,7 +84,4 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
 
     fun unitOfMeasure(name: String, factorToSI: Double, dimension: Dimension) = UnitOfMeasure(name, factorToSI, dimension)
     fun u(name: String, factorToSI: Double, dimension: Dimension) = unitOfMeasure(name, factorToSI, dimension)
-
-    val squants = SquantsExport
-    val si = InternationalSystemOfUnits
 }
