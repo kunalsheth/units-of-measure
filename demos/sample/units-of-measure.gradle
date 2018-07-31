@@ -2,30 +2,22 @@ generateUnitsOfMeasure {
     relationships += relation(dimension(L: 1), dimension(T: 1)) +
             relation(dimension(L: 1, T: -1), dimension(L: 1, T: -2))
 
-    quantities = [
-            quantity("Speed", dimension(L: 1, T: -1)),
+    quantities += [ /* the default values are good enough */]
 
-            // `q(..)` is short for `quantity(..)`
-            // `d(..)` is short for `dimension(..)`
-            q("Acceleration", d(L: 1, T: -2))
-    ].toSet()
-
-    unitsOfMeasure = [
-            unitOfMeasure("Grams", 0.001, dimension(M: 1)),
-            unitOfMeasure("Ounces", 0.0283495, dimension(M: 1)),
-            unitOfMeasure("Pounds", 0.453592, dimension(M: 1)),
+    unitsOfMeasure += [
+            unitOfMeasure("Gram", 0.001, dimension(M: 1)),
+            unitOfMeasure("Ounce", 0.0283495, dimension(M: 1)),
+            unitOfMeasure("Pound", 0.453592, dimension(M: 1)),
 
             // `u(..)` is short for `unitOfMeasure(..)`
             // `d(..)` is short for `dimension(..)`
-            u("Degrees", 180 / Math.PI, d()),
-            u("Turns", 0.5 / Math.PI, d()),
+            u("Degree", Math.PI / 180, d()),
+            u("Turn", Math.PI / 0.5, d()),
             u("Feet", 0.3048, d(L: 1)),
-            u("Metres", 1.0, d(L: 1)),
             u("Percent", 0.01, d()),
-            u("Minutes", 60.0, d(T: 1)),
-            u("Hours", 3600.0, d(T: 1)),
-            u("Seconds", 1.0, d(T: 1)),
-            u("Miles", 1609.34, d(L: 1)),
+            u("Minute", 60.0, d(T: 1)),
+            u("Hour", 3600.0, d(T: 1)),
+            u("Mile", 1609.34, d(L: 1)),
     ].toSet()
 }
 sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir

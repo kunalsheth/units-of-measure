@@ -30,19 +30,27 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
                 Dimension(T = 1))
                 .toSet()
 
-        val graph = (allDimensions
-                .map { it to emptySet<Relation>() }
-                .toMap() +
-                relationships.groupBy { it.a })
-                .mapValues { it.value.toSet() }
+        val relationGroups = relationships
+                .groupBy { it.a }
+                .mapValues { (_, v) -> v.toSet() }
 
-        graph.map { (k, v) -> k.src(v) }
-                .forEach(srcWriter::println)
+        val quantityGroups = quantities
+                .groupBy { it.dimension }
+                .mapValues { (_, v) -> v.toSet() }
 
-        quantities.map(Quantity::src).forEach(srcWriter::println)
-        unitsOfMeasure.map(UnitOfMeasure::src).forEach(srcWriter::println)
+        val unitGroups = unitsOfMeasure
+                .groupBy { it.dimension }
+                .mapValues { (_, v) -> v.toSet() }
 
-        srcWriter.done()
+        allDimensions.map {
+            it.src(
+                    relationGroups[it] ?: emptySet(),
+                    quantityGroups[it] ?: emptySet(),
+                    unitGroups[it] ?: emptySet()
+            )
+        }.forEach(srcWriter::println)
+
+        srcWriter.close()
     }
 
     @Input

@@ -13,7 +13,7 @@ data class Dimension(
         val Theta: Int = 0,
         val N: Int = 0,
         val J: Int = 0
-) :Serializable {
+) : Serializable {
     val safeName by lazy {
         val (numerator, denominator) = mapOf(
                 "L" to L,
@@ -38,7 +38,7 @@ data class Dimension(
                 .takeUnless { it.isBlank() } ?: "Dimensionless"
     }
 
-    val fullName by lazy {
+    val fancyName by lazy {
         mapOf(
                 "L" to L,
                 "M" to M,
@@ -48,10 +48,12 @@ data class Dimension(
                 "N" to N,
                 "J" to J
         ).factorizedString
-                .takeUnless(String::isBlank) ?: "Dimensionless"
+                .takeUnless(String::isBlank)
+                ?: "Dimensionless"
     }
 
-    val metricUnitAbrev by lazy {
+
+    val abbreviation by lazy {
         mapOf(
                 "m" to L,
                 "kg" to M,
@@ -89,5 +91,5 @@ data class Dimension(
                 .map { (base, power) -> base + power }
                 .joinToString(separator = "⋅")
 
-    override fun toString() = "`$fullName`"
+    override fun toString() = "`$fancyName`"
 }
