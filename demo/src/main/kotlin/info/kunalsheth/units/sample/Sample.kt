@@ -4,7 +4,7 @@ import info.kunalsheth.units.generated.*
 
 
 fun main(args: Array<String>) {
-    infix fun <Q : Quantity<Q, *, *>> Q.plusOrMinus(that: Q) = (this - that)..(this + that)
+    infix fun <Q : Quan<Q>> Q.plusOrMinus(that: Q) = (this - that)..(this + that)
 
     val mass1 = 3.kilo(Gram)
     val mass2 = 14.Ounce
@@ -56,6 +56,7 @@ data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
 
 fun timeSeq() = generateSequence(0) { it + 1 }.map { it.Second }
 
+// strong support for generic programming
 fun <Q : Quantity<Q, *, DerivativeOfQ>, DerivativeOfQ> Sequence<Q>.derivative(): Sequence<DerivativeOfQ> = timeSeq()
         .zip(this)
         .zipWithNext { (x1, y1), (x2, y2) ->
