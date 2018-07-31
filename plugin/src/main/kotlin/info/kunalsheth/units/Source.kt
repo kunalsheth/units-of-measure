@@ -30,9 +30,12 @@ fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Se
             ?.result?.toString()
             ?: nothing
 
+    val siUnit = units.firstOrNull { it.factorToSI == 1.0 }
+    val name = siUnit ?: safeName
+
     return """
-typealias $this = $safeName
-data class $safeName(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
+typealias $this = $name
+data class $name(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
     override val $abrev = "$abbreviation"
     override fun new($siValue: Double) = copy($siValue)
     override fun equals(other: Any?) = eq(other)
@@ -45,13 +48,14 @@ data class $safeName(override val $siValue: Double) : Quantity<$this, $integral,
     override operator fun times(that: Quan<$time>) = ${
     if (integral != nothing) "$integral(this.$siValue * that.$siValue)" else "TODO()"}
 
-    ${relations
-            .filter { it.b != time }
-            .joinToString(
-                    separator = "\n    ",
-                    postfix = "\n",
-                    transform = Relation::src
-            )}
+    ${if (siUnit != null) """
+    companion object : UomConverter<$this>,
+        Quantity<$this, $integral, $derivative> by $name(1.0) {
+        override val unitName = "${siUnit.name}"
+        override fun invoke(x: Number) = x.$siUnit
+        override fun invoke(x: $this) = x.$siUnit
+    }
+    """ else ""}
 }
 ${units.joinToString(separator = "") {
         it.src(integral, derivative, quantities
@@ -60,14 +64,15 @@ ${units.joinToString(separator = "") {
         )
     }}
 ${quantities.joinToString(separator = "", transform = Quantity::src)}
+${relations.filter { it.b != time }.joinToString(separator = "\n", transform = Relation::src)}
 """
 }
 
-private fun Relation.src() = when (f) {
+private fun Relation.src() = "@JvmName(\"${a.safeName}_${f.name}_${b.safeName}\") " + when (f) {
     RelationType.Divide ->
-        "operator fun div(that: Quan<$b>) = $result(this.$siValue / that.$siValue)"
+        "operator fun Quan<$a>.div(that: Quan<$b>) = $result(this.$siValue / that.$siValue)"
     RelationType.Multiply ->
-        "operator fun times(that: Quan<$b>) = $result(this.$siValue * that.$siValue)"
+        "operator fun Quan<$a>.times(that: Quan<$b>) = $result(this.$siValue * that.$siValue)"
 }
 
 private fun Quantity.src() = """
@@ -77,10 +82,12 @@ typealias $this = $dimension
 private fun UnitOfMeasure.src(integral: String, derivative: String, quantity: Quantity?) = """
 val Number.$this: ${quantity ?: dimension} get() = $dimension(d * $factorToSI)
 val $dimension.$this get() = $siValue * ${1 / factorToSI}
+${if (factorToSI != 1.0) """
 object $this : UomConverter<$dimension>,
     Quantity<$dimension, $integral, $derivative> by $dimension($factorToSI) {
     override val unitName = "$name"
     override fun invoke(x: Number) = x.$this
     override fun invoke(x: $dimension) = x.$this
 }
+""" else ""}
 """
