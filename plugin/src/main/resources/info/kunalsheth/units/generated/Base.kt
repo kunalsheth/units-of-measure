@@ -54,6 +54,9 @@ private inline fun <reified Q : Quan<Q>> Q.eq(that: Any?) = when (that) {
 
 private val Number.d get() = toDouble()
 
+operator fun <Q : Quan<Q>> Number.times(that: Quan<Q>): Q = that * this
+// operator fun <Q : Quan<Q>> Number.div(that: Quan<Q>): Q = need some sort of reciprocal op
+
 fun <Q : Quan<Q>> Number.exa(f: UomConverter<Q>) = f(d * 1E18)
 fun <Q : Quan<Q>> Q.exa(f: UomConverter<Q>) = f(this) * 1E-18
 

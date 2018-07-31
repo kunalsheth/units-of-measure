@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
     assert(sum in 3.3.kilo(Gram)..7.5.Pound) // this works too
     // assert(sum in 7.4.Kilowatts..7.5.Pounds) // will not compile
 
-    val ratio = 2.Feet / 1.Metre
+    val ratio = 2.Foot / 1.Metre
     assert(ratio in 60.Percent plusOrMinus 5.Percent)
     assert(ratio.Percent in 55..65)
 
@@ -42,8 +42,8 @@ fun main(args: Array<String>) {
     val kunalsCar = Car(200.Mile / Hour, 62.Mile / Hour / 3.1.Second)
     assert(kunalsCar.zeroToSixty() < 3.2.Second)
 
-    val threshold = 0.001.Feet / Second / Second
-    sequenceOf(0, 1, 4, 9, 16, 25).map { it.Feet }
+    val threshold = 0.001.Foot / Second / Second
+    sequenceOf(0, 1, 4, 9, 16, 25).map { it.Foot }
             .derivative()
             .derivative()
             .zipWithNext { a, b -> a in b + threshold..b - threshold }

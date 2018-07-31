@@ -13,7 +13,7 @@ generateUnitsOfMeasure {
             // `d(..)` is short for `dimension(..)`
             u("Degree", Math.PI / 180, d()),
             u("Turn", Math.PI / 0.5, d()),
-            u("Feet", 0.3048, d(L: 1)),
+            u("Foot", 0.3048, d(L: 1)),
             u("Percent", 0.01, d()),
             u("Minute", 60.0, d(T: 1)),
             u("Hour", 3600.0, d(T: 1)),
