@@ -2,6 +2,7 @@ package info.kunalsheth.units.generated
 
 import kotlin.math.abs
 import kotlin.math.sign
+import kotlin.jvm.JvmName
 
 /**
  * Created by kunal on 8/6/17.
