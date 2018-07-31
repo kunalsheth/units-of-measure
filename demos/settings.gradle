@@ -1,3 +1,0 @@
-rootProject.name = "demos"
-include "sample"
-include "extractor"

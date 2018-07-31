@@ -1,8 +1,11 @@
 package info.kunalsheth.units
 
-import info.kunalsheth.units.data.*
+import info.kunalsheth.units.data.Dimension
+import info.kunalsheth.units.data.Quantity
+import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.RelationType.Divide
 import info.kunalsheth.units.data.RelationType.Multiply
+import info.kunalsheth.units.data.UnitOfMeasure
 import java.io.PrintWriter
 
 /**
@@ -69,9 +72,9 @@ ${relations.filter { it.b != time }.joinToString(separator = "\n", transform = R
 }
 
 private fun Relation.src() = "@JvmName(\"${a.safeName}_${f.name}_${b.safeName}\") " + when (f) {
-    RelationType.Divide ->
+    Divide ->
         "operator fun Quan<$a>.div(that: Quan<$b>) = $result(this.$siValue / that.$siValue)"
-    RelationType.Multiply ->
+    Multiply ->
         "operator fun Quan<$a>.times(that: Quan<$b>) = $result(this.$siValue * that.$siValue)"
 }
 

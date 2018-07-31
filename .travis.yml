@@ -2,5 +2,5 @@ language: kotlin
 script:
   - cd plugin
   - ./gradlew publishToMavenLocal
-  - cd ../demos
+  - cd ../demo
   - ./gradlew run
