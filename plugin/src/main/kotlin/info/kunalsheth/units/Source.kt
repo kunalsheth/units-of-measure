@@ -19,7 +19,6 @@ fun writeBase(printWriter: PrintWriter) = ::UnitsOfMeasurePlugin::class.java
 
 private const val nothing = "Nothing"
 private const val siValue = "siValue"
-private const val abrev = "abrev"
 private val time = Dimension(T = 1)
 
 fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Set<UnitOfMeasure>): String {
@@ -34,16 +33,17 @@ fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Se
             ?: nothing
 
     val siUnit = units.firstOrNull { it.factorToSI == 1.0 }
-    val name = siUnit ?: safeName
+//    val name = siUnit ?: safeName
 
     return """
-typealias $this = $name
-data class $name(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
-    override val $abrev = "$abbreviation"
+typealias $this = $safeName
+${if (siUnit != null) "typealias $siUnit = $safeName" else ""}
+data class $safeName(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
+    override val abrev = "$abbreviation"
     override fun new($siValue: Double) = copy($siValue)
     override fun equals(other: Any?) = eq(other)
-    override fun hashCode() = ($siValue to $abrev).hashCode()
-    override fun toString() = "$$siValue $$abrev"
+    override fun hashCode() = ($siValue to abrev).hashCode()
+    override fun toString() = "$$siValue $${if (siUnit != null) "unitName" else "abrev"}"
 
     override operator fun div(that: Quan<$time>) = ${
     if (derivative != nothing) "$derivative(this.$siValue / that.$siValue)" else "TODO()"}
@@ -53,7 +53,7 @@ data class $name(override val $siValue: Double) : Quantity<$this, $integral, $de
 
     ${if (siUnit != null) """
     companion object : UomConverter<$this>,
-        Quantity<$this, $integral, $derivative> by $name(1.0) {
+        Quantity<$this, $integral, $derivative> by $safeName(1.0) {
         override val unitName = "${siUnit.name}"
         override fun invoke(x: Number) = x.$siUnit
         override fun invoke(x: $this) = x.$siUnit
