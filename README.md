@@ -1,8 +1,8 @@
 # units-of-measure
-A type-safe, embedded DSL for dimensional analysis and unit conversion in Kotlin.
+A DSL for type-safe dimensional analysis and unit conversion in Kotlin.
 
 ### Usage
-Please look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demos/samples/custom/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt) for DSL usage.
+Please look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demo/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt) for DSL usage.
 Configuration documentation can be found on the [wiki](http://kunalsheth.info/units-of-measure/wiki).
 
 ### Gradle Installation
@@ -13,7 +13,7 @@ buildscript {
         maven { url 'http://repo.kunalsheth.info/' }
     }
     dependencies {
-        classpath 'info.kunalsheth.units:plugin:3.4.0'
+        classpath 'info.kunalsheth.units:plugin:4.0.3'
     }
 }
 apply plugin: 'info.kunalsheth.units.gradle'
@@ -50,5 +50,6 @@ units-of-measure's novel, metaprogramming approach to the problem makes it:
 - [x] Add metric prefixes.
 - [x] Multiplatform.
 - [x] Stronger support for generic use (`Quantity<This, IntegralOfThis, DerivativeOfThis>`)
-- [ ] Optimize for faster compilation.
+- [ ] Generic reciprocal functions?
+- [ ] Optimize for faster compilation and runtime.
 - [ ] Benchmark performance hit in contrast to primitives. (Can someone help me with this?)
