@@ -61,7 +61,7 @@ data class $safeName(override val $siValue: Double) : Quantity<$this, $integral,
     """ else ""}
 }
 ${units.joinToString(separator = "") {
-        it.src(integral, derivative, quantities
+        it.src(it != siUnit, integral, derivative, quantities
                 .takeIf { it.size == 1 }
                 ?.run(Set<Quantity>::first)
         )
@@ -82,15 +82,13 @@ private fun Quantity.src() = """
 typealias $this = $dimension
 """
 
-private fun UnitOfMeasure.src(integral: String, derivative: String, quantity: Quantity?) = """
+private fun UnitOfMeasure.src(converter: Boolean, integral: String, derivative: String, quantity: Quantity?) = """
 val Number.$this: ${quantity ?: dimension} get() = $dimension(d * $factorToSI)
 val $dimension.$this get() = $siValue * ${1 / factorToSI}
-${if (factorToSI != 1.0) """
-object $this : UomConverter<$dimension>,
+${if (converter) """object $this : UomConverter<$dimension>,
     Quantity<$dimension, $integral, $derivative> by $dimension($factorToSI) {
     override val unitName = "$name"
     override fun invoke(x: Number) = x.$this
     override fun invoke(x: $dimension) = x.$this
-}
-""" else ""}
+}""" else ""}
 """
