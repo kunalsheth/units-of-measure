@@ -46,6 +46,7 @@ enum class RelationType : (Dimension, Dimension) -> Dimension {
     Divide {
         override fun invoke(a: Dimension, b: Dimension) = Dimension(
                 L = a.L - b.L,
+                A = a.A - b.A,
                 M = a.M - b.M,
                 T = a.T - b.T,
                 I = a.I - b.I,
@@ -57,6 +58,7 @@ enum class RelationType : (Dimension, Dimension) -> Dimension {
     Multiply {
         override fun invoke(a: Dimension, b: Dimension) = Dimension(
                 L = a.L + b.L,
+                A = a.A + b.A,
                 M = a.M + b.M,
                 T = a.T + b.T,
                 I = a.I + b.I,

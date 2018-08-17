@@ -7,6 +7,7 @@ import java.io.Serializable
  */
 data class Dimension(
         val L: Int = 0,
+        val A: Int = 0,
         val M: Int = 0,
         val T: Int = 0,
         val I: Int = 0,
@@ -17,6 +18,7 @@ data class Dimension(
     val safeName by lazy {
         val (numerator, denominator) = mapOf(
                 "L" to L,
+                "A" to A,
                 "M" to M,
                 "T" to T,
                 "I" to I,
@@ -41,6 +43,7 @@ data class Dimension(
     val fancyName by lazy {
         mapOf(
                 "L" to L,
+                "∠" to A,
                 "M" to M,
                 "T" to T,
                 "I" to I,
@@ -56,6 +59,7 @@ data class Dimension(
     val abbreviation by lazy {
         mapOf(
                 "m" to L,
+                "rad" to A,
                 "kg" to M,
                 "s" to T,
                 "A" to I,
