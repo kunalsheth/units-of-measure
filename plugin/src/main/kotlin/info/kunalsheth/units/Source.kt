@@ -17,78 +17,90 @@ fun writeBase(printWriter: PrintWriter) = ::UnitsOfMeasurePlugin::class.java
         .lineSequence()
         .forEach(printWriter::println)
 
-private const val nothing = "Nothing"
+private const val underlying = "underlying"
 private const val siValue = "siValue"
-private val time = Dimension(T = 1)
 
 fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Set<UnitOfMeasure>): String {
-
-    val derivative = relations
-            .firstOrNull { it.b == time && it.f == Divide }
-            ?.result?.toString()
-            ?: nothing
-    val integral = relations
-            .firstOrNull { it.b == time && it.f == Multiply }
-            ?.result?.toString()
-            ?: nothing
-
-    val siUnit = units.firstOrNull { it.factorToSI == 1.0 }
-//    val name = siUnit ?: safeName
-
     return """
 typealias $this = $safeName
-${if (siUnit != null) "typealias $siUnit = $safeName" else ""}
-data class $safeName(override val $siValue: Double) : Quantity<$this, $integral, $derivative> {
-    override val abrev = "$abbreviation"
-    override fun new($siValue: Double) = copy($siValue)
-    override fun equals(other: Any?) = eq(other)
-    override fun hashCode() = ($siValue to abrev).hashCode()
-    override fun toString() = "$$siValue $${if (siUnit != null) "unitName" else "abrev"}"
+/*inline*/ class $safeName(internal val $underlying: Double) : Quan<$this> {
+    override val siValue get() = $underlying
+    override val abrev get() = "$abbreviation"
 
-    override operator fun div(that: Quan<$time>) = ${
-    if (derivative != nothing) "$derivative(this.$siValue / that.$siValue)" else "TODO()"}
+    override fun new($siValue: Double) = $this($siValue)
 
-    override operator fun times(that: Quan<$time>) = ${
-    if (integral != nothing) "$integral(this.$siValue * that.$siValue)" else "TODO()"}
+    override operator fun unaryPlus() = $this(+$underlying)
+    override operator fun unaryMinus() = $this(-$underlying)
 
-    ${if (siUnit != null) """
-    companion object : UomConverter<$this>,
-        Quantity<$this, $integral, $derivative> by $safeName(1.0) {
-        override val unitName = "${siUnit.name}"
-        override fun invoke(x: Number) = x.$siUnit
-        override fun invoke(x: $this) = x.$siUnit
-    }
-    """ else ""}
+    override operator fun plus(that: $this) = $this(this.$underlying + that.$underlying)
+    override operator fun minus(that: $this) = $this(this.$underlying - that.$underlying)
+    override operator fun times(that: Number) = $this(this.$underlying * that.toDouble())
+    override operator fun div(that: Number) = $this(this.$underlying / that.toDouble())
+    override operator fun rem(that: $this) = $this(this.$underlying % that.$underlying)
+
+    override infix fun min(that: $this) = if (this < that) this else that
+    override infix fun max(that: $this) = if (this > that) this else that
+
+    override val abs get() = $this(abs($underlying))
+    override val signum get() = $underlying.sign
+    override val isNegative get() = $underlying < 0
+    override val isPositive get() = $underlying > 0
+
+    override fun compareTo(other: $this) = this.$underlying.compareTo(other.$underlying)
+
+    override fun toString() = "${'$'}$underlying ${'$'}abrev"
 }
 ${units.joinToString(separator = "") {
-        it.src(it != siUnit, integral, derivative, quantities
+        it.src(quantities
                 .takeIf { it.size == 1 }
                 ?.run(Set<Quantity>::first)
         )
     }}
 ${quantities.joinToString(separator = "", transform = Quantity::src)}
-${relations.filter { it.b != time }.joinToString(separator = "\n", transform = Relation::src)}
+${relations.joinToString(separator = "\n", transform = Relation::src)}
 """
 }
 
-private fun Relation.src() = "@JvmName(\"${a.safeName}_${f.name}_${b.safeName}\") " + when (f) {
-    Divide ->
-        "operator fun Quan<$a>.div(that: Quan<$b>) = $result(this.$siValue / that.$siValue)"
-    Multiply ->
-        "operator fun Quan<$a>.times(that: Quan<$b>) = $result(this.$siValue * that.$siValue)"
+private fun Relation.src(): String {
+    fun jvmName(category: String) = """@JvmName("${a.safeName}_${f.name}_${b.safeName}_$category")"""
+
+    return when (f) {
+        Divide -> {
+            val logic = "$result(this.$siValue / that.$siValue)"
+            """
+            ${jvmName("generic")}
+            operator fun $a.div(that: Quan<$b>) = $logic
+            // ${jvmName("concrete")}
+            operator fun $a.div(that: $b) = $logic
+            ${jvmName("nonextension")}
+            fun div(thiz: Quan<$a>, that: Quan<$b>) = thiz.run { $logic }
+        """.trimIndent()
+        }
+        Multiply -> {
+            val logic = "$result(this.$siValue * that.$siValue)"
+            """
+            ${jvmName("generic")}
+            operator fun $a.times(that: Quan<$b>) = $logic
+            // ${jvmName("concrete")}
+            operator fun $a.times(that: $b) = $logic
+            ${jvmName("nonextension")}
+            fun times(thiz: Quan<$a>, that: Quan<$b>) = thiz.run { $logic }
+        """.trimIndent()
+        }
+    }
 }
 
 private fun Quantity.src() = """
 typealias $this = $dimension
 """
 
-private fun UnitOfMeasure.src(converter: Boolean, integral: String, derivative: String, quantity: Quantity?) = """
+private fun UnitOfMeasure.src(quantity: Quantity?) = """
 val Number.$this: ${quantity ?: dimension} get() = $dimension(d * $factorToSI)
 val $dimension.$this get() = $siValue * ${1 / factorToSI}
-${if (converter) """object $this : UomConverter<$dimension>,
-    Quantity<$dimension, $integral, $derivative> by $dimension($factorToSI) {
+object $this : UomConverter<$dimension>,
+    Quan<$dimension> by box($dimension($factorToSI)) {
     override val unitName = "$name"
     override fun invoke(x: Number) = x.$this
     override fun invoke(x: $dimension) = x.$this
-}""" else ""}
+}
 """
