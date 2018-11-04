@@ -44,16 +44,14 @@ operator fun <Q : Quan<Q>> Q.rangeTo(that: Q) = object : ClosedRange<Q> {
 }
 
 fun <Q : Quan<Q>> avg(a: Q, b: Q) = (a + b) / 2
-fun <Q : Quan<Q>> avg(a: Q, b: Q, c: Q) = (a + b + c) / 3
-fun <Q : Quan<Q>> avg(a: Q, b: Q, c: Q, d: Q) = (a + b + c + d) / 4
 fun <Q : Quan<Q>> avg(first: Q, vararg x: Q) = first.new(
-        (first.siValue + x.sumByDouble { it.siValue }) / (x.size + 1)
+        (first.siValue + x.sumByDouble(Quan<Q>::siValue)) /
+                (1 + x.size)
 )
 
 private val Number.d get() = toDouble()
 
 operator fun <Q : Quan<Q>> Number.times(that: Quan<Q>): Q = that * this
-// operator fun <Q : Quan<Q>> Number.div(that: Quan<Q>): Q = need some sort of reciprocal op
 
 fun <Q : Quan<Q>> Number.exa(f: UomConverter<Q>) = f(d * 1E18)
 fun <Q : Quan<Q>> Q.exa(f: UomConverter<Q>) = f(this) * 1E-18

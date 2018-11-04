@@ -19,13 +19,14 @@ fun writeBase(printWriter: PrintWriter) = ::UnitsOfMeasurePlugin::class.java
 
 private const val underlying = "underlying"
 private const val siValue = "siValue"
+private fun quan(d: Dimension) = "Quan<$d>"
 
 fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Set<UnitOfMeasure>): String {
     return """
 typealias $this = $safeName
-/*inline*/ class $safeName(internal val $underlying: Double) : Quan<$this> {
-    override val siValue get() = $underlying
-    override val abrev get() = "$abbreviation"
+/*inline*/ class $safeName(internal val $underlying: Double) : ${quan(this)} {
+    override val $siValue /*get()*/ = $underlying
+    override val abrev /*get()*/ = "$abbreviation"
 
     override fun new($siValue: Double) = $this($siValue)
 
@@ -34,8 +35,8 @@ typealias $this = $safeName
 
     override operator fun plus(that: $this) = $this(this.$underlying + that.$underlying)
     override operator fun minus(that: $this) = $this(this.$underlying - that.$underlying)
-    override operator fun times(that: Number) = $this(this.$underlying * that.toDouble())
-    override operator fun div(that: Number) = $this(this.$underlying / that.toDouble())
+    override operator fun times(that: Number) = $this(this.$underlying * that.d)
+    override operator fun div(that: Number) = $this(this.$underlying / that.d)
     override operator fun rem(that: $this) = $this(this.$underlying % that.$underlying)
 
     override infix fun min(that: $this) = if (this < that) this else that
@@ -49,6 +50,7 @@ typealias $this = $safeName
     override fun compareTo(other: $this) = this.$underlying.compareTo(other.$underlying)
 
     override fun toString() = "${'$'}$underlying ${'$'}abrev"
+    override fun equals(other: Any?) = other is $this && this.siValue == other.siValue
 }
 ${units.joinToString(separator = "") {
         it.src(quantities
@@ -69,22 +71,22 @@ private fun Relation.src(): String {
             val logic = "$result(this.$siValue / that.$siValue)"
             """
             ${jvmName("generic")}
-            operator fun $a.div(that: Quan<$b>) = $logic
+            operator fun $a.div(that: ${quan(b)}) = $logic
             // ${jvmName("concrete")}
             operator fun $a.div(that: $b) = $logic
             ${jvmName("nonextension")}
-            fun div(thiz: Quan<$a>, that: Quan<$b>) = thiz.run { $logic }
+            fun div(thiz: ${quan(a)}, that: ${quan(b)}) = thiz.run { $logic }
         """.trimIndent()
         }
         Multiply -> {
             val logic = "$result(this.$siValue * that.$siValue)"
             """
             ${jvmName("generic")}
-            operator fun $a.times(that: Quan<$b>) = $logic
+            operator fun $a.times(that: ${quan(b)}) = $logic
             // ${jvmName("concrete")}
             operator fun $a.times(that: $b) = $logic
             ${jvmName("nonextension")}
-            fun times(thiz: Quan<$a>, that: Quan<$b>) = thiz.run { $logic }
+            fun times(thiz: ${quan(a)}, that: ${quan(b)}) = thiz.run { $logic }
         """.trimIndent()
         }
     }
@@ -98,7 +100,7 @@ private fun UnitOfMeasure.src(quantity: Quantity?) = """
 val Number.$this: ${quantity ?: dimension} get() = $dimension(d * $factorToSI)
 val $dimension.$this get() = $siValue * ${1 / factorToSI}
 object $this : UomConverter<$dimension>,
-    Quan<$dimension> by box($dimension($factorToSI)) {
+    ${quan(dimension)} by box($dimension($factorToSI)) {
     override val unitName = "$name"
     override fun invoke(x: Number) = x.$this
     override fun invoke(x: $dimension) = x.$this
