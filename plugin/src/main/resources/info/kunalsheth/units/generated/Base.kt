@@ -7,56 +7,51 @@ import kotlin.jvm.JvmName
 /**
  * Created by kunal on 8/6/17.
  */
-typealias Quan<Q> = Quantity<Q, *, *>
-
-@Suppress("FINITE_BOUNDS_VIOLATION", "UNCHECKED_CAST")
-interface Quantity<This, Integral, Derivative> : Comparable<Quan<This>> where
-This : Quantity<This, Integral, Derivative>,
-Integral : Quantity<Integral, *, This>,
-Derivative : Quantity<Derivative, This, *> {
+@Suppress("UNCHECKED_CAST")
+interface Quan<This> : Comparable<This> where
+This : Quan<This> {
     val siValue: Double
     val abrev: String
 
     fun new(siValue: Double): This
 
-    operator fun unaryPlus(): This = this as This
-    operator fun unaryMinus(): This = new(-siValue)
+    operator fun unaryPlus(): This
+    operator fun unaryMinus(): This
 
-    operator fun plus(that: Quan<This>): This = new(this.siValue + that.siValue)
-    operator fun minus(that: Quan<This>): This = new(this.siValue - that.siValue)
-    operator fun times(that: Number): This = new(this.siValue * that.toDouble())
-    operator fun div(that: Number): This = new(this.siValue / that.toDouble())
-    operator fun rem(that: Quan<This>): This = new(this.siValue % that.siValue)
+    operator fun plus(that: This): This
+    operator fun minus(that: This): This
+    operator fun times(that: Number): This
+    operator fun div(that: Number): This
+    operator fun rem(that: This): This
 
-    operator fun times(that: Quan<T>): Integral = TODO()
-    operator fun div(that: Quan<T>): Derivative = TODO()
+    infix fun min(that: This): This
+    infix fun max(that: This): This
 
-    @Suppress("UNCHECKED_CAST")
-    operator fun rangeTo(that: Quan<This>) = object : ClosedRange<This> {
-        override val start = (this@Quantity min that)
-        override val endInclusive = (this@Quantity max that)
-    }
+    val abs: This
+    val signum: Double
+    val isNegative: Boolean
+    val isPositive: Boolean
 
-    infix fun min(that: Quan<This>): This = (if (this < that) this else that) as This
-    infix fun max(that: Quan<This>): This = (if (this > that) this else that) as This
-
-    val abs: This get() = new(abs(siValue))
-    val signum get() = siValue.sign
-    val isNegative: Boolean get() = siValue < 0
-    val isPositive: Boolean get() = siValue > 0
-
-    override fun compareTo(other: Quan<This>) = this.siValue.compareTo(other.siValue)
+    override fun compareTo(other: This): Int
 }
 
-private inline fun <reified Q : Quan<Q>> Q.eq(that: Any?) = when (that) {
-    is Q -> this.siValue == that.siValue
-    else -> false
+infix fun <Q : Quan<Q>> Q.plusOrMinus(radius: Q) = (this - radius)..(this + radius)
+infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = (this - radius)..(this + radius)
+
+operator fun <Q : Quan<Q>> Q.rangeTo(that: Q) = object : ClosedRange<Q> {
+    override val start = min(that)
+    override val endInclusive = max(that)
 }
+
+fun <Q : Quan<Q>> avg(a: Q, b: Q) = (a + b) / 2
+fun <Q : Quan<Q>> avg(first: Q, vararg x: Q) = first.new(
+        (first.siValue + x.sumByDouble(Quan<Q>::siValue)) /
+                (1 + x.size)
+)
 
 private val Number.d get() = toDouble()
 
 operator fun <Q : Quan<Q>> Number.times(that: Quan<Q>): Q = that * this
-// operator fun <Q : Quan<Q>> Number.div(that: Quan<Q>): Q = need some sort of reciprocal op
 
 fun <Q : Quan<Q>> Number.exa(f: UomConverter<Q>) = f(d * 1E18)
 fun <Q : Quan<Q>> Q.exa(f: UomConverter<Q>) = f(this) * 1E-18
@@ -111,3 +106,5 @@ interface UomConverter<Q : Quan<Q>> {
     operator fun invoke(x: Number): Q
     operator fun invoke(x: Q): Double
 }
+
+private fun <Q : Quan<Q>> box(x: Q) = x as Quan<Q>

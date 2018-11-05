@@ -26,8 +26,7 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
 
         val allDimensions = (relationships.flatMap { listOf(it.a, it.b, it.result) } +
                 quantities.map(Quantity::dimension) +
-                unitsOfMeasure.map(UnitOfMeasure::dimension) +
-                Dimension(T = 1))
+                unitsOfMeasure.map(UnitOfMeasure::dimension))
                 .toSet()
 
         val relationGroups = relationships
