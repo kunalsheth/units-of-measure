@@ -6,16 +6,15 @@ import info.kunalsheth.units.data.Relation
 import info.kunalsheth.units.data.RelationType.Divide
 import info.kunalsheth.units.data.RelationType.Multiply
 import info.kunalsheth.units.data.UnitOfMeasure
+import java.io.OutputStream
 import java.io.PrintWriter
 
 /**
  * Created by kunal on 8/5/17.
  */
-fun writeBase(printWriter: PrintWriter) = ::UnitsOfMeasurePlugin::class.java
+fun writeBase(writer: OutputStream) = ::UnitsOfMeasurePlugin::class.java
         .getResourceAsStream("/info/kunalsheth/units/generated/Base.kt")
-        .bufferedReader()
-        .lineSequence()
-        .forEach(printWriter::println)
+        .copyTo(writer)
 
 private const val underlying = "underlying"
 private const val siValue = "siValue"
@@ -106,3 +105,13 @@ object $this : UomConverter<$dimension>,
     override fun invoke(x: $dimension) = x.$this
 }
 """
+
+val requiredMathUnits = setOf(
+        Dimension(),
+        Dimension(L = 1),
+        Dimension(A = 1)
+)
+
+fun writeMath(writer: OutputStream) = ::UnitsOfMeasurePlugin::class.java
+        .getResourceAsStream("/info/kunalsheth/units/math/Math.kt")
+        .copyTo(writer)

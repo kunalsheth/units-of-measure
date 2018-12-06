@@ -21,12 +21,13 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
     fun generate() {
         generatedSrcDir.delete()
         generatedSrcDir.mkdirs()
-        val srcWriter = generatedSrc.printWriter()
+        val srcWriter = generatedSrc.outputStream()
         writeBase(srcWriter)
 
         val allDimensions = (relationships.flatMap { listOf(it.a, it.b, it.result) } +
                 quantities.map(Quantity::dimension) +
-                unitsOfMeasure.map(UnitOfMeasure::dimension))
+                unitsOfMeasure.map(UnitOfMeasure::dimension) +
+                requiredMathUnits)
                 .toSet()
 
         val relationGroups = relationships
@@ -41,15 +42,19 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
                 .groupBy { it.dimension }
                 .mapValues { (_, v) -> v.toSet() }
 
-        allDimensions.map {
+        val generatedSourceCode = allDimensions.map {
             it.src(
                     relationGroups[it] ?: emptySet(),
                     quantityGroups[it] ?: emptySet(),
                     unitGroups[it] ?: emptySet()
             )
-        }.forEach(srcWriter::println)
+        }
 
-        srcWriter.close()
+        srcWriter.bufferedWriter().use { writer ->
+            generatedSourceCode.forEach { writer.appendln(it) }
+        }
+
+        mathSrc.outputStream().use(::writeMath)
     }
 
     @Input
@@ -67,6 +72,8 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
     @OutputFile
     val generatedSrc = File(generatedSrcDir, "UnitsOfMeasure.kt")
 
+    @OutputFile
+    val mathSrc = File(generatedSrcDir, "UomMath.kt")
 
     // for Groovy to Kotlin interop
 
