@@ -28,7 +28,6 @@ fun <Q : Quan<Q>> sign(x: Q) = x.signum
 fun <Q : Quan<Q>> min(a: Q, b: Q) = a min b
 fun <Q : Quan<Q>> max(a: Q, b: Q) = a max b
 fun Dimensionless.pow(x: Dimensionless) = Dimensionless(siValue.pow(x.siValue))
-fun <Q : Quan<Q>> Q.IEEErem(divisor: Q) = new(siValue.IEEErem(divisor.siValue))
 fun <Q : Quan<Q>> Q.withSign(sign: Quan<*>) = new(siValue.withSign(sign.siValue))
 val <Q : Quan<Q>> Q.ulp get() = new(siValue.ulp)
 fun <Q : Quan<Q>> Q.nextUp() = new(siValue.nextUp())
