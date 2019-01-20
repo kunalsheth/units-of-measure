@@ -1,6 +1,7 @@
 generateUnitsOfMeasure {
     relationships += relation(dimension(L: 1), dimension(T: 1)) +
-            relation(dimension(L: 1, T: -1), dimension(L: 1, T: -2))
+            relation(dimension(L: 1, T: -1), dimension(L: 1, T: -2)) +
+            relation(dimension(L:2,M:1,T:-3), d(T:1))
 
     quantities += [ /* the default values are good enough */]
 

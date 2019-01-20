@@ -22,9 +22,9 @@ private fun quan(d: Dimension) = "Quan<$d>"
 fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Set<UnitOfMeasure>): String {
     return """
 typealias $this = $safeName
-/*inline*/ class $safeName(internal val $underlying: Double) : ${quan(this)} {
-    override val $siValue /*get()*/ = $underlying
-    override val abrev /*get()*/ = "$abbreviation"
+inline class $safeName(internal val $underlying: Double) : ${quan(this)} {
+    override val $siValue get() = $underlying
+    override val abrev get() = "$abbreviation"
 
     override fun new($siValue: Double) = $this($siValue)
 
@@ -48,7 +48,7 @@ typealias $this = $safeName
     override fun compareTo(other: $this) = this.$underlying.compareTo(other.$underlying)
 
     override fun toString() = "${'$'}$underlying ${'$'}abrev"
-    override fun equals(other: Any?) = other is $this && this.siValue == other.siValue
+    // override fun equals(other: Any?) = other is $this && this.siValue == other.siValue
 }
 ${units.joinToString(separator = "") {
         it.src(quantities

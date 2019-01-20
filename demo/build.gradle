@@ -1,12 +1,12 @@
 buildscript {
-    ext.kotlin_version = "1.3.10"
+    ext.kotlin_version = "1.3.11"
     repositories {
         mavenLocal()
         jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "info.kunalsheth.units:plugin:5.1.1"
+        classpath "info.kunalsheth.units:plugin:5.2.0"
     }
 }
 
