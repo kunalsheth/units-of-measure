@@ -33,8 +33,8 @@ inline class $safeName(internal val $underlying: Double) : ${quan(this)} {
 
     override operator fun plus(that: $this) = $this(this.$underlying + that.$underlying)
     override operator fun minus(that: $this) = $this(this.$underlying - that.$underlying)
-    override operator fun times(that: Number) = $this(this.$underlying * that.d)
-    override operator fun div(that: Number) = $this(this.$underlying / that.d)
+    override operator fun times(that: Number) = $this(this.$underlying * that.toDouble())
+    override operator fun div(that: Number) = $this(this.$underlying / that.toDouble())
     override operator fun rem(that: $this) = $this(this.$underlying % that.$underlying)
 
     override infix fun min(that: $this) = if (this < that) this else that
@@ -95,12 +95,12 @@ typealias $this = $dimension
 """
 
 private fun UnitOfMeasure.src(quantity: Quantity?) = """
-val Number.$this: ${quantity ?: dimension} get() = $dimension(d * $factorToSI)
-val $dimension.$this get() = $siValue * ${1 / factorToSI}
+inline val Number.$this: ${quantity ?: dimension} get() = $dimension(toDouble() * $factorToSI)
+inline val $dimension.$this get() = $siValue * ${1 / factorToSI}
 object $this : UomConverter<$dimension>,
     ${quan(dimension)} by box($dimension($factorToSI)) {
     override val unitName = "$name"
-    override fun invoke(x: Number) = x.$this
+    override fun invoke(x: Double) = x.$this
     override fun invoke(x: $dimension) = x.$this
 }
 """

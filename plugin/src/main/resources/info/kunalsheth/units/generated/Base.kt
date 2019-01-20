@@ -37,9 +37,8 @@ This : Quan<This> {
 
 interface UomConverter<Q : Quan<Q>> {
     val unitName: String
-    operator fun invoke(x: Number): Q
+    operator fun invoke(x: Double): Q
     operator fun invoke(x: Q): Double
 }
 
 private fun <Q : Quan<Q>> box(x: Q) = x as Quan<Q>
-private inline val Number.d get() = toDouble()
