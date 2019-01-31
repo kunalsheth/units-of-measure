@@ -41,4 +41,8 @@ interface UomConverter<Q : Quan<Q>> {
     operator fun invoke(x: Q): Double
 }
 
-private fun <Q : Quan<Q>> box(x: Q) = x as Quan<Q>
+@Deprecated(
+        message = "Explicit boxing should only be used to circumnavigate compiler bugs",
+        replaceWith = ReplaceWith("a newer version of Kotlin")
+)
+fun <Q : Quan<Q>> box(x: Q) = x as Quan<Q>
