@@ -43,6 +43,7 @@ inline class $safeName(internal val $underlying: Double) : ${quan(this)} {
     override val abs get() = $this(abs($underlying))
     override val signum get() = $underlying.sign
     override val isNegative get() = $underlying < 0
+    override val isZero get() = $underlying == 0.0
     override val isPositive get() = $underlying > 0
 
     override fun compareTo(other: $this) = this.$underlying.compareTo(other.$underlying)

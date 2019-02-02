@@ -30,6 +30,7 @@ This : Quan<This> {
     val abs: This
     val signum: Double
     val isNegative: Boolean
+    val isZero: Boolean
     val isPositive: Boolean
 
     override fun compareTo(other: This): Int
