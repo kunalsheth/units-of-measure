@@ -5,6 +5,8 @@ A DSL for type-safe dimensional analysis and unit conversion in Kotlin.
 Please look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demo/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt) for DSL usage.
 Configuration documentation can be found on the [wiki](http://kunalsheth.info/units-of-measure/wiki).
 
+Also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for more advanced usage and configuration.
+
 ### Gradle Installation
 In `./build.gradle`:
 ```groovy
@@ -13,7 +15,7 @@ buildscript {
         maven { url 'http://repo.kunalsheth.info/' }
     }
     dependencies {
-        classpath 'info.kunalsheth.units:plugin:4.0.3'
+        classpath 'info.kunalsheth.units:plugin:5.2.4'
     }
 }
 apply plugin: 'info.kunalsheth.units.gradle'
