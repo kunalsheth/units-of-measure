@@ -22,4 +22,4 @@ generateUnitsOfMeasure {
     ].toSet()
 }
 sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir
-compileKotlin.dependsOn(generateUnitsOfMeasure)
+compileKotlinCommon.dependsOn(generateUnitsOfMeasure)

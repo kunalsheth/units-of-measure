@@ -2,6 +2,7 @@ package info.kunalsheth.units.math
 
 import info.kunalsheth.units.generated.*
 import kotlin.math.*
+import kotlin.js.JsName
 
 fun sin(x: `∠`) = Dimensionless(kotlin.math.sin(x.siValue))
 fun cos(x: `∠`) = Dimensionless(kotlin.math.cos(x.siValue))
@@ -37,8 +38,8 @@ inline fun <Q : Quan<Q>> Q.roundToInt(q: UomConverter<Q>) = q(q(this).roundToInt
 inline fun <Q : Quan<Q>> Q.roundToLong(q: UomConverter<Q>) = q(q(this).roundToLong().toDouble())
 
 inline infix fun <Q : Quan<Q>> Q.plusOrMinus(radius: Q) = (this - radius)..(this + radius)
-inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius)
-inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius)
+@JsName("pm1") inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius)
+@JsName("pm2") inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius)
 
 inline operator fun <Q : Quan<Q>> Q.rangeTo(that: Q) = object : ClosedRange<Q> {
     override val start = min(that)

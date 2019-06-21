@@ -1,1 +1,3 @@
 rootProject.name = "demo"
+include 'jvm'
+include 'js'

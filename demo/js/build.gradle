@@ -1,0 +1,13 @@
+apply plugin: 'kotlin-platform-js'
+repositories.jcenter()
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    expectedBy project(':')
+}
+
+compileKotlin2Js {
+    kotlinOptions.outputFile = "${projectDir}/web/output.js"
+    kotlinOptions.moduleKind = "amd"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.freeCompilerArgs += ["-XXLanguage:+InlineClasses"]
+}
