@@ -1,4 +1,7 @@
-define(['exports', 'kotlin'], function (_, Kotlin) {
+if (typeof kotlin === 'undefined') {
+  throw new Error("Error loading module 'output'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'output'.");
+}
+var output = function (_, Kotlin) {
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
@@ -16356,6 +16359,6 @@ define(['exports', 'kotlin'], function (_, Kotlin) {
   package$math.atto_8hetjx$ = atto_0;
   Kotlin.defineModule('output', _);
   return _;
-});
+}(typeof output === 'undefined' ? {} : output, kotlin);
 
 //# sourceMappingURL=output.js.map

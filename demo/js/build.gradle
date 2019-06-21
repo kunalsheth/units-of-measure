@@ -7,7 +7,7 @@ dependencies {
 
 compileKotlin2Js {
     kotlinOptions.outputFile = "${projectDir}/web/output.js"
-    kotlinOptions.moduleKind = "amd"
+    kotlinOptions.moduleKind = "plain"
     kotlinOptions.sourceMap = true
     kotlinOptions.freeCompilerArgs += ["-XXLanguage:+InlineClasses"]
 }
