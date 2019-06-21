@@ -2,7 +2,7 @@
 A DSL for type-safe dimensional analysis and unit conversion in Kotlin.
 
 ### Usage
-Please look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demo/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt) for DSL usage.
+Please look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demo/jvm/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt) for DSL usage.
 Configuration documentation can be found on the [wiki](http://kunalsheth.info/units-of-measure/wiki).
 
 Also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for more advanced usage and configuration.
