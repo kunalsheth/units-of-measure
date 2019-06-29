@@ -20,7 +20,7 @@ skip:
 Lets do a practice problem:
 > How many days does it take for a 3.7V 500mAh battery to discharge when a 10kΩ resistor is placed across its terminals?
 
-If we were to solve this using numeric datatypes, all unit conversions must be take care of by hand.
+If we were to solve this using numeric datatypes, all unit conversions must be taken care of by hand.
 This becomes tedious, error prone, and difficult to read:
 {% include kotlin.html src=site.data.examples.auto_convert.numeric %}
 

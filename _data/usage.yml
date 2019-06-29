@@ -1,20 +1,20 @@
 basic:
-  - text: "Import these wherever you want to use units-of-measure,"
+  - text: "Import these wherever you want to use units-of-measure:"
     code: |-
       import info.kunalsheth.units.generated.*
       import info.kunalsheth.units.math.*
 
   - text: "The basic syntax to create a quantity is <code>MAGNITUDE.UNIT</code>."
     code: |-
-      14.Ounce
-      65.Mile
-      27.Minute
+      846.Ounce
+      1678.Mile
+      9.71.Minute
 
   - text: "Metric prefix functions are also provided. <code>MAGNITUDE.PREFIX(UNIT)</code>."
     code: |-
-      3.kilo(Gram)
-      10.milli(Metre)
-      4.deca(Metre)
+      1323.kilo(Gram)
+      148.milli(Metre)
+      2.54.deca(Metre)
 
   - text: "Math operations work as expected."
     code: |-

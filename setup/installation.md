@@ -27,5 +27,5 @@ Current version: <code class="libversion"></code>
 </details>
 {% endfor %}
 
-Because {{site.lib}} takes a metaprogramming approach, it does not magically work out of the box.
-You need to tell it _what_ to generate by [configuring](configuration) it in `uoms/units-of-measure.gradle`.
+Because {{site.lib}} generates a DSL for you, it does not magically work out of the box.  
+You need to tell it _what_ you want it to generate. This is done in the `uoms/units-of-measure.gradle` [configuration](configuration) file.

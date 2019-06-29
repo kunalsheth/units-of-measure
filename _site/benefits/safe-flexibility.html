@@ -43,8 +43,8 @@
 <p>With just the <strong><a href="/setup/configuration.html">tweak of a config file</a></strong>, <em>units-of-measure</em> can represent any unit or quantity.</p>
 
 <h2 id="type-safe-math-library">Type-safe Math Library</h2>
-<p>For even greater safety and ease of use, <em>units-of-measure</em> ships with a type-safe implementation of the <code class="highlighter-rouge">kotlin.math</code> library.<br />
-This means, for example, that <em>units-of-measure</em> can track units/dimensions even across complex trigonometric expressions.</p>
+<p>For even greater safety and ease of use, <em>units-of-measure</em> ships with a type-safe superset of the <code class="highlighter-rouge">kotlin.math</code> library.<br />
+This means, for example, that <em>units-of-measure</em> can track units &amp; dimensions even across complex trigonometric expressions.</p>
 
 <p>Lets write a function that uses the law of cosines to solve for <strong><em>m∠C</em></strong>.</p>
 <blockquote>
@@ -62,9 +62,9 @@ This means, for example, that <em>units-of-measure</em> can track units/dimensio
 </blockquote>
 
 <h2 id="strong-support-for-generic-programming">Strong Support for Generic Programming</h2>
-<p><em>units-of-measure</em> allows you to define almost any relationship between units at the type level. All you have to do is pass a “proof” (<code class="highlighter-rouge">::div</code> or <code class="highlighter-rouge">::times</code>).</p>
+<p><em>units-of-measure</em> allows you to define relationships between quantities at the type level. All you have to do is pass a “proof” (<code class="highlighter-rouge">::div</code> or <code class="highlighter-rouge">::times</code>).</p>
 
-<p>This means, for example, that we can write generic integration, differentiation, &amp; stdev functions:</p>
+<p>This means, for example, that we can write generic integration, differentiation, &amp; stdev utilities.</p>
 
 <h3 id="generic-integrator">Generic Integrator</h3>
 <blockquote>

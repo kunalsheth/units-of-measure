@@ -19,6 +19,6 @@ I started {{site.lib}} in early 2017 for use on my high school's [_FIRST_](https
 
 {{site.lib}} prevents incorrect code from ever deploying to our robot in the first place. 
 
-When developing control system software, real-time performance is a priority. This is why I've decided to use inline classes before they are fully matured.
+When developing control system software, real-time performance is a priority. This is why I've decided to use inline classes before they have fully matured.
 
 {{site.lib}} was originally distributed as an annotation processor, but was later repackaged as a gradle plugin to support multiplatform builds.
