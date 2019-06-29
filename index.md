@@ -1,7 +1,6 @@
 ---
 layout: home
 ---
-
 # Type-safe dimensional analysis and unit conversion
 
 <br>
