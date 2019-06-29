@@ -12,9 +12,7 @@ layout: home
 </h2></center>
 
 <center>
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/kunalsheth" data-size="large" aria-label="Follow @kunalsheth on GitHub">View on GitHub</a>
-<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/kunalsheth/units-of-measure" data-size="large" aria-label="View units-of-measure on GitHub">View on GitHub</a>
 <a class="github-button" href="https://github.com/kunalsheth/units-of-measure" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kunalsheth/units-of-measure on GitHub">Star</a>
 </center>
 
