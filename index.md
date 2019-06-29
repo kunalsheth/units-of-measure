@@ -1,6 +1,8 @@
 ---
 layout: home
 ---
+# Type-safe dimensional analysis and unit conversion
+
 <br>
 ![units-of-measure]({% link assets/example1.png %})
 
