@@ -1,0 +1,46 @@
+basic:
+  - text: "Import these wherever you want to use units-of-measure,"
+    code: |-
+      import info.kunalsheth.units.generated.*
+      import info.kunalsheth.units.math.*
+
+  - text: "The basic syntax to create a quantity is <code>MAGNITUDE.UNIT</code>."
+    code: |-
+      14.Ounce
+      65.Mile
+      27.Minute
+
+  - text: "Metric prefix functions are also provided. <code>MAGNITUDE.PREFIX(UNIT)</code>."
+    code: |-
+      3.kilo(Gram)
+      10.milli(Metre)
+      4.deca(Metre)
+
+  - text: "Math operations work as expected."
+    code: |-
+      val sum =        mass1 + mass2
+      val myLength = 1.Metre - 3.Foot
+      val distance =    rate * time
+      val mySpeed =  65.Mile / Hour
+
+  - text: "You can also create ranges using the <code>..</code> operator or the <code>`±`</code> infix function."
+    code: |-
+      2.Foot / 1.Metre in 60.Percent `±` 5.Percent   == true
+      420.Degree % 1.Turn in 60.Degree `±` 1.Degree  == true
+      65.Mile / Hour * 27.Minute in 30.Mile..29.Mile == true
+
+  - text: "<code>==</code> also works, but it is not recommended since <a href='http://docs.sun.com/source/806-3568/ncg_goldberg.html'>floating point math is not exact</a>."
+    code: |-
+      (1.kilo(Gram) == 1000.Gram)         == true
+      (10.milli(Metre) == 1.centi(Metre)) == true
+      (60000.milli(Second) == 1.Minute)   == true
+
+  - text: "Note: <strong>quantities</strong> are represented by types. Do not use <strong>units</strong> as types."
+    code: |-
+      fun bad(x: FootPerSecond) { ... } // this is incorrect.
+      bad(3.FootPerSecond)              // this won't compile
+
+      data class Car(val topSpeed: Speed, val floorIt: Acceleration) { ... }  // good
+      val kunalsCar = Car(149.1.Mile / Hour, 100.Mile / Hour / 4.7.Second)    // good
+
+      fun v(a: Acceleration, v0: Velocity, t: Time): Velocity = v0 + a * t    // good

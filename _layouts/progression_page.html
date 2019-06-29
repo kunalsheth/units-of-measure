@@ -1,0 +1,28 @@
+---
+layout: default
+
+next:
+    text: "Next"
+
+previous:
+    text: "Back"
+    url: "/"
+
+skip:
+    text: "Skip"
+---
+
+<link rel="stylesheet" type="text/css" href="{% link assets/button.css %}">
+
+{{ content }}
+
+<br>
+<a href="{{page.previous.url}}" class="soft-btn">&#8249; {{page.previous.text}}</a>
+{% if page.next.url %}
+{% if page.skip.url %}
+<a href="{{page.skip.url}}" class="juicy-btn right">{{page.skip.text}} &#8250;&#8250;</a>
+<a href="{{page.next.url}}" class="soft-btn right">{{page.next.text}} &#8250;</a>
+{% else %}
+<a href="{{page.next.url}}" class="juicy-btn right">{{page.next.text}} &#8250;</a>
+{% endif %}
+{% endif %}

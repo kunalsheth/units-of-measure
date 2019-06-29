@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>units-of-measure | Type-safe dimensional analysis and unit conversion in Kotlin.</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="units-of-measure" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
+<meta property="og:description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
+<link rel="canonical" href="http://localhost:4000/usage/basic.html" />
+<meta property="og:url" content="http://localhost:4000/usage/basic.html" />
+<meta property="og:site_name" content="units-of-measure" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/usage/basic.html","headline":"units-of-measure","description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="units-of-measure" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">units-of-measure</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <link rel="stylesheet" type="text/css" href="/assets/button.css">
+
+<h1 id="basic-usage">Basic Usage</h1>
+
+<p>Import these wherever you want to use units-of-measure,</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">import</span> <span class="nn">info.kunalsheth.units.generated.*</span>
+<span class="k">import</span> <span class="nn">info.kunalsheth.units.math.*</span></code></pre></figure>
+
+</blockquote>
+
+<p>The basic syntax to create a quantity is <code>MAGNITUDE.UNIT</code>.</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="m">14</span><span class="p">.</span><span class="n">Ounce</span>
+<span class="m">65</span><span class="p">.</span><span class="n">Mile</span>
+<span class="m">27</span><span class="p">.</span><span class="n">Minute</span></code></pre></figure>
+
+</blockquote>
+
+<p>Metric prefix functions are also provided. <code>MAGNITUDE.PREFIX(UNIT)</code>.</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="m">3</span><span class="p">.</span><span class="n">kilo</span><span class="p">(</span><span class="n">Gram</span><span class="p">)</span>
+<span class="m">10</span><span class="p">.</span><span class="n">milli</span><span class="p">(</span><span class="n">Metre</span><span class="p">)</span>
+<span class="m">4</span><span class="p">.</span><span class="n">deca</span><span class="p">(</span><span class="n">Metre</span><span class="p">)</span></code></pre></figure>
+
+</blockquote>
+
+<p>Math operations work as expected.</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="kd">val</span> <span class="py">sum</span> <span class="p">=</span>        <span class="n">mass1</span> <span class="p">+</span> <span class="n">mass2</span>
+<span class="kd">val</span> <span class="py">myLength</span> <span class="p">=</span> <span class="m">1</span><span class="p">.</span><span class="n">Metre</span> <span class="p">-</span> <span class="m">3</span><span class="p">.</span><span class="n">Foot</span>
+<span class="kd">val</span> <span class="py">distance</span> <span class="p">=</span>    <span class="n">rate</span> <span class="p">*</span> <span class="n">time</span>
+<span class="kd">val</span> <span class="py">mySpeed</span> <span class="p">=</span>  <span class="m">65</span><span class="p">.</span><span class="n">Mile</span> <span class="p">/</span> <span class="n">Hour</span></code></pre></figure>
+
+</blockquote>
+
+<p>You can also create ranges using the <code>..</code> operator or the <code>`±`</code> infix function.</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="m">2</span><span class="p">.</span><span class="n">Foot</span> <span class="p">/</span> <span class="m">1</span><span class="p">.</span><span class="n">Metre</span> <span class="k">in</span> <span class="m">60</span><span class="p">.</span><span class="n">Percent</span> <span class="err">`±`</span> <span class="m">5</span><span class="p">.</span><span class="n">Percent</span>   <span class="p">==</span> <span class="k">true</span>
+<span class="m">420</span><span class="p">.</span><span class="n">Degree</span> <span class="p">%</span> <span class="m">1</span><span class="p">.</span><span class="n">Turn</span> <span class="k">in</span> <span class="m">60</span><span class="p">.</span><span class="n">Degree</span> <span class="err">`±`</span> <span class="m">1</span><span class="p">.</span><span class="n">Degree</span>  <span class="p">==</span> <span class="k">true</span>
+<span class="m">65</span><span class="p">.</span><span class="n">Mile</span> <span class="p">/</span> <span class="n">Hour</span> <span class="p">*</span> <span class="m">27</span><span class="p">.</span><span class="n">Minute</span> <span class="k">in</span> <span class="m">30</span><span class="p">.</span><span class="n">Mile</span><span class="o">..</span><span class="m">29</span><span class="p">.</span><span class="n">Mile</span> <span class="p">==</span> <span class="k">true</span></code></pre></figure>
+
+</blockquote>
+
+<p><code>==</code> also works, but it is not recommended since <a href="http://docs.sun.com/source/806-3568/ncg_goldberg.html">floating point math is not exact</a>.</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="p">(</span><span class="m">1</span><span class="p">.</span><span class="n">kilo</span><span class="p">(</span><span class="n">Gram</span><span class="p">)</span> <span class="p">==</span> <span class="m">1000</span><span class="p">.</span><span class="n">Gram</span><span class="p">)</span>         <span class="p">==</span> <span class="k">true</span>
+<span class="p">(</span><span class="m">10</span><span class="p">.</span><span class="n">milli</span><span class="p">(</span><span class="n">Metre</span><span class="p">)</span> <span class="p">==</span> <span class="m">1</span><span class="p">.</span><span class="n">centi</span><span class="p">(</span><span class="n">Metre</span><span class="p">))</span> <span class="p">==</span> <span class="k">true</span>
+<span class="p">(</span><span class="m">60000</span><span class="p">.</span><span class="n">milli</span><span class="p">(</span><span class="n">Second</span><span class="p">)</span> <span class="p">==</span> <span class="m">1</span><span class="p">.</span><span class="n">Minute</span><span class="p">)</span>   <span class="p">==</span> <span class="k">true</span></code></pre></figure>
+
+</blockquote>
+
+<p>Note: <strong>quantities</strong> are represented by types. Do not use <strong>units</strong> as types.</p>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">bad</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="nc">FootPerSecond</span><span class="p">)</span> <span class="p">{</span> <span class="o">..</span><span class="p">.</span> <span class="p">}</span> <span class="c1">// this is incorrect.</span>
+<span class="n">bad</span><span class="p">(</span><span class="m">3</span><span class="p">.</span><span class="n">FootPerSecond</span><span class="p">)</span>              <span class="c1">// this won't compile</span>
+
+<span class="kd">data class</span> <span class="nc">Car</span><span class="p">(</span><span class="kd">val</span> <span class="py">topSpeed</span><span class="p">:</span> <span class="n">Speed</span><span class="p">,</span> <span class="kd">val</span> <span class="py">floorIt</span><span class="p">:</span> <span class="n">Acceleration</span><span class="p">)</span> <span class="p">{</span> <span class="o">..</span><span class="p">.</span> <span class="p">}</span>  <span class="c1">// good</span>
+<span class="kd">val</span> <span class="py">kunalsCar</span> <span class="p">=</span> <span class="n">Car</span><span class="p">(</span><span class="m">149.1</span><span class="p">.</span><span class="n">Mile</span> <span class="p">/</span> <span class="n">Hour</span><span class="p">,</span> <span class="m">100</span><span class="p">.</span><span class="n">Mile</span> <span class="p">/</span> <span class="n">Hour</span> <span class="p">/</span> <span class="m">4.7</span><span class="p">.</span><span class="n">Second</span><span class="p">)</span>    <span class="c1">// good</span>
+
+<span class="k">fun</span> <span class="nf">v</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="nc">Acceleration</span><span class="p">,</span> <span class="nv">v0</span><span class="p">:</span> <span class="nc">Velocity</span><span class="p">,</span> <span class="nv">t</span><span class="p">:</span> <span class="nc">Time</span><span class="p">):</span> <span class="nc">Velocity</span> <span class="p">=</span> <span class="n">v0</span> <span class="p">+</span> <span class="n">a</span> <span class="p">*</span> <span class="n">t</span>    <span class="c1">// good</span></code></pre></figure>
+
+</blockquote>
+
+
+<br>
+<a href="/setup/configuration" class="soft-btn">&#8249; Configuration</a>
+
+
+<a href="advanced" class="juicy-btn right">Advanced Usage &#8250;</a>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">units-of-measure</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">units-of-measure</li><li><a class="u-email" href="mailto:units@kunalsheth.info">units@kunalsheth.info</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/kunalsheth"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kunalsheth</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Type-safe dimensional analysis and unit conversion in Kotlin.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

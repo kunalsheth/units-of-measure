@@ -1,0 +1,25 @@
+general:
+  - html: <em>Faster</em> Development
+    link: /benefits/faster-development
+    desc: "Variables and functions will <strong>self-document</strong> their units. IDE autocomplete will become more accurate."
+
+  - html: <em>Cleaner</em> Code
+    link: /benefits/cleaner-code
+    desc: "Units will be <strong>converted automatically</strong>. No magic conversion factors. No massive variable names."
+
+  - html: Safe <em>Flexibility</em>
+    link: /benefits/safe-flexibility
+    desc: "Ships with a <strong>type-safe math library</strong> and support for defining complex <strong>generic bounds</strong>."
+
+specific:
+  - html: Lightweight
+    link: /setup/configuration
+    desc: "Generate <strong>only what you need</strong>. Optimized to deliver <strong><a href='http://github.com/team846'>real-time performance</a></strong> with a <strong>low memory footprint</strong>."
+
+  - html: 100% <em>Customizable</em>
+    link: /setup/configuration
+    desc: "<strong>Built for any application.</strong> Adding support for <strong>a new unit or quantity</strong> is as simple as adding a line to your build file."
+
+  - html: Introspect <em>Efficiently</em>
+    link: /usage/advanced
+    desc: "Ships with converter system for <strong>reading and writing unit metadata and values</strong> in logs and config files."

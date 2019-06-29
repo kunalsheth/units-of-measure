@@ -1,0 +1,48 @@
+file: uoms/units-of-measure.gradle
+
+structure: |-
+  generateUnitsOfMeasure {
+      relationships += r(
+              // ...
+      ) + r(
+              // ...
+      )
+      // ...
+
+      quantities += [
+              // ...
+      ].toSet()
+
+      unitsOfMeasure += [
+              // ...
+      ].toSet()
+  }
+
+snippets:
+  relationships: |-
+    relationships += r(
+            d(T: 1), d(T: 2), // time
+            d(L: 1), d(L: 2), // length
+    ) + r(
+            d(M: 1, L: 2, T: -3, I: -1), // volts
+            d(M: 1, L: 2, T: -3, I: -2), // ohms
+            d(I: 1),                     // amps
+            d(T: 1),                     // time
+    ) // ...
+  quantities: |-
+    quantities += [
+            q("Absement", d(L: 1, T: 1)),
+            q("AngularAbsement", d(A: 1, T: 1)),
+            // ...
+    ].toSet()
+  unitsOfMeasure: |-
+    unitsOfMeasure += [
+            u("Inch", 0.0254, d(L: 1)),
+            u("Foot", 0.3048, d(L: 1)),
+            u("EarthGravity", 9.80665, d(L: 1, T: -2)),
+            u("Turn", 2 * PI, d(A: 1)),
+            u("Rpm", 2 * PI / 60, d(A: 1, T: -1)),
+            u("Minute", 60, d(T: 1)),
+            u("VoltPerSecond", 1.0, d(L: 2, M: 1, T: -4, I: -1)),
+            // ...
+    ].toSet()

@@ -1,0 +1,112 @@
+car_class:
+  numeric: |-
+    /**
+     * @param topSpeedMph miles per hour
+     * @param floorItFeetPerSecondSquared feet per second squared
+     */
+    data class Car(
+            val topSpeedMph: Double,
+            val floorItFeetPerSecondSquared: Double
+    ) {
+        /**
+         * @param targetMph the target speed in miles per hour
+         * @return the time in seconds
+         */
+        fun estimateAccelTimeSeconds(targetMph: Double) =
+                // convert targetMph to ftps then divide by max acceleration
+                targetMph * 1.46667 / floorItFeetPerSecondSquared
+    }
+  uom: |-
+    data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
+        fun estimateAccel(target: Speed): Time = target / floorIt
+    }
+auto_convert:
+  numeric: |-
+    val colombs = 500.0 * 60 * 60 / 1000
+    val amperes = 3.7 / (10 * 1000)
+    val seconds = colombs / amperes
+    val days = seconds / 60 / 60 / 24
+    println(days)
+  uom: |-
+    val discharge: Time = 500.milli(Ampere) * Hour / 3.7.Volt * 10.kilo(Ohm)
+    println(discharge.Second)
+autocomplete:
+  numeric: |-
+    // ...
+    val emperical = 2.4 // LaFerrari
+    val kunalsCar = Car(149.1, 31.2)
+    assert(kunalsCar.estimateAccelTimeSeconds(60.0) < ‸‸‸)
+  uom: |-
+    // ...
+    val emperical = 2.4.Second // LaFerrari
+    val kunalsCar = Car(149.1.Mile / Hour, 100.Mile / Hour / 4.7.Second)
+    assert(kunalsCar.estimateAccel(60.Mile / Hour) < ‸‸‸)
+math:
+  trig:
+    function: |-
+      fun lawOfCosines(a: Length, b: Length, c: Length): Angle {
+          val asq = a * a // `L²` type
+          val bsq = b * b
+          val csq = c * c
+
+          return acos(
+                  (asq + bsq - csq) / (a * b * 2) // Dimensionless type
+          ) // `∠` type
+      }
+generics:
+  - text: Integrator
+    function: |-
+      fun <Q, SQDT> integrator(
+              times: (Q, Time) -> SQDT,
+              x1: Time, y1: Q
+      ): (Time, Q) -> SQDT
+
+              where SQDT : Quan<SQDT>,
+                    Q : Quan<Q> {
+          ...
+      }
+    call: |-
+      val i = integrator(::times, 0.Second, 0.Foot / Second)
+      var position = i(1.Second, 1.Foot / Second)
+      position = i(2.Second, 4.Foot / Second)
+      position = i(4.Second, 4.Foot / Second)
+      position = i(5.Second, 1.Foot / Second)
+    link: https://github.com/kunalsheth/uom-example-project/search?q=Integrator
+
+  - text: Differentiator
+    function: |-
+      fun <Q, DQDT> differentiator(
+              div: (Q, T) -> DQDT,
+              x1: Time, y1: Q
+      ): (Time, Q) -> DQDT
+
+              where Q : Quan<Q>,
+                    DQDT : Quan<DQDT> {
+          ...
+      }
+    call: |-
+      val d = differentiator(::div, 0.Second, 0.Foot)
+      var velocity = d(2.Second, 3.Foot)
+      velocity = i(5.Second, 9.Foot)
+      velocity = i(9.Second, 21.Foot)
+      velocity = i(14.Second, 36.Foot)
+    link: https://github.com/kunalsheth/uom-example-project/search?q=Differentiator
+
+  - text: Standard Deviation Calculator
+    function: |-
+      fun <Q, Q2> stdev(
+              times: (Q, Q) -> Q2,
+              init: Q
+      ): (Q) -> Q
+
+              where Q : Quan<Q>,
+                    Q2 : Quan<Q2> {
+          ...
+      }
+    call: |-
+      val s = stdev(::times, 0.Mole / Litre)
+      var stdev = s(0.20.Mole / Litre)
+      stdev = s(0.17.Mole / Litre)
+      stdev = s(0.22.Mole / Litre)
+      stdev = s(0.19.Mole / Litre)
+    link: https://github.com/kunalsheth/uom-example-project/search?q=STDEV

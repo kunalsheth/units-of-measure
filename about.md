@@ -1,18 +1,24 @@
 ---
-layout: page
-title: About
+layout:    progression_page
+title:     About
 permalink: /about/
+
+previous:
+    text: "Back to Home"
+    url:  /
+
+next:
+    text: "View on GitHub"
+    url:  https://github.com/kunalsheth/units-of-measure
 ---
+# About
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I started {{site.lib}} in early 2017 for use on my high school's [_FIRST_](https://www.firstinspires.org/robotics/frc) Robotics Competition team, [_The Funky Monkeys_](https://lynbrookrobotics.com).
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+> With many programmers and a 17,000 line, student-managed code base, unit-related bugs are inevitable. One option may be to document the units of every single variable while enforcing even stricter code-review, but this is not always possible, especially in the heat of competition.  
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+{{site.lib}} prevents incorrect code from ever deploying to our robot in the first place. 
 
+When developing control system software, real-time performance is a priority. This is why I've decided to use inline classes before they are fully matured.
 
-[jekyll-organization]: https://github.com/jekyll
+{{site.lib}} was originally distributed as an annotation processor, but was later repackaged as a gradle plugin to support multiplatform builds.

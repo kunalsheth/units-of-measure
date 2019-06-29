@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>units-of-measure | Type-safe dimensional analysis and unit conversion in Kotlin.</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="units-of-measure" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
+<meta property="og:description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
+<link rel="canonical" href="http://localhost:4000/setup/configuration.html" />
+<meta property="og:url" content="http://localhost:4000/setup/configuration.html" />
+<meta property="og:site_name" content="units-of-measure" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/setup/configuration.html","headline":"units-of-measure","description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="units-of-measure" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">units-of-measure</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <link rel="stylesheet" type="text/css" href="/assets/button.css">
+
+<h1 id="configuration">Configuration</h1>
+
+<h2 id="terminology">Terminology</h2>
+<p>Before we can start configuring <em>units-of-measure</em>, lets make sure we’re on the same page regarding some terminology:</p>
+
+<ol>
+  <li>
+    <dl>
+      <dt><a href="https://en.wikipedia.org/wiki/Dimensional_analysis">dimension</a></dt>
+      <dd>“Physical quantities that are of the same kind … (e.g., length or time or mass) have the same dimension and can be directly compared to other physical quantities of the same kind …, even if they are originally expressed in differing units of measure (such as yards and meters). If physical quantities have different dimensions (such as length vs. mass), they cannot be expressed in terms of similar units and cannot be compared in quantity…” <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><a href="https://en.wikipedia.org/wiki/Physical_quantity">quantity</a></dt>
+      <dd>“a property of a material that can be quantified by measurement. A physical quantity can be expressed as the combination of unit by a number. where the number is the magnitude . For example, 1 kg where 1 is magnitude and kg is unit.” <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><a href="https://en.wikipedia.org/wiki/Units_of_measurement">unit of measure</a></dt>
+      <dd>“a definite magnitude of a quantity … that is used as a standard for measurement of the same kind of quantity. … For example, a length is a physical quantity. The metre is a unit of length that represents a definite predetermined length.” <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><a href="https://en.wikipedia.org/wiki/Dimensional_analysis#Definition">base dimensions (L, M, T, I, Θ, N, J)</a></dt>
+      <dd>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: right">symbol</th>
+              <th style="text-align: left">SI base unit <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></th>
+              <th>dimension name <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: right"><strong>L</strong></td>
+              <td style="text-align: left">m</td>
+              <td>length</td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><strong>M</strong></td>
+              <td style="text-align: left">kg</td>
+              <td>mass</td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><strong>T</strong></td>
+              <td style="text-align: left">s</td>
+              <td>time</td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><strong>I</strong></td>
+              <td style="text-align: left">A</td>
+              <td>electric current</td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><strong>Θ</strong></td>
+              <td style="text-align: left">K</td>
+              <td>thermodynamic temperature</td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><strong>N</strong></td>
+              <td style="text-align: left">mol</td>
+              <td>amount of substance</td>
+            </tr>
+            <tr>
+              <td style="text-align: right"><strong>J</strong></td>
+              <td style="text-align: left">cd</td>
+              <td>luminous intensity</td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+    </dl>
+  </li>
+</ol>
+
+<h2 id="basic-configuration-structure">Basic Configuration Structure</h2>
+<details open="">
+<summary><code>uoms/units-of-measure.gradle</code></summary>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">generateUnitsOfMeasure</span> <span class="o">{</span>
+    <span class="n">relationships</span> <span class="o">+=</span> <span class="n">r</span><span class="o">(</span>
+            <span class="c1">// ...</span>
+    <span class="o">)</span> <span class="o">+</span> <span class="n">r</span><span class="o">(</span>
+            <span class="c1">// ...</span>
+    <span class="o">)</span>
+    <span class="c1">// ...</span>
+
+    <span class="n">quantities</span> <span class="o">+=</span> <span class="o">[</span>
+            <span class="c1">// ...</span>
+    <span class="o">].</span><span class="na">toSet</span><span class="o">()</span>
+
+    <span class="n">unitsOfMeasure</span> <span class="o">+=</span> <span class="o">[</span>
+            <span class="c1">// ...</span>
+    <span class="o">].</span><span class="na">toSet</span><span class="o">()</span>
+<span class="o">}</span></code></pre></figure>
+
+</blockquote>
+<a href="https://github.com/kunalsheth/uom-example-project/blob/master/uoms/units-of-measure.gradle">view complete configuration example</a>
+<p><!-- br doesn't work for some reason --></p>
+</details>
+<p></p>
+
+<h2 id="relationships">Relationships</h2>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">relationships</span> <span class="o">+=</span> <span class="n">r</span><span class="o">(</span>
+        <span class="n">d</span><span class="o">(</span><span class="nl">T:</span> <span class="mi">1</span><span class="o">),</span> <span class="n">d</span><span class="o">(</span><span class="nl">T:</span> <span class="mi">2</span><span class="o">),</span> <span class="c1">// time</span>
+        <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">1</span><span class="o">),</span> <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">2</span><span class="o">),</span> <span class="c1">// length</span>
+<span class="o">)</span> <span class="o">+</span> <span class="n">r</span><span class="o">(</span>
+        <span class="n">d</span><span class="o">(</span><span class="nl">M:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">L:</span> <span class="mi">2</span><span class="o">,</span> <span class="nl">T:</span> <span class="o">-</span><span class="mi">3</span><span class="o">,</span> <span class="nl">I:</span> <span class="o">-</span><span class="mi">1</span><span class="o">),</span> <span class="c1">// volts</span>
+        <span class="n">d</span><span class="o">(</span><span class="nl">M:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">L:</span> <span class="mi">2</span><span class="o">,</span> <span class="nl">T:</span> <span class="o">-</span><span class="mi">3</span><span class="o">,</span> <span class="nl">I:</span> <span class="o">-</span><span class="mi">2</span><span class="o">),</span> <span class="c1">// ohms</span>
+        <span class="n">d</span><span class="o">(</span><span class="nl">I:</span> <span class="mi">1</span><span class="o">),</span>                     <span class="c1">// amps</span>
+        <span class="n">d</span><span class="o">(</span><span class="nl">T:</span> <span class="mi">1</span><span class="o">),</span>                     <span class="c1">// time</span>
+<span class="o">)</span> <span class="c1">// ...</span></code></pre></figure>
+
+</blockquote>
+
+<p><code class="highlighter-rouge">relationships</code> tell <em>units-of-measure</em> which operator extension functions to generate.
+The <code class="highlighter-rouge">r(...)</code> function returns a set containing many different permutations of the given dimensions.
+<em>units-of-measure</em> will then generate the corresponding operator overloads and inline classes.</p>
+
+<p>For example, <code class="highlighter-rouge">relationships += r(d(L: 1), d(T: 1))</code> will generate the following on build:</p>
+<ul>
+  <li><code class="highlighter-rouge">Quan&lt;...&gt;</code> inline classes:
+    <ul>
+      <li><code class="highlighter-rouge">L</code> (specified by user)</li>
+      <li><code class="highlighter-rouge">T</code> (specified by user)</li>
+      <li><code class="highlighter-rouge">L⋅T⁻¹</code> (inferred from input)</li>
+      <li><code class="highlighter-rouge">L⋅T</code> (inferred from input)</li>
+      <li><code class="highlighter-rouge">L⁻¹⋅T</code> (inferred from input)</li>
+      <li>and a few others  (inferred from input)</li>
+    </ul>
+  </li>
+  <li>overloads for the <code class="highlighter-rouge">*</code> and <code class="highlighter-rouge">/</code> operators:
+    <ul>
+      <li><code class="highlighter-rouge">L</code> / <code class="highlighter-rouge">L</code> ↦ <code class="highlighter-rouge">Dimensionless</code></li>
+      <li><code class="highlighter-rouge">L</code> * <code class="highlighter-rouge">L</code> ↦ <code class="highlighter-rouge">L²</code></li>
+      <li><code class="highlighter-rouge">L</code> / <code class="highlighter-rouge">T</code> ↦ <code class="highlighter-rouge">L⋅T⁻¹</code></li>
+      <li><code class="highlighter-rouge">Dimensionless</code> * <code class="highlighter-rouge">L</code> ↦ <code class="highlighter-rouge">L</code></li>
+      <li><code class="highlighter-rouge">Dimensionless</code> * <code class="highlighter-rouge">Dimensionless</code> ↦ <code class="highlighter-rouge">Dimensionless</code></li>
+      <li><code class="highlighter-rouge">L²</code> / <code class="highlighter-rouge">L</code> ↦ <code class="highlighter-rouge">L</code></li>
+      <li><code class="highlighter-rouge">L²</code> / <code class="highlighter-rouge">L²</code> ↦ <code class="highlighter-rouge">Dimensionless</code></li>
+      <li><code class="highlighter-rouge">Dimensionless</code> / <code class="highlighter-rouge">L⋅T⁻¹</code> ↦ <code class="highlighter-rouge">L⁻¹⋅T</code></li>
+      <li><code class="highlighter-rouge">Dimensionless</code> * <code class="highlighter-rouge">L⋅T⁻¹</code> ↦ <code class="highlighter-rouge">L⋅T⁻¹</code></li>
+      <li><code class="highlighter-rouge">T²</code> / <code class="highlighter-rouge">L⋅T</code> ↦ <code class="highlighter-rouge">L⁻¹⋅T</code></li>
+      <li><code class="highlighter-rouge">T²</code> / <code class="highlighter-rouge">L⁻¹⋅T</code> ↦ <code class="highlighter-rouge">L⋅T</code></li>
+      <li>and many, many more</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Using the <code class="highlighter-rouge">r(...)</code> function sacrifices generated code size for ease of use.<br />
+To reduce the amount of generated code, individual instances of the <a href="https://github.com/kunalsheth/units-of-measure/blob/master/plugin/src/main/kotlin/info/kunalsheth/units/data/Relation.kt"><code class="highlighter-rouge">Relation</code></a> class can also be added to the <code class="highlighter-rouge">relationships</code> set.</p>
+
+<h2 id="quantities">Quantities</h2>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">quantities</span> <span class="o">+=</span> <span class="o">[</span>
+        <span class="n">q</span><span class="o">(</span><span class="s2">"Absement"</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">T:</span> <span class="mi">1</span><span class="o">)),</span>
+        <span class="n">q</span><span class="o">(</span><span class="s2">"AngularAbsement"</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">A:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">T:</span> <span class="mi">1</span><span class="o">)),</span>
+        <span class="c1">// ...</span>
+<span class="o">].</span><span class="na">toSet</span><span class="o">()</span></code></pre></figure>
+
+</blockquote>
+
+<p><em>units-of-measure</em>’s default naming scheme is not easy for humans to work with.<br />
+Use <code class="highlighter-rouge">quantities</code> to make <em>units-of-measure</em> define and use human-friendly typealiases in its generated DSL.</p>
+<ul>
+  <li>
+    <dl>
+      <dt><code class="highlighter-rouge">q("velocity", d(L: 1, T: -1))</code></dt>
+      <dd><code class="highlighter-rouge">L⋅T⁻¹</code> ⇔ <code class="highlighter-rouge">velocity</code></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><code class="highlighter-rouge">q("acceleration", d(L: 1, T: -2))</code></dt>
+      <dd><code class="highlighter-rouge">L⋅T⁻²</code> ⇔ <code class="highlighter-rouge">acceleration</code></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><code class="highlighter-rouge">q("force", d(M: 1, L: 1, T: -2))</code></dt>
+      <dd><code class="highlighter-rouge">L⋅M⋅T⁻²</code> ⇔ <code class="highlighter-rouge">force</code></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><code class="highlighter-rouge">q("electrical resistance", d(M: 1, L: 2, T: -3, I: -2))</code></dt>
+      <dd><code class="highlighter-rouge">L²⋅M⋅T⁻³⋅I⁻²</code> ⇔ <code class="highlighter-rouge">electrical resistance</code></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt><code class="highlighter-rouge">q("thermal conductivity", d(M: 1, L: 1, T: -3, Theta: -1))</code></dt>
+      <dd><code class="highlighter-rouge">L⋅M⋅T⁻³⋅Θ⁻¹</code> ⇔ <code class="highlighter-rouge">thermal conductivity</code></dd>
+    </dl>
+  </li>
+</ul>
+
+<p>Its okay to define multiple quantities for the same dimension.<br />
+(e.g. “speed” and “velocity” for <code class="highlighter-rouge">d(L: 1, T: -2)</code>)</p>
+
+<p>Its not okay to define the same quantity on multiple dimensions.<br />
+(e.g. “rate” in <code class="highlighter-rouge">d(L: 1, T: -1)</code> and “rate” in <code class="highlighter-rouge">d(L: 1, T: -2)</code>)</p>
+
+<p>For ease of use, <em>units-of-measure</em> comes bundled with all derived SI units &amp; quantities.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup><br />
+(area, volume, velocity, volumetric flow, acceleration, and many, many more.)</p>
+
+<p>These pre-defined quantities are all stored in the <code class="highlighter-rouge">quantities</code> set.
+One way to delete them is to write <code class="highlighter-rouge">quantities = ...</code> instead of <code class="highlighter-rouge">quantities += ...</code> in your configuration.</p>
+
+<h2 id="units-of-measure">Units of Measure</h2>
+<blockquote>
+
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">unitsOfMeasure</span> <span class="o">+=</span> <span class="o">[</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"Inch"</span><span class="o">,</span> <span class="mf">0.0254</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">1</span><span class="o">)),</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"Foot"</span><span class="o">,</span> <span class="mf">0.3048</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">1</span><span class="o">)),</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"EarthGravity"</span><span class="o">,</span> <span class="mf">9.80665</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">T:</span> <span class="o">-</span><span class="mi">2</span><span class="o">)),</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"Turn"</span><span class="o">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">A:</span> <span class="mi">1</span><span class="o">)),</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"Rpm"</span><span class="o">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">/</span> <span class="mi">60</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">A:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">T:</span> <span class="o">-</span><span class="mi">1</span><span class="o">)),</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"Minute"</span><span class="o">,</span> <span class="mi">60</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">T:</span> <span class="mi">1</span><span class="o">)),</span>
+        <span class="n">u</span><span class="o">(</span><span class="s2">"VoltPerSecond"</span><span class="o">,</span> <span class="mf">1.0</span><span class="o">,</span> <span class="n">d</span><span class="o">(</span><span class="nl">L:</span> <span class="mi">2</span><span class="o">,</span> <span class="nl">M:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">T:</span> <span class="o">-</span><span class="mi">4</span><span class="o">,</span> <span class="nl">I:</span> <span class="o">-</span><span class="mi">1</span><span class="o">)),</span>
+        <span class="c1">// ...</span>
+<span class="o">].</span><span class="na">toSet</span><span class="o">()</span></code></pre></figure>
+
+</blockquote>
+
+<p><code class="highlighter-rouge">unitsOfMeasure</code> defines unit names, conversion factors, and derived dimensions.<br />
+Given <code class="highlighter-rouge">unitsOfMeasure += u("Minute", 60.0, d(T: 1))</code>, <em>units-of-measure</em> will generate:</p>
+<ul>
+  <li><code class="highlighter-rouge">inline val Number.Minute: Time get() = ...</code></li>
+  <li><code class="highlighter-rouge">inline val T.Minute: Double get() = ...</code></li>
+  <li><code class="highlighter-rouge">object Minute : UomConverter&lt;T&gt;, Quan&lt;T&gt; ...</code> (useful for <a href="/usage/advanced.html">serialization</a>)</li>
+</ul>
+
+<p>To determine the conversion factor, <code class="highlighter-rouge">factorToSI</code>, when calling <code class="highlighter-rouge">u(...)</code>, use the following formula</p>
+<blockquote>
+  <p>SI Base Units * <code class="highlighter-rouge">factorToSI</code> = Custom Unit.</p>
+</blockquote>
+
+<p>For example:</p>
+<ul>
+  <li>1 second * <code class="highlighter-rouge">60.0</code> = 1 minute</li>
+  <li>1 metre⁻¹ ⋅ kilogram ⋅ second⁻² * <code class="highlighter-rouge">101325</code> = 1 atmosphere</li>
+</ul>
+
+<p>Its okay to define multiple units for the same dimension.<br />
+(e.g. “FootPerSecond” and “MilePerHour” for <code class="highlighter-rouge">d(L: 1, T: -1)</code>)</p>
+
+<p>Its not okay to define the same unit for multiple dimensions.<br />
+(e.g. “MyUnit” of <code class="highlighter-rouge">d(L: 1, T: -1)</code> and “MyUnit” of <code class="highlighter-rouge">d(L: 1, T: -2)</code>)</p>
+
+<p>For ease of use, <em>units-of-measure</em> comes bundled with all derived SI units &amp; quantities.<sup id="fnref:6:1"><a href="#fn:6" class="footnote">6</a></sup><br />
+(hertz, newton, pascal, joule, watt, coulomb, volt, farad, ohm, and many, many more.)</p>
+
+<p>These pre-defined quantities are all stored in the <code class="highlighter-rouge">unitsOfMeasure</code> set.
+One way to delete them is to write <code class="highlighter-rouge">unitsOfMeasure = ...</code> instead of <code class="highlighter-rouge">unitsOfMeasure += ...</code> in your configuration.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://en.wikipedia.org/wiki/Dimensional_analysis">https://en.wikipedia.org/wiki/Dimensional_analysis</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="https://en.wikipedia.org/wiki/Physical_quantity">https://en.wikipedia.org/wiki/Physical_quantity</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="https://en.wikipedia.org/wiki/Units_of_measurement">https://en.wikipedia.org/wiki/Units_of_measurement</a> <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p><a href="https://en.wikipedia.org/wiki/SI_base_unit">https://en.wikipedia.org/wiki/SI_base_unit</a> <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p><a href="https://en.wikipedia.org/wiki/Dimensional_analysis#Definition">https://en.wikipedia.org/wiki/Dimensional_analysis#Definition</a> <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p><a href="https://en.wikipedia.org/wiki/SI_derived_unit">https://en.wikipedia.org/wiki/SI_derived_unit</a> <a href="#fnref:6" class="reversefootnote">&#8617;</a> <a href="#fnref:6:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+
+<br>
+<a href="installation" class="soft-btn">&#8249; Installation</a>
+
+
+<a href="/usage/basic" class="juicy-btn right">Basic Usage &#8250;</a>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">units-of-measure</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">units-of-measure</li><li><a class="u-email" href="mailto:units@kunalsheth.info">units@kunalsheth.info</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/kunalsheth"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kunalsheth</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Type-safe dimensional analysis and unit conversion in Kotlin.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

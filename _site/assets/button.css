@@ -1,0 +1,105 @@
+/* lighten10 brand-color #5796e8        */
+/* brand-color           #2a7ae2 MINIMA */
+/* darken10 brand-color  #1a62bf        */
+/* darken20 brand-color  #144b92        */
+/* darken30 brand-color  #0e3466        */
+.cta-btn, .cta-btn:visited {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 0px;
+    width: 50%;
+    border: 1px solid #828282;
+    border-radius: 8px;
+    background: #2a7ae2;
+    background: linear-gradient(to bottom, #5796e8, #144b92); /* mid */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cta-btn:hover, .cta-btn:focus {
+    background: #5796e8;
+    background: linear-gradient(to bottom, #5796e8, #1a62bf); /* lighten */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cta-btn:active {
+    background: #144b92;
+    background: linear-gradient(to bottom, #1a62bf, #0e3466); /* darken */
+}
+
+
+/* text-color                 #111    MINIMA */
+
+/* lighten5 grey-color-light  #f5f5f5        */
+/* grey-color-light           #e8e8e8 MINIMA */
+/* darken10 grey-color-light  #cecece        */
+/* darken20 grey-color-light  #b5b5b5        */
+/* darken30 grey-color-light  #9b9b9b        */
+/* darken40 grey-color-light  #828282 MINIMA */
+/* darken50 grey-color-light  #686868        */
+.soft-btn, .soft-btn:visited {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background: #e8e8e8; /* mid */
+    color: #828282;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.soft-btn:hover, .soft-btn:focus {
+    background: #f5f5f5; /* lighten */
+    color: #9b9b9b;
+    text-decoration: none;
+}
+
+.soft-btn:active {
+    background: #cecece; /* darken */
+    color: #686868;
+}
+
+
+/* lighten45 brand-color #f4f8fd        */
+/* lighten40 brand-color #deeafa        */
+/* lighten30 brand-color #b1cef4        */
+/* lighten20 brand-color #84b2ee        */
+/* lighten10 brand-color #5796e8        */
+/* brand-color           #2a7ae2 MINIMA */
+/* darken10 brand-color  #1a62bf        */
+/* darken20 brand-color  #144b92        */
+/* darken30 brand-color  #0e3466        */
+/* darken40 brand-color  #081d38        */
+.juicy-btn, .juicy-btn:visited {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 15px;
+    border: 1px solid #deeafa;
+    border-radius: 3px;
+    background: #deeafa; /* mid */
+    color: #828282;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.juicy-btn:hover, .juicy-btn:focus {
+    background: #f4f8fd; /* lighten */
+    color: #9b9b9b;
+    text-decoration: none;
+}
+
+.juicy-btn:active {
+    background: #b1cef4; /* darken */
+    color: #828282;
+}
+
+
+.right {
+    text-align: right;
+    float: right;
+}

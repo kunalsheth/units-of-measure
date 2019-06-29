@@ -1,0 +1,66 @@
+github_root: 'https://github.com/kunalsheth/uom-example-project/blob/master/'
+
+files:
+  - file: build.gradle
+    content: |-
+      buildscript {
+          // ...
+          repositories {
+              // ...
+              maven { url 'http://repo.kunalsheth.info/' }
+          }
+          dependencies {
+              // ...
+              classpath 'info.kunalsheth.units:plugin:VERSION'
+          }
+      }
+      // ...
+
+  - file: settings.gradle
+    content: |-
+      // ...
+      include 'uoms'
+
+  - file: uoms/build.gradle
+    content: |-
+      apply plugin: 'org.jetbrains.kotlin.multiplatform'
+      apply plugin: 'info.kunalsheth.units.gradle'
+
+      repositories.mavenCentral()
+
+      kotlin {
+          jvm()
+      //  js()
+      //  linuxX64()
+
+          sourceSets {
+              commonMain {
+                  kotlin.srcDir(generateUnitsOfMeasure.generatedSrcDir)
+                  dependencies { implementation kotlin('stdlib-common') }
+              }
+              jvm { dependencies { implementation kotlin('stdlib-jdk8') } }
+      //      js { dependencies { implementation kotlin('stdlib-js') } }
+              all { languageSettings.enableLanguageFeature('InlineClasses') }
+          }
+          targets.all {
+              compilations.all { compileKotlinTask.dependsOn(generateUnitsOfMeasure) }
+          }
+      }
+      apply from: 'units-of-measure.gradle'
+
+  - file: uoms/units-of-measure.gradle
+    content: |-
+      generateUnitsOfMeasure {
+          relationships += // ...
+          quantities += // ...
+          unitsOfMeasure += // ...
+      }
+
+  - file: myapp/build.gradle
+    content: |-
+      // ...
+      dependencies {
+          implementation project(':uoms')
+          // ...
+      }
+      // ...
