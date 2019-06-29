@@ -34,12 +34,12 @@ autocomplete:
   numeric: |-
     // ...
     val emperical = 2.4 // LaFerrari
-    val kunalsCar = Car(149.1, 31.2)
+    val kunalsCar = Car(217, 31.2)
     assert(kunalsCar.estimateAccelTimeSeconds(60.0) < ‸‸‸)
   uom: |-
     // ...
     val emperical = 2.4.Second // LaFerrari
-    val kunalsCar = Car(149.1.Mile / Hour, 100.Mile / Hour / 4.7.Second)
+    val kunalsCar = Car(217.Mile / Hour, 100.Mile / Hour / 4.7.Second)
     assert(kunalsCar.estimateAccel(60.Mile / Hour) < ‸‸‸)
 math:
   trig:

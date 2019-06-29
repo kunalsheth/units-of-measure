@@ -4,7 +4,7 @@ layout: home
 <h1>Type-safe dimensional analysis and unit conversion</h1>
 
 <br>
-![units-of-measure]({% link assets/example1.png %})
+![units-of-measure]({% link assets/param-align.png %})
 
 <link rel="stylesheet" href="{% link assets/button.css %}">
 <center><h2>
