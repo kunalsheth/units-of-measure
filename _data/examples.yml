@@ -29,7 +29,7 @@ auto_convert:
     println(days)
   uom: |-
     val discharge: Time = 500.milli(Ampere) * Hour / 3.7.Volt * 10.kilo(Ohm)
-    println(discharge.Second)
+    println(discharge.Day)
 autocomplete:
   numeric: |-
     // ...
