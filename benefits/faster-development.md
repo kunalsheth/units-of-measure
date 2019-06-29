@@ -34,6 +34,6 @@ If we were using only doubles, the IDE would just spit out every number in scope
 ![IDE autocomplete suggestions when using doubles]({% link assets/double-autocomplete.png %})
 
 
-However, with {{site.lib}}, the IDE only suggests expressions (both generic and concrete) which can satisfy the expression's dimensional analysis.
+However, with {{site.lib}}, the IDE only suggests expressions (both generic and concrete) which can satisfy the rules of dimensional analysis.
 {% include kotlin.html src=site.data.examples.autocomplete.uom %}
 ![IDE autocomplete suggestions when using {{site.title}}]({% link assets/uom-autocomplete.png %})
