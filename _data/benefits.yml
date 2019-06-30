@@ -20,6 +20,6 @@ specific:
     link: /setup/configuration
     desc: "<strong>Built for any application.</strong> Adding support for <strong>a new unit or quantity</strong> is as simple as adding a line to your build file."
 
-  - html: Introspect <em>Efficiently</em>
+  - html: Fast <em>Introspection</em>
     link: /usage/advanced
-    desc: "Ships with converter system for <strong>reading and writing unit metadata and values</strong> in logs and config files."
+    desc: "Generates converters to <strong>handle quantity metadata without reflection</strong> for configuration and logging."
