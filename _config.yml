@@ -7,6 +7,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 baseurl: ""
 url: "http://units.kunalsheth.info"
+plugins:
+  - jekyll-sitemap
 
 github_username: kunalsheth
 google_analytics: UA-110054552-2
