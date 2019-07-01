@@ -1,6 +1,43 @@
 ---
 layout: home
 ---
+<script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "units-of-measure",
+            "url": "https://github.com/kunalsheth/units-of-measure",
+            "downloadUrl": "http://units.kunalsheth.info/setup/installation.html",
+            "screenshot": "http://units.kunalsheth.info/assets/param-align.png",
+            "review": [
+                {
+                    "@type": "Review",
+                    "reviewBody": "Variables and functions will self-document their units. IDE autocomplete will become more accurate."
+                },
+                {
+                    "@type": "Review",
+                    "reviewBody": "Units will be converted automatically. No magic conversion factors. No massive variable names."
+                },
+                {
+                    "@type": "Review",
+                    "reviewBody": "Ships with a type-safe math library and support for defining complex generic bounds."
+                },
+                {
+                    "@type": "Review",
+                    "reviewBody": "Generate only what you need. Optimized to deliver real-time performance with a low memory footprint."
+                },
+                {
+                    "@type": "Review",
+                    "reviewBody": "Built for any application.</STRONG> Adding support for a new unit or quantity is as simple as adding a line to your build file."
+                },
+                {
+                    "@type": "Review",
+                    "reviewBody": "Generates converters to handle quantity metadata without reflection for configuration and logging."
+                }
+            ]
+        }
+</script>
+    
 <h1>Type-safe dimensional analysis and unit conversion</h1>
 
 <br>
