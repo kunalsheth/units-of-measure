@@ -1,8 +1,7 @@
 ---
 layout: home
+title: Type-safe dimensional analysis and unit conversion
 ---
-<h1>Type-safe dimensional analysis and unit conversion</h1>
-
 <br>
 ![units-of-measure]({% link assets/param-align.png %})
 
