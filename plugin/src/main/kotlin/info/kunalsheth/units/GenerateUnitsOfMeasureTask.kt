@@ -86,7 +86,8 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
                     I = (params["I"] ?: 0) as Int,
                     Theta = (params["Theta"] ?: 0) as Int,
                     N = (params["N"] ?: 0) as Int,
-                    J = (params["J"] ?: 0) as Int
+                    J = (params["J"] ?: 0) as Int,
+                    C = (params["C"] ?: 0) as Int
             ) else Dimension()
 
     fun d(params: Map<String, Any>?) = dimension(params)

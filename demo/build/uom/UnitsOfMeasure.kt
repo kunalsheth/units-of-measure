@@ -48,8 +48,8 @@ interface UomConverter<Q : Quan<Q>> {
 )
 fun <Q : Quan<Q>> box(x: Q) = x as Quan<Q>
 
-typealias `L` = L1A0M0T0I0Theta0N0J0
-inline class L1A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L`> {
+typealias `L` = L1A0M0T0I0Theta0N0J0C0
+inline class L1A0M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L`> {
     override val siValue get() = underlying
     override val abrev get() = "m"
 
@@ -109,58 +109,106 @@ object `Foot` : UomConverter<`L`>,
 
 typealias `Length` = `L`
 
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L`.div(that: Quan<`L`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L`.div(that: `L`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L`>, that: Quan<`L`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L`.times(that: Quan<`L`>) = `L²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L`.times(that: `L`) = `L²`(this.siValue * that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L`>, that: Quan<`L`>) = thiz.run { `L²`(this.siValue * that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L`.div(that: Quan<`T`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L`.div(that: `T`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L`>, that: Quan<`T`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L`.times(that: Quan<`T`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L`.times(that: `T`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L`>, that: Quan<`T`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L`.div(that: Quan<`Dimensionless`>) = `L`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L`.div(that: `Dimensionless`) = `L`(this.siValue / that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L`>, that: Quan<`Dimensionless`>) = thiz.run { `L`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L`.times(that: Quan<`Dimensionless`>) = `L`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L`.times(that: `Dimensionless`) = `L`(this.siValue * that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L`>, that: Quan<`Dimensionless`>) = thiz.run { `L`(this.siValue * that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L`.div(that: Quan<`L⋅T⁻¹`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L`.div(that: `L⋅T⁻¹`) = `T`(this.siValue / that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `L`.times(that: Quan<`L⁻¹⋅T`>) = `T`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `L`.times(that: `L⁻¹⋅T`) = `T`(this.siValue * that.siValue)
-@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun times(thiz: Quan<`L`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `T`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L`.div(that: Quan<`$`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L`.div(that: `$`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L`>, that: Quan<`$`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L`.times(that: Quan<`$`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L`.times(that: `$`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L`>, that: Quan<`$`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L`.div(that: Quan<`L³`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L`.div(that: `L³`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L`>, that: Quan<`L³`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L`.times(that: Quan<`L³`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L`.times(that: `L³`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L`>, that: Quan<`L³`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L`.times(that: Quan<`L⁻¹⋅$`>) = `$`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L`.times(that: `L⁻¹⋅$`) = `$`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `$`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L`.div(that: Quan<`L⋅$⁻¹`>) = `$`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L`.div(that: `L⋅$⁻¹`) = `$`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `$`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L`.times(that: Quan<`L²`>) = `L³`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L`.times(that: `L²`) = `L³`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L`>, that: Quan<`L²`>) = thiz.run { `L³`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L`.div(that: Quan<`L⁻²`>) = `L³`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L`.div(that: `L⁻²`) = `L³`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L`>, that: Quan<`L⁻²`>) = thiz.run { `L³`(this.siValue / that.siValue) }
 
 
-typealias `Dimensionless` = L0A0M0T0I0Theta0N0J0
-inline class L0A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`Dimensionless`> {
+typealias `Dimensionless` = L0A0M0T0I0Theta0N0J0C0
+inline class L0A0M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`Dimensionless`> {
     override val siValue get() = underlying
     override val abrev get() = ""
 
@@ -218,160 +266,268 @@ object `Percent` : UomConverter<`Dimensionless`>,
 }
 
 
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.div(that: Quan<`Dimensionless`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.div(that: `Dimensionless`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`Dimensionless`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.times(that: Quan<`L`>) = `L`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.times(that: `L`) = `L`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L`>) = thiz.run { `L`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.times(that: Quan<`Dimensionless`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.times(that: `Dimensionless`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`Dimensionless`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.times(that: Quan<`T`>) = `T`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.times(that: `T`) = `T`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`T`>) = thiz.run { `T`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²`>) = `L²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.times(that: `L²`) = `L²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²`>) = thiz.run { `L²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `Dimensionless`.div(that: Quan<`L⋅T⁻¹`>) = `L⁻¹⋅T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `Dimensionless`.div(that: `L⋅T⁻¹`) = `L⁻¹⋅T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⁻¹⋅T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `Dimensionless`.times(that: Quan<`L⋅T⁻¹`>) = `L⋅T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `Dimensionless`.times(that: `L⋅T⁻¹`) = `L⋅T⁻¹`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T1I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.times(that: Quan<`L⋅T`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.times(that: `L⋅T`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅T`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `Dimensionless`.div(that: Quan<`L⁻¹⋅T`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `Dimensionless`.div(that: `L⁻¹⋅T`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `Dimensionless`.times(that: Quan<`L⁻¹⋅T`>) = `L⁻¹⋅T`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `Dimensionless`.times(that: `L⁻¹⋅T`) = `L⁻¹⋅T`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `L⁻¹⋅T`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T2I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T2I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.times(that: Quan<`T²`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T2I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T2I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.times(that: `T²`) = `T²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0T2I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T2I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`T²`>) = thiz.run { `T²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `Dimensionless`.times(that: Quan<`L⋅T⁻²`>) = `L⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `Dimensionless`.times(that: `L⋅T⁻²`) = `L⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `L⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²⋅T⁻²`>) = `L²⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `Dimensionless`.times(that: `L²⋅T⁻²`) = `L²⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅T⁻²`>) = thiz.run { `L²⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `Dimensionless`.div(that: Quan<`T`>) = `T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `Dimensionless`.div(that: `T`) = `T⁻¹`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`T`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T3_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²⋅T⁻³`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_concrete")
 operator fun `Dimensionless`.times(that: `L²⋅T⁻³`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅T⁻³`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `Dimensionless`.div(that: Quan<`T⁻¹`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `Dimensionless`.div(that: `T⁻¹`) = `T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`T⁻¹`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `Dimensionless`.times(that: Quan<`T⁻¹`>) = `T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `Dimensionless`.times(that: `T⁻¹`) = `T⁻¹`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`T⁻¹`>) = thiz.run { `T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T4_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T4_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²⋅T⁻⁴`>) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T4_concrete")
 operator fun `Dimensionless`.times(that: `L²⋅T⁻⁴`) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅T⁻⁴`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²⋅M⋅T⁻³`>) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `Dimensionless`.times(that: `L²⋅M⋅T⁻³`) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L4A0M2I0Theta0N0J0_per_T6_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L4A0M2I0Theta0N0J0C0_per_T6_generic")
 operator fun `Dimensionless`.times(that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L4A0M2I0Theta0N0J0_per_T6_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L4A0M2I0Theta0N0J0C0_per_T6_concrete")
 operator fun `Dimensionless`.times(that: `L⁴⋅M²⋅T⁻⁶`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L4A0M2I0Theta0N0J0_per_T6_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L4A0M2I0Theta0N0J0C0_per_T6_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `Dimensionless`.div(that: Quan<`L²⋅M⋅T⁻⁴`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `Dimensionless`.div(that: `L²⋅M⋅T⁻⁴`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²⋅M⋅T⁻⁴`>) = `L²⋅M⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `Dimensionless`.times(that: `L²⋅M⋅T⁻⁴`) = `L²⋅M⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T2_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_generic")
 operator fun `Dimensionless`.times(that: Quan<`L²⋅M⋅T⁻²`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_concrete")
 operator fun `Dimensionless`.times(that: `L²⋅M⋅T⁻²`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L²⋅M⋅T⁻²`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `Dimensionless`.div(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `Dimensionless`.div(that: `L⁻²⋅M⁻¹⋅T⁴`) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `Dimensionless`.times(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `Dimensionless`.times(that: `L⁻²⋅M⁻¹⋅T⁴`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue * that.siValue)
-@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `Dimensionless`.times(that: Quan<`$`>) = `$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `Dimensionless`.times(that: `$`) = `$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`$`>) = thiz.run { `$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `Dimensionless`.times(that: Quan<`L³`>) = `L³`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `Dimensionless`.times(that: `L³`) = `L³`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L³`>) = thiz.run { `L³`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C2_generic")
+operator fun `Dimensionless`.times(that: Quan<`$²`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C2_concrete")
+operator fun `Dimensionless`.times(that: `$²`) = `$²`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C2_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`$²`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `Dimensionless`.div(that: Quan<`L⁻³⋅$`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `Dimensionless`.div(that: `L⁻³⋅$`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⁻³⋅$`>) = `L⁻³⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `Dimensionless`.times(that: `L⁻³⋅$`) = `L⁻³⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⁻³⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `Dimensionless`.times(that: Quan<`L³⋅$`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `Dimensionless`.times(that: `L³⋅$`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L³⋅$`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `Dimensionless`.div(that: Quan<`L³⋅$⁻¹`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `Dimensionless`.div(that: `L³⋅$⁻¹`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `Dimensionless`.times(that: Quan<`L³⋅$⁻¹`>) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `Dimensionless`.times(that: `L³⋅$⁻¹`) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L³⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L6A0M0T0I0Theta0N0J0C0_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⁶`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L6A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `Dimensionless`.times(that: `L⁶`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L6A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁶`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `Dimensionless`.div(that: Quan<`L⁻¹⋅$`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `Dimensionless`.div(that: `L⁻¹⋅$`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⁻¹⋅$`>) = `L⁻¹⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `Dimensionless`.times(that: `L⁻¹⋅$`) = `L⁻¹⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⁻¹⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⋅$`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `Dimensionless`.times(that: `L⋅$`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅$`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `Dimensionless`.div(that: Quan<`L⋅$⁻¹`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `Dimensionless`.div(that: `L⋅$⁻¹`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⋅$⁻¹`>) = `L⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `Dimensionless`.times(that: `L⋅$⁻¹`) = `L⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `Dimensionless`.div(that: Quan<`L²`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `Dimensionless`.div(that: `L²`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L²`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⁴`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `Dimensionless`.times(that: `L⁴`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁴`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `Dimensionless`.div(that: Quan<`L⁻²`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `Dimensionless`.div(that: `L⁻²`) = `L²`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻²`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⁻²`>) = `L⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `Dimensionless`.times(that: `L⁻²`) = `L⁻²`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`Dimensionless`>, that: Quan<`L⁻²`>) = thiz.run { `L⁻²`(this.siValue * that.siValue) }
 
 
-typealias `L²` = L2A0M0T0I0Theta0N0J0
-inline class L2A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L²`> {
+typealias `L²` = L2A0M0T0I0Theta0N0J0C0
+inline class L2A0M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L²`> {
     override val siValue get() = underlying
     override val abrev get() = "m²"
 
@@ -404,52 +560,136 @@ inline class L2A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L²`>
 
 typealias `Area` = `L²`
 
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²`.div(that: Quan<`L`>) = `L`(this.siValue / that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²`.div(that: `L`) = `L`(this.siValue / that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²`>, that: Quan<`L`>) = thiz.run { `L`(this.siValue / that.siValue) }
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L2A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²`.div(that: Quan<`L²`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Divide_L2A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²`.div(that: `L²`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L2A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²`>, that: Quan<`L²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²`.div(that: Quan<`Dimensionless`>) = `L²`(this.siValue / that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²`.div(that: `Dimensionless`) = `L²`(this.siValue / that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²`>, that: Quan<`Dimensionless`>) = thiz.run { `L²`(this.siValue / that.siValue) }
-@JvmName("L2A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²`.times(that: Quan<`Dimensionless`>) = `L²`(this.siValue * that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²`.times(that: `Dimensionless`) = `L²`(this.siValue * that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²`>, that: Quan<`Dimensionless`>) = thiz.run { `L²`(this.siValue * that.siValue) }
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²`.div(that: Quan<`L⋅T⁻¹`>) = `L⋅T`(this.siValue / that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²`.div(that: `L⋅T⁻¹`) = `L⋅T`(this.siValue / that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L²`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅T`(this.siValue / that.siValue) }
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²`.div(that: Quan<`L⋅T`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²`.div(that: `L⋅T`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²`>, that: Quan<`L⋅T`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L2A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `L²`.times(that: Quan<`L⁻¹⋅T`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L2A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `L²`.times(that: `L⁻¹⋅T`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L2A0M0T0I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun times(thiz: Quan<`L²`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L²`.times(that: Quan<`L²`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L²`.times(that: `L²`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L²`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L²`.times(that: Quan<`L`>) = `L³`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L²`.times(that: `L`) = `L³`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L`>) = thiz.run { `L³`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L²`.times(that: Quan<`L⁻³⋅$`>) = `L⁻¹⋅$`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L²`.times(that: `L⁻³⋅$`) = `L⁻¹⋅$`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⁻¹⋅$`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L²`.div(that: Quan<`L³⋅$⁻¹`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L²`.div(that: `L³⋅$⁻¹`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L²`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L²`.div(that: Quan<`L⁻¹⋅$`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L²`.div(that: `L⁻¹⋅$`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`L²`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L²`.times(that: Quan<`L⁻¹⋅$`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L²`.times(that: `L⁻¹⋅$`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L²`.div(that: Quan<`L⋅$`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L²`.div(that: `L⋅$`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L²`>, that: Quan<`L⋅$`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L²`.times(that: Quan<`L⋅$`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L²`.times(that: `L⋅$`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L⋅$`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L²`.div(that: Quan<`L⋅$⁻¹`>) = `L⋅$`(this.siValue / that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L²`.div(that: `L⋅$⁻¹`) = `L⋅$`(this.siValue / that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L²`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⋅$`(this.siValue / that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L²`.times(that: Quan<`L⋅$⁻¹`>) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L²`.times(that: `L⋅$⁻¹`) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L³⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L²`.div(that: Quan<`L⁴`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L²`.div(that: `L⁴`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L²`>, that: Quan<`L⁴`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L²`.times(that: Quan<`L⁴`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L²`.times(that: `L⁴`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L⁴`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L²`.div(that: Quan<`L⁻²`>) = `L⁴`(this.siValue / that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L²`.div(that: `L⁻²`) = `L⁴`(this.siValue / that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L²`>, that: Quan<`L⁻²`>) = thiz.run { `L⁴`(this.siValue / that.siValue) }
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L²`.times(that: Quan<`L⁻²`>) = `Dimensionless`(this.siValue * that.siValue)
+// @JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L²`.times(that: `L⁻²`) = `Dimensionless`(this.siValue * that.siValue)
+@JvmName("L2A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L²`>, that: Quan<`L⁻²`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
 
 
-typealias `T` = L0A0M0T1I0Theta0N0J0
-inline class L0A0M0T1I0Theta0N0J0(internal val underlying: Double) : Quan<`T`> {
+typealias `T` = L0A0M0T1I0Theta0N0J0C0
+inline class L0A0M0T1I0Theta0N0J0C0(internal val underlying: Double) : Quan<`T`> {
     override val siValue get() = underlying
     override val abrev get() = "s"
 
@@ -488,15 +728,6 @@ object `Second` : UomConverter<`T`>,
     override fun invoke(x: `T`) = x.`Second`
 }
 
-inline val Number.`Hour`: `Time` get() = `T`(toDouble() * 3600.0)
-inline val `T`.`Hour` get() = siValue * 2.777777777777778E-4
-object `Hour` : UomConverter<`T`>,
-    Quan<`T`> by box(`T`(3600.0)) {
-    override val unitName = "Hour"
-    override fun invoke(x: Double) = x.`Hour`
-    override fun invoke(x: `T`) = x.`Hour`
-}
-
 inline val Number.`Minute`: `Time` get() = `T`(toDouble() * 60.0)
 inline val `T`.`Minute` get() = siValue * 0.016666666666666666
 object `Minute` : UomConverter<`T`>,
@@ -506,109 +737,118 @@ object `Minute` : UomConverter<`T`>,
     override fun invoke(x: `T`) = x.`Minute`
 }
 
+inline val Number.`Hour`: `Time` get() = `T`(toDouble() * 3600.0)
+inline val `T`.`Hour` get() = siValue * 2.777777777777778E-4
+object `Hour` : UomConverter<`T`>,
+    Quan<`T`> by box(`T`(3600.0)) {
+    override val unitName = "Hour"
+    override fun invoke(x: Double) = x.`Hour`
+    override fun invoke(x: `T`) = x.`Hour`
+}
+
 
 typealias `Time` = `T`
 
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T`.div(that: Quan<`L`>) = `L⁻¹⋅T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T`.div(that: `L`) = `L⁻¹⋅T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T`>, that: Quan<`L`>) = thiz.run { `L⁻¹⋅T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `T`.div(that: Quan<`T`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `T`.div(that: `T`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T`>, that: Quan<`T`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T`.times(that: Quan<`L`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T`.times(that: `L`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `T`.times(that: Quan<`T`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `T`.times(that: `T`) = `T²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`T`>) = thiz.run { `T²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T`.div(that: Quan<`Dimensionless`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T`.div(that: `Dimensionless`) = `T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T`>, that: Quan<`Dimensionless`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T`.times(that: Quan<`Dimensionless`>) = `T`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T`.times(that: `Dimensionless`) = `T`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`Dimensionless`>) = thiz.run { `T`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `T`.times(that: Quan<`L⋅T⁻¹`>) = `L`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `T`.times(that: `L⋅T⁻¹`) = `L`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `T`.div(that: Quan<`L⁻¹⋅T`>) = `L`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `T`.div(that: `L⁻¹⋅T`) = `L`(this.siValue / that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun div(thiz: Quan<`T`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `L`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `T`.times(that: Quan<`L⋅T⁻²`>) = `L⋅T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `T`.times(that: `L⋅T⁻²`) = `L⋅T⁻¹`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `L⋅T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T3_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_generic")
 operator fun `T`.times(that: Quan<`L²⋅T⁻³`>) = `L²⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_concrete")
 operator fun `T`.times(that: `L²⋅T⁻³`) = `L²⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L²⋅T⁻³`>) = thiz.run { `L²⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `T`.times(that: Quan<`T⁻¹`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `T`.times(that: `T⁻¹`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`T⁻¹`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T4_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T4_generic")
 operator fun `T`.times(that: Quan<`L²⋅T⁻⁴`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T4_concrete")
 operator fun `T`.times(that: `L²⋅T⁻⁴`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M0I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M0I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L²⋅T⁻⁴`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `T`.div(that: Quan<`L²⋅M⋅T⁻³`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `T`.div(that: `L²⋅M⋅T⁻³`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`T`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `T`.times(that: Quan<`L²⋅M⋅T⁻³`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `T`.times(that: `L²⋅M⋅T⁻³`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `T`.times(that: Quan<`L²⋅M⋅T⁻⁴`>) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `T`.times(that: `L²⋅M⋅T⁻⁴`) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`T`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `T`.div(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T1I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `T`.div(that: `L⁻²⋅M⁻¹⋅T⁴`) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L0A0M0T1I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L0A0M0T1I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun div(thiz: Quan<`T`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue / that.siValue) }
 
 
-typealias `L⋅T⁻¹` = L1A0M0I0Theta0N0J0_per_T1
-inline class L1A0M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`L⋅T⁻¹`> {
+typealias `L⋅T⁻¹` = L1A0M0I0Theta0N0J0C0_per_T1
+inline class L1A0M0I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`L⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅s⁻¹"
 
@@ -643,82 +883,82 @@ typealias `Speed` = `L⋅T⁻¹`
 
 typealias `Velocity` = `L⋅T⁻¹`
 
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T⁻¹`.div(that: Quan<`L⋅T⁻¹`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T⁻¹`.div(that: `L⋅T⁻¹`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`T`>) = `L`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻¹`.times(that: `T`) = `L`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`T`>) = thiz.run { `L`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻¹`.div(that: Quan<`Dimensionless`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻¹`.div(that: `Dimensionless`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`Dimensionless`>) = `L⋅T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻¹`.times(that: `Dimensionless`) = `L⋅T⁻¹`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`L⋅T`>) = `L²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻¹`.times(that: `L⋅T`) = `L²`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`L⋅T`>) = thiz.run { `L²`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`L⁻¹⋅T`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `L⋅T⁻¹`.times(that: `L⁻¹⋅T`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T2I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T2I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`T²`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T2I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T2I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻¹`.times(that: `T²`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T2I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T2I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`T²`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`L⋅T⁻¹`>) = `L²⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T⁻¹`.times(that: `L⋅T⁻¹`) = `L²⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L²⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L⋅T⁻¹`.div(that: Quan<`L⋅T⁻²`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L⋅T⁻¹`.div(that: `L⋅T⁻²`) = `T`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`L⋅T⁻²`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L⋅T⁻¹`.times(that: `L⋅T⁻²`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻¹`.div(that: Quan<`T`>) = `L⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻¹`.div(that: `T`) = `L⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`T`>) = thiz.run { `L⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`T⁻¹`>) = `L⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T⁻¹`.times(that: `T⁻¹`) = `L⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L⋅T⁻¹`>, that: Quan<`T⁻¹`>) = thiz.run { `L⋅T⁻²`(this.siValue * that.siValue) }
 
 
-typealias `L⋅T` = L1A0M0T1I0Theta0N0J0
-inline class L1A0M0T1I0Theta0N0J0(internal val underlying: Double) : Quan<`L⋅T`> {
+typealias `L⋅T` = L1A0M0T1I0Theta0N0J0C0
+inline class L1A0M0T1I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L⋅T`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅s"
 
@@ -749,76 +989,76 @@ inline class L1A0M0T1I0Theta0N0J0(internal val underlying: Double) : Quan<`L⋅T
 }
 
 
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.div(that: Quan<`L`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.div(that: `L`) = `T`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`L`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.div(that: Quan<`L⋅T`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.div(that: `L⋅T`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`L⋅T`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.div(that: Quan<`T`>) = `L`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.div(that: `T`) = `L`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`T`>) = thiz.run { `L`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.div(that: Quan<`Dimensionless`>) = `L⋅T`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.div(that: `Dimensionless`) = `L⋅T`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅T`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.times(that: Quan<`Dimensionless`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.times(that: `Dimensionless`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L2A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.div(that: Quan<`L²`>) = `L⁻¹⋅T`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L2A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.div(that: `L²`) = `L⁻¹⋅T`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L2A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`L²`>) = thiz.run { `L⁻¹⋅T`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T`.div(that: Quan<`L⋅T⁻¹`>) = `T²`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T`.div(that: `L⋅T⁻¹`) = `T²`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `T²`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T`.times(that: Quan<`L⋅T⁻¹`>) = `L²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T`.times(that: `L⋅T⁻¹`) = `L²`(this.siValue * that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L⋅T`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L²`(this.siValue * that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `L⋅T`.div(that: Quan<`L⁻¹⋅T`>) = `L²`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `L⋅T`.div(that: `L⁻¹⋅T`) = `L²`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `L²`(this.siValue / that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `L⋅T`.times(that: Quan<`L⁻¹⋅T`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `L⋅T`.times(that: `L⁻¹⋅T`) = `T²`(this.siValue * that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Multiply_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Multiply_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun times(thiz: Quan<`L⋅T`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `T²`(this.siValue * that.siValue) }
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T2I0Theta0N0J0_generic")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T2I0Theta0N0J0C0_generic")
 operator fun `L⋅T`.div(that: Quan<`T²`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T2I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T2I0Theta0N0J0C0_concrete")
 operator fun `L⋅T`.div(that: `T²`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L1A0M0T1I0Theta0N0J0_Divide_L0A0M0T2I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0T1I0Theta0N0J0C0_Divide_L0A0M0T2I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T`>, that: Quan<`T²`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
 
 
-typealias `L⁻¹⋅T` = A0M0T1I0Theta0N0J0_per_L1
-inline class A0M0T1I0Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅T`> {
+typealias `L⁻¹⋅T` = A0M0T1I0Theta0N0J0C0_per_L1
+inline class A0M0T1I0Theta0N0J0C0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅T`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅s"
 
@@ -849,52 +1089,52 @@ inline class A0M0T1I0Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`
 }
 
 
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Divide_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Divide_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `L⁻¹⋅T`.div(that: Quan<`L⁻¹⋅T`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Divide_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Divide_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `L⁻¹⋅T`.div(that: `L⁻¹⋅T`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Divide_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Divide_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun div(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁻¹⋅T`.times(that: Quan<`L`>) = `T`(this.siValue * that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁻¹⋅T`.times(that: `L`) = `T`(this.siValue * that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`L`>) = thiz.run { `T`(this.siValue * that.siValue) }
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁻¹⋅T`.div(that: Quan<`Dimensionless`>) = `L⁻¹⋅T`(this.siValue / that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁻¹⋅T`.div(that: `Dimensionless`) = `L⁻¹⋅T`(this.siValue / that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻¹⋅T`(this.siValue / that.siValue) }
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁻¹⋅T`.times(that: Quan<`Dimensionless`>) = `L⁻¹⋅T`(this.siValue * that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁻¹⋅T`.times(that: `Dimensionless`) = `L⁻¹⋅T`(this.siValue * that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻¹⋅T`(this.siValue * that.siValue) }
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L2A0M0T0I0Theta0N0J0_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁻¹⋅T`.times(that: Quan<`L²`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L2A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁻¹⋅T`.times(that: `L²`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L2A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`L²`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⁻¹⋅T`.times(that: Quan<`L⋅T⁻¹`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⁻¹⋅T`.times(that: `L⋅T⁻¹`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0T1I0Theta0N0J0_generic")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⁻¹⋅T`.times(that: Quan<`L⋅T`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⁻¹⋅T`.times(that: `L⋅T`) = `T²`(this.siValue * that.siValue)
-@JvmName("A0M0T1I0Theta0N0J0_per_L1_Multiply_L1A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("A0M0T1I0Theta0N0J0C0_per_L1_Multiply_L1A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⁻¹⋅T`>, that: Quan<`L⋅T`>) = thiz.run { `T²`(this.siValue * that.siValue) }
 
 
-typealias `T²` = L0A0M0T2I0Theta0N0J0
-inline class L0A0M0T2I0Theta0N0J0(internal val underlying: Double) : Quan<`T²`> {
+typealias `T²` = L0A0M0T2I0Theta0N0J0C0
+inline class L0A0M0T2I0Theta0N0J0C0(internal val underlying: Double) : Quan<`T²`> {
     override val siValue get() = underlying
     override val abrev get() = "s²"
 
@@ -925,70 +1165,70 @@ inline class L0A0M0T2I0Theta0N0J0(internal val underlying: Double) : Quan<`T²`>
 }
 
 
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T2I0Theta0N0J0_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T2I0Theta0N0J0C0_generic")
 operator fun `T²`.div(that: Quan<`T²`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T2I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T2I0Theta0N0J0C0_concrete")
 operator fun `T²`.div(that: `T²`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T2I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T2I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`T²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `T²`.div(that: Quan<`T`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `T²`.div(that: `T`) = `T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`T`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T²`.div(that: Quan<`Dimensionless`>) = `T²`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T²`.div(that: `Dimensionless`) = `T²`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`Dimensionless`>) = thiz.run { `T²`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T²`.times(that: Quan<`Dimensionless`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T²`.times(that: `Dimensionless`) = `T²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`T²`>, that: Quan<`Dimensionless`>) = thiz.run { `T²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `T²`.times(that: Quan<`L⋅T⁻¹`>) = `L⋅T`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `T²`.times(that: `L⋅T⁻¹`) = `L⋅T`(this.siValue * that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`T²`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅T`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_generic")
 operator fun `T²`.div(that: Quan<`L⋅T`>) = `L⁻¹⋅T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `T²`.div(that: `L⋅T`) = `L⁻¹⋅T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L1A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L1A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`L⋅T`>) = thiz.run { `L⁻¹⋅T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_generic")
 operator fun `T²`.div(that: Quan<`L⁻¹⋅T`>) = `L⋅T`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_concrete")
 operator fun `T²`.div(that: `L⁻¹⋅T`) = `L⋅T`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_A0M0T1I0Theta0N0J0_per_L1_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_A0M0T1I0Theta0N0J0C0_per_L1_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`L⁻¹⋅T`>) = thiz.run { `L⋅T`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `T²`.times(that: Quan<`L²⋅M⋅T⁻⁴`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `T²`.times(that: `L²⋅M⋅T⁻⁴`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Multiply_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`T²`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T2_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T2_generic")
 operator fun `T²`.div(that: Quan<`L²⋅M⋅T⁻²`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T2_concrete")
 operator fun `T²`.div(that: `L²⋅M⋅T⁻²`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_L2A0M1I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_L2A0M1I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`L²⋅M⋅T⁻²`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue) }
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `T²`.div(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `L²⋅M⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L0A0M0T2I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `T²`.div(that: `L⁻²⋅M⁻¹⋅T⁴`) = `L²⋅M⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L0A0M0T2I0Theta0N0J0_Divide_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L0A0M0T2I0Theta0N0J0C0_Divide_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun div(thiz: Quan<`T²`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue / that.siValue) }
 
 
-typealias `L²⋅T⁻²` = L2A0M0I0Theta0N0J0_per_T2
-inline class L2A0M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`L²⋅T⁻²`> {
+typealias `L²⋅T⁻²` = L2A0M0I0Theta0N0J0C0_per_T2
+inline class L2A0M0I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`L²⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅s⁻²"
 
@@ -1043,52 +1283,52 @@ typealias `EquivalentDose` = `L²⋅T⁻²`
 
 typealias `SpecificEnergy` = `L²⋅T⁻²`
 
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²⋅T⁻²`.div(that: Quan<`L⋅T⁻¹`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²⋅T⁻²`.div(that: `L⋅T⁻¹`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L2A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L2A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L²⋅T⁻²`.div(that: Quan<`L²⋅T⁻²`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L2A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L2A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L²⋅T⁻²`.div(that: `L²⋅T⁻²`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L2A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L2A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`L²⋅T⁻²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻²`.div(that: Quan<`Dimensionless`>) = `L²⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻²`.div(that: `Dimensionless`) = `L²⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻²`.times(that: Quan<`Dimensionless`>) = `L²⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻²`.times(that: `Dimensionless`) = `L²⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻²`.div(that: Quan<`T`>) = `L²⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻²`.div(that: `T`) = `L²⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`T`>) = thiz.run { `L²⋅T⁻³`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L2A0M0I0Theta0N0J0_per_T3_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L2A0M0I0Theta0N0J0C0_per_T3_generic")
 operator fun `L²⋅T⁻²`.div(that: Quan<`L²⋅T⁻³`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L2A0M0I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L2A0M0I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L²⋅T⁻²`.div(that: `L²⋅T⁻³`) = `T`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Divide_L2A0M0I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Divide_L2A0M0I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`L²⋅T⁻³`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²⋅T⁻²`.times(that: Quan<`T⁻¹`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²⋅T⁻²`.times(that: `T⁻¹`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻²`>, that: Quan<`T⁻¹`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
 
 
-typealias `L⋅T⁻²` = L1A0M0I0Theta0N0J0_per_T2
-inline class L1A0M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`L⋅T⁻²`> {
+typealias `L⋅T⁻²` = L1A0M0I0Theta0N0J0C0_per_T2
+inline class L1A0M0I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`L⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅s⁻²"
 
@@ -1121,58 +1361,58 @@ inline class L1A0M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`
 
 typealias `Acceleration` = `L⋅T⁻²`
 
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T⁻²`.div(that: Quan<`L⋅T⁻¹`>) = `T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T⁻²`.div(that: `L⋅T⁻¹`) = `T⁻¹`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L⋅T⁻²`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L⋅T⁻²`.div(that: Quan<`L⋅T⁻²`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L⋅T⁻²`.div(that: `L⋅T⁻²`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L⋅T⁻²`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T⁻²`.times(that: Quan<`L⋅T⁻¹`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T⁻²`.times(that: `L⋅T⁻¹`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L⋅T⁻²`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L⋅T⁻²`.times(that: Quan<`L⋅T⁻²`>) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L⋅T⁻²`.times(that: `L⋅T⁻²`) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`L⋅T⁻²`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻²`.div(that: Quan<`Dimensionless`>) = `L⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻²`.div(that: `Dimensionless`) = `L⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⋅T⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻²`.times(that: Quan<`Dimensionless`>) = `L⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻²`.times(that: `Dimensionless`) = `L⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L⋅T⁻²`.times(that: Quan<`T`>) = `L⋅T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L⋅T⁻²`.times(that: `T`) = `L⋅T⁻¹`(this.siValue * that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⋅T⁻²`>, that: Quan<`T`>) = thiz.run { `L⋅T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L⋅T⁻²`.div(that: Quan<`T⁻¹`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L⋅T⁻²`.div(that: `T⁻¹`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L1A0M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L1A0M0I0Theta0N0J0C0_per_T2_Divide_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L⋅T⁻²`>, that: Quan<`T⁻¹`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
 
 
-typealias `L²⋅T⁻³` = L2A0M0I0Theta0N0J0_per_T3
-inline class L2A0M0I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`L²⋅T⁻³`> {
+typealias `L²⋅T⁻³` = L2A0M0I0Theta0N0J0C0_per_T3
+inline class L2A0M0I0Theta0N0J0C0_per_T3(internal val underlying: Double) : Quan<`L²⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅s⁻³"
 
@@ -1205,76 +1445,76 @@ inline class L2A0M0I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`
 
 typealias `AbsorbedDoseRate` = `L²⋅T⁻³`
 
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`L⋅T⁻¹`>) = `L⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²⋅T⁻³`.div(that: `L⋅T⁻¹`) = `L⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T3_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T3_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`L²⋅T⁻³`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L²⋅T⁻³`.div(that: `L²⋅T⁻³`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`L²⋅T⁻³`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`L⋅T⁻²`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L²⋅T⁻³`.div(that: `L⋅T⁻²`) = `L⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`Dimensionless`>) = `L²⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻³`.div(that: `Dimensionless`) = `L²⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅T⁻³`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻³`.times(that: Quan<`Dimensionless`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻³`.times(that: `Dimensionless`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`L²⋅T⁻²`>) = `T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L²⋅T⁻³`.div(that: `L²⋅T⁻²`) = `T⁻¹`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`L²⋅T⁻²`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`T`>) = `L²⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻³`.div(that: `T`) = `L²⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`T`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻³`.times(that: Quan<`T`>) = `L²⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻³`.times(that: `T`) = `L²⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`T`>) = thiz.run { `L²⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`T⁻¹`>) = `L²⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²⋅T⁻³`.div(that: `T⁻¹`) = `L²⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`T⁻¹`>) = thiz.run { `L²⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²⋅T⁻³`.times(that: Quan<`T⁻¹`>) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²⋅T⁻³`.times(that: `T⁻¹`) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Multiply_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Multiply_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`T⁻¹`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue * that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T4_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T4_generic")
 operator fun `L²⋅T⁻³`.div(that: Quan<`L²⋅T⁻⁴`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L²⋅T⁻³`.div(that: `L²⋅T⁻⁴`) = `T`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T3_Divide_L2A0M0I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T3_Divide_L2A0M0I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻³`>, that: Quan<`L²⋅T⁻⁴`>) = thiz.run { `T`(this.siValue / that.siValue) }
 
 
-typealias `T⁻¹` = L0A0M0I0Theta0N0J0_per_T1
-inline class L0A0M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`T⁻¹`> {
+typealias `T⁻¹` = L0A0M0I0Theta0N0J0C0_per_T1
+inline class L0A0M0I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "s⁻¹"
 
@@ -1327,52 +1567,52 @@ typealias `Frequency` = `T⁻¹`
 
 typealias `Radioactivity` = `T⁻¹`
 
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `T⁻¹`.div(that: Quan<`T⁻¹`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `T⁻¹`.div(that: `T⁻¹`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`T⁻¹`>, that: Quan<`T⁻¹`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `T⁻¹`.times(that: Quan<`L⋅T⁻¹`>) = `L⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `T⁻¹`.times(that: `L⋅T⁻¹`) = `L⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L1A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun times(thiz: Quan<`T⁻¹`>, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T⁻¹`.div(that: Quan<`Dimensionless`>) = `T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T⁻¹`.div(that: `Dimensionless`) = `T⁻¹`(this.siValue / that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`T⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `T⁻¹`.times(that: Quan<`Dimensionless`>) = `T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `T⁻¹`.times(that: `Dimensionless`) = `T⁻¹`(this.siValue * that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`T⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L2A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L2A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `T⁻¹`.times(that: Quan<`L²⋅T⁻²`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L2A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L2A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `T⁻¹`.times(that: `L²⋅T⁻²`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L2A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L2A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`T⁻¹`>, that: Quan<`L²⋅T⁻²`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `T⁻¹`.times(that: Quan<`T`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `T⁻¹`.times(that: `T`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`T⁻¹`>, that: Quan<`T`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L2A0M0I0Theta0N0J0_per_T3_generic")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_generic")
 operator fun `T⁻¹`.times(that: Quan<`L²⋅T⁻³`>) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L2A0M0I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_concrete")
 operator fun `T⁻¹`.times(that: `L²⋅T⁻³`) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L2A0M0I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L0A0M0I0Theta0N0J0C0_per_T1_Multiply_L2A0M0I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`T⁻¹`>, that: Quan<`L²⋅T⁻³`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue * that.siValue) }
 
 
-typealias `L²⋅T⁻⁴` = L2A0M0I0Theta0N0J0_per_T4
-inline class L2A0M0I0Theta0N0J0_per_T4(internal val underlying: Double) : Quan<`L²⋅T⁻⁴`> {
+typealias `L²⋅T⁻⁴` = L2A0M0I0Theta0N0J0C0_per_T4
+inline class L2A0M0I0Theta0N0J0C0_per_T4(internal val underlying: Double) : Quan<`L²⋅T⁻⁴`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅s⁻⁴"
 
@@ -1403,52 +1643,52 @@ inline class L2A0M0I0Theta0N0J0_per_T4(internal val underlying: Double) : Quan<`
 }
 
 
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L2A0M0I0Theta0N0J0_per_T4_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L2A0M0I0Theta0N0J0C0_per_T4_generic")
 operator fun `L²⋅T⁻⁴`.div(that: Quan<`L²⋅T⁻⁴`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L2A0M0I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L2A0M0I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L²⋅T⁻⁴`.div(that: `L²⋅T⁻⁴`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L2A0M0I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L2A0M0I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`L²⋅T⁻⁴`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L1A0M0I0Theta0N0J0_per_T2_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L1A0M0I0Theta0N0J0C0_per_T2_generic")
 operator fun `L²⋅T⁻⁴`.div(that: Quan<`L⋅T⁻²`>) = `L⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L1A0M0I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L1A0M0I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L²⋅T⁻⁴`.div(that: `L⋅T⁻²`) = `L⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L1A0M0I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L1A0M0I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`L⋅T⁻²`>) = thiz.run { `L⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻⁴`.div(that: Quan<`Dimensionless`>) = `L²⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻⁴`.div(that: `Dimensionless`) = `L²⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻⁴`.times(that: Quan<`Dimensionless`>) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻⁴`.times(that: `Dimensionless`) = `L²⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅T⁻⁴`(this.siValue * that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅T⁻⁴`.times(that: Quan<`T`>) = `L²⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅T⁻⁴`.times(that: `T`) = `L²⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`T`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L2A0M0I0Theta0N0J0_per_T3_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L2A0M0I0Theta0N0J0C0_per_T3_generic")
 operator fun `L²⋅T⁻⁴`.div(that: Quan<`L²⋅T⁻³`>) = `T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L2A0M0I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L2A0M0I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L²⋅T⁻⁴`.div(that: `L²⋅T⁻³`) = `T⁻¹`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L2A0M0I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L2A0M0I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`L²⋅T⁻³`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L0A0M0I0Theta0N0J0C0_per_T1_generic")
 operator fun `L²⋅T⁻⁴`.div(that: Quan<`T⁻¹`>) = `L²⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+// @JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L0A0M0I0Theta0N0J0C0_per_T1_concrete")
 operator fun `L²⋅T⁻⁴`.div(that: `T⁻¹`) = `L²⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L2A0M0I0Theta0N0J0_per_T4_Divide_L0A0M0I0Theta0N0J0_per_T1_nonextension")
+@JvmName("L2A0M0I0Theta0N0J0C0_per_T4_Divide_L0A0M0I0Theta0N0J0C0_per_T1_nonextension")
 fun div(thiz: Quan<`L²⋅T⁻⁴`>, that: Quan<`T⁻¹`>) = thiz.run { `L²⋅T⁻³`(this.siValue / that.siValue) }
 
 
-typealias `L²⋅M⋅T⁻³` = L2A0M1I0Theta0N0J0_per_T3
-inline class L2A0M1I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻³`> {
+typealias `L²⋅M⋅T⁻³` = L2A0M1I0Theta0N0J0C0_per_T3
+inline class L2A0M1I0Theta0N0J0C0_per_T3(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻³"
 
@@ -1492,58 +1732,58 @@ typealias `Power` = `L²⋅M⋅T⁻³`
 
 typealias `RadiantFlux` = `L²⋅M⋅T⁻³`
 
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `L²⋅M⋅T⁻³`.div(that: Quan<`L²⋅M⋅T⁻³`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L²⋅M⋅T⁻³`.div(that: `L²⋅M⋅T⁻³`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `L²⋅M⋅T⁻³`.times(that: Quan<`L²⋅M⋅T⁻³`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L²⋅M⋅T⁻³`.times(that: `L²⋅M⋅T⁻³`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻³`.div(that: Quan<`T`>) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻³`.div(that: `T`) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`T`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻³`.times(that: Quan<`T`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻³`.times(that: `T`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`T`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻³`.div(that: Quan<`Dimensionless`>) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻³`.div(that: `Dimensionless`) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻³`.times(that: Quan<`Dimensionless`>) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻³`.times(that: `Dimensionless`) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `L²⋅M⋅T⁻³`.div(that: Quan<`L²⋅M⋅T⁻⁴`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L²⋅M⋅T⁻³`.div(that: `L²⋅M⋅T⁻⁴`) = `T`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Divide_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Divide_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `L²⋅M⋅T⁻³`.times(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `T`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `L²⋅M⋅T⁻³`.times(that: `L⁻²⋅M⁻¹⋅T⁴`) = `T`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T3_Multiply_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T3_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻³`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `T`(this.siValue * that.siValue) }
 
 
-typealias `L⁴⋅M²⋅T⁻⁶` = L4A0M2I0Theta0N0J0_per_T6
-inline class L4A0M2I0Theta0N0J0_per_T6(internal val underlying: Double) : Quan<`L⁴⋅M²⋅T⁻⁶`> {
+typealias `L⁴⋅M²⋅T⁻⁶` = L4A0M2I0Theta0N0J0C0_per_T6
+inline class L4A0M2I0Theta0N0J0C0_per_T6(internal val underlying: Double) : Quan<`L⁴⋅M²⋅T⁻⁶`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁴⋅kg²⋅s⁻⁶"
 
@@ -1574,52 +1814,52 @@ inline class L4A0M2I0Theta0N0J0_per_T6(internal val underlying: Double) : Quan<`
 }
 
 
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: Quan<`L²⋅M⋅T⁻³`>) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: `L²⋅M⋅T⁻³`) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue / that.siValue) }
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L4A0M2I0Theta0N0J0_per_T6_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L4A0M2I0Theta0N0J0C0_per_T6_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L4A0M2I0Theta0N0J0_per_T6_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L4A0M2I0Theta0N0J0C0_per_T6_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: `L⁴⋅M²⋅T⁻⁶`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L4A0M2I0Theta0N0J0_per_T6_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L4A0M2I0Theta0N0J0C0_per_T6_nonextension")
 fun div(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: Quan<`Dimensionless`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue / that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: `Dimensionless`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue / that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue / that.siValue) }
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.times(that: Quan<`Dimensionless`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.times(that: `Dimensionless`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue) }
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: Quan<`L²⋅M⋅T⁻⁴`>) = `L²⋅M⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: `L²⋅M⋅T⁻⁴`) = `L²⋅M⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T2_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T2_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: Quan<`L²⋅M⋅T⁻²`>) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.div(that: `L²⋅M⋅T⁻²`) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Divide_L2A0M1I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Divide_L2A0M1I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`L²⋅M⋅T⁻²`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue) }
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Multiply_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `L⁴⋅M²⋅T⁻⁶`.times(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L4A0M2I0Theta0N0J0_per_T6_Multiply_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `L⁴⋅M²⋅T⁻⁶`.times(that: `L⁻²⋅M⁻¹⋅T⁴`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L4A0M2I0Theta0N0J0_per_T6_Multiply_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L4A0M2I0Theta0N0J0C0_per_T6_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun times(thiz: Quan<`L⁴⋅M²⋅T⁻⁶`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
 
 
-typealias `L²⋅M⋅T⁻⁴` = L2A0M1I0Theta0N0J0_per_T4
-inline class L2A0M1I0Theta0N0J0_per_T4(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻⁴`> {
+typealias `L²⋅M⋅T⁻⁴` = L2A0M1I0Theta0N0J0C0_per_T4
+inline class L2A0M1I0Theta0N0J0C0_per_T4(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻⁴`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻⁴"
 
@@ -1650,52 +1890,52 @@ inline class L2A0M1I0Theta0N0J0_per_T4(internal val underlying: Double) : Quan<`
 }
 
 
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Divide_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Divide_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `L²⋅M⋅T⁻⁴`.div(that: Quan<`L²⋅M⋅T⁻⁴`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Divide_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Divide_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.div(that: `L²⋅M⋅T⁻⁴`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Divide_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Divide_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: Quan<`T`>) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: `T`) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`T`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻⁴`.div(that: Quan<`Dimensionless`>) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.div(that: `Dimensionless`) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: Quan<`Dimensionless`>) = `L²⋅M⋅T⁻⁴`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: `Dimensionless`) = `L²⋅M⋅T⁻⁴`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L2A0M1I0Theta0N0J0_per_T2_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_generic")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: Quan<`L²⋅M⋅T⁻²`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L2A0M1I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: `L²⋅M⋅T⁻²`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L2A0M1I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`L²⋅M⋅T⁻²`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: `L⁻²⋅M⁻¹⋅T⁴`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T2I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T2I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: Quan<`T²`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T2I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T2I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻⁴`.times(that: `T²`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T4_Multiply_L0A0M0T2I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T4_Multiply_L0A0M0T2I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻⁴`>, that: Quan<`T²`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
 
 
-typealias `L²⋅M⋅T⁻²` = L2A0M1I0Theta0N0J0_per_T2
-inline class L2A0M1I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²`> {
+typealias `L²⋅M⋅T⁻²` = L2A0M1I0Theta0N0J0C0_per_T2
+inline class L2A0M1I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻²"
 
@@ -1743,76 +1983,76 @@ typealias `Heat` = `L²⋅M⋅T⁻²`
 
 typealias `MomentOfForce` = `L²⋅M⋅T⁻²`
 
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`L²⋅M⋅T⁻³`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `L²⋅M⋅T⁻³`) = `T`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T2_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T2_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`L²⋅M⋅T⁻²`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T2_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `L²⋅M⋅T⁻²`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T2_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T2_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L²⋅M⋅T⁻²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T1I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T1I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`T`>) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T1I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `T`) = `L²⋅M⋅T⁻³`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T1I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T1I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`T`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`Dimensionless`>) = `L²⋅M⋅T⁻²`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `Dimensionless`) = `L²⋅M⋅T⁻²`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻²`.times(that: Quan<`Dimensionless`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻²`.times(that: `Dimensionless`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L4A0M2I0Theta0N0J0_per_T6_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L4A0M2I0Theta0N0J0C0_per_T6_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L4A0M2I0Theta0N0J0_per_T6_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L4A0M2I0Theta0N0J0C0_per_T6_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `L⁴⋅M²⋅T⁻⁶`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L4A0M2I0Theta0N0J0_per_T6_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L4A0M2I0Theta0N0J0C0_per_T6_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`L²⋅M⋅T⁻⁴`>) = `T²`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `L²⋅M⋅T⁻⁴`) = `T²`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `T²`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `L²⋅M⋅T⁻²`.times(that: Quan<`L²⋅M⋅T⁻⁴`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L²⋅M⋅T⁻²`.times(that: `L²⋅M⋅T⁻⁴`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `L⁴⋅M²⋅T⁻⁶`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `L⁻²⋅M⁻¹⋅T⁴`) = `L⁴⋅M²⋅T⁻⁶`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `L⁴⋅M²⋅T⁻⁶`(this.siValue / that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `L²⋅M⋅T⁻²`.times(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `L²⋅M⋅T⁻²`.times(that: `L⁻²⋅M⁻¹⋅T⁴`) = `T²`(this.siValue * that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Multiply_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Multiply_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun times(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `T²`(this.siValue * that.siValue) }
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T2I0Theta0N0J0_generic")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T2I0Theta0N0J0C0_generic")
 operator fun `L²⋅M⋅T⁻²`.div(that: Quan<`T²`>) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-// @JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T2I0Theta0N0J0_concrete")
+// @JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T2I0Theta0N0J0C0_concrete")
 operator fun `L²⋅M⋅T⁻²`.div(that: `T²`) = `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue)
-@JvmName("L2A0M1I0Theta0N0J0_per_T2_Divide_L0A0M0T2I0Theta0N0J0_nonextension")
+@JvmName("L2A0M1I0Theta0N0J0C0_per_T2_Divide_L0A0M0T2I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L²⋅M⋅T⁻²`>, that: Quan<`T²`>) = thiz.run { `L²⋅M⋅T⁻⁴`(this.siValue / that.siValue) }
 
 
-typealias `L⁻²⋅M⁻¹⋅T⁴` = A0T4I0Theta0N0J0_per_L2M1
-inline class A0T4I0Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T⁴`> {
+typealias `L⁻²⋅M⁻¹⋅T⁴` = A0T4I0Theta0N0J0C0_per_L2M1
+inline class A0T4I0Theta0N0J0C0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T⁴`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg⁻¹⋅s⁴"
 
@@ -1843,52 +2083,1441 @@ inline class A0T4I0Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`
 }
 
 
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Divide_A0T4I0Theta0N0J0_per_L2M1_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Divide_A0T4I0Theta0N0J0C0_per_L2M1_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.div(that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Divide_A0T4I0Theta0N0J0_per_L2M1_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Divide_A0T4I0Theta0N0J0C0_per_L2M1_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.div(that: `L⁻²⋅M⁻¹⋅T⁴`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Divide_A0T4I0Theta0N0J0_per_L2M1_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Divide_A0T4I0Theta0N0J0C0_per_L2M1_nonextension")
 fun div(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`L⁻²⋅M⁻¹⋅T⁴`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T3_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: Quan<`L²⋅M⋅T⁻³`>) = `T`(this.siValue * that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T3_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: `L²⋅M⋅T⁻³`) = `T`(this.siValue * that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T3_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T3_nonextension")
 fun times(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`L²⋅M⋅T⁻³`>) = thiz.run { `T`(this.siValue * that.siValue) }
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Divide_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.div(that: Quan<`Dimensionless`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.div(that: `Dimensionless`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Divide_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun div(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue / that.siValue) }
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: Quan<`Dimensionless`>) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue * that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: `Dimensionless`) = `L⁻²⋅M⁻¹⋅T⁴`(this.siValue * that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L0A0M0T0I0Theta0N0J0_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
 fun times(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻²⋅M⁻¹⋅T⁴`(this.siValue * that.siValue) }
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L4A0M2I0Theta0N0J0_per_T6_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L4A0M2I0Theta0N0J0C0_per_T6_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L4A0M2I0Theta0N0J0_per_T6_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L4A0M2I0Theta0N0J0C0_per_T6_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: `L⁴⋅M²⋅T⁻⁶`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L4A0M2I0Theta0N0J0_per_T6_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L4A0M2I0Theta0N0J0C0_per_T6_nonextension")
 fun times(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`L⁴⋅M²⋅T⁻⁶`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T4_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: Quan<`L²⋅M⋅T⁻⁴`>) = `Dimensionless`(this.siValue * that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T4_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: `L²⋅M⋅T⁻⁴`) = `Dimensionless`(this.siValue * that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T4_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T4_nonextension")
 fun times(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`L²⋅M⋅T⁻⁴`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T2_generic")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_generic")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: Quan<`L²⋅M⋅T⁻²`>) = `T²`(this.siValue * that.siValue)
-// @JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T2_concrete")
+// @JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_concrete")
 operator fun `L⁻²⋅M⁻¹⋅T⁴`.times(that: `L²⋅M⋅T⁻²`) = `T²`(this.siValue * that.siValue)
-@JvmName("A0T4I0Theta0N0J0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0_per_T2_nonextension")
+@JvmName("A0T4I0Theta0N0J0C0_per_L2M1_Multiply_L2A0M1I0Theta0N0J0C0_per_T2_nonextension")
 fun times(thiz: Quan<`L⁻²⋅M⁻¹⋅T⁴`>, that: Quan<`L²⋅M⋅T⁻²`>) = thiz.run { `T²`(this.siValue * that.siValue) }
 
 
-typealias `M` = L0A0M1T0I0Theta0N0J0
-inline class L0A0M1T0I0Theta0N0J0(internal val underlying: Double) : Quan<`M`> {
+typealias `$` = L0A0M0T0I0Theta0N0J0C1
+inline class L0A0M0T0I0Theta0N0J0C1(internal val underlying: Double) : Quan<`$`> {
+    override val siValue get() = underlying
+    override val abrev get() = "$"
+
+    override fun new(siValue: Double) = `$`(siValue)
+
+    override operator fun unaryPlus() = `$`(+underlying)
+    override operator fun unaryMinus() = `$`(-underlying)
+
+    override operator fun plus(that: `$`) = `$`(this.underlying + that.underlying)
+    override operator fun minus(that: `$`) = `$`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `$`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `$`(this.underlying / that.toDouble())
+    override operator fun rem(that: `$`) = `$`(this.underlying % that.underlying)
+
+    override infix fun min(that: `$`) = if (this < that) this else that
+    override infix fun max(that: `$`) = if (this > that) this else that
+
+    override val abs get() = `$`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `$`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `$` && this.siValue == other.siValue
+}
+
+inline val Number.`Dollar`: `Currency` get() = `$`(toDouble() * 1.0)
+inline val `$`.`Dollar` get() = siValue * 1.0
+object `Dollar` : UomConverter<`$`>,
+    Quan<`$`> by box(`$`(1.0)) {
+    override val unitName = "Dollar"
+    override fun invoke(x: Double) = x.`Dollar`
+    override fun invoke(x: `$`) = x.`Dollar`
+}
+
+inline val Number.`Cent`: `Currency` get() = `$`(toDouble() * 0.01)
+inline val `$`.`Cent` get() = siValue * 100.0
+object `Cent` : UomConverter<`$`>,
+    Quan<`$`> by box(`$`(0.01)) {
+    override val unitName = "Cent"
+    override fun invoke(x: Double) = x.`Cent`
+    override fun invoke(x: `$`) = x.`Cent`
+}
+
+
+typealias `Currency` = `$`
+
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `$`.div(that: Quan<`$`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `$`.div(that: `$`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`$`>, that: Quan<`$`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `$`.times(that: Quan<`$`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `$`.times(that: `$`) = `$²`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`$`>, that: Quan<`$`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$`.div(that: Quan<`L³`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$`.div(that: `L³`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`$`>, that: Quan<`L³`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$`.times(that: Quan<`L³`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$`.times(that: `L³`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`$`>, that: Quan<`L³`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$`.div(that: Quan<`L`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$`.div(that: `L`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`$`>, that: Quan<`L`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$`.times(that: Quan<`L`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$`.times(that: `L`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`$`>, that: Quan<`L`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$`.div(that: Quan<`Dimensionless`>) = `$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$`.div(that: `Dimensionless`) = `$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`$`>, that: Quan<`Dimensionless`>) = thiz.run { `$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$`.times(that: Quan<`Dimensionless`>) = `$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$`.times(that: `Dimensionless`) = `$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`$`>, that: Quan<`Dimensionless`>) = thiz.run { `$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `$`.div(that: Quan<`L⁻³⋅$`>) = `L³`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `$`.div(that: `L⁻³⋅$`) = `L³`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`$`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L³`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `$`.times(that: Quan<`L³⋅$⁻¹`>) = `L³`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `$`.times(that: `L³⋅$⁻¹`) = `L³`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`$`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L³`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `$`.div(that: Quan<`L⁻¹⋅$`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `$`.div(that: `L⁻¹⋅$`) = `L`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`$`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `$`.times(that: Quan<`L⋅$⁻¹`>) = `L`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `$`.times(that: `L⋅$⁻¹`) = `L`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`$`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L`(this.siValue * that.siValue) }
+
+
+typealias `$²` = L0A0M0T0I0Theta0N0J0C2
+inline class L0A0M0T0I0Theta0N0J0C2(internal val underlying: Double) : Quan<`$²`> {
+    override val siValue get() = underlying
+    override val abrev get() = "$²"
+
+    override fun new(siValue: Double) = `$²`(siValue)
+
+    override operator fun unaryPlus() = `$²`(+underlying)
+    override operator fun unaryMinus() = `$²`(-underlying)
+
+    override operator fun plus(that: `$²`) = `$²`(this.underlying + that.underlying)
+    override operator fun minus(that: `$²`) = `$²`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `$²`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `$²`(this.underlying / that.toDouble())
+    override operator fun rem(that: `$²`) = `$²`(this.underlying % that.underlying)
+
+    override infix fun min(that: `$²`) = if (this < that) this else that
+    override infix fun max(that: `$²`) = if (this > that) this else that
+
+    override val abs get() = `$²`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `$²`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `$²` && this.siValue == other.siValue
+}
+
+
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `$²`.div(that: Quan<`$`>) = `$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `$²`.div(that: `$`) = `$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`$`>) = thiz.run { `$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C2_generic")
+operator fun `$²`.div(that: Quan<`$²`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C2_concrete")
+operator fun `$²`.div(that: `$²`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C2_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`$²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$²`.div(that: Quan<`Dimensionless`>) = `$²`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$²`.div(that: `Dimensionless`) = `$²`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`Dimensionless`>) = thiz.run { `$²`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `$²`.times(that: Quan<`Dimensionless`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `$²`.times(that: `Dimensionless`) = `$²`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`$²`>, that: Quan<`Dimensionless`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `$²`.div(that: Quan<`L⁻³⋅$`>) = `L³⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `$²`.div(that: `L⁻³⋅$`) = `L³⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L³⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `$²`.div(that: Quan<`L³⋅$`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `$²`.div(that: `L³⋅$`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`L³⋅$`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `$²`.times(that: Quan<`L³⋅$⁻¹`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `$²`.times(that: `L³⋅$⁻¹`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`$²`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `$²`.div(that: Quan<`L⁻¹⋅$`>) = `L⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `$²`.div(that: `L⁻¹⋅$`) = `L⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `$²`.div(that: Quan<`L⋅$`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `$²`.div(that: `L⋅$`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Divide_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`$²`>, that: Quan<`L⋅$`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `$²`.times(that: Quan<`L⋅$⁻¹`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `$²`.times(that: `L⋅$⁻¹`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0C2_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`$²`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+
+
+typealias `L³` = L3A0M0T0I0Theta0N0J0C0
+inline class L3A0M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L³`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m³"
+
+    override fun new(siValue: Double) = `L³`(siValue)
+
+    override operator fun unaryPlus() = `L³`(+underlying)
+    override operator fun unaryMinus() = `L³`(-underlying)
+
+    override operator fun plus(that: `L³`) = `L³`(this.underlying + that.underlying)
+    override operator fun minus(that: `L³`) = `L³`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L³`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L³`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L³`) = `L³`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L³`) = if (this < that) this else that
+    override infix fun max(that: `L³`) = if (this > that) this else that
+
+    override val abs get() = `L³`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L³`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L³` && this.siValue == other.siValue
+}
+
+inline val Number.`Gallon`: `Volume` get() = `L³`(toDouble() * 0.00378541)
+inline val `L³`.`Gallon` get() = siValue * 264.172176857989
+object `Gallon` : UomConverter<`L³`>,
+    Quan<`L³`> by box(`L³`(0.00378541)) {
+    override val unitName = "Gallon"
+    override fun invoke(x: Double) = x.`Gallon`
+    override fun invoke(x: `L³`) = x.`Gallon`
+}
+
+
+typealias `Volume` = `L³`
+
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³`.div(that: Quan<`$`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³`.div(that: `$`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L³`>, that: Quan<`$`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.div(that: Quan<`L³`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.div(that: `L³`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³`>, that: Quan<`L³`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³`.times(that: Quan<`$`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³`.times(that: `$`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L³`>, that: Quan<`$`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.times(that: Quan<`L³`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.times(that: `L³`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L³`>, that: Quan<`L³`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.div(that: Quan<`L`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.div(that: `L`) = `L²`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³`>, that: Quan<`L`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.times(that: Quan<`L`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.times(that: `L`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L³`>, that: Quan<`L`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.div(that: Quan<`Dimensionless`>) = `L³`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.div(that: `Dimensionless`) = `L³`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³`>, that: Quan<`Dimensionless`>) = thiz.run { `L³`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.times(that: Quan<`Dimensionless`>) = `L³`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.times(that: `Dimensionless`) = `L³`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L³`>, that: Quan<`Dimensionless`>) = thiz.run { `L³`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L³`.times(that: Quan<`L⁻³⋅$`>) = `$`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L³`.times(that: `L⁻³⋅$`) = `$`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L³`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `$`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L³`.div(that: Quan<`L³⋅$⁻¹`>) = `$`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L³`.div(that: `L³⋅$⁻¹`) = `$`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L³`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `$`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³`.div(that: Quan<`L²`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³`.div(that: `L²`) = `L`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³`>, that: Quan<`L²`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L³`.times(that: Quan<`L⁻²`>) = `L`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L³`.times(that: `L⁻²`) = `L`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L³`>, that: Quan<`L⁻²`>) = thiz.run { `L`(this.siValue * that.siValue) }
+
+
+typealias `L⁻³⋅$` = A0M0T0I0Theta0N0J0C1_per_L3
+inline class A0M0T0I0Theta0N0J0C1_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅$`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⁻³⋅$"
+
+    override fun new(siValue: Double) = `L⁻³⋅$`(siValue)
+
+    override operator fun unaryPlus() = `L⁻³⋅$`(+underlying)
+    override operator fun unaryMinus() = `L⁻³⋅$`(-underlying)
+
+    override operator fun plus(that: `L⁻³⋅$`) = `L⁻³⋅$`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⁻³⋅$`) = `L⁻³⋅$`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⁻³⋅$`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⁻³⋅$`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⁻³⋅$`) = `L⁻³⋅$`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⁻³⋅$`) = if (this < that) this else that
+    override infix fun max(that: `L⁻³⋅$`) = if (this > that) this else that
+
+    override val abs get() = `L⁻³⋅$`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⁻³⋅$`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⁻³⋅$` && this.siValue == other.siValue
+}
+
+
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⁻³⋅$`.div(that: Quan<`L⁻³⋅$`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⁻³⋅$`.div(that: `L⁻³⋅$`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L³`>) = `$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻³⋅$`.times(that: `L³`) = `$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L³`>) = thiz.run { `$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻³⋅$`.div(that: Quan<`Dimensionless`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻³⋅$`.div(that: `Dimensionless`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁻³⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`Dimensionless`>) = `L⁻³⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻³⋅$`.times(that: `Dimensionless`) = `L⁻³⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻³⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L³⋅$`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁻³⋅$`.times(that: `L³⋅$`) = `$²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L³⋅$`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L³⋅$⁻¹`>) = `Dimensionless`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁻³⋅$`.times(that: `L³⋅$⁻¹`) = `Dimensionless`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L6A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L⁶`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L6A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻³⋅$`.times(that: `L⁶`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L6A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L⁶`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⁻³⋅$`.div(that: Quan<`L⁻¹⋅$`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⁻³⋅$`.div(that: `L⁻¹⋅$`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L⋅$⁻¹`>) = `L⁻²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁻³⋅$`.times(that: `L⋅$⁻¹`) = `L⁻²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⁻²`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L²`>) = `L⁻¹⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻³⋅$`.times(that: `L²`) = `L⁻¹⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L²`>) = thiz.run { `L⁻¹⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻³⋅$`.times(that: Quan<`L⁴`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻³⋅$`.times(that: `L⁴`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Multiply_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L⁴`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁻³⋅$`.div(that: Quan<`L⁻²`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁻³⋅$`.div(that: `L⁻²`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L3_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L⁻³⋅$`>, that: Quan<`L⁻²`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+
+
+typealias `L³⋅$` = L3A0M0T0I0Theta0N0J0C1
+inline class L3A0M0T0I0Theta0N0J0C1(internal val underlying: Double) : Quan<`L³⋅$`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m³⋅$"
+
+    override fun new(siValue: Double) = `L³⋅$`(siValue)
+
+    override operator fun unaryPlus() = `L³⋅$`(+underlying)
+    override operator fun unaryMinus() = `L³⋅$`(-underlying)
+
+    override operator fun plus(that: `L³⋅$`) = `L³⋅$`(this.underlying + that.underlying)
+    override operator fun minus(that: `L³⋅$`) = `L³⋅$`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L³⋅$`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L³⋅$`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L³⋅$`) = `L³⋅$`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L³⋅$`) = if (this < that) this else that
+    override infix fun max(that: `L³⋅$`) = if (this > that) this else that
+
+    override val abs get() = `L³⋅$`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L³⋅$`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L³⋅$` && this.siValue == other.siValue
+}
+
+
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³⋅$`.div(that: Quan<`$`>) = `L³`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³⋅$`.div(that: `$`) = `L³`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`$`>) = thiz.run { `L³`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³⋅$`.div(that: Quan<`L³⋅$`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³⋅$`.div(that: `L³⋅$`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L³⋅$`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$`.div(that: Quan<`L³`>) = `$`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$`.div(that: `L³`) = `$`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L³`>) = thiz.run { `$`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$`.div(that: Quan<`Dimensionless`>) = `L³⋅$`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$`.div(that: `Dimensionless`) = `L³⋅$`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L³⋅$`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$`.times(that: Quan<`Dimensionless`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$`.times(that: `Dimensionless`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L³⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C2_generic")
+operator fun `L³⋅$`.div(that: Quan<`$²`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C2_concrete")
+operator fun `L³⋅$`.div(that: `$²`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C2_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`$²`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L³⋅$`.div(that: Quan<`L⁻³⋅$`>) = `L⁶`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L³⋅$`.div(that: `L⁻³⋅$`) = `L⁶`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⁶`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L³⋅$`.times(that: Quan<`L⁻³⋅$`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L³⋅$`.times(that: `L⁻³⋅$`) = `$²`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L³⋅$`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L³⋅$`.div(that: Quan<`L³⋅$⁻¹`>) = `$²`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L³⋅$`.div(that: `L³⋅$⁻¹`) = `$²`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `$²`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L³⋅$`.times(that: Quan<`L³⋅$⁻¹`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L³⋅$`.times(that: `L³⋅$⁻¹`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L³⋅$`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L6A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$`.div(that: Quan<`L⁶`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L6A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$`.div(that: `L⁶`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L6A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L⁶`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L³⋅$`.div(that: Quan<`L⁻¹⋅$`>) = `L⁴`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L³⋅$`.div(that: `L⁻¹⋅$`) = `L⁴`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⁴`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³⋅$`.div(that: Quan<`L⋅$`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³⋅$`.div(that: `L⋅$`) = `L²`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L⋅$`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L³⋅$`.times(that: Quan<`L⋅$⁻¹`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L³⋅$`.times(that: `L⋅$⁻¹`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L³⋅$`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$`.div(that: Quan<`L²`>) = `L⋅$`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$`.div(that: `L²`) = `L⋅$`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L²`>) = thiz.run { `L⋅$`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$`.div(that: Quan<`L⁴`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$`.div(that: `L⁴`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Divide_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$`>, that: Quan<`L⁴`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L³⋅$`.times(that: Quan<`L⁻²`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L³⋅$`.times(that: `L⁻²`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L³⋅$`>, that: Quan<`L⁻²`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+
+
+typealias `L³⋅$⁻¹` = L3A0M0T0I0Theta0N0J0_per_C1
+inline class L3A0M0T0I0Theta0N0J0_per_C1(internal val underlying: Double) : Quan<`L³⋅$⁻¹`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m³⋅$⁻¹"
+
+    override fun new(siValue: Double) = `L³⋅$⁻¹`(siValue)
+
+    override operator fun unaryPlus() = `L³⋅$⁻¹`(+underlying)
+    override operator fun unaryMinus() = `L³⋅$⁻¹`(-underlying)
+
+    override operator fun plus(that: `L³⋅$⁻¹`) = `L³⋅$⁻¹`(this.underlying + that.underlying)
+    override operator fun minus(that: `L³⋅$⁻¹`) = `L³⋅$⁻¹`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L³⋅$⁻¹`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L³⋅$⁻¹`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L³⋅$⁻¹`) = `L³⋅$⁻¹`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L³⋅$⁻¹`) = if (this < that) this else that
+    override infix fun max(that: `L³⋅$⁻¹`) = if (this > that) this else that
+
+    override val abs get() = `L³⋅$⁻¹`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L³⋅$⁻¹`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L³⋅$⁻¹` && this.siValue == other.siValue
+}
+
+
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L³⋅$⁻¹`.div(that: Quan<`L³⋅$⁻¹`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L³⋅$⁻¹`.div(that: `L³⋅$⁻¹`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`$`>) = `L³`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `$`) = `L³`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`$`>) = thiz.run { `L³`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$⁻¹`.div(that: Quan<`Dimensionless`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$⁻¹`.div(that: `Dimensionless`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`Dimensionless`>) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `Dimensionless`) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `L³⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C2_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`$²`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C2_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `$²`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C2_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`$²`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`L⁻³⋅$`>) = `Dimensionless`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `L⁻³⋅$`) = `Dimensionless`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`L³⋅$`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `L³⋅$`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L³⋅$`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`L⁻¹⋅$`>) = `L²`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `L⁻¹⋅$`) = `L²`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`L⋅$`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `L⋅$`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L⋅$`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L³⋅$⁻¹`.div(that: Quan<`L⋅$⁻¹`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L³⋅$⁻¹`.div(that: `L⋅$⁻¹`) = `L²`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L³⋅$⁻¹`.div(that: Quan<`L²`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L³⋅$⁻¹`.div(that: `L²`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L²`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L³⋅$⁻¹`.times(that: Quan<`L⁻²`>) = `L⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L³⋅$⁻¹`.times(that: `L⁻²`) = `L⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L3A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L³⋅$⁻¹`>, that: Quan<`L⁻²`>) = thiz.run { `L⋅$⁻¹`(this.siValue * that.siValue) }
+
+
+typealias `L⁶` = L6A0M0T0I0Theta0N0J0C0
+inline class L6A0M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L⁶`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⁶"
+
+    override fun new(siValue: Double) = `L⁶`(siValue)
+
+    override operator fun unaryPlus() = `L⁶`(+underlying)
+    override operator fun unaryMinus() = `L⁶`(-underlying)
+
+    override operator fun plus(that: `L⁶`) = `L⁶`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⁶`) = `L⁶`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⁶`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⁶`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⁶`) = `L⁶`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⁶`) = if (this < that) this else that
+    override infix fun max(that: `L⁶`) = if (this > that) this else that
+
+    override val abs get() = `L⁶`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⁶`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⁶` && this.siValue == other.siValue
+}
+
+
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L6A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁶`.div(that: Quan<`L⁶`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L6A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁶`.div(that: `L⁶`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L6A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`L⁶`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁶`.div(that: Quan<`L³`>) = `L³`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁶`.div(that: `L³`) = `L³`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`L³`>) = thiz.run { `L³`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁶`.div(that: Quan<`Dimensionless`>) = `L⁶`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁶`.div(that: `Dimensionless`) = `L⁶`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁶`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁶`.times(that: Quan<`Dimensionless`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁶`.times(that: `Dimensionless`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁶`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⁶`.times(that: Quan<`L⁻³⋅$`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⁶`.times(that: `L⁻³⋅$`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L⁶`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁶`.div(that: Quan<`L³⋅$`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁶`.div(that: `L³⋅$`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`L³⋅$`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁶`.div(that: Quan<`L³⋅$⁻¹`>) = `L³⋅$`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁶`.div(that: `L³⋅$⁻¹`) = `L³⋅$`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L³⋅$`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁶`.div(that: Quan<`L²`>) = `L⁴`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁶`.div(that: `L²`) = `L⁴`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`L²`>) = thiz.run { `L⁴`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁶`.div(that: Quan<`L⁴`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁶`.div(that: `L⁴`) = `L²`(this.siValue / that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁶`>, that: Quan<`L⁴`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁶`.times(that: Quan<`L⁻²`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁶`.times(that: `L⁻²`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L6A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L⁶`>, that: Quan<`L⁻²`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+
+
+typealias `L⁻¹⋅$` = A0M0T0I0Theta0N0J0C1_per_L1
+inline class A0M0T0I0Theta0N0J0C1_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅$`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⁻¹⋅$"
+
+    override fun new(siValue: Double) = `L⁻¹⋅$`(siValue)
+
+    override operator fun unaryPlus() = `L⁻¹⋅$`(+underlying)
+    override operator fun unaryMinus() = `L⁻¹⋅$`(-underlying)
+
+    override operator fun plus(that: `L⁻¹⋅$`) = `L⁻¹⋅$`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⁻¹⋅$`) = `L⁻¹⋅$`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⁻¹⋅$`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⁻¹⋅$`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⁻¹⋅$`) = `L⁻¹⋅$`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⁻¹⋅$`) = if (this < that) this else that
+    override infix fun max(that: `L⁻¹⋅$`) = if (this > that) this else that
+
+    override val abs get() = `L⁻¹⋅$`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⁻¹⋅$`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⁻¹⋅$` && this.siValue == other.siValue
+}
+
+
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⁻¹⋅$`.div(that: Quan<`L⁻¹⋅$`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⁻¹⋅$`.div(that: `L⁻¹⋅$`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L`>) = `$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L`) = `$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L`>) = thiz.run { `$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻¹⋅$`.div(that: Quan<`Dimensionless`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻¹⋅$`.div(that: `Dimensionless`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`Dimensionless`>) = `L⁻¹⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻¹⋅$`.times(that: `Dimensionless`) = `L⁻¹⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻¹⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⁻¹⋅$`.div(that: Quan<`L⁻³⋅$`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⁻¹⋅$`.div(that: `L⁻³⋅$`) = `L²`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L³⋅$⁻¹`>) = `L²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L³⋅$⁻¹`) = `L²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁻¹⋅$`.div(that: Quan<`L⋅$`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁻¹⋅$`.div(that: `L⋅$`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⋅$`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L⋅$`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L⋅$`) = `$²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⋅$`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L⋅$⁻¹`>) = `Dimensionless`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L⋅$⁻¹`) = `Dimensionless`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻¹⋅$`.div(that: Quan<`L²`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻¹⋅$`.div(that: `L²`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L²`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L²`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L²`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L²`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L⁴`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L⁴`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⁴`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁻¹⋅$`.div(that: Quan<`L⁻²`>) = `L⋅$`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁻¹⋅$`.div(that: `L⁻²`) = `L⋅$`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⁻²`>) = thiz.run { `L⋅$`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁻¹⋅$`.times(that: Quan<`L⁻²`>) = `L⁻³⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁻¹⋅$`.times(that: `L⁻²`) = `L⁻³⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C1_per_L1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L⁻¹⋅$`>, that: Quan<`L⁻²`>) = thiz.run { `L⁻³⋅$`(this.siValue * that.siValue) }
+
+
+typealias `L⋅$` = L1A0M0T0I0Theta0N0J0C1
+inline class L1A0M0T0I0Theta0N0J0C1(internal val underlying: Double) : Quan<`L⋅$`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⋅$"
+
+    override fun new(siValue: Double) = `L⋅$`(siValue)
+
+    override operator fun unaryPlus() = `L⋅$`(+underlying)
+    override operator fun unaryMinus() = `L⋅$`(-underlying)
+
+    override operator fun plus(that: `L⋅$`) = `L⋅$`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⋅$`) = `L⋅$`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⋅$`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⋅$`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⋅$`) = `L⋅$`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⋅$`) = if (this < that) this else that
+    override infix fun max(that: `L⋅$`) = if (this > that) this else that
+
+    override val abs get() = `L⋅$`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⋅$`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⋅$` && this.siValue == other.siValue
+}
+
+
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⋅$`.div(that: Quan<`$`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⋅$`.div(that: `$`) = `L`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`$`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⋅$`.div(that: Quan<`L⋅$`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⋅$`.div(that: `L⋅$`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L⋅$`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$`.div(that: Quan<`L`>) = `$`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$`.div(that: `L`) = `$`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L`>) = thiz.run { `$`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$`.div(that: Quan<`Dimensionless`>) = `L⋅$`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$`.div(that: `Dimensionless`) = `L⋅$`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅$`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$`.times(that: Quan<`Dimensionless`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$`.times(that: `Dimensionless`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⋅$`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C2_generic")
+operator fun `L⋅$`.div(that: Quan<`$²`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C2_concrete")
+operator fun `L⋅$`.div(that: `$²`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L0A0M0T0I0Theta0N0J0C2_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`$²`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⋅$`.div(that: Quan<`L⁻³⋅$`>) = `L⁴`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⋅$`.div(that: `L⁻³⋅$`) = `L⁴`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⁴`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⋅$`.div(that: Quan<`L³⋅$`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⋅$`.div(that: `L³⋅$`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L³⋅$`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⋅$`.times(that: Quan<`L³⋅$⁻¹`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⋅$`.times(that: `L³⋅$⁻¹`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⋅$`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⋅$`.div(that: Quan<`L⁻¹⋅$`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⋅$`.div(that: `L⁻¹⋅$`) = `L²`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⋅$`.times(that: Quan<`L⁻¹⋅$`>) = `$²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⋅$`.times(that: `L⁻¹⋅$`) = `$²`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L⋅$`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `$²`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⋅$`.div(that: Quan<`L⋅$⁻¹`>) = `$²`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⋅$`.div(that: `L⋅$⁻¹`) = `$²`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `$²`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⋅$`.times(that: Quan<`L⋅$⁻¹`>) = `L²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⋅$`.times(that: `L⋅$⁻¹`) = `L²`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⋅$`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$`.div(that: Quan<`L²`>) = `L⁻¹⋅$`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$`.div(that: `L²`) = `L⁻¹⋅$`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L²`>) = thiz.run { `L⁻¹⋅$`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$`.times(that: Quan<`L²`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$`.times(that: `L²`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⋅$`>, that: Quan<`L²`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$`.div(that: Quan<`L⁴`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$`.div(that: `L⁴`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L⁴`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⋅$`.div(that: Quan<`L⁻²`>) = `L³⋅$`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⋅$`.div(that: `L⁻²`) = `L³⋅$`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L⋅$`>, that: Quan<`L⁻²`>) = thiz.run { `L³⋅$`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⋅$`.times(that: Quan<`L⁻²`>) = `L⁻¹⋅$`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⋅$`.times(that: `L⁻²`) = `L⁻¹⋅$`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0C1_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L⋅$`>, that: Quan<`L⁻²`>) = thiz.run { `L⁻¹⋅$`(this.siValue * that.siValue) }
+
+
+typealias `L⋅$⁻¹` = L1A0M0T0I0Theta0N0J0_per_C1
+inline class L1A0M0T0I0Theta0N0J0_per_C1(internal val underlying: Double) : Quan<`L⋅$⁻¹`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⋅$⁻¹"
+
+    override fun new(siValue: Double) = `L⋅$⁻¹`(siValue)
+
+    override operator fun unaryPlus() = `L⋅$⁻¹`(+underlying)
+    override operator fun unaryMinus() = `L⋅$⁻¹`(-underlying)
+
+    override operator fun plus(that: `L⋅$⁻¹`) = `L⋅$⁻¹`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⋅$⁻¹`) = `L⋅$⁻¹`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⋅$⁻¹`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⋅$⁻¹`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⋅$⁻¹`) = `L⋅$⁻¹`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⋅$⁻¹`) = if (this < that) this else that
+    override infix fun max(that: `L⋅$⁻¹`) = if (this > that) this else that
+
+    override val abs get() = `L⋅$⁻¹`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⋅$⁻¹`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⋅$⁻¹` && this.siValue == other.siValue
+}
+
+
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⋅$⁻¹`.div(that: Quan<`L⋅$⁻¹`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⋅$⁻¹`.div(that: `L⋅$⁻¹`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`$`>) = `L`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⋅$⁻¹`.times(that: `$`) = `L`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`$`>) = thiz.run { `L`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$⁻¹`.div(that: Quan<`Dimensionless`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$⁻¹`.div(that: `Dimensionless`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`Dimensionless`>) = `L⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$⁻¹`.times(that: `Dimensionless`) = `L⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`Dimensionless`>) = thiz.run { `L⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C2_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`$²`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C2_concrete")
+operator fun `L⋅$⁻¹`.times(that: `$²`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L0A0M0T0I0Theta0N0J0C2_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`$²`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`L⁻³⋅$`>) = `L⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⋅$⁻¹`.times(that: `L⁻³⋅$`) = `L⁻²`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⁻²`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`L³⋅$`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⋅$⁻¹`.times(that: `L³⋅$`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L³⋅$`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⋅$⁻¹`.div(that: Quan<`L³⋅$⁻¹`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⋅$⁻¹`.div(that: `L³⋅$⁻¹`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`L⁻¹⋅$`>) = `Dimensionless`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⋅$⁻¹`.times(that: `L⁻¹⋅$`) = `Dimensionless`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`L⋅$`>) = `L²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⋅$⁻¹`.times(that: `L⋅$`) = `L²`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L⋅$`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⋅$⁻¹`.times(that: Quan<`L²`>) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⋅$⁻¹`.times(that: `L²`) = `L³⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L²`>) = thiz.run { `L³⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⋅$⁻¹`.div(that: Quan<`L⁻²`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⋅$⁻¹`.div(that: `L⁻²`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_per_C1_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L⋅$⁻¹`>, that: Quan<`L⁻²`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+
+
+typealias `L⁴` = L4A0M0T0I0Theta0N0J0C0
+inline class L4A0M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L⁴`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⁴"
+
+    override fun new(siValue: Double) = `L⁴`(siValue)
+
+    override operator fun unaryPlus() = `L⁴`(+underlying)
+    override operator fun unaryMinus() = `L⁴`(-underlying)
+
+    override operator fun plus(that: `L⁴`) = `L⁴`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⁴`) = `L⁴`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⁴`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⁴`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⁴`) = `L⁴`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⁴`) = if (this < that) this else that
+    override infix fun max(that: `L⁴`) = if (this > that) this else that
+
+    override val abs get() = `L⁴`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⁴`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⁴` && this.siValue == other.siValue
+}
+
+
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.div(that: Quan<`L⁴`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.div(that: `L⁴`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L⁴`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.div(that: Quan<`L³`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.div(that: `L³`) = `L`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L³`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.div(that: Quan<`L`>) = `L³`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.div(that: `L`) = `L³`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L`>) = thiz.run { `L³`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.div(that: Quan<`Dimensionless`>) = `L⁴`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.div(that: `Dimensionless`) = `L⁴`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁴`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.times(that: Quan<`Dimensionless`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.times(that: `Dimensionless`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁴`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⁴`.times(that: Quan<`L⁻³⋅$`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⁴`.times(that: `L⁻³⋅$`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun times(thiz: Quan<`L⁴`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁴`.div(that: Quan<`L³⋅$`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁴`.div(that: `L³⋅$`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L³⋅$`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁴`.div(that: Quan<`L³⋅$⁻¹`>) = `L⋅$`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁴`.div(that: `L³⋅$⁻¹`) = `L⋅$`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⋅$`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L6A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.div(that: Quan<`L⁶`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L6A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.div(that: `L⁶`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L6A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L⁶`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⁴`.times(that: Quan<`L⁻¹⋅$`>) = `L³⋅$`(this.siValue * that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⁴`.times(that: `L⁻¹⋅$`) = `L³⋅$`(this.siValue * that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L⁴`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L³⋅$`(this.siValue * that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁴`.div(that: Quan<`L⋅$`>) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁴`.div(that: `L⋅$`) = `L³⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L⋅$`>) = thiz.run { `L³⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁴`.div(that: Quan<`L⋅$⁻¹`>) = `L³⋅$`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁴`.div(that: `L⋅$⁻¹`) = `L³⋅$`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L³⋅$`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.div(that: Quan<`L²`>) = `L²`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.div(that: `L²`) = `L²`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L²`>) = thiz.run { `L²`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁴`.times(that: Quan<`L²`>) = `L⁶`(this.siValue * that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁴`.times(that: `L²`) = `L⁶`(this.siValue * that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁴`>, that: Quan<`L²`>) = thiz.run { `L⁶`(this.siValue * that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁴`.div(that: Quan<`L⁻²`>) = `L⁶`(this.siValue / that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁴`.div(that: `L⁻²`) = `L⁶`(this.siValue / that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L⁴`>, that: Quan<`L⁻²`>) = thiz.run { `L⁶`(this.siValue / that.siValue) }
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁴`.times(that: Quan<`L⁻²`>) = `L²`(this.siValue * that.siValue)
+// @JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁴`.times(that: `L⁻²`) = `L²`(this.siValue * that.siValue)
+@JvmName("L4A0M0T0I0Theta0N0J0C0_Multiply_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun times(thiz: Quan<`L⁴`>, that: Quan<`L⁻²`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+
+
+typealias `L⁻²` = A0M0T0I0Theta0N0J0C0_per_L2
+inline class A0M0T0I0Theta0N0J0C0_per_L2(internal val underlying: Double) : Quan<`L⁻²`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⁻²"
+
+    override fun new(siValue: Double) = `L⁻²`(siValue)
+
+    override operator fun unaryPlus() = `L⁻²`(+underlying)
+    override operator fun unaryMinus() = `L⁻²`(-underlying)
+
+    override operator fun plus(that: `L⁻²`) = `L⁻²`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⁻²`) = `L⁻²`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⁻²`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⁻²`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⁻²`) = `L⁻²`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⁻²`) = if (this < that) this else that
+    override infix fun max(that: `L⁻²`) = if (this > that) this else that
+
+    override val abs get() = `L⁻²`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⁻²`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⁻²` && this.siValue == other.siValue
+}
+
+
+typealias `FuelEfficiency` = `L⁻²`
+
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_A0M0T0I0Theta0N0J0C0_per_L2_generic")
+operator fun `L⁻²`.div(that: Quan<`L⁻²`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_A0M0T0I0Theta0N0J0C0_per_L2_concrete")
+operator fun `L⁻²`.div(that: `L⁻²`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_A0M0T0I0Theta0N0J0C0_per_L2_nonextension")
+fun div(thiz: Quan<`L⁻²`>, that: Quan<`L⁻²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻²`.times(that: Quan<`L³`>) = `L`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻²`.times(that: `L³`) = `L`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L³`>) = thiz.run { `L`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻²`.div(that: Quan<`Dimensionless`>) = `L⁻²`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻²`.div(that: `Dimensionless`) = `L⁻²`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun div(thiz: Quan<`L⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻²`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L0A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻²`.times(that: Quan<`Dimensionless`>) = `L⁻²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L0A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻²`.times(that: `Dimensionless`) = `L⁻²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L0A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`Dimensionless`>) = thiz.run { `L⁻²`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_A0M0T0I0Theta0N0J0C1_per_L3_generic")
+operator fun `L⁻²`.div(that: Quan<`L⁻³⋅$`>) = `L⋅$⁻¹`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_A0M0T0I0Theta0N0J0C1_per_L3_concrete")
+operator fun `L⁻²`.div(that: `L⁻³⋅$`) = `L⋅$⁻¹`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_A0M0T0I0Theta0N0J0C1_per_L3_nonextension")
+fun div(thiz: Quan<`L⁻²`>, that: Quan<`L⁻³⋅$`>) = thiz.run { `L⋅$⁻¹`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁻²`.times(that: Quan<`L³⋅$`>) = `L⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁻²`.times(that: `L³⋅$`) = `L⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L³⋅$`>) = thiz.run { `L⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁻²`.times(that: Quan<`L³⋅$⁻¹`>) = `L⋅$⁻¹`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁻²`.times(that: `L³⋅$⁻¹`) = `L⋅$⁻¹`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L3A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L³⋅$⁻¹`>) = thiz.run { `L⋅$⁻¹`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L6A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻²`.times(that: Quan<`L⁶`>) = `L⁴`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L6A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻²`.times(that: `L⁶`) = `L⁴`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L6A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L⁶`>) = thiz.run { `L⁴`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_generic")
+operator fun `L⁻²`.times(that: Quan<`L⁻¹⋅$`>) = `L⁻³⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_concrete")
+operator fun `L⁻²`.times(that: `L⁻¹⋅$`) = `L⁻³⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_A0M0T0I0Theta0N0J0C1_per_L1_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L⁻¹⋅$`>) = thiz.run { `L⁻³⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L1A0M0T0I0Theta0N0J0C1_generic")
+operator fun `L⁻²`.times(that: Quan<`L⋅$`>) = `L⁻¹⋅$`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L1A0M0T0I0Theta0N0J0C1_concrete")
+operator fun `L⁻²`.times(that: `L⋅$`) = `L⁻¹⋅$`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L1A0M0T0I0Theta0N0J0C1_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L⋅$`>) = thiz.run { `L⁻¹⋅$`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_L1A0M0T0I0Theta0N0J0_per_C1_generic")
+operator fun `L⁻²`.div(that: Quan<`L⋅$⁻¹`>) = `L⁻³⋅$`(this.siValue / that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_L1A0M0T0I0Theta0N0J0_per_C1_concrete")
+operator fun `L⁻²`.div(that: `L⋅$⁻¹`) = `L⁻³⋅$`(this.siValue / that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Divide_L1A0M0T0I0Theta0N0J0_per_C1_nonextension")
+fun div(thiz: Quan<`L⁻²`>, that: Quan<`L⋅$⁻¹`>) = thiz.run { `L⁻³⋅$`(this.siValue / that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L2A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻²`.times(that: Quan<`L²`>) = `Dimensionless`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L2A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻²`.times(that: `L²`) = `Dimensionless`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L2A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L²`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L4A0M0T0I0Theta0N0J0C0_generic")
+operator fun `L⁻²`.times(that: Quan<`L⁴`>) = `L²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L4A0M0T0I0Theta0N0J0C0_concrete")
+operator fun `L⁻²`.times(that: `L⁴`) = `L²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0C0_per_L2_Multiply_L4A0M0T0I0Theta0N0J0C0_nonextension")
+fun times(thiz: Quan<`L⁻²`>, that: Quan<`L⁴`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+
+
+typealias `M` = L0A0M1T0I0Theta0N0J0C0
+inline class L0A0M1T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`M`> {
     override val siValue get() = underlying
     override val abrev get() = "kg"
 
@@ -1936,15 +3565,6 @@ object `Ounce` : UomConverter<`M`>,
     override fun invoke(x: `M`) = x.`Ounce`
 }
 
-inline val Number.`Gram`: `Mass` get() = `M`(toDouble() * 0.001)
-inline val `M`.`Gram` get() = siValue * 1000.0
-object `Gram` : UomConverter<`M`>,
-    Quan<`M`> by box(`M`(0.001)) {
-    override val unitName = "Gram"
-    override fun invoke(x: Double) = x.`Gram`
-    override fun invoke(x: `M`) = x.`Gram`
-}
-
 inline val Number.`Pound`: `Mass` get() = `M`(toDouble() * 0.453592)
 inline val `M`.`Pound` get() = siValue * 2.2046244201837775
 object `Pound` : UomConverter<`M`>,
@@ -1954,14 +3574,23 @@ object `Pound` : UomConverter<`M`>,
     override fun invoke(x: `M`) = x.`Pound`
 }
 
+inline val Number.`Gram`: `Mass` get() = `M`(toDouble() * 0.001)
+inline val `M`.`Gram` get() = siValue * 1000.0
+object `Gram` : UomConverter<`M`>,
+    Quan<`M`> by box(`M`(0.001)) {
+    override val unitName = "Gram"
+    override fun invoke(x: Double) = x.`Gram`
+    override fun invoke(x: `M`) = x.`Gram`
+}
+
 
 typealias `Mass` = `M`
 
 
 
 
-typealias `I` = L0A0M0T0I1Theta0N0J0
-inline class L0A0M0T0I1Theta0N0J0(internal val underlying: Double) : Quan<`I`> {
+typealias `I` = L0A0M0T0I1Theta0N0J0C0
+inline class L0A0M0T0I1Theta0N0J0C0(internal val underlying: Double) : Quan<`I`> {
     override val siValue get() = underlying
     override val abrev get() = "A"
 
@@ -2006,8 +3635,8 @@ typealias `ElectricCurrent` = `I`
 
 
 
-typealias `Θ` = L0A0M0T0I0Theta1N0J0
-inline class L0A0M0T0I0Theta1N0J0(internal val underlying: Double) : Quan<`Θ`> {
+typealias `Θ` = L0A0M0T0I0Theta1N0J0C0
+inline class L0A0M0T0I0Theta1N0J0C0(internal val underlying: Double) : Quan<`Θ`> {
     override val siValue get() = underlying
     override val abrev get() = "K"
 
@@ -2052,8 +3681,8 @@ typealias `Temperature` = `Θ`
 
 
 
-typealias `N` = L0A0M0T0I0Theta0N1J0
-inline class L0A0M0T0I0Theta0N1J0(internal val underlying: Double) : Quan<`N`> {
+typealias `N` = L0A0M0T0I0Theta0N1J0C0
+inline class L0A0M0T0I0Theta0N1J0C0(internal val underlying: Double) : Quan<`N`> {
     override val siValue get() = underlying
     override val abrev get() = "mol"
 
@@ -2098,8 +3727,8 @@ typealias `AmountOfSubstance` = `N`
 
 
 
-typealias `J` = L0A0M0T0I0Theta0N0J1
-inline class L0A0M0T0I0Theta0N0J1(internal val underlying: Double) : Quan<`J`> {
+typealias `J` = L0A0M0T0I0Theta0N0J1C0
+inline class L0A0M0T0I0Theta0N0J1C0(internal val underlying: Double) : Quan<`J`> {
     override val siValue get() = underlying
     override val abrev get() = "cd"
 
@@ -2144,8 +3773,8 @@ typealias `LuminousIntensity` = `J`
 
 
 
-typealias `∠` = L0A1M0T0I0Theta0N0J0
-inline class L0A1M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠`> {
+typealias `∠` = L0A1M0T0I0Theta0N0J0C0
+inline class L0A1M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`∠`> {
     override val siValue get() = underlying
     override val abrev get() = "rad"
 
@@ -2190,8 +3819,8 @@ typealias `Angle` = `∠`
 
 
 
-typealias `∠²` = L0A2M0T0I0Theta0N0J0
-inline class L0A2M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠²`> {
+typealias `∠²` = L0A2M0T0I0Theta0N0J0C0
+inline class L0A2M0T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`∠²`> {
     override val siValue get() = underlying
     override val abrev get() = "rad²"
 
@@ -2236,8 +3865,8 @@ typealias `SolidAngle` = `∠²`
 
 
 
-typealias `L⋅M⋅T⁻²` = L1A0M1I0Theta0N0J0_per_T2
-inline class L1A0M1I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`L⋅M⋅T⁻²`> {
+typealias `L⋅M⋅T⁻²` = L1A0M1I0Theta0N0J0C0_per_T2
+inline class L1A0M1I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`L⋅M⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻²"
 
@@ -2284,8 +3913,8 @@ typealias `Weight` = `L⋅M⋅T⁻²`
 
 
 
-typealias `L⁻¹⋅M⋅T⁻²` = A0M1I0Theta0N0J0_per_L1T2
-inline class A0M1I0Theta0N0J0_per_L1T2(internal val underlying: Double) : Quan<`L⁻¹⋅M⋅T⁻²`> {
+typealias `L⁻¹⋅M⋅T⁻²` = A0M1I0Theta0N0J0C0_per_L1T2
+inline class A0M1I0Theta0N0J0C0_per_L1T2(internal val underlying: Double) : Quan<`L⁻¹⋅M⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅kg⋅s⁻²"
 
@@ -2334,8 +3963,8 @@ typealias `EnergyDensity` = `L⁻¹⋅M⋅T⁻²`
 
 
 
-typealias `T⋅I` = L0A0M0T1I1Theta0N0J0
-inline class L0A0M0T1I1Theta0N0J0(internal val underlying: Double) : Quan<`T⋅I`> {
+typealias `T⋅I` = L0A0M0T1I1Theta0N0J0C0
+inline class L0A0M0T1I1Theta0N0J0C0(internal val underlying: Double) : Quan<`T⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "s⋅A"
 
@@ -2380,8 +4009,8 @@ typealias `ElectricCharge` = `T⋅I`
 
 
 
-typealias `L²⋅M⋅T⁻³⋅I⁻¹` = L2A0M1Theta0N0J0_per_T3I1
-inline class L2A0M1Theta0N0J0_per_T3I1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻³⋅I⁻¹`> {
+typealias `L²⋅M⋅T⁻³⋅I⁻¹` = L2A0M1Theta0N0J0C0_per_T3I1
+inline class L2A0M1Theta0N0J0C0_per_T3I1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻³⋅I⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻³⋅A⁻¹"
 
@@ -2426,8 +4055,8 @@ typealias `ElectricalPotential` = `L²⋅M⋅T⁻³⋅I⁻¹`
 
 
 
-typealias `L⁻²⋅M⁻¹⋅T⁴⋅I²` = A0T4I2Theta0N0J0_per_L2M1
-inline class A0T4I2Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T⁴⋅I²`> {
+typealias `L⁻²⋅M⁻¹⋅T⁴⋅I²` = A0T4I2Theta0N0J0C0_per_L2M1
+inline class A0T4I2Theta0N0J0C0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T⁴⋅I²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg⁻¹⋅s⁴⋅A²"
 
@@ -2472,8 +4101,8 @@ typealias `ElectricalCapacitance` = `L⁻²⋅M⁻¹⋅T⁴⋅I²`
 
 
 
-typealias `L²⋅M⋅T⁻³⋅I⁻²` = L2A0M1Theta0N0J0_per_T3I2
-inline class L2A0M1Theta0N0J0_per_T3I2(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻³⋅I⁻²`> {
+typealias `L²⋅M⋅T⁻³⋅I⁻²` = L2A0M1Theta0N0J0C0_per_T3I2
+inline class L2A0M1Theta0N0J0C0_per_T3I2(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻³⋅I⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻³⋅A⁻²"
 
@@ -2522,8 +4151,8 @@ typealias `Reactance` = `L²⋅M⋅T⁻³⋅I⁻²`
 
 
 
-typealias `L⁻²⋅M⁻¹⋅T³⋅I²` = A0T3I2Theta0N0J0_per_L2M1
-inline class A0T3I2Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T³⋅I²`> {
+typealias `L⁻²⋅M⁻¹⋅T³⋅I²` = A0T3I2Theta0N0J0C0_per_L2M1
+inline class A0T3I2Theta0N0J0C0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T³⋅I²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg⁻¹⋅s³⋅A²"
 
@@ -2568,8 +4197,8 @@ typealias `ElectricalConductance` = `L⁻²⋅M⁻¹⋅T³⋅I²`
 
 
 
-typealias `L²⋅M⋅T⁻²⋅I⁻¹` = L2A0M1Theta0N0J0_per_T2I1
-inline class L2A0M1Theta0N0J0_per_T2I1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅I⁻¹`> {
+typealias `L²⋅M⋅T⁻²⋅I⁻¹` = L2A0M1Theta0N0J0C0_per_T2I1
+inline class L2A0M1Theta0N0J0C0_per_T2I1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅I⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻²⋅A⁻¹"
 
@@ -2614,8 +4243,8 @@ typealias `MagneticFlux` = `L²⋅M⋅T⁻²⋅I⁻¹`
 
 
 
-typealias `M⋅T⁻²⋅I⁻¹` = L0A0M1Theta0N0J0_per_T2I1
-inline class L0A0M1Theta0N0J0_per_T2I1(internal val underlying: Double) : Quan<`M⋅T⁻²⋅I⁻¹`> {
+typealias `M⋅T⁻²⋅I⁻¹` = L0A0M1Theta0N0J0C0_per_T2I1
+inline class L0A0M1Theta0N0J0C0_per_T2I1(internal val underlying: Double) : Quan<`M⋅T⁻²⋅I⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⋅s⁻²⋅A⁻¹"
 
@@ -2662,8 +4291,8 @@ typealias `MagneticFluxDensity` = `M⋅T⁻²⋅I⁻¹`
 
 
 
-typealias `L²⋅M⋅T⁻²⋅I⁻²` = L2A0M1Theta0N0J0_per_T2I2
-inline class L2A0M1Theta0N0J0_per_T2I2(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅I⁻²`> {
+typealias `L²⋅M⋅T⁻²⋅I⁻²` = L2A0M1Theta0N0J0C0_per_T2I2
+inline class L2A0M1Theta0N0J0C0_per_T2I2(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅I⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻²⋅A⁻²"
 
@@ -2708,8 +4337,8 @@ typealias `ElectricalInductance` = `L²⋅M⋅T⁻²⋅I⁻²`
 
 
 
-typealias `∠²⋅J` = L0A2M0T0I0Theta0N0J1
-inline class L0A2M0T0I0Theta0N0J1(internal val underlying: Double) : Quan<`∠²⋅J`> {
+typealias `∠²⋅J` = L0A2M0T0I0Theta0N0J1C0
+inline class L0A2M0T0I0Theta0N0J1C0(internal val underlying: Double) : Quan<`∠²⋅J`> {
     override val siValue get() = underlying
     override val abrev get() = "rad²⋅cd"
 
@@ -2754,8 +4383,8 @@ typealias `LuminousFlux` = `∠²⋅J`
 
 
 
-typealias `L⁻²⋅J` = A0M0T0I0Theta0N0J1_per_L2
-inline class A0M0T0I0Theta0N0J1_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅J`> {
+typealias `L⁻²⋅J` = A0M0T0I0Theta0N0J1C0_per_L2
+inline class A0M0T0I0Theta0N0J1C0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅J`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅cd"
 
@@ -2802,8 +4431,8 @@ typealias `Luminance` = `L⁻²⋅J`
 
 
 
-typealias `T⁻¹⋅N` = L0A0M0I0Theta0N1J0_per_T1
-inline class L0A0M0I0Theta0N1J0_per_T1(internal val underlying: Double) : Quan<`T⁻¹⋅N`> {
+typealias `T⁻¹⋅N` = L0A0M0I0Theta0N1J0C0_per_T1
+inline class L0A0M0I0Theta0N1J0C0_per_T1(internal val underlying: Double) : Quan<`T⁻¹⋅N`> {
     override val siValue get() = underlying
     override val abrev get() = "s⁻¹⋅mol"
 
@@ -2848,45 +4477,8 @@ typealias `CatalyticActivity` = `T⁻¹⋅N`
 
 
 
-typealias `L³` = L3A0M0T0I0Theta0N0J0
-inline class L3A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L³`> {
-    override val siValue get() = underlying
-    override val abrev get() = "m³"
-
-    override fun new(siValue: Double) = `L³`(siValue)
-
-    override operator fun unaryPlus() = `L³`(+underlying)
-    override operator fun unaryMinus() = `L³`(-underlying)
-
-    override operator fun plus(that: `L³`) = `L³`(this.underlying + that.underlying)
-    override operator fun minus(that: `L³`) = `L³`(this.underlying - that.underlying)
-    override operator fun times(that: Number) = `L³`(this.underlying * that.toDouble())
-    override operator fun div(that: Number) = `L³`(this.underlying / that.toDouble())
-    override operator fun rem(that: `L³`) = `L³`(this.underlying % that.underlying)
-
-    override infix fun min(that: `L³`) = if (this < that) this else that
-    override infix fun max(that: `L³`) = if (this > that) this else that
-
-    override val abs get() = `L³`(abs(underlying))
-    override val signum get() = underlying.sign
-    override val isNegative get() = underlying < 0
-    override val isZero get() = underlying == 0.0
-    override val isPositive get() = underlying > 0
-
-    override fun compareTo(other: `L³`) = this.underlying.compareTo(other.underlying)
-
-    override fun toString() = "$underlying $abrev"
-    // override fun equals(other: Any?) = other is `L³` && this.siValue == other.siValue
-}
-
-
-typealias `Volume` = `L³`
-
-
-
-
-typealias `L³⋅T⁻¹` = L3A0M0I0Theta0N0J0_per_T1
-inline class L3A0M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`L³⋅T⁻¹`> {
+typealias `L³⋅T⁻¹` = L3A0M0I0Theta0N0J0C0_per_T1
+inline class L3A0M0I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`L³⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m³⋅s⁻¹"
 
@@ -2922,8 +4514,8 @@ typealias `VolumetricFlow` = `L³⋅T⁻¹`
 
 
 
-typealias `L⋅T⁻³` = L1A0M0I0Theta0N0J0_per_T3
-inline class L1A0M0I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`L⋅T⁻³`> {
+typealias `L⋅T⁻³` = L1A0M0I0Theta0N0J0C0_per_T3
+inline class L1A0M0I0Theta0N0J0C0_per_T3(internal val underlying: Double) : Quan<`L⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅s⁻³"
 
@@ -2961,8 +4553,8 @@ typealias `Jolt` = `L⋅T⁻³`
 
 
 
-typealias `L⋅T⁻⁴` = L1A0M0I0Theta0N0J0_per_T4
-inline class L1A0M0I0Theta0N0J0_per_T4(internal val underlying: Double) : Quan<`L⋅T⁻⁴`> {
+typealias `L⋅T⁻⁴` = L1A0M0I0Theta0N0J0C0_per_T4
+inline class L1A0M0I0Theta0N0J0C0_per_T4(internal val underlying: Double) : Quan<`L⋅T⁻⁴`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅s⁻⁴"
 
@@ -3000,8 +4592,8 @@ typealias `Jounce` = `L⋅T⁻⁴`
 
 
 
-typealias `∠⋅T⁻¹` = L0A1M0I0Theta0N0J0_per_T1
-inline class L0A1M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`∠⋅T⁻¹`> {
+typealias `∠⋅T⁻¹` = L0A1M0I0Theta0N0J0C0_per_T1
+inline class L0A1M0I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`∠⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "rad⋅s⁻¹"
 
@@ -3037,8 +4629,8 @@ typealias `AngularVelocity` = `∠⋅T⁻¹`
 
 
 
-typealias `∠⋅T⁻²` = L0A1M0I0Theta0N0J0_per_T2
-inline class L0A1M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`∠⋅T⁻²`> {
+typealias `∠⋅T⁻²` = L0A1M0I0Theta0N0J0C0_per_T2
+inline class L0A1M0I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`∠⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "rad⋅s⁻²"
 
@@ -3074,8 +4666,8 @@ typealias `AngularAcceleration` = `∠⋅T⁻²`
 
 
 
-typealias `L⋅M⋅T⁻¹` = L1A0M1I0Theta0N0J0_per_T1
-inline class L1A0M1I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻¹`> {
+typealias `L⋅M⋅T⁻¹` = L1A0M1I0Theta0N0J0C0_per_T1
+inline class L1A0M1I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻¹"
 
@@ -3113,8 +4705,8 @@ typealias `Impulse` = `L⋅M⋅T⁻¹`
 
 
 
-typealias `L²⋅M⋅T⁻¹` = L2A0M1I0Theta0N0J0_per_T1
-inline class L2A0M1I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻¹`> {
+typealias `L²⋅M⋅T⁻¹` = L2A0M1I0Theta0N0J0C0_per_T1
+inline class L2A0M1I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻¹"
 
@@ -3152,8 +4744,8 @@ typealias `Action` = `L²⋅M⋅T⁻¹`
 
 
 
-typealias `L²⋅∠⁻¹⋅M⋅T⁻²` = L2M1I0Theta0N0J0_per_A1T2
-inline class L2M1I0Theta0N0J0_per_A1T2(internal val underlying: Double) : Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`> {
+typealias `L²⋅∠⁻¹⋅M⋅T⁻²` = L2M1I0Theta0N0J0C0_per_A1T2
+inline class L2M1I0Theta0N0J0C0_per_A1T2(internal val underlying: Double) : Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅rad⁻¹⋅kg⋅s⁻²"
 
@@ -3189,8 +4781,8 @@ typealias `Torque` = `L²⋅∠⁻¹⋅M⋅T⁻²`
 
 
 
-typealias `L⋅M⋅T⁻³` = L1A0M1I0Theta0N0J0_per_T3
-inline class L1A0M1I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`L⋅M⋅T⁻³`> {
+typealias `L⋅M⋅T⁻³` = L1A0M1I0Theta0N0J0C0_per_T3
+inline class L1A0M1I0Theta0N0J0C0_per_T3(internal val underlying: Double) : Quan<`L⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻³"
 
@@ -3228,8 +4820,8 @@ typealias `SpectralPower` = `L⋅M⋅T⁻³`
 
 
 
-typealias `L⁻¹` = A0M0T0I0Theta0N0J0_per_L1
-inline class A0M0T0I0Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹`> {
+typealias `L⁻¹` = A0M0T0I0Theta0N0J0C0_per_L1
+inline class A0M0T0I0Theta0N0J0C0_per_L1(internal val underlying: Double) : Quan<`L⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹"
 
@@ -3271,8 +4863,8 @@ typealias `SpatialFrequency` = `L⁻¹`
 
 
 
-typealias `L⁻²⋅M` = A0M1T0I0Theta0N0J0_per_L2
-inline class A0M1T0I0Theta0N0J0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅M`> {
+typealias `L⁻²⋅M` = A0M1T0I0Theta0N0J0C0_per_L2
+inline class A0M1T0I0Theta0N0J0C0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅M`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg"
 
@@ -3308,8 +4900,8 @@ typealias `AreaDensity` = `L⁻²⋅M`
 
 
 
-typealias `L⁻³⋅M` = A0M1T0I0Theta0N0J0_per_L3
-inline class A0M1T0I0Theta0N0J0_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅M`> {
+typealias `L⁻³⋅M` = A0M1T0I0Theta0N0J0C0_per_L3
+inline class A0M1T0I0Theta0N0J0C0_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅M`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻³⋅kg"
 
@@ -3347,8 +4939,8 @@ typealias `MassDensity` = `L⁻³⋅M`
 
 
 
-typealias `L³⋅M⁻¹` = L3A0T0I0Theta0N0J0_per_M1
-inline class L3A0T0I0Theta0N0J0_per_M1(internal val underlying: Double) : Quan<`L³⋅M⁻¹`> {
+typealias `L³⋅M⁻¹` = L3A0T0I0Theta0N0J0C0_per_M1
+inline class L3A0T0I0Theta0N0J0C0_per_M1(internal val underlying: Double) : Quan<`L³⋅M⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m³⋅kg⁻¹"
 
@@ -3384,8 +4976,8 @@ typealias `SpecificVolume` = `L³⋅M⁻¹`
 
 
 
-typealias `L⁻³⋅N` = A0M0T0I0Theta0N1J0_per_L3
-inline class A0M0T0I0Theta0N1J0_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅N`> {
+typealias `L⁻³⋅N` = A0M0T0I0Theta0N1J0C0_per_L3
+inline class A0M0T0I0Theta0N1J0C0_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅N`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻³⋅mol"
 
@@ -3423,8 +5015,8 @@ typealias `AmountOfSubstanceConcentration` = `L⁻³⋅N`
 
 
 
-typealias `L³⋅N⁻¹` = L3A0M0T0I0Theta0J0_per_N1
-inline class L3A0M0T0I0Theta0J0_per_N1(internal val underlying: Double) : Quan<`L³⋅N⁻¹`> {
+typealias `L³⋅N⁻¹` = L3A0M0T0I0Theta0J0C0_per_N1
+inline class L3A0M0T0I0Theta0J0C0_per_N1(internal val underlying: Double) : Quan<`L³⋅N⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m³⋅mol⁻¹"
 
@@ -3460,8 +5052,8 @@ typealias `MolarVolume` = `L³⋅N⁻¹`
 
 
 
-typealias `L²⋅M⋅T⁻²⋅Θ⁻¹` = L2A0M1I0N0J0_per_T2Theta1
-inline class L2A0M1I0N0J0_per_T2Theta1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅Θ⁻¹`> {
+typealias `L²⋅M⋅T⁻²⋅Θ⁻¹` = L2A0M1I0N0J0C0_per_T2Theta1
+inline class L2A0M1I0N0J0C0_per_T2Theta1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅Θ⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻²⋅K⁻¹"
 
@@ -3499,8 +5091,8 @@ typealias `Entropy` = `L²⋅M⋅T⁻²⋅Θ⁻¹`
 
 
 
-typealias `L²⋅M⋅T⁻²⋅Θ⁻¹⋅N⁻¹` = L2A0M1I0J0_per_T2Theta1N1
-inline class L2A0M1I0J0_per_T2Theta1N1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅Θ⁻¹⋅N⁻¹`> {
+typealias `L²⋅M⋅T⁻²⋅Θ⁻¹⋅N⁻¹` = L2A0M1I0J0C0_per_T2Theta1N1
+inline class L2A0M1I0J0C0_per_T2Theta1N1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅Θ⁻¹⋅N⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻²⋅K⁻¹⋅mol⁻¹"
 
@@ -3538,8 +5130,8 @@ typealias `MolarEntropy` = `L²⋅M⋅T⁻²⋅Θ⁻¹⋅N⁻¹`
 
 
 
-typealias `L²⋅T⁻²⋅Θ⁻¹` = L2A0M0I0N0J0_per_T2Theta1
-inline class L2A0M0I0N0J0_per_T2Theta1(internal val underlying: Double) : Quan<`L²⋅T⁻²⋅Θ⁻¹`> {
+typealias `L²⋅T⁻²⋅Θ⁻¹` = L2A0M0I0N0J0C0_per_T2Theta1
+inline class L2A0M0I0N0J0C0_per_T2Theta1(internal val underlying: Double) : Quan<`L²⋅T⁻²⋅Θ⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅s⁻²⋅K⁻¹"
 
@@ -3577,8 +5169,8 @@ typealias `SpecificEntropy` = `L²⋅T⁻²⋅Θ⁻¹`
 
 
 
-typealias `L²⋅M⋅T⁻²⋅N⁻¹` = L2A0M1I0Theta0J0_per_T2N1
-inline class L2A0M1I0Theta0J0_per_T2N1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅N⁻¹`> {
+typealias `L²⋅M⋅T⁻²⋅N⁻¹` = L2A0M1I0Theta0J0C0_per_T2N1
+inline class L2A0M1I0Theta0J0C0_per_T2N1(internal val underlying: Double) : Quan<`L²⋅M⋅T⁻²⋅N⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg⋅s⁻²⋅mol⁻¹"
 
@@ -3614,8 +5206,8 @@ typealias `MolarEnergy` = `L²⋅M⋅T⁻²⋅N⁻¹`
 
 
 
-typealias `M⋅T⁻²` = L0A0M1I0Theta0N0J0_per_T2
-inline class L0A0M1I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`M⋅T⁻²`> {
+typealias `M⋅T⁻²` = L0A0M1I0Theta0N0J0C0_per_T2
+inline class L0A0M1I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`M⋅T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⋅s⁻²"
 
@@ -3655,8 +5247,8 @@ typealias `RadiantExposure` = `M⋅T⁻²`
 
 
 
-typealias `M⋅T⁻³` = L0A0M1I0Theta0N0J0_per_T3
-inline class L0A0M1I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`M⋅T⁻³`> {
+typealias `M⋅T⁻³` = L0A0M1I0Theta0N0J0C0_per_T3
+inline class L0A0M1I0Theta0N0J0C0_per_T3(internal val underlying: Double) : Quan<`M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⋅s⁻³"
 
@@ -3696,8 +5288,8 @@ typealias `EnergyFluxDensity` = `M⋅T⁻³`
 
 
 
-typealias `L⋅M⋅T⁻³⋅Θ⁻¹` = L1A0M1I0N0J0_per_T3Theta1
-inline class L1A0M1I0N0J0_per_T3Theta1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻³⋅Θ⁻¹`> {
+typealias `L⋅M⋅T⁻³⋅Θ⁻¹` = L1A0M1I0N0J0C0_per_T3Theta1
+inline class L1A0M1I0N0J0C0_per_T3Theta1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻³⋅Θ⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻³⋅K⁻¹"
 
@@ -3733,8 +5325,8 @@ typealias `ThermalConductivity` = `L⋅M⋅T⁻³⋅Θ⁻¹`
 
 
 
-typealias `L²⋅T⁻¹` = L2A0M0I0Theta0N0J0_per_T1
-inline class L2A0M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`L²⋅T⁻¹`> {
+typealias `L²⋅T⁻¹` = L2A0M0I0Theta0N0J0C0_per_T1
+inline class L2A0M0I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`L²⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅s⁻¹"
 
@@ -3776,8 +5368,8 @@ typealias `SpecificAngularMomentum` = `L²⋅T⁻¹`
 
 
 
-typealias `L⁻¹⋅M⋅T⁻¹` = A0M1I0Theta0N0J0_per_L1T1
-inline class A0M1I0Theta0N0J0_per_L1T1(internal val underlying: Double) : Quan<`L⁻¹⋅M⋅T⁻¹`> {
+typealias `L⁻¹⋅M⋅T⁻¹` = A0M1I0Theta0N0J0C0_per_L1T1
+inline class A0M1I0Theta0N0J0C0_per_L1T1(internal val underlying: Double) : Quan<`L⁻¹⋅M⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅kg⋅s⁻¹"
 
@@ -3813,8 +5405,8 @@ typealias `DynamicViscosity` = `L⁻¹⋅M⋅T⁻¹`
 
 
 
-typealias `L⁻²⋅T⋅I` = A0M0T1I1Theta0N0J0_per_L2
-inline class A0M0T1I1Theta0N0J0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅T⋅I`> {
+typealias `L⁻²⋅T⋅I` = A0M0T1I1Theta0N0J0C0_per_L2
+inline class A0M0T1I1Theta0N0J0C0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅T⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅s⋅A"
 
@@ -3852,8 +5444,8 @@ typealias `PolarizationDensity` = `L⁻²⋅T⋅I`
 
 
 
-typealias `L⁻³⋅T⋅I` = A0M0T1I1Theta0N0J0_per_L3
-inline class A0M0T1I1Theta0N0J0_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅T⋅I`> {
+typealias `L⁻³⋅T⋅I` = A0M0T1I1Theta0N0J0C0_per_L3
+inline class A0M0T1I1Theta0N0J0C0_per_L3(internal val underlying: Double) : Quan<`L⁻³⋅T⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻³⋅s⋅A"
 
@@ -3889,8 +5481,8 @@ typealias `ElectricChargeDensity` = `L⁻³⋅T⋅I`
 
 
 
-typealias `L⁻²⋅I` = A0M0T0I1Theta0N0J0_per_L2
-inline class A0M0T0I1Theta0N0J0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅I`> {
+typealias `L⁻²⋅I` = A0M0T0I1Theta0N0J0C0_per_L2
+inline class A0M0T0I1Theta0N0J0C0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅A"
 
@@ -3926,8 +5518,8 @@ typealias `ElectricCurrentDensity` = `L⁻²⋅I`
 
 
 
-typealias `L⁻³⋅M⁻¹⋅T³⋅I²` = A0T3I2Theta0N0J0_per_L3M1
-inline class A0T3I2Theta0N0J0_per_L3M1(internal val underlying: Double) : Quan<`L⁻³⋅M⁻¹⋅T³⋅I²`> {
+typealias `L⁻³⋅M⁻¹⋅T³⋅I²` = A0T3I2Theta0N0J0C0_per_L3M1
+inline class A0T3I2Theta0N0J0C0_per_L3M1(internal val underlying: Double) : Quan<`L⁻³⋅M⁻¹⋅T³⋅I²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻³⋅kg⁻¹⋅s³⋅A²"
 
@@ -3963,8 +5555,8 @@ typealias `ElectricalConductivity` = `L⁻³⋅M⁻¹⋅T³⋅I²`
 
 
 
-typealias `M⁻¹⋅T³⋅I²⋅N⁻¹` = L0A0T3I2Theta0J0_per_M1N1
-inline class L0A0T3I2Theta0J0_per_M1N1(internal val underlying: Double) : Quan<`M⁻¹⋅T³⋅I²⋅N⁻¹`> {
+typealias `M⁻¹⋅T³⋅I²⋅N⁻¹` = L0A0T3I2Theta0J0C0_per_M1N1
+inline class L0A0T3I2Theta0J0C0_per_M1N1(internal val underlying: Double) : Quan<`M⁻¹⋅T³⋅I²⋅N⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⁻¹⋅s³⋅A²⋅mol⁻¹"
 
@@ -4000,8 +5592,8 @@ typealias `MolarConductivity` = `M⁻¹⋅T³⋅I²⋅N⁻¹`
 
 
 
-typealias `L⁻³⋅M⁻¹⋅T⁴⋅I²` = A0T4I2Theta0N0J0_per_L3M1
-inline class A0T4I2Theta0N0J0_per_L3M1(internal val underlying: Double) : Quan<`L⁻³⋅M⁻¹⋅T⁴⋅I²`> {
+typealias `L⁻³⋅M⁻¹⋅T⁴⋅I²` = A0T4I2Theta0N0J0C0_per_L3M1
+inline class A0T4I2Theta0N0J0C0_per_L3M1(internal val underlying: Double) : Quan<`L⁻³⋅M⁻¹⋅T⁴⋅I²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻³⋅kg⁻¹⋅s⁴⋅A²"
 
@@ -4037,8 +5629,8 @@ typealias `Permittivity` = `L⁻³⋅M⁻¹⋅T⁴⋅I²`
 
 
 
-typealias `L⋅M⋅T⁻²⋅I⁻²` = L1A0M1Theta0N0J0_per_T2I2
-inline class L1A0M1Theta0N0J0_per_T2I2(internal val underlying: Double) : Quan<`L⋅M⋅T⁻²⋅I⁻²`> {
+typealias `L⋅M⋅T⁻²⋅I⁻²` = L1A0M1Theta0N0J0C0_per_T2I2
+inline class L1A0M1Theta0N0J0C0_per_T2I2(internal val underlying: Double) : Quan<`L⋅M⋅T⁻²⋅I⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻²⋅A⁻²"
 
@@ -4074,8 +5666,8 @@ typealias `MagneticPermeability` = `L⋅M⋅T⁻²⋅I⁻²`
 
 
 
-typealias `L⋅M⋅T⁻³⋅I⁻¹` = L1A0M1Theta0N0J0_per_T3I1
-inline class L1A0M1Theta0N0J0_per_T3I1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻³⋅I⁻¹`> {
+typealias `L⋅M⋅T⁻³⋅I⁻¹` = L1A0M1Theta0N0J0C0_per_T3I1
+inline class L1A0M1Theta0N0J0C0_per_T3I1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻³⋅I⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻³⋅A⁻¹"
 
@@ -4111,8 +5703,8 @@ typealias `ElectricFieldStrength` = `L⋅M⋅T⁻³⋅I⁻¹`
 
 
 
-typealias `L⁻¹⋅I` = A0M0T0I1Theta0N0J0_per_L1
-inline class A0M0T0I1Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅I`> {
+typealias `L⁻¹⋅I` = A0M0T0I1Theta0N0J0C0_per_L1
+inline class A0M0T0I1Theta0N0J0C0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅A"
 
@@ -4148,8 +5740,8 @@ typealias `Magnetization` = `L⁻¹⋅I`
 
 
 
-typealias `T⋅J` = L0A0M0T1I0Theta0N0J1
-inline class L0A0M0T1I0Theta0N0J1(internal val underlying: Double) : Quan<`T⋅J`> {
+typealias `T⋅J` = L0A0M0T1I0Theta0N0J1C0
+inline class L0A0M0T1I0Theta0N0J1C0(internal val underlying: Double) : Quan<`T⋅J`> {
     override val siValue get() = underlying
     override val abrev get() = "s⋅cd"
 
@@ -4185,8 +5777,8 @@ typealias `LuminousEnergy` = `T⋅J`
 
 
 
-typealias `L⁻²⋅T⋅J` = A0M0T1I0Theta0N0J1_per_L2
-inline class A0M0T1I0Theta0N0J1_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅T⋅J`> {
+typealias `L⁻²⋅T⋅J` = A0M0T1I0Theta0N0J1C0_per_L2
+inline class A0M0T1I0Theta0N0J1C0_per_L2(internal val underlying: Double) : Quan<`L⁻²⋅T⋅J`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅s⋅cd"
 
@@ -4222,8 +5814,8 @@ typealias `LuminousExposure` = `L⁻²⋅T⋅J`
 
 
 
-typealias `M⁻¹⋅T⋅I` = L0A0T1I1Theta0N0J0_per_M1
-inline class L0A0T1I1Theta0N0J0_per_M1(internal val underlying: Double) : Quan<`M⁻¹⋅T⋅I`> {
+typealias `M⁻¹⋅T⋅I` = L0A0T1I1Theta0N0J0C0_per_M1
+inline class L0A0T1I1Theta0N0J0C0_per_M1(internal val underlying: Double) : Quan<`M⁻¹⋅T⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⁻¹⋅s⋅A"
 
@@ -4259,8 +5851,8 @@ typealias `Exposure` = `M⁻¹⋅T⋅I`
 
 
 
-typealias `L³⋅M⋅T⁻³⋅I⁻²` = L3A0M1Theta0N0J0_per_T3I2
-inline class L3A0M1Theta0N0J0_per_T3I2(internal val underlying: Double) : Quan<`L³⋅M⋅T⁻³⋅I⁻²`> {
+typealias `L³⋅M⋅T⁻³⋅I⁻²` = L3A0M1Theta0N0J0C0_per_T3I2
+inline class L3A0M1Theta0N0J0C0_per_T3I2(internal val underlying: Double) : Quan<`L³⋅M⋅T⁻³⋅I⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "m³⋅kg⋅s⁻³⋅A⁻²"
 
@@ -4296,8 +5888,8 @@ typealias `Resistivity` = `L³⋅M⋅T⁻³⋅I⁻²`
 
 
 
-typealias `L⁻¹⋅M` = A0M1T0I0Theta0N0J0_per_L1
-inline class A0M1T0I0Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅M`> {
+typealias `L⁻¹⋅M` = A0M1T0I0Theta0N0J0C0_per_L1
+inline class A0M1T0I0Theta0N0J0C0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅M`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅kg"
 
@@ -4333,8 +5925,8 @@ typealias `LinearMassDensity` = `L⁻¹⋅M`
 
 
 
-typealias `L⁻¹⋅T⋅I` = A0M0T1I1Theta0N0J0_per_L1
-inline class A0M0T1I1Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅T⋅I`> {
+typealias `L⁻¹⋅T⋅I` = A0M0T1I1Theta0N0J0C0_per_L1
+inline class A0M0T1I1Theta0N0J0C0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅T⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅s⋅A"
 
@@ -4370,8 +5962,8 @@ typealias `LinearChargeDensity` = `L⁻¹⋅T⋅I`
 
 
 
-typealias `M⁻¹⋅N` = L0A0T0I0Theta0N1J0_per_M1
-inline class L0A0T0I0Theta0N1J0_per_M1(internal val underlying: Double) : Quan<`M⁻¹⋅N`> {
+typealias `M⁻¹⋅N` = L0A0T0I0Theta0N1J0C0_per_M1
+inline class L0A0T0I0Theta0N1J0C0_per_M1(internal val underlying: Double) : Quan<`M⁻¹⋅N`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⁻¹⋅mol"
 
@@ -4407,8 +5999,8 @@ typealias `Molality` = `M⁻¹⋅N`
 
 
 
-typealias `M⋅N⁻¹` = L0A0M1T0I0Theta0J0_per_N1
-inline class L0A0M1T0I0Theta0J0_per_N1(internal val underlying: Double) : Quan<`M⋅N⁻¹`> {
+typealias `M⋅N⁻¹` = L0A0M1T0I0Theta0J0C0_per_N1
+inline class L0A0M1T0I0Theta0J0C0_per_N1(internal val underlying: Double) : Quan<`M⋅N⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⋅mol⁻¹"
 
@@ -4444,45 +6036,8 @@ typealias `MolarMass` = `M⋅N⁻¹`
 
 
 
-typealias `L⁻²` = A0M0T0I0Theta0N0J0_per_L2
-inline class A0M0T0I0Theta0N0J0_per_L2(internal val underlying: Double) : Quan<`L⁻²`> {
-    override val siValue get() = underlying
-    override val abrev get() = "m⁻²"
-
-    override fun new(siValue: Double) = `L⁻²`(siValue)
-
-    override operator fun unaryPlus() = `L⁻²`(+underlying)
-    override operator fun unaryMinus() = `L⁻²`(-underlying)
-
-    override operator fun plus(that: `L⁻²`) = `L⁻²`(this.underlying + that.underlying)
-    override operator fun minus(that: `L⁻²`) = `L⁻²`(this.underlying - that.underlying)
-    override operator fun times(that: Number) = `L⁻²`(this.underlying * that.toDouble())
-    override operator fun div(that: Number) = `L⁻²`(this.underlying / that.toDouble())
-    override operator fun rem(that: `L⁻²`) = `L⁻²`(this.underlying % that.underlying)
-
-    override infix fun min(that: `L⁻²`) = if (this < that) this else that
-    override infix fun max(that: `L⁻²`) = if (this > that) this else that
-
-    override val abs get() = `L⁻²`(abs(underlying))
-    override val signum get() = underlying.sign
-    override val isNegative get() = underlying < 0
-    override val isZero get() = underlying == 0.0
-    override val isPositive get() = underlying > 0
-
-    override fun compareTo(other: `L⁻²`) = this.underlying.compareTo(other.underlying)
-
-    override fun toString() = "$underlying $abrev"
-    // override fun equals(other: Any?) = other is `L⁻²` && this.siValue == other.siValue
-}
-
-
-typealias `FuelEfficiency` = `L⁻²`
-
-
-
-
-typealias `M⋅T⁻¹` = L0A0M1I0Theta0N0J0_per_T1
-inline class L0A0M1I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`M⋅T⁻¹`> {
+typealias `M⋅T⁻¹` = L0A0M1I0Theta0N0J0C0_per_T1
+inline class L0A0M1I0Theta0N0J0C0_per_T1(internal val underlying: Double) : Quan<`M⋅T⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⋅s⁻¹"
 
@@ -4518,8 +6073,8 @@ typealias `MassFlowRate` = `M⋅T⁻¹`
 
 
 
-typealias `L²⋅I` = L2A0M0T0I1Theta0N0J0
-inline class L2A0M0T0I1Theta0N0J0(internal val underlying: Double) : Quan<`L²⋅I`> {
+typealias `L²⋅I` = L2A0M0T0I1Theta0N0J0C0
+inline class L2A0M0T0I1Theta0N0J0C0(internal val underlying: Double) : Quan<`L²⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅A"
 
@@ -4555,8 +6110,8 @@ typealias `MagneticDipoleMoment` = `L²⋅I`
 
 
 
-typealias `L⁻¹⋅M⋅T⁻³` = A0M1I0Theta0N0J0_per_L1T3
-inline class A0M1I0Theta0N0J0_per_L1T3(internal val underlying: Double) : Quan<`L⁻¹⋅M⋅T⁻³`> {
+typealias `L⁻¹⋅M⋅T⁻³` = A0M1I0Theta0N0J0C0_per_L1T3
+inline class A0M1I0Theta0N0J0C0_per_L1T3(internal val underlying: Double) : Quan<`L⁻¹⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅kg⋅s⁻³"
 
@@ -4594,8 +6149,8 @@ typealias `PowerDensity` = `L⁻¹⋅M⋅T⁻³`
 
 
 
-typealias `L⁻²⋅M⁻¹⋅T³⋅Θ` = A0T3I0Theta1N0J0_per_L2M1
-inline class A0T3I0Theta1N0J0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T³⋅Θ`> {
+typealias `L⁻²⋅M⁻¹⋅T³⋅Θ` = A0T3I0Theta1N0J0C0_per_L2M1
+inline class A0T3I0Theta1N0J0C0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T³⋅Θ`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg⁻¹⋅s³⋅K"
 
@@ -4631,8 +6186,8 @@ typealias `ThermalResistance` = `L⁻²⋅M⁻¹⋅T³⋅Θ`
 
 
 
-typealias `Θ⁻¹` = L0A0M0T0I0N0J0_per_Theta1
-inline class L0A0M0T0I0N0J0_per_Theta1(internal val underlying: Double) : Quan<`Θ⁻¹`> {
+typealias `Θ⁻¹` = L0A0M0T0I0N0J0C0_per_Theta1
+inline class L0A0M0T0I0N0J0C0_per_Theta1(internal val underlying: Double) : Quan<`Θ⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "K⁻¹"
 
@@ -4668,8 +6223,8 @@ typealias `ThermalExpansionCoefficient` = `Θ⁻¹`
 
 
 
-typealias `L⁻¹⋅Θ` = A0M0T0I0Theta1N0J0_per_L1
-inline class A0M0T0I0Theta1N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅Θ`> {
+typealias `L⁻¹⋅Θ` = A0M0T0I0Theta1N0J0C0_per_L1
+inline class A0M0T0I0Theta1N0J0C0_per_L1(internal val underlying: Double) : Quan<`L⁻¹⋅Θ`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅K"
 
@@ -4705,8 +6260,8 @@ typealias `TemperatureGradient` = `L⁻¹⋅Θ`
 
 
 
-typealias `M⁻¹⋅T²⋅I` = L0A0T2I1Theta0N0J0_per_M1
-inline class L0A0T2I1Theta0N0J0_per_M1(internal val underlying: Double) : Quan<`M⁻¹⋅T²⋅I`> {
+typealias `M⁻¹⋅T²⋅I` = L0A0T2I1Theta0N0J0C0_per_M1
+inline class L0A0T2I1Theta0N0J0C0_per_M1(internal val underlying: Double) : Quan<`M⁻¹⋅T²⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "kg⁻¹⋅s²⋅A"
 
@@ -4742,8 +6297,8 @@ typealias `ElectronMobility` = `M⁻¹⋅T²⋅I`
 
 
 
-typealias `L⋅M⁻¹⋅T²` = L1A0T2I0Theta0N0J0_per_M1
-inline class L1A0T2I0Theta0N0J0_per_M1(internal val underlying: Double) : Quan<`L⋅M⁻¹⋅T²`> {
+typealias `L⋅M⁻¹⋅T²` = L1A0T2I0Theta0N0J0C0_per_M1
+inline class L1A0T2I0Theta0N0J0C0_per_M1(internal val underlying: Double) : Quan<`L⋅M⁻¹⋅T²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⁻¹⋅s²"
 
@@ -4779,8 +6334,8 @@ typealias `Compressibility` = `L⋅M⁻¹⋅T²`
 
 
 
-typealias `L⁻²⋅M⁻¹⋅T²⋅I²` = A0T2I2Theta0N0J0_per_L2M1
-inline class A0T2I2Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T²⋅I²`> {
+typealias `L⁻²⋅M⁻¹⋅T²⋅I²` = A0T2I2Theta0N0J0C0_per_L2M1
+inline class A0T2I2Theta0N0J0C0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T²⋅I²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg⁻¹⋅s²⋅A²"
 
@@ -4816,8 +6371,8 @@ typealias `MagneticReluctance` = `L⁻²⋅M⁻¹⋅T²⋅I²`
 
 
 
-typealias `L⋅M⋅T⁻²⋅I⁻¹` = L1A0M1Theta0N0J0_per_T2I1
-inline class L1A0M1Theta0N0J0_per_T2I1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻²⋅I⁻¹`> {
+typealias `L⋅M⋅T⁻²⋅I⁻¹` = L1A0M1Theta0N0J0C0_per_T2I1
+inline class L1A0M1Theta0N0J0C0_per_T2I1(internal val underlying: Double) : Quan<`L⋅M⋅T⁻²⋅I⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅kg⋅s⁻²⋅A⁻¹"
 
@@ -4855,8 +6410,8 @@ typealias `MagneticRigidity` = `L⋅M⋅T⁻²⋅I⁻¹`
 
 
 
-typealias `L³⋅M⋅T⁻²⋅I⁻¹` = L3A0M1Theta0N0J0_per_T2I1
-inline class L3A0M1Theta0N0J0_per_T2I1(internal val underlying: Double) : Quan<`L³⋅M⋅T⁻²⋅I⁻¹`> {
+typealias `L³⋅M⋅T⁻²⋅I⁻¹` = L3A0M1Theta0N0J0C0_per_T2I1
+inline class L3A0M1Theta0N0J0C0_per_T2I1(internal val underlying: Double) : Quan<`L³⋅M⋅T⁻²⋅I⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m³⋅kg⋅s⁻²⋅A⁻¹"
 
@@ -4892,8 +6447,8 @@ typealias `MagneticMoment` = `L³⋅M⋅T⁻²⋅I⁻¹`
 
 
 
-typealias `L³⋅T⁻¹⋅N⁻¹` = L3A0M0I0Theta0J0_per_T1N1
-inline class L3A0M0I0Theta0J0_per_T1N1(internal val underlying: Double) : Quan<`L³⋅T⁻¹⋅N⁻¹`> {
+typealias `L³⋅T⁻¹⋅N⁻¹` = L3A0M0I0Theta0J0C0_per_T1N1
+inline class L3A0M0I0Theta0J0C0_per_T1N1(internal val underlying: Double) : Quan<`L³⋅T⁻¹⋅N⁻¹`> {
     override val siValue get() = underlying
     override val abrev get() = "m³⋅s⁻¹⋅mol⁻¹"
 
@@ -4929,8 +6484,8 @@ typealias `CatalyticEfficiency` = `L³⋅T⁻¹⋅N⁻¹`
 
 
 
-typealias `L²⋅M` = L2A0M1T0I0Theta0N0J0
-inline class L2A0M1T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L²⋅M`> {
+typealias `L²⋅M` = L2A0M1T0I0Theta0N0J0C0
+inline class L2A0M1T0I0Theta0N0J0C0(internal val underlying: Double) : Quan<`L²⋅M`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅kg"
 
@@ -4966,8 +6521,8 @@ typealias `MomentOfInertia` = `L²⋅M`
 
 
 
-typealias `T⁻²` = L0A0M0I0Theta0N0J0_per_T2
-inline class L0A0M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`T⁻²`> {
+typealias `T⁻²` = L0A0M0I0Theta0N0J0C0_per_T2
+inline class L0A0M0I0Theta0N0J0C0_per_T2(internal val underlying: Double) : Quan<`T⁻²`> {
     override val siValue get() = underlying
     override val abrev get() = "s⁻²"
 
@@ -5003,8 +6558,8 @@ typealias `FrequencyDrift` = `T⁻²`
 
 
 
-typealias `L⁻²⋅M⁻¹⋅T³⋅J` = A0T3I0Theta0N0J1_per_L2M1
-inline class A0T3I0Theta0N0J1_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T³⋅J`> {
+typealias `L⁻²⋅M⁻¹⋅T³⋅J` = A0T3I0Theta0N0J1C0_per_L2M1
+inline class A0T3I0Theta0N0J1C0_per_L2M1(internal val underlying: Double) : Quan<`L⁻²⋅M⁻¹⋅T³⋅J`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻²⋅kg⁻¹⋅s³⋅cd"
 
@@ -5040,8 +6595,8 @@ typealias `LuminousEfficacy` = `L⁻²⋅M⁻¹⋅T³⋅J`
 
 
 
-typealias `∠⋅I` = L0A1M0T0I1Theta0N0J0
-inline class L0A1M0T0I1Theta0N0J0(internal val underlying: Double) : Quan<`∠⋅I`> {
+typealias `∠⋅I` = L0A1M0T0I1Theta0N0J0C0
+inline class L0A1M0T0I1Theta0N0J0C0(internal val underlying: Double) : Quan<`∠⋅I`> {
     override val siValue get() = underlying
     override val abrev get() = "rad⋅A"
 
@@ -5077,8 +6632,8 @@ typealias `MagnetomotiveForce` = `∠⋅I`
 
 
 
-typealias `L⁻¹⋅M⁻¹⋅T²⋅I²` = A0T2I2Theta0N0J0_per_L1M1
-inline class A0T2I2Theta0N0J0_per_L1M1(internal val underlying: Double) : Quan<`L⁻¹⋅M⁻¹⋅T²⋅I²`> {
+typealias `L⁻¹⋅M⁻¹⋅T²⋅I²` = A0T2I2Theta0N0J0C0_per_L1M1
+inline class A0T2I2Theta0N0J0C0_per_L1M1(internal val underlying: Double) : Quan<`L⁻¹⋅M⁻¹⋅T²⋅I²`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅kg⁻¹⋅s²⋅A²"
 
@@ -5114,8 +6669,8 @@ typealias `MagneticSusceptibility` = `L⁻¹⋅M⁻¹⋅T²⋅I²`
 
 
 
-typealias `L²⋅∠⁻²⋅M⋅T⁻³` = L2M1I0Theta0N0J0_per_A2T3
-inline class L2M1I0Theta0N0J0_per_A2T3(internal val underlying: Double) : Quan<`L²⋅∠⁻²⋅M⋅T⁻³`> {
+typealias `L²⋅∠⁻²⋅M⋅T⁻³` = L2M1I0Theta0N0J0C0_per_A2T3
+inline class L2M1I0Theta0N0J0C0_per_A2T3(internal val underlying: Double) : Quan<`L²⋅∠⁻²⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m²⋅rad⁻²⋅kg⋅s⁻³"
 
@@ -5151,8 +6706,8 @@ typealias `RadiantIntensity` = `L²⋅∠⁻²⋅M⋅T⁻³`
 
 
 
-typealias `L⋅∠⁻²⋅M⋅T⁻³` = L1M1I0Theta0N0J0_per_A2T3
-inline class L1M1I0Theta0N0J0_per_A2T3(internal val underlying: Double) : Quan<`L⋅∠⁻²⋅M⋅T⁻³`> {
+typealias `L⋅∠⁻²⋅M⋅T⁻³` = L1M1I0Theta0N0J0C0_per_A2T3
+inline class L1M1I0Theta0N0J0C0_per_A2T3(internal val underlying: Double) : Quan<`L⋅∠⁻²⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m⋅rad⁻²⋅kg⋅s⁻³"
 
@@ -5188,8 +6743,8 @@ typealias `SpectralIntensity` = `L⋅∠⁻²⋅M⋅T⁻³`
 
 
 
-typealias `∠⁻²⋅M⋅T⁻³` = L0M1I0Theta0N0J0_per_A2T3
-inline class L0M1I0Theta0N0J0_per_A2T3(internal val underlying: Double) : Quan<`∠⁻²⋅M⋅T⁻³`> {
+typealias `∠⁻²⋅M⋅T⁻³` = L0M1I0Theta0N0J0C0_per_A2T3
+inline class L0M1I0Theta0N0J0C0_per_A2T3(internal val underlying: Double) : Quan<`∠⁻²⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "rad⁻²⋅kg⋅s⁻³"
 
@@ -5225,8 +6780,8 @@ typealias `Radiance` = `∠⁻²⋅M⋅T⁻³`
 
 
 
-typealias `L⁻¹⋅∠⁻²⋅M⋅T⁻³` = M1I0Theta0N0J0_per_L1A2T3
-inline class M1I0Theta0N0J0_per_L1A2T3(internal val underlying: Double) : Quan<`L⁻¹⋅∠⁻²⋅M⋅T⁻³`> {
+typealias `L⁻¹⋅∠⁻²⋅M⋅T⁻³` = M1I0Theta0N0J0C0_per_L1A2T3
+inline class M1I0Theta0N0J0C0_per_L1A2T3(internal val underlying: Double) : Quan<`L⁻¹⋅∠⁻²⋅M⋅T⁻³`> {
     override val siValue get() = underlying
     override val abrev get() = "m⁻¹⋅rad⁻²⋅kg⋅s⁻³"
 

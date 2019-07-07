@@ -26,6 +26,10 @@ fun main(args: Array<String>) {
 
     assert(420.Degree % 1.Turn in 60.Degree `±` 1.Degree)
 
+    val gasPrice = 5.07.Dollar / 1.Gallon
+    val carEfficiency = 39.Mile / 1.Gallon
+    val trip = 3.2.Mile
+    assert(gasPrice / carEfficiency * trip in 0.41.Dollar `±` 1.Cent)
 
     val speed = 65.Mile / Hour
     val time = 27.Minute

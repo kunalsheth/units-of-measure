@@ -1,7 +1,8 @@
 generateUnitsOfMeasure {
     relationships += relation(dimension(L: 1), dimension(T: 1)) +
             relation(dimension(L: 1, T: -1), dimension(L: 1, T: -2)) +
-            relation(dimension(L:2,M:1,T:-3), d(T:1))
+            relation(dimension(L: 2, M: 1, T: -3), d(T: 1)) +
+            r(d(C: 1), d(L: 3), d(L: 1))
 
     quantities += [ /* the default values are good enough */]
 
@@ -19,6 +20,8 @@ generateUnitsOfMeasure {
             u("Minute", 60.0, d(T: 1)),
             u("Hour", 3600.0, d(T: 1)),
             u("Mile", 1609.34, d(L: 1)),
+            u("Gallon", 0.00378541, d(L: 3)),
+            u("Cent", 0.01, d(C: 1)),
     ].toSet()
 }
 sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir

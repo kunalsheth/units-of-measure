@@ -52,7 +52,8 @@ enum class RelationType : (Dimension, Dimension) -> Dimension {
                 I = a.I - b.I,
                 Theta = a.Theta - b.Theta,
                 N = a.N - b.N,
-                J = a.J - b.J
+                J = a.J - b.J,
+                C = a.C - b.C
         )
     },
     Multiply {
@@ -64,7 +65,8 @@ enum class RelationType : (Dimension, Dimension) -> Dimension {
                 I = a.I + b.I,
                 Theta = a.Theta + b.Theta,
                 N = a.N + b.N,
-                J = a.J + b.J
+                J = a.J + b.J,
+                C = a.C + b.C
         )
     }
 }

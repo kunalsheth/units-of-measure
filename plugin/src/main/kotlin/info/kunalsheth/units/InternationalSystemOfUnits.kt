@@ -12,6 +12,7 @@ object InternationalSystemOfUnits {
     private val Temperature = Dimension(Theta = 1)
     private val AmountOfSubstance = Dimension(N = 1)
     private val LuminousIntensity = Dimension(J = 1)
+    private val Currency = Dimension(C = 1)
 
     private val Frequency = Dimension(T = -1)
     private val Angle = Dimension(A = 1)
@@ -140,6 +141,8 @@ object InternationalSystemOfUnits {
     private val SpectralRadiance = Dimension(A = -2, L = -1, M = 1, T = -3)
     private val SpectralPower = Dimension(L = 1, M = 1, T = -3)
 
+    private val Dollar = Dimension(C = 1)
+
     val quantities = setOf(
             Quantity("Length", Length),
             Quantity("Mass", Mass),
@@ -148,6 +151,7 @@ object InternationalSystemOfUnits {
             Quantity("Temperature", Temperature),
             Quantity("AmountOfSubstance", AmountOfSubstance),
             Quantity("LuminousIntensity", LuminousIntensity),
+            Quantity("Currency", Currency),
 
             Quantity("Frequency", Frequency),
             Quantity("Angle", Angle),
@@ -314,6 +318,8 @@ object InternationalSystemOfUnits {
             UnitOfMeasure("Becquerel", 1.0, Radioactivity),
             UnitOfMeasure("Gray", 1.0, AbsorbedDose),
             UnitOfMeasure("Sievert", 1.0, EquivalentDose),
-            UnitOfMeasure("Katal", 1.0, CatalyticActivity)
+            UnitOfMeasure("Katal", 1.0, CatalyticActivity),
+
+            UnitOfMeasure("Dollar", 1.0, Dollar)
     )
 }
