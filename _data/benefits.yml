@@ -13,11 +13,11 @@ general:
 
 specific:
   - html: Lightweight
-    link: /setup/configuration
+    link: /setup/configure
     desc: "Generate <strong>only what you need</strong>. Optimized to deliver <strong><a href='http://github.com/team846'>real-time performance</a></strong> with a <strong>low memory footprint</strong>."
 
   - html: 100% <em>Customizable</em>
-    link: /setup/configuration
+    link: /setup/configure
     desc: "<strong>Built for any application.</strong> Adding support for <strong>a new unit or quantity</strong> is as simple as adding a line to your build file."
 
   - html: Fast <em>Introspection</em>
