@@ -105,4 +105,5 @@ fabric.properties
 *.iml
 local.properties
 .sass-cache
+.DS_Store
 
