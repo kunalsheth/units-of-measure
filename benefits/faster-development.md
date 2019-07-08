@@ -31,9 +31,9 @@ Additionally, {{site.lib}} helps your IDE make more helpful autocomplete predict
 
 If we were using only doubles, the IDE would just spit out every number in scope.
 {% include kotlin.html src=site.data.examples.autocomplete.numeric %}
-![IDE autocomplete suggestions when using doubles]({% link assets/double-autocomplete-2.png %})
+![IDE autocomplete suggestions when using doubles]({% link assets/images/double-autocomplete-2.png %})
 
 
 However, with {{site.lib}}, the IDE only suggests expressions (both generic and concrete) which can satisfy the rules of dimensional analysis.
 {% include kotlin.html src=site.data.examples.autocomplete.uom %}
-![IDE autocomplete suggestions when using {{site.title}}]({% link assets/uom-autocomplete-2.png %})
+![IDE autocomplete suggestions when using {{site.title}}]({% link assets/images/uom-autocomplete-2.png %})

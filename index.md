@@ -4,9 +4,9 @@ title:  Type-safe dimensional analysis and unit conversion
 author: Kunal Sheth
 ---
 <br>
-![units-of-measure]({% link assets/param-align.png %})
+![units-of-measure]({% link assets/images/param-align.png %})
 
-<link rel="stylesheet" href="{% link assets/button.css %}">
+<link rel="stylesheet" href="{% link assets/buttons/button.css %}">
 <h2 style="text-align: center;">
 <a href="{% link setup/install.md %}" class="cta-btn" role="button">Try with Gradle!</a>
 </h2>
@@ -50,4 +50,4 @@ author: Kunal Sheth
 </table>
 
 <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="{% link assets/gh-buttons.js %}"></script>
+<script async defer src="{% link assets/buttons/gh-buttons.js %}"></script>

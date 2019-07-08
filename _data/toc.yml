@@ -1,9 +1,9 @@
 - title: Benefits
   pages:
-    - title: Cleaner Code
-      link:  /benefits/cleaner-code
     - title: Faster Development
       link:  /benefits/faster-development
+    - title: Cleaner Code
+      link:  /benefits/cleaner-code
     - title: Safe Flexibility
       link:  /benefits/safe-flexibility
 
