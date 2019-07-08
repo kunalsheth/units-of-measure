@@ -1,9 +1,11 @@
 ---
+title:      Faster Development
 layout:     progression_page
 catagories: benefits
+author:     Kunal Sheth
 
 previous:
-    text: "Home"
+    text: Home
     url:  /
 
 next:
@@ -11,12 +13,10 @@ next:
     url:  cleaner-code
 
 skip:
-    text: "Gradle Installation"
-    url:  /setup/installation
+    text: Install
+    url:  /setup/install
 ---
-# Faster Development
-
-## Self-Documenting Units
+# Self-Documenting Units
 When using numeric datatypes, all units have to be spelled out in documentation, variables, and function names. 
 Not only is this prone to human error, but it also requires significant boilerplate for what should be simple code.
 {% include kotlin.html src=site.data.examples.car_class.numeric %}
@@ -26,7 +26,7 @@ No more tedious documentation. No more massive variable names.
 {% include kotlin.html src=site.data.examples.car_class.uom %}
 
 
-## Better IDE Autocomplete
+# Better IDE Autocomplete
 Additionally, {{site.lib}} helps your IDE make more helpful autocomplete predictions.
 
 If we were using only doubles, the IDE would just spit out every number in scope.

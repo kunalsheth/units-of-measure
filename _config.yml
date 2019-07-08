@@ -14,6 +14,7 @@ github_username: kunalsheth
 google_analytics: UA-110054552-2
 
 header_pages:
+  - setup/install.md
   - about.md
 
 markdown: kramdown

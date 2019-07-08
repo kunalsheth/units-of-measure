@@ -1,0 +1,22 @@
+- title: Benefits
+  pages:
+    - title: Cleaner Code
+      link:  /benefits/cleaner-code
+    - title: Faster Development
+      link:  /benefits/faster-development
+    - title: Safe Flexibility
+      link:  /benefits/safe-flexibility
+
+- title: Setup
+  pages:
+    - title: Install
+      link:  /setup/install
+    - title: Configure
+      link:  /setup/configure
+
+- title: Usage
+  pages:
+    - title: Basic
+      link:  /usage/basic
+    - title: Advanced
+      link:  /usage/advanced

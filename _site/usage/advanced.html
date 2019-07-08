@@ -3,9 +3,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>units-of-measure | Type-safe dimensional analysis and unit conversion in Kotlin.</title>
+<title>Advanced Usage | units-of-measure</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="units-of-measure" />
+<meta property="og:title" content="Advanced Usage" />
+<meta name="author" content="Kunal Sheth" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
 <meta property="og:description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
@@ -13,7 +14,7 @@
 <meta property="og:url" content="http://localhost:4000/usage/advanced.html" />
 <meta property="og:site_name" content="units-of-measure" />
 <script type="application/ld+json">
-{"headline":"units-of-measure","url":"http://localhost:4000/usage/advanced.html","description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
+{"headline":"Advanced Usage","url":"http://localhost:4000/usage/advanced.html","author":{"@type":"Person","name":"Kunal Sheth"},"description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="units-of-measure" /></head>
 <body><header class="site-header" role="banner">
@@ -28,14 +29,100 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/setup/install.html">Install</a><a class="page-link" href="/about/">About</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <link rel="stylesheet" type="text/css" href="/assets/button.css">
+        <article class="post">
 
-<h1 id="advanced-usage">Advanced Usage</h1>
+  <header class="post-header">
+    <h1 class="post-title">Advanced Usage</h1>
+  </header>
+
+  <div class="post-content">
+    <link rel="stylesheet" type="text/css" href="/assets/button.css">
+
+<link rel="stylesheet" type="text/css" href="/assets/toc/toc.css">
+<details class="toc" open onclick="setTimeout(detailsOnClick, 50)" id="toc-details">
+    <summary><h4 style="display: inline-block" id="toc-h4">Table of Contents</h4></summary>
+    
+    Benefits
+    <ul>
+        
+        <li>
+
+            
+            <a href="/benefits/cleaner-code">Cleaner Code</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/benefits/faster-development">Faster Development</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/benefits/safe-flexibility">Safe Flexibility</a>
+            
+
+        </li>
+        
+    </ul>
+    
+    Setup
+    <ul>
+        
+        <li>
+
+            
+            <a href="/setup/install">Install</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/setup/configure">Configure</a>
+            
+
+        </li>
+        
+    </ul>
+    
+    Usage
+    <ul>
+        
+        <li>
+
+            
+            <a href="/usage/basic">Basic</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <span>Advanced</span>
+
+            <ul id="toc-headers"></ul>
+
+            
+
+        </li>
+        
+    </ul>
+    
+</details>
+<script src="/assets/toc/toc.js"></script>
 
 <p>Sorry, I’m still writing up formal explanations on the following:</p>
 <ul>
@@ -58,6 +145,11 @@
       <li>serialization &amp; introspection support via <code class="highlighter-rouge">UomConverter&lt;...&gt;</code></li>
     </ul>
   </li>
+  <li><a href="https://github.com/kunalsheth/units-of-measure/blob/57e8512cf849dc9253f0b9151e7a0846180b6a9f/plugin/src/main/kotlin/info/kunalsheth/units/InternationalSystemOfUnits.kt#L56">units-of-measure’s Bundled SI Quantities &amp; Dimensions</a>
+    <ul>
+      <li>angle as a base dimension via the <code class="highlighter-rouge">A</code> dimension parameter</li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -67,6 +159,10 @@
 
 <a href="/" class="juicy-btn right">Back to Home &#8250;</a>
 
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

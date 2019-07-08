@@ -1,19 +1,20 @@
 ---
 layout: home
-title: Type-safe dimensional analysis and unit conversion
+title:  Type-safe dimensional analysis and unit conversion
+author: Kunal Sheth
 ---
 <br>
 ![units-of-measure]({% link assets/param-align.png %})
 
 <link rel="stylesheet" href="{% link assets/button.css %}">
-<center><h2>
-<a href="{% link setup/installation.md %}" class="cta-btn" role="button">Try with Gradle!</a>
-</h2></center>
+<h2 style="text-align: center;">
+<a href="{% link setup/install.md %}" class="cta-btn" role="button">Try with Gradle!</a>
+</h2>
 
-<center>
+<div style="text-align: center;">
 <a class="github-button" href="https://github.com/kunalsheth/units-of-measure" data-size="large" aria-label="View units-of-measure on GitHub">View on GitHub</a>
 <a class="github-button" href="https://github.com/kunalsheth/units-of-measure" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kunalsheth/units-of-measure on GitHub">Star</a>
-</center>
+</div>
 
 <br>
 

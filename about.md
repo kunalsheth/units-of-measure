@@ -1,18 +1,17 @@
 ---
-layout:    progression_page
+layout:    page
 title:     About
 permalink: /about/
+author:     Kunal Sheth
 
 previous:
-    text: "Back to Home"
+    text: Back to Home
     url:  /
 
 next:
-    text: "View on GitHub"
+    text: View on GitHub
     url:  https://github.com/kunalsheth/units-of-measure
 ---
-# About
-
 I started {{site.lib}} in early 2017 for use on my high school's [_FIRST_](https://www.firstinspires.org/robotics/frc) Robotics Competition team, [_The Funky Monkeys_](https://lynbrookrobotics.com).
 
 > With many programmers and a 17,000 line, student-managed code base, unit-related bugs are inevitable. One option may be to document the units of every single variable while enforcing even stricter code-review, but this is not always possible, especially in the heat of competition.  

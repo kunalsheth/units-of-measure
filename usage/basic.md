@@ -1,17 +1,17 @@
 ---
+title:      Basic Usage
 layout:     progression_page
 catagories: setup
+author:     Kunal Sheth
 
 previous:
-    text: "Configuration"
-    url:  /setup/configuration
+    text: Configure
+    url:  /setup/configure
 
 next:
-    text: "Advanced Usage"
+    text: Advanced Usage
     url:  advanced
 ---
-# Basic Usage
-
 {% for u in site.data.usage.basic %}
 {{u.text}}
 {% include kotlin.html src=u.code %}

@@ -1,18 +1,18 @@
 ---
+title:      Configure
 layout:     progression_page
 catagories: setup
+author:     Kunal Sheth
 
 previous:
-    text: "Installation"
-    url:  installation
+    text: Install
+    url:  install
 
 next:
-    text: "Basic Usage"
+    text: Basic Usage
     url:  /usage/basic
 ---
-# Configuration
-
-## Terminology
+# Terminology
 Before we can start configuring {{site.lib}}, lets make sure we're on the same page regarding some terminology:
 
 1. [dimension](https://en.wikipedia.org/wiki/Dimensional_analysis)
@@ -35,7 +35,7 @@ Before we can start configuring {{site.lib}}, lets make sure we're on the same p
      | **N**     | mol               | amount of substance       |
      | **J**     | cd                | luminous intensity        |
      
-## Basic Configuration Structure
+# Basic Configuration Structure
 <details open>
 <summary><code>{{site.data.config.file}}</code></summary>
 {% include gradle.html src=site.data.config.structure %}
@@ -44,7 +44,7 @@ Before we can start configuring {{site.lib}}, lets make sure we're on the same p
 </details>
 <p></p>
 
-## Relationships
+# Relationships
 {% include gradle.html src=site.data.config.snippets.relationships %}
 
 `relationships` tell {{site.lib}} which operator extension functions to generate.
@@ -76,7 +76,7 @@ For example, `relationships += r(d(L: 1), d(T: 1))` will generate the following 
 Using the `r(...)` function sacrifices generated code size for ease of use.  
 To reduce the amount of generated code, individual instances of the [`Relation`](https://github.com/kunalsheth/units-of-measure/blob/master/plugin/src/main/kotlin/info/kunalsheth/units/data/Relation.kt) class can also be added to the `relationships` set.
 
-## Quantities
+# Quantities
 {% include gradle.html src=site.data.config.snippets.quantities %}
 
 {{site.lib}}'s default naming scheme is not easy for humans to work with.  
@@ -104,7 +104,7 @@ For ease of use, {{site.lib}} comes bundled with all derived SI units & quantiti
 These pre-defined quantities are all stored in the `quantities` set.
 One way to delete them is to write `quantities = ...` instead of `quantities += ...` in your configuration.
 
-## Units of Measure
+# Units of Measure
 {% include gradle.html src=site.data.config.snippets.unitsOfMeasure %}
 
 `unitsOfMeasure` defines unit names, conversion factors, and derived dimensions.  
@@ -132,7 +132,7 @@ For ease of use, {{site.lib}} comes bundled with all derived SI units & quantiti
 These pre-defined quantities are all stored in the `unitsOfMeasure` set.
 One way to delete them is to write `unitsOfMeasure = ...` instead of `unitsOfMeasure += ...` in your configuration.
 
-## Footnotes
+# Footnotes
 [^1]: [https://en.wikipedia.org/wiki/Dimensional_analysis](https://en.wikipedia.org/wiki/Dimensional_analysis)
 [^2]: [https://en.wikipedia.org/wiki/Physical_quantity](https://en.wikipedia.org/wiki/Physical_quantity)
 [^3]: [https://en.wikipedia.org/wiki/Units_of_measurement](https://en.wikipedia.org/wiki/Units_of_measurement)

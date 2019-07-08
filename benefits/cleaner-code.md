@@ -1,6 +1,8 @@
 ---
+title:      Cleaner Code
 layout:     progression_page
 catagories: benefits
+author:     Kunal Sheth
 
 previous:
     text: "Benefit: Faster Development"
@@ -11,12 +13,10 @@ next:
     url:  safe-flexibility
 
 skip:
-    text: "Gradle Installation"
-    url:  /setup/installation
+    text: Install
+    url:  /setup/install
 ---
-# Cleaner Code  
-
-## Automatic Unit Conversion
+# Automatic Unit Conversion
 Lets do a practice problem:
 > How many days does it take for a 3.7V 500mAh battery to discharge when a 10kΩ resistor is placed across its terminals?
 

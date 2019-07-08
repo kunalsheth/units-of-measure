@@ -3,17 +3,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>units-of-measure | Type-safe dimensional analysis and unit conversion in Kotlin.</title>
+<title>Configure | units-of-measure</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="units-of-measure" />
+<meta property="og:title" content="Configure" />
+<meta name="author" content="Kunal Sheth" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
 <meta property="og:description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
-<link rel="canonical" href="http://localhost:4000/setup/configuration.html" />
-<meta property="og:url" content="http://localhost:4000/setup/configuration.html" />
+<link rel="canonical" href="http://localhost:4000/setup/configure.html" />
+<meta property="og:url" content="http://localhost:4000/setup/configure.html" />
 <meta property="og:site_name" content="units-of-measure" />
 <script type="application/ld+json">
-{"headline":"units-of-measure","url":"http://localhost:4000/setup/configuration.html","description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
+{"headline":"Configure","url":"http://localhost:4000/setup/configure.html","author":{"@type":"Person","name":"Kunal Sheth"},"description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="units-of-measure" /></head>
 <body><header class="site-header" role="banner">
@@ -28,16 +29,102 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/setup/install.html">Install</a><a class="page-link" href="/about/">About</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <link rel="stylesheet" type="text/css" href="/assets/button.css">
+        <article class="post">
 
-<h1 id="configuration">Configuration</h1>
+  <header class="post-header">
+    <h1 class="post-title">Configure</h1>
+  </header>
 
-<h2 id="terminology">Terminology</h2>
+  <div class="post-content">
+    <link rel="stylesheet" type="text/css" href="/assets/button.css">
+
+<link rel="stylesheet" type="text/css" href="/assets/toc/toc.css">
+<details class="toc" open onclick="setTimeout(detailsOnClick, 50)" id="toc-details">
+    <summary><h4 style="display: inline-block" id="toc-h4">Table of Contents</h4></summary>
+    
+    Benefits
+    <ul>
+        
+        <li>
+
+            
+            <a href="/benefits/cleaner-code">Cleaner Code</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/benefits/faster-development">Faster Development</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/benefits/safe-flexibility">Safe Flexibility</a>
+            
+
+        </li>
+        
+    </ul>
+    
+    Setup
+    <ul>
+        
+        <li>
+
+            
+            <a href="/setup/install">Install</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <span>Configure</span>
+
+            <ul id="toc-headers"></ul>
+
+            
+
+        </li>
+        
+    </ul>
+    
+    Usage
+    <ul>
+        
+        <li>
+
+            
+            <a href="/usage/basic">Basic</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/usage/advanced">Advanced</a>
+            
+
+        </li>
+        
+    </ul>
+    
+</details>
+<script src="/assets/toc/toc.js"></script>
+
+<h1 id="terminology">Terminology</h1>
 <p>Before we can start configuring <em>units-of-measure</em>, lets make sure we’re on the same page regarding some terminology:</p>
 
 <ol>
@@ -114,7 +201,7 @@
   </li>
 </ol>
 
-<h2 id="basic-configuration-structure">Basic Configuration Structure</h2>
+<h1 id="basic-configuration-structure">Basic Configuration Structure</h1>
 <details open="">
 <summary><code>uoms/units-of-measure.gradle</code></summary>
 <blockquote>
@@ -142,7 +229,7 @@
 </details>
 <p></p>
 
-<h2 id="relationships">Relationships</h2>
+<h1 id="relationships">Relationships</h1>
 <blockquote>
 
 <figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">relationships</span> <span class="o">+=</span> <span class="n">r</span><span class="o">(</span>
@@ -194,7 +281,7 @@ The <code class="highlighter-rouge">r(...)</code> function returns a set contain
 <p>Using the <code class="highlighter-rouge">r(...)</code> function sacrifices generated code size for ease of use.<br />
 To reduce the amount of generated code, individual instances of the <a href="https://github.com/kunalsheth/units-of-measure/blob/master/plugin/src/main/kotlin/info/kunalsheth/units/data/Relation.kt"><code class="highlighter-rouge">Relation</code></a> class can also be added to the <code class="highlighter-rouge">relationships</code> set.</p>
 
-<h2 id="quantities">Quantities</h2>
+<h1 id="quantities">Quantities</h1>
 <blockquote>
 
 <figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">quantities</span> <span class="o">+=</span> <span class="o">[</span>
@@ -252,7 +339,7 @@ Use <code class="highlighter-rouge">quantities</code> to make <em>units-of-measu
 <p>These pre-defined quantities are all stored in the <code class="highlighter-rouge">quantities</code> set.
 One way to delete them is to write <code class="highlighter-rouge">quantities = ...</code> instead of <code class="highlighter-rouge">quantities += ...</code> in your configuration.</p>
 
-<h2 id="units-of-measure">Units of Measure</h2>
+<h1 id="units-of-measure">Units of Measure</h1>
 <blockquote>
 
 <figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">unitsOfMeasure</span> <span class="o">+=</span> <span class="o">[</span>
@@ -299,7 +386,7 @@ Given <code class="highlighter-rouge">unitsOfMeasure += u("Minute", 60.0, d(T: 1
 <p>These pre-defined quantities are all stored in the <code class="highlighter-rouge">unitsOfMeasure</code> set.
 One way to delete them is to write <code class="highlighter-rouge">unitsOfMeasure = ...</code> instead of <code class="highlighter-rouge">unitsOfMeasure += ...</code> in your configuration.</p>
 
-<h2 id="footnotes">Footnotes</h2>
+<h1 id="footnotes">Footnotes</h1>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
@@ -325,11 +412,15 @@ One way to delete them is to write <code class="highlighter-rouge">unitsOfMeasur
 
 
 <br>
-<a href="installation" class="soft-btn">&#8249; Installation</a>
+<a href="install" class="soft-btn">&#8249; Install</a>
 
 
 <a href="/usage/basic" class="juicy-btn right">Basic Usage &#8250;</a>
 
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

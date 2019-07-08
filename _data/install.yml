@@ -1,6 +1,6 @@
 github_root: 'https://github.com/kunalsheth/uom-example-project/blob/master/'
 
-files:
+plugin:
   - file: build.gradle
     content: |-
       buildscript {
@@ -16,6 +16,7 @@ files:
       }
       // ...
 
+module:
   - file: settings.gradle
     content: |-
       // ...
@@ -56,6 +57,7 @@ files:
           unitsOfMeasure += // ...
       }
 
+app:
   - file: myapp/build.gradle
     content: |-
       // ...

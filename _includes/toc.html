@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="{% link assets/toc/toc.css %}">
+<details class="toc" open onclick="setTimeout(detailsOnClick, 50)" id="toc-details">
+    <summary><h4 style="display: inline-block" id="toc-h4">Table of Contents</h4></summary>
+    {% for section in site.data.toc %}
+    {{ section.title }}
+    <ul>
+        {% for i in section.pages %}
+        <li>
+
+            {% if page.url contains i.link %}
+            <span>{{ i.title }}</span>
+
+            <ul id="toc-headers"></ul>
+
+            {% else %}
+            <a href="{{ i.link }}">{{ i.title }}</a>
+            {% endif %}
+
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</details>
+<script src="{% link assets/toc/toc.js %}"></script>

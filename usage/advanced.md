@@ -1,17 +1,17 @@
 ---
+title:      Advanced Usage
 layout:     progression_page
 catagories: setup
+author:     Kunal Sheth
 
 previous:
-    text: "Basic Usage"
+    text: Basic Usage
     url:  basic
 
 next:
-    text: "Back to Home"
+    text: Back to Home
     url:  /
 ---
-# Advanced Usage
-
 Sorry, I'm still writing up formal explanations on the following:
 - defining more complicated bounds on generic quantity parameters
 - the bundled type-safe math library (a superset of `kotlin.math`)
@@ -24,3 +24,5 @@ For now, you can take a look at these examples demonstrating said features:
     - complex generic bounds via "proof-passing"
 - [Team846 Kapuchin Control System Grapher](https://github.com/Team846/2019-preseason/blob/master/architecture/jvmfrc/src/main/kotlin/com/lynbrookrobotics/kapuchin/logging/actual.kt)
     - serialization & introspection support via `UomConverter<...>`
+- [units-of-measure's Bundled SI Quantities & Dimensions](https://github.com/kunalsheth/units-of-measure/blob/57e8512cf849dc9253f0b9151e7a0846180b6a9f/plugin/src/main/kotlin/info/kunalsheth/units/InternationalSystemOfUnits.kt#L56)
+    - angle as a base dimension via the `A` dimension parameter

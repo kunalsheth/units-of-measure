@@ -3,17 +3,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>units-of-measure | Type-safe dimensional analysis and unit conversion in Kotlin.</title>
+<title>Install | units-of-measure</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="units-of-measure" />
+<meta property="og:title" content="Install" />
+<meta name="author" content="Kunal Sheth" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
 <meta property="og:description" content="Type-safe dimensional analysis and unit conversion in Kotlin." />
-<link rel="canonical" href="http://localhost:4000/setup/installation.html" />
-<meta property="og:url" content="http://localhost:4000/setup/installation.html" />
+<link rel="canonical" href="http://localhost:4000/setup/install.html" />
+<meta property="og:url" content="http://localhost:4000/setup/install.html" />
 <meta property="og:site_name" content="units-of-measure" />
 <script type="application/ld+json">
-{"headline":"units-of-measure","url":"http://localhost:4000/setup/installation.html","description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
+{"headline":"Install","url":"http://localhost:4000/setup/install.html","author":{"@type":"Person","name":"Kunal Sheth"},"description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="units-of-measure" /></head>
 <body><header class="site-header" role="banner">
@@ -28,19 +29,106 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/setup/install.html">Install</a><a class="page-link" href="/about/">About</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <link rel="stylesheet" type="text/css" href="/assets/button.css">
+        <article class="post">
 
-<h1 id="gradle-installation">Gradle Installation</h1>
+  <header class="post-header">
+    <h1 class="post-title">Install</h1>
+  </header>
 
-<p><em>units-of-measure</em> is distributed as a Gradle plugin.<br />
-Creating a separate Gradle module for <em>units-of-measure</em> is <em>highly</em> recommended.</p>
+  <div class="post-content">
+    <link rel="stylesheet" type="text/css" href="/assets/button.css">
 
-<p>Current version: <code class="libversion"></code>
+<link rel="stylesheet" type="text/css" href="/assets/toc/toc.css">
+<details class="toc" open onclick="setTimeout(detailsOnClick, 50)" id="toc-details">
+    <summary><h4 style="display: inline-block" id="toc-h4">Table of Contents</h4></summary>
+    
+    Benefits
+    <ul>
+        
+        <li>
+
+            
+            <a href="/benefits/cleaner-code">Cleaner Code</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/benefits/faster-development">Faster Development</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/benefits/safe-flexibility">Safe Flexibility</a>
+            
+
+        </li>
+        
+    </ul>
+    
+    Setup
+    <ul>
+        
+        <li>
+
+            
+            <span>Install</span>
+
+            <ul id="toc-headers"></ul>
+
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/setup/configure">Configure</a>
+            
+
+        </li>
+        
+    </ul>
+    
+    Usage
+    <ul>
+        
+        <li>
+
+            
+            <a href="/usage/basic">Basic</a>
+            
+
+        </li>
+        
+        <li>
+
+            
+            <a href="/usage/advanced">Advanced</a>
+            
+
+        </li>
+        
+    </ul>
+    
+</details>
+<script src="/assets/toc/toc.js"></script>
+
+<h1 id="gradle-plugin-installation">Gradle Plugin Installation</h1>
+
+<p><em>units-of-measure</em> is distributed as a Gradle plugin.</p>
+
+<p>Latest version: <code class="libversion"></code>
 <script src="/assets/libversion.js"></script></p>
 
 <details open="">
@@ -64,6 +152,9 @@ Creating a separate Gradle module for <em>units-of-measure</em> is <em>highly</e
 <a href="https://github.com/kunalsheth/uom-example-project/blob/master/build.gradle">see full example on GitHub</a>
 <p><!-- br doesn't work for some reason --></p>
 </details>
+
+<h1 id="generated-code-module">Generated Code Module</h1>
+<p>Creating a separate Gradle module for <em>units-of-measure</em>’s generated code is <em>highly</em> recommended.</p>
 
 <details open="">
 <summary><code>settings.gradle</code></summary>
@@ -126,6 +217,8 @@ Creating a separate Gradle module for <em>units-of-measure</em> is <em>highly</e
 <p><!-- br doesn't work for some reason --></p>
 </details>
 
+<h1 id="user-application-dependency">User Application Dependency</h1>
+
 <details open="">
 <summary><code>myapp/build.gradle</code></summary>
 <blockquote>
@@ -143,15 +236,19 @@ Creating a separate Gradle module for <em>units-of-measure</em> is <em>highly</e
 </details>
 
 <p>Because <em>units-of-measure</em> generates a DSL for you, it does not magically work out of the box.<br />
-You need to tell it <em>what</em> you want it to generate. This is done in the <code class="highlighter-rouge">uoms/units-of-measure.gradle</code> <a href="configuration">configuration</a> file.</p>
+You need to tell it <em>what</em> you want it to generate. This is done in the <code class="highlighter-rouge">uoms/units-of-measure.gradle</code> <a href="configure">configuration</a> file.</p>
 
 
 <br>
 <a href="/benefits/safe-flexibility" class="soft-btn">&#8249; Benefit: Safe Flexibility</a>
 
 
-<a href="configuration" class="juicy-btn right">Configuration &#8250;</a>
+<a href="configure" class="juicy-btn right">Configure &#8250;</a>
 
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

@@ -13,7 +13,7 @@
 <loc>http://localhost:4000/benefits/cleaner-code.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/setup/configuration.html</loc>
+<loc>http://localhost:4000/setup/configure.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/benefits/faster-development.html</loc>
@@ -22,7 +22,7 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/setup/installation.html</loc>
+<loc>http://localhost:4000/setup/install.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/benefits/safe-flexibility.html</loc>

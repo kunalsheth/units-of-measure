@@ -41,6 +41,6 @@ basic:
       bad(3.FootPerSecond)              // this won't compile
 
       data class Car(val topSpeed: Speed, val floorIt: Acceleration) { ... }  // good
-      val kunalsCar = Car(217.Mile / Hour, 100.Mile / Hour / 4.7.Second)    // good
+      val kunalsCar = Car(217.Mile / Hour, 100.Mile / Hour / 4.7.Second)      // good
 
       fun v(a: Acceleration, v0: Velocity, t: Time): Velocity = v0 + a * t    // good
