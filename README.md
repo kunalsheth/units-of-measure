@@ -2,35 +2,12 @@
 A DSL for type-safe dimensional analysis and unit conversion in Kotlin.
 
 ### Usage
-Please look at this [sample code](https://github.com/kunalsheth/units-of-measure/blob/master/demo/jvm/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt) for DSL usage.
-Configuration documentation can be found on the [wiki](http://kunalsheth.info/units-of-measure/wiki).
+Take a look at the project website for installation and usage: http://units.kunalsheth.info
+- [Gradle Install](http://units.kunalsheth.info/setup/installation)
+- [Configuration](http://units.kunalsheth.info/setup/configuration)
+- [Basic Usage](http://units.kunalsheth.info/usage/basic)
 
-Also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for more advanced usage and configuration.
-
-### Gradle Installation
-In `./build.gradle`:
-```groovy
-buildscript {
-    repositories {
-        maven { url 'http://repo.kunalsheth.info/' }
-    }
-    dependencies {
-        classpath 'info.kunalsheth.units:plugin:5.2.4'
-    }
-}
-apply plugin: 'info.kunalsheth.units.gradle'
-
-apply from: 'units-of-measure.gradle'
-```
-
-In `./units-of-measure.gradle`:
-```groovy
-generateUnitsOfMeasure {
-    // do all configuration here
-}
-sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir
-compileKotlin.dependsOn(generateUnitsOfMeasure) // may vary
-```
+You can also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for a complete gradle setup and to learn about some of the more advanced features.
 
 ### Background
 Type-safe dimensional analysis and unit conversion can be extremely beneficial to a team. From personal experience, using type-safe calculations result in:
@@ -48,10 +25,10 @@ units-of-measure's novel, metaprogramming approach to the problem makes it:
 - [x] Generate implicit relationships as well.
 - [x] Make annotations easier to write and manage.
 - [x] Add support for unit conversions.
-- [x] Add docs. ([wiki](http://kunalsheth.info/units-of-measure/wiki))
+- [x] Add docs. (http://units.kunalsheth.info)
 - [x] Add metric prefixes.
 - [x] Multiplatform.
 - [x] Stronger support for generic use (`Quantity<This, IntegralOfThis, DerivativeOfThis>`)
-- [ ] Generic reciprocal functions?
+- [ ] `*` and `/` singleton types for even safer proof-passing.
 - [ ] Optimize for faster compilation and runtime.
 - [ ] Benchmark performance hit in contrast to primitives. (Can someone help me with this?)
