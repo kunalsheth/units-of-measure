@@ -50,6 +50,10 @@ fun main(args: Array<String>) {
             .forEach { assert(it) }
 }
 
+// inlined to prevent boxing
+inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius)
+inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius)
+
 data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
     fun zeroToSixty() = 60.Mile / Hour / floorIt
 }
