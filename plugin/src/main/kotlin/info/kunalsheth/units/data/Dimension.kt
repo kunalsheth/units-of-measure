@@ -68,7 +68,7 @@ data class Dimension(
                 "Θ" to Theta,
                 "N" to N,
                 "J" to J,
-                "$" to C
+                "¤" to C // https://en.wikipedia.org/wiki/Currency_sign_(typography)
         ).factorizedString
                 .takeUnless(String::isBlank)
                 ?: "Dimensionless"
@@ -85,7 +85,7 @@ data class Dimension(
                 "K" to Theta,
                 "mol" to N,
                 "cd" to J,
-                "$" to C
+                "¤" to C // https://en.wikipedia.org/wiki/Currency_sign_(typography)
         ).factorizedString
     }
 

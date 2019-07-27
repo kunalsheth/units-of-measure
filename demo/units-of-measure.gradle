@@ -21,7 +21,9 @@ generateUnitsOfMeasure {
             u("Hour", 3600.0, d(T: 1)),
             u("Mile", 1609.34, d(L: 1)),
             u("Gallon", 0.00378541, d(L: 3)),
-            u("Cent", 0.01, d(C: 1)),
+            u("\$", 1, d(C: 1)),
+            u("¢", 0.01, d(C: 1)),
+            u("£", 1.24, d(C: 1)),
     ].toSet()
 }
 sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir

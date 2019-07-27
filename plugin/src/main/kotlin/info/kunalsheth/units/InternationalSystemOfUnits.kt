@@ -157,8 +157,6 @@ object InternationalSystemOfUnits {
     private val SpectralRadiance = Dimension(A = -2, L = -1, M = 1, T = -3)
     private val SpectralPower = Dimension(L = 1, M = 1, T = -3)
 
-    private val Dollar = Dimension(C = 1)
-
     val quantities = setOf(
             Quantity("Length", Length),
             Quantity("Mass", Mass),
@@ -334,8 +332,6 @@ object InternationalSystemOfUnits {
             UnitOfMeasure("Becquerel", 1.0, Radioactivity),
             UnitOfMeasure("Gray", 1.0, AbsorbedDose),
             UnitOfMeasure("Sievert", 1.0, EquivalentDose),
-            UnitOfMeasure("Katal", 1.0, CatalyticActivity),
-
-            UnitOfMeasure("Dollar", 1.0, Dollar)
+            UnitOfMeasure("Katal", 1.0, CatalyticActivity)
     )
 }
