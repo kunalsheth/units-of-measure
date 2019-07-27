@@ -18,7 +18,6 @@ package info.kunalsheth.units.math
 
 import info.kunalsheth.units.generated.*
 import kotlin.math.*
-import kotlin.js.JsName
 
 fun sin(x: `∠`) = Dimensionless(kotlin.math.sin(x.siValue))
 fun cos(x: `∠`) = Dimensionless(kotlin.math.cos(x.siValue))
@@ -54,8 +53,8 @@ inline fun <Q : Quan<Q>> Q.roundToInt(q: UomConverter<Q>) = q(q(this).roundToInt
 inline fun <Q : Quan<Q>> Q.roundToLong(q: UomConverter<Q>) = q(q(this).roundToLong().toDouble())
 
 inline infix fun <Q : Quan<Q>> Q.plusOrMinus(radius: Q) = (this - radius)..(this + radius)
-@JsName("pm1") inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius)
-@JsName("pm2") inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius)
+//@JsName("pm1") inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius)    // too many compiler bugs here
+//@JsName("pm2") inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius) // too many compiler bugs here
 
 inline operator fun <Q : Quan<Q>> Q.rangeTo(that: Q) = object : ClosedRange<Q> {
     override val start = min(that)
@@ -63,6 +62,7 @@ inline operator fun <Q : Quan<Q>> Q.rangeTo(that: Q) = object : ClosedRange<Q> {
 }
 
 inline fun <Q : Quan<Q>> avg(a: Q, b: Q) = (a + b) / 2
+inline fun <Q : Quan<Q>> avg(a: Q, b: Q, c: Q) = (a + b + c) / 3
 inline fun <Q : Quan<Q>> avg(first: Q, vararg x: Q) = first.new(
         (first.siValue + x.sumByDouble(Quan<Q>::siValue)) /
                 (1 + x.size)
