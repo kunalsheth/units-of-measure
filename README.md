@@ -3,8 +3,8 @@ A DSL for type-safe dimensional analysis and unit conversion in Kotlin.
 
 ### Usage
 Take a look at the project website for installation and usage: http://units.kunalsheth.info
-- [Gradle Install](http://units.kunalsheth.info/setup/installation)
-- [Configuration](http://units.kunalsheth.info/setup/configuration)
+- [Gradle Install](http://units.kunalsheth.info/setup/install)
+- [Configuration](http://units.kunalsheth.info/setup/configure)
 - [Basic Usage](http://units.kunalsheth.info/usage/basic)
 
 You can also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for a complete gradle setup and to learn about some of the more advanced features.
