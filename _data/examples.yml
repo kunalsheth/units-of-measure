@@ -87,9 +87,9 @@ generics:
     call: |-
       val d = differentiator(::div, 0.Second, 0.Foot)
       var velocity = d(2.Second, 3.Foot)
-      velocity = i(5.Second, 9.Foot)
-      velocity = i(9.Second, 21.Foot)
-      velocity = i(14.Second, 36.Foot)
+      velocity = d(5.Second, 9.Foot)
+      velocity = d(9.Second, 21.Foot)
+      velocity = d(14.Second, 36.Foot)
     link: https://github.com/kunalsheth/uom-example-project/search?q=Differentiator
 
   - text: Standard Deviation Calculator
