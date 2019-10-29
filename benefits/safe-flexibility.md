@@ -29,6 +29,10 @@ Lets write a function that uses the law of cosines to solve for **_m∠C_**.
 # Strong Support for Generic Programming
 {{site.lib}} allows you to define relationships between quantities at the type level. All you have to do is pass a "proof" (`::div` or `::times`).
 
+> Technical Note:
+"Proof passing" is a technique invented by Kunal Sheth.
+It allows dimensional relationships to be used as bounds for UOM type parameters by exploiting Kotlin's type inference and method overloading capabilities.
+
 This means, for example, that we can write generic integration, differentiation, & stdev utilities.
 
 {% for e in site.data.examples.generics %}

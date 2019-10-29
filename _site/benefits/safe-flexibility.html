@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://localhost:4000/benefits/safe-flexibility.html" />
 <meta property="og:site_name" content="units-of-measure" />
 <script type="application/ld+json">
-{"headline":"Safe Flexibility","url":"http://localhost:4000/benefits/safe-flexibility.html","author":{"@type":"Person","name":"Kunal Sheth"},"description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Type-safe dimensional analysis and unit conversion in Kotlin.","@type":"WebPage","headline":"Safe Flexibility","url":"http://localhost:4000/benefits/safe-flexibility.html","author":{"@type":"Person","name":"Kunal Sheth"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="units-of-measure" /></head>
 <body><header class="site-header" role="banner">
@@ -150,6 +150,12 @@ This means, for example, that <em>units-of-measure</em> can track units &amp; di
 
 <h1 id="strong-support-for-generic-programming">Strong Support for Generic Programming</h1>
 <p><em>units-of-measure</em> allows you to define relationships between quantities at the type level. All you have to do is pass a “proof” (<code class="highlighter-rouge">::div</code> or <code class="highlighter-rouge">::times</code>).</p>
+
+<blockquote>
+  <p>Technical Note:
+“Proof passing” is a technique invented by Kunal Sheth.
+It allows dimensional relationships to be used as bounds for UOM type parameters by exploiting Kotlin’s type inference and method overloading capabilities.</p>
+</blockquote>
 
 <p>This means, for example, that we can write generic integration, differentiation, &amp; stdev utilities.</p>
 
