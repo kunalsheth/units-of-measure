@@ -2,7 +2,8 @@ generateUnitsOfMeasure {
     relationships += relation(dimension(L: 1), dimension(T: 1)) +
             relation(dimension(L: 1, T: -1), dimension(L: 1, T: -2)) +
             relation(dimension(L: 2, M: 1, T: -3), d(T: 1)) +
-            r(d(C: 1), d(L: 3), d(L: 1))
+            r(d(C: 1), d(L: 3), d(L: 1)) +
+            r(d(C: 1), d(B: 1), d(T: 1))
 
     quantities += [ /* the default values are good enough */]
 
@@ -17,13 +18,15 @@ generateUnitsOfMeasure {
             u("Turn", Math.PI / 0.5, d()),
             u("Foot", 0.3048, d(L: 1)),
             u("Percent", 0.01, d()),
-            u("Minute", 60.0, d(T: 1)),
-            u("Hour", 3600.0, d(T: 1)),
+            u("Minute", 60, d(T: 1)),
+            u("Hour", 3600, d(T: 1)),
+            u("Day", 86400, d(T: 1)),
             u("Mile", 1609.34, d(L: 1)),
             u("Gallon", 0.00378541, d(L: 3)),
             u("\$", 1, d(C: 1)),
             u("¢", 0.01, d(C: 1)),
             u("£", 1.24, d(C: 1)),
+            u("Bit", 1.0 / 8, d(B: 1)),
     ].toSet()
 }
 sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir

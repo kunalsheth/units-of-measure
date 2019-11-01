@@ -29,6 +29,7 @@ object InternationalSystemOfUnits {
     private val AmountOfSubstance = Dimension(N = 1)
     private val LuminousIntensity = Dimension(J = 1)
     private val Currency = Dimension(C = 1)
+    private val DigitalStorage = Dimension(B = 1)
 
     private val Frequency = Dimension(T = -1)
     private val Angle = Dimension(A = 1)
@@ -166,6 +167,7 @@ object InternationalSystemOfUnits {
             Quantity("AmountOfSubstance", AmountOfSubstance),
             Quantity("LuminousIntensity", LuminousIntensity),
             Quantity("Currency", Currency),
+            Quantity("DigitalStorage", DigitalStorage),
 
             Quantity("Frequency", Frequency),
             Quantity("Angle", Angle),
@@ -303,6 +305,7 @@ object InternationalSystemOfUnits {
             UnitOfMeasure("Kelvin", 1.0, Temperature),
             UnitOfMeasure("Mole", 1.0, AmountOfSubstance),
             UnitOfMeasure("Candela", 1.0, LuminousIntensity),
+            UnitOfMeasure("Byte", 1.0, DigitalStorage),
 
             UnitOfMeasure("Hertz", 1.0, Frequency),
             UnitOfMeasure("Radian", 1.0, Angle),

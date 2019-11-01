@@ -1,6 +1,7 @@
 package info.kunalsheth.units.sample
 
 import info.kunalsheth.units.generated.*
+import info.kunalsheth.units.generated.Byte
 import info.kunalsheth.units.math.*
 
 
@@ -34,6 +35,17 @@ fun main(args: Array<String>) {
 
     assert(gasMoney in 7.57.`$` `±` 1.`¢`)
     assert(gasMoney in 6.11.`£` `±` 1.`¢`)
+
+
+    val hardDrive = 500.giga(Byte)
+    val price = 54.99.`$`
+    val download = 15.3.mega(Bit) / Second
+
+    val restoreTime = hardDrive / download
+    val dailyExpense = price / hardDrive * download * Day
+
+    assert(restoreTime in 72.Hour..73.Hour)
+    assert(dailyExpense in 18.`$`..19.`$`)
 
 
     val speed = 65.Mile / Hour

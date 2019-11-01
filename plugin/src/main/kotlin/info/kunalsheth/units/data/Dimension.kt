@@ -30,7 +30,8 @@ data class Dimension(
         val Theta: Int = 0,
         val N: Int = 0,
         val J: Int = 0,
-        val C: Int = 0
+        val C: Int = 0,
+        val B: Int = 0
 ) : Serializable {
     val safeName by lazy {
         val (numerator, denominator) = mapOf(
@@ -42,7 +43,8 @@ data class Dimension(
                 "Theta" to Theta,
                 "N" to N,
                 "J" to J,
-                "C" to C
+                "C" to C,
+                "B" to B
         )
                 .toList()
                 .partition { (_, power) -> power >= 0 }
@@ -68,7 +70,8 @@ data class Dimension(
                 "Θ" to Theta,
                 "N" to N,
                 "J" to J,
-                "¤" to C // https://en.wikipedia.org/wiki/Currency_sign_(typography)
+                "¤" to C, // https://en.wikipedia.org/wiki/Currency_sign_(typography)
+                "B" to B  // https://simple.wikipedia.org/wiki/Byte
         ).factorizedString
                 .takeUnless(String::isBlank)
                 ?: "Dimensionless"
@@ -85,7 +88,8 @@ data class Dimension(
                 "K" to Theta,
                 "mol" to N,
                 "cd" to J,
-                "¤" to C // https://en.wikipedia.org/wiki/Currency_sign_(typography)
+                "¤" to C, // https://en.wikipedia.org/wiki/Currency_sign_(typography)
+                "B" to B  // https://simple.wikipedia.org/wiki/Byte
         ).factorizedString
     }
 
