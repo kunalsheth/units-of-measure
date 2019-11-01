@@ -61,7 +61,6 @@ data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
 fun timeSeq() = generateSequence(0) { it + 1 }.map { it.Second }
 
 // support for generic programming
-// this will be prettier once KT-26012 is fixed
 fun <Q : Quan<Q>, DQDT : Quan<DQDT>> Sequence<Q>.derivative(div: (Q, T) -> DQDT) = timeSeq()
         .zip(this)
         .zipWithNext { (x1, y1), (x2, y2) ->
