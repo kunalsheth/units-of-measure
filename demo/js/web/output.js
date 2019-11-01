@@ -15207,63 +15207,6 @@ var output = function (_, Kotlin) {
       return new rangeTo$ObjectLiteral($receiver.plus_j0rjbv$(radius), $receiver_0);
     };
   }));
-  var __0 = defineInlineFunction('output.info.kunalsheth.units.math.pm1', wrapFunction(function () {
-    var Kind_CLASS = Kotlin.Kind.CLASS;
-    var ClosedRange = Kotlin.kotlin.ranges.ClosedRange;
-    rangeTo$ObjectLiteral.prototype.contains_mef7kx$ = ClosedRange.prototype.contains_mef7kx$;
-    rangeTo$ObjectLiteral.prototype.isEmpty = ClosedRange.prototype.isEmpty;
-    function rangeTo$ObjectLiteral(closure$that, this$rangeTo) {
-      this.start_ehrlcp$_0 = this$rangeTo.min_j0rjbv$(closure$that);
-      this.endInclusive_jp29m0$_0 = this$rangeTo.max_j0rjbv$(closure$that);
-    }
-    Object.defineProperty(rangeTo$ObjectLiteral.prototype, 'start', {
-      get: function () {
-        return this.start_ehrlcp$_0;
-      }
-    });
-    Object.defineProperty(rangeTo$ObjectLiteral.prototype, 'endInclusive', {
-      get: function () {
-        return this.endInclusive_jp29m0$_0;
-      }
-    });
-    rangeTo$ObjectLiteral.$metadata$ = {
-      kind: Kind_CLASS,
-      interfaces: [ClosedRange]
-    };
-    return function ($receiver, radius) {
-      var $receiver_0 = $receiver.minus_j0rjbv$(radius);
-      return new rangeTo$ObjectLiteral($receiver.plus_j0rjbv$(radius), $receiver_0);
-    };
-  }));
-  var __1 = defineInlineFunction('output.info.kunalsheth.units.math.pm2', wrapFunction(function () {
-    var Kind_CLASS = Kotlin.Kind.CLASS;
-    var ClosedRange = Kotlin.kotlin.ranges.ClosedRange;
-    rangeTo$ObjectLiteral.prototype.contains_mef7kx$ = ClosedRange.prototype.contains_mef7kx$;
-    rangeTo$ObjectLiteral.prototype.isEmpty = ClosedRange.prototype.isEmpty;
-    function rangeTo$ObjectLiteral(closure$that, this$rangeTo) {
-      this.start_ehrlcp$_0 = this$rangeTo.min_j0rjbv$(closure$that);
-      this.endInclusive_jp29m0$_0 = this$rangeTo.max_j0rjbv$(closure$that);
-    }
-    Object.defineProperty(rangeTo$ObjectLiteral.prototype, 'start', {
-      get: function () {
-        return this.start_ehrlcp$_0;
-      }
-    });
-    Object.defineProperty(rangeTo$ObjectLiteral.prototype, 'endInclusive', {
-      get: function () {
-        return this.endInclusive_jp29m0$_0;
-      }
-    });
-    rangeTo$ObjectLiteral.$metadata$ = {
-      kind: Kind_CLASS,
-      interfaces: [ClosedRange]
-    };
-    return function (radius) {
-      var $receiver = radius.new_14dthe$(0.0);
-      var $receiver_0 = $receiver.minus_j0rjbv$(radius);
-      return new rangeTo$ObjectLiteral($receiver.plus_j0rjbv$(radius), $receiver_0);
-    };
-  }));
   var rangeTo = defineInlineFunction('output.info.kunalsheth.units.math.rangeTo_yovr9j$', wrapFunction(function () {
     var Kind_CLASS = Kotlin.Kind.CLASS;
     var ClosedRange = Kotlin.kotlin.ranges.ClosedRange;
@@ -15294,7 +15237,10 @@ var output = function (_, Kotlin) {
   var avg = defineInlineFunction('output.info.kunalsheth.units.math.avg_lj4v3w$', function (a, b) {
     return a.plus_j0rjbv$(b).div_3p81yu$(2);
   });
-  var avg_0 = defineInlineFunction('output.info.kunalsheth.units.math.avg_9uvjub$', wrapFunction(function () {
+  var avg_0 = defineInlineFunction('output.info.kunalsheth.units.math.avg_2h62ra$', function (a, b, c) {
+    return a.plus_j0rjbv$(b).plus_j0rjbv$(c).div_3p81yu$(3);
+  });
+  var avg_1 = defineInlineFunction('output.info.kunalsheth.units.math.avg_9uvjub$', wrapFunction(function () {
     var getPropertyCallableRef = Kotlin.getPropertyCallableRef;
     return function (first, x) {
       var tmp$ = first.siValue;
@@ -16320,10 +16266,9 @@ var output = function (_, Kotlin) {
   package$math.roundToLong_8hetjx$ = roundToLong;
   package$math.rangeTo_yovr9j$ = rangeTo;
   package$math.plusOrMinus_yovr9j$ = plusOrMinus;
-  package$math.pm1 = __0;
-  package$math.pm2 = __1;
   package$math.avg_lj4v3w$ = avg;
-  package$math.avg_9uvjub$ = avg_0;
+  package$math.avg_2h62ra$ = avg_0;
+  package$math.avg_9uvjub$ = avg_1;
   package$math.times_uotjip$ = times_263;
   package$math.exa_z3xifh$ = exa;
   package$math.exa_8hetjx$ = exa_0;
