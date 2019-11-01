@@ -52,6 +52,10 @@ This : Quan<This> {
     override fun compareTo(other: This): Int
 }
 
+sealed class OperationProof
+object times : OperationProof()
+object div : OperationProof()
+
 interface UomConverter<Q : Quan<Q>> {
     val unitName: String
     operator fun invoke(x: Double): Q

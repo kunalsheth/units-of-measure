@@ -29,6 +29,6 @@ units-of-measure's novel, metaprogramming approach to the problem makes it:
 - [x] Add metric prefixes.
 - [x] Multiplatform.
 - [x] Stronger support for generic use (`Quantity<This, IntegralOfThis, DerivativeOfThis>`)
-- [ ] `*` and `/` singleton types for even safer proof-passing.
+- [x] `*` and `/` singleton types for even safer proof-passing.
 - [ ] Optimize for faster compilation and runtime.
 - [ ] Benchmark performance hit in contrast to primitives. (Can someone help me with this?)
