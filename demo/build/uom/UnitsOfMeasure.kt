@@ -159,6 +159,24 @@ operator fun `Dimensionless`.times(that: Quan<`∠`>) = `∠`(this.siValue * tha
 operator fun `Dimensionless`.times(that: `∠`) = `∠`(this.siValue * that.siValue)
 @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`Dimensionless`>, op: times, that: Quan<`∠`>) = thiz.run { `∠`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⋅∠`>) = `L⋅∠`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `Dimensionless`.times(that: `L⋅∠`) = `L⋅∠`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`Dimensionless`>, op: times, that: Quan<`L⋅∠`>) = thiz.run { `L⋅∠`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⋅∠⋅T⁻¹`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `Dimensionless`.times(that: `L⋅∠⋅T⁻¹`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`Dimensionless`>, op: times, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `Dimensionless`.times(that: Quan<`L⋅∠⋅T⁻²`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `Dimensionless`.times(that: `L⋅∠⋅T⁻²`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`Dimensionless`>, op: times, that: Quan<`L⋅∠⋅T⁻²`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M1T0I0Theta0N0J0_generic")
 operator fun `Dimensionless`.times(that: Quan<`M`>) = `M`(this.siValue * that.siValue)
 // @JvmName("L0A0M0T0I0Theta0N0J0_Multiply_L0A0M1T0I0Theta0N0J0_concrete")
@@ -948,6 +966,12 @@ operator fun `L`.times(that: Quan<`L`>) = `L²`(this.siValue * that.siValue)
 operator fun `L`.times(that: `L`) = `L²`(this.siValue * that.siValue)
 @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`L`>, op: times, that: Quan<`L`>) = thiz.run { `L²`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `L`.times(that: Quan<`∠`>) = `L⋅∠`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `L`.times(that: `∠`) = `L⋅∠`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L`>, op: times, that: Quan<`∠`>) = thiz.run { `L⋅∠`(this.siValue * that.siValue) }
 @JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
 operator fun `L`.div(that: Quan<`T`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
 // @JvmName("L1A0M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
@@ -1044,6 +1068,18 @@ operator fun `L`.times(that: Quan<`L⋅T⁻³`>) = `L²⋅T⁻³`(this.siValue *
 operator fun `L`.times(that: `L⋅T⁻³`) = `L²⋅T⁻³`(this.siValue * that.siValue)
 @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T3_proof")
 fun p(thiz: Quan<`L`>, op: times, that: Quan<`L⋅T⁻³`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L`.times(that: Quan<`∠⋅T⁻¹`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L`.times(that: `∠⋅T⁻¹`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L`>, op: times, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `L`.times(that: Quan<`∠⋅T⁻²`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L`.times(that: `∠⋅T⁻²`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L0A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L`>, op: times, that: Quan<`∠⋅T⁻²`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M1I0Theta0N0J0_per_T1_generic")
 operator fun `L`.times(that: Quan<`L⋅M⋅T⁻¹`>) = `L²⋅M⋅T⁻¹`(this.siValue * that.siValue)
 // @JvmName("L1A0M0T0I0Theta0N0J0_Multiply_L1A0M1I0Theta0N0J0_per_T1_concrete")
@@ -1280,6 +1316,489 @@ operator fun `L`.times(that: `L⁻¹⋅∠⁻²⋅M⋅T⁻³`) = `∠⁻²⋅M�
 fun p(thiz: Quan<`L`>, op: times, that: Quan<`L⁻¹⋅∠⁻²⋅M⋅T⁻³`>) = thiz.run { `∠⁻²⋅M⋅T⁻³`(this.siValue * that.siValue) }
 
 
+typealias `∠` = L0A1M0T0I0Theta0N0J0
+inline class L0A1M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠`> {
+    override val siValue get() = underlying
+    override val abrev get() = "rad"
+
+    override fun new(siValue: Double) = `∠`(siValue)
+
+    override operator fun unaryPlus() = `∠`(+underlying)
+    override operator fun unaryMinus() = `∠`(-underlying)
+
+    override operator fun plus(that: `∠`) = `∠`(this.underlying + that.underlying)
+    override operator fun minus(that: `∠`) = `∠`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `∠`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `∠`(this.underlying / that.toDouble())
+    override operator fun rem(that: `∠`) = `∠`(this.underlying % that.underlying)
+
+    override infix fun min(that: `∠`) = if (this < that) this else that
+    override infix fun max(that: `∠`) = if (this > that) this else that
+
+    override val abs get() = `∠`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `∠`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `∠` && this.siValue == other.siValue
+}
+
+inline val Number.`Radian`: `Angle` get() = `∠`(toDouble() * 1.0)
+inline val `∠`.`Radian` get() = siValue * 1.0
+object `Radian` : UomConverter<`∠`>,
+    Quan<`∠`> by box(`∠`(1.0)) {
+    override val unitName = "Radian"
+    override fun invoke(x: Double) = x.`Radian`
+    override fun invoke(x: `∠`) = x.`Radian`
+}
+
+
+typealias `Angle` = `∠`
+
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `∠`.div(that: Quan<`Dimensionless`>) = `∠`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `∠`.div(that: `Dimensionless`) = `∠`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: div, that: Quan<`Dimensionless`>) = thiz.run { `∠`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `∠`.div(that: Quan<`∠`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `∠`.div(that: `∠`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: div, that: Quan<`∠`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `∠`.times(that: Quan<`Dimensionless`>) = `∠`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `∠`.times(that: `Dimensionless`) = `∠`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `∠`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `∠`.times(that: Quan<`∠`>) = `∠²`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `∠`.times(that: `∠`) = `∠²`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`∠`>) = thiz.run { `∠²`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+operator fun `∠`.times(that: Quan<`L`>) = `L⋅∠`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+operator fun `∠`.times(that: `L`) = `L⋅∠`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`L`>) = thiz.run { `L⋅∠`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `∠`.div(that: Quan<`L⋅∠`>) = `L⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `∠`.div(that: `L⋅∠`) = `L⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: div, that: Quan<`L⋅∠`>) = thiz.run { `L⁻¹`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+operator fun `∠`.div(that: Quan<`T`>) = `∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+operator fun `∠`.div(that: `T`) = `∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: div, that: Quan<`T`>) = thiz.run { `∠⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_generic")
+operator fun `∠`.times(that: Quan<`I`>) = `∠⋅I`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_concrete")
+operator fun `∠`.times(that: `I`) = `∠⋅I`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`I`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `∠`.times(that: Quan<`T⁻¹`>) = `∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `∠`.times(that: `T⁻¹`) = `∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`T⁻¹`>) = thiz.run { `∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `∠`.times(that: Quan<`L⋅T⁻¹`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `∠`.times(that: `L⋅T⁻¹`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_generic")
+operator fun `∠`.times(that: Quan<`L⋅T⁻²`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_concrete")
+operator fun `∠`.times(that: `L⋅T⁻²`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L1A0M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`L⋅T⁻²`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `∠`.div(that: Quan<`∠⋅T⁻¹`>) = `T`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `∠`.div(that: `∠⋅T⁻¹`) = `T`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`∠`>, op: div, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `T`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L2M1I0Theta0N0J0_per_A1T2_generic")
+operator fun `∠`.times(that: Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L2M1I0Theta0N0J0_per_A1T2_concrete")
+operator fun `∠`.times(that: `L²⋅∠⁻¹⋅M⋅T⁻²`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L2M1I0Theta0N0J0_per_A1T2_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_A0M0T0I0Theta0N0J0_per_L1_generic")
+operator fun `∠`.div(that: Quan<`L⁻¹`>) = `L⋅∠`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_A0M0T0I0Theta0N0J0_per_L1_concrete")
+operator fun `∠`.div(that: `L⁻¹`) = `L⋅∠`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Divide_A0M0T0I0Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`∠`>, op: div, that: Quan<`L⁻¹`>) = thiz.run { `L⋅∠`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_generic")
+operator fun `∠`.times(that: Quan<`T⁻²`>) = `∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_concrete")
+operator fun `∠`.times(that: `T⁻²`) = `∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`∠`>, op: times, that: Quan<`T⁻²`>) = thiz.run { `∠⋅T⁻²`(this.siValue * that.siValue) }
+
+
+typealias `L⋅∠` = L1A1M0T0I0Theta0N0J0
+inline class L1A1M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L⋅∠`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⋅rad"
+
+    override fun new(siValue: Double) = `L⋅∠`(siValue)
+
+    override operator fun unaryPlus() = `L⋅∠`(+underlying)
+    override operator fun unaryMinus() = `L⋅∠`(-underlying)
+
+    override operator fun plus(that: `L⋅∠`) = `L⋅∠`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⋅∠`) = `L⋅∠`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⋅∠`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⋅∠`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⋅∠`) = `L⋅∠`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⋅∠`) = if (this < that) this else that
+    override infix fun max(that: `L⋅∠`) = if (this > that) this else that
+
+    override val abs get() = `L⋅∠`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⋅∠`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⋅∠` && this.siValue == other.siValue
+}
+
+
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠`.div(that: Quan<`Dimensionless`>) = `L⋅∠`(this.siValue / that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠`.div(that: `Dimensionless`) = `L⋅∠`(this.siValue / that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: div, that: Quan<`Dimensionless`>) = thiz.run { `L⋅∠`(this.siValue / that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠`.div(that: Quan<`L⋅∠`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠`.div(that: `L⋅∠`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: div, that: Quan<`L⋅∠`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠`.times(that: Quan<`Dimensionless`>) = `L⋅∠`(this.siValue * that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠`.times(that: `Dimensionless`) = `L⋅∠`(this.siValue * that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `L⋅∠`(this.siValue * that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠`.div(that: Quan<`L`>) = `∠`(this.siValue / that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠`.div(that: `L`) = `∠`(this.siValue / that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: div, that: Quan<`L`>) = thiz.run { `∠`(this.siValue / that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠`.div(that: Quan<`∠`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠`.div(that: `∠`) = `L`(this.siValue / that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: div, that: Quan<`∠`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠`.div(that: Quan<`L⋅∠⋅T⁻¹`>) = `T`(this.siValue / that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠`.div(that: `L⋅∠⋅T⁻¹`) = `T`(this.siValue / that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: div, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `T`(this.siValue / that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
+operator fun `L⋅∠`.div(that: Quan<`T`>) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+operator fun `L⋅∠`.div(that: `T`) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: div, that: Quan<`T`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠`.times(that: Quan<`T⁻¹`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠`.times(that: `T⁻¹`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: times, that: Quan<`T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_A0M0T0I0Theta0N0J0_per_L1_generic")
+operator fun `L⋅∠`.times(that: Quan<`L⁻¹`>) = `∠`(this.siValue * that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Multiply_A0M0T0I0Theta0N0J0_per_L1_concrete")
+operator fun `L⋅∠`.times(that: `L⁻¹`) = `∠`(this.siValue * that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_A0M0T0I0Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: times, that: Quan<`L⁻¹`>) = thiz.run { `∠`(this.siValue * that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_A0M0T0I1Theta0N0J0_per_L1_generic")
+operator fun `L⋅∠`.times(that: Quan<`L⁻¹⋅I`>) = `∠⋅I`(this.siValue * that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Multiply_A0M0T0I1Theta0N0J0_per_L1_concrete")
+operator fun `L⋅∠`.times(that: `L⁻¹⋅I`) = `∠⋅I`(this.siValue * that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_A0M0T0I1Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: times, that: Quan<`L⁻¹⋅I`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⋅∠`.times(that: Quan<`T⁻²`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⋅∠`.times(that: `T⁻²`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⋅∠`>, op: times, that: Quan<`T⁻²`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
+
+
+typealias `L⋅∠⋅T⁻¹` = L1A1M0I0Theta0N0J0_per_T1
+inline class L1A1M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`L⋅∠⋅T⁻¹`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⋅rad⋅s⁻¹"
+
+    override fun new(siValue: Double) = `L⋅∠⋅T⁻¹`(siValue)
+
+    override operator fun unaryPlus() = `L⋅∠⋅T⁻¹`(+underlying)
+    override operator fun unaryMinus() = `L⋅∠⋅T⁻¹`(-underlying)
+
+    override operator fun plus(that: `L⋅∠⋅T⁻¹`) = `L⋅∠⋅T⁻¹`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⋅∠⋅T⁻¹`) = `L⋅∠⋅T⁻¹`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⋅∠⋅T⁻¹`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⋅∠⋅T⁻¹`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⋅∠⋅T⁻¹`) = `L⋅∠⋅T⁻¹`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⋅∠⋅T⁻¹`) = if (this < that) this else that
+    override infix fun max(that: `L⋅∠⋅T⁻¹`) = if (this > that) this else that
+
+    override val abs get() = `L⋅∠⋅T⁻¹`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⋅∠⋅T⁻¹`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⋅∠⋅T⁻¹` && this.siValue == other.siValue
+}
+
+
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`Dimensionless`>) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `Dimensionless`) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`Dimensionless`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`L⋅∠⋅T⁻¹`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `L⋅∠⋅T⁻¹`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.times(that: Quan<`Dimensionless`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.times(that: `Dimensionless`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`L`>) = `∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `L`) = `∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`L`>) = thiz.run { `∠⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`∠`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `∠`) = `L⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`∠`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`L⋅∠`>) = `T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `L⋅∠`) = `T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`L⋅∠`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`L⋅∠⋅T⁻²`>) = `T`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `L⋅∠⋅T⁻²`) = `T`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`L⋅∠⋅T⁻²`>) = thiz.run { `T`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`T`>) = `L⋅∠⋅T⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `T`) = `L⋅∠⋅T⁻²`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`T`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻¹`.times(that: Quan<`T`>) = `L⋅∠`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻¹`.times(that: `T`) = `L⋅∠`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: times, that: Quan<`T`>) = thiz.run { `L⋅∠`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`T⁻¹`>) = `L⋅∠`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `T⁻¹`) = `L⋅∠`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`T⁻¹`>) = thiz.run { `L⋅∠`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻¹`.times(that: Quan<`T⁻¹`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.times(that: `T⁻¹`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: times, that: Quan<`T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`L⋅T⁻¹`>) = `∠`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `L⋅T⁻¹`) = `∠`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L1A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`L⋅T⁻¹`>) = thiz.run { `∠`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻¹`.div(that: Quan<`∠⋅T⁻¹`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.div(that: `∠⋅T⁻¹`) = `L`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: div, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_A0M0T0I0Theta0N0J0_per_L1_generic")
+operator fun `L⋅∠⋅T⁻¹`.times(that: Quan<`L⁻¹`>) = `∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_A0M0T0I0Theta0N0J0_per_L1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.times(that: `L⁻¹`) = `∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_A0M0T0I0Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: times, that: Quan<`L⁻¹`>) = thiz.run { `∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_A0M0T1I1Theta0N0J0_per_L1_generic")
+operator fun `L⋅∠⋅T⁻¹`.times(that: Quan<`L⁻¹⋅T⋅I`>) = `∠⋅I`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_A0M0T1I1Theta0N0J0_per_L1_concrete")
+operator fun `L⋅∠⋅T⁻¹`.times(that: `L⁻¹⋅T⋅I`) = `∠⋅I`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T1_Multiply_A0M0T1I1Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻¹`>, op: times, that: Quan<`L⁻¹⋅T⋅I`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
+
+
+typealias `L⋅∠⋅T⁻²` = L1A1M0I0Theta0N0J0_per_T2
+inline class L1A1M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`L⋅∠⋅T⁻²`> {
+    override val siValue get() = underlying
+    override val abrev get() = "m⋅rad⋅s⁻²"
+
+    override fun new(siValue: Double) = `L⋅∠⋅T⁻²`(siValue)
+
+    override operator fun unaryPlus() = `L⋅∠⋅T⁻²`(+underlying)
+    override operator fun unaryMinus() = `L⋅∠⋅T⁻²`(-underlying)
+
+    override operator fun plus(that: `L⋅∠⋅T⁻²`) = `L⋅∠⋅T⁻²`(this.underlying + that.underlying)
+    override operator fun minus(that: `L⋅∠⋅T⁻²`) = `L⋅∠⋅T⁻²`(this.underlying - that.underlying)
+    override operator fun times(that: Number) = `L⋅∠⋅T⁻²`(this.underlying * that.toDouble())
+    override operator fun div(that: Number) = `L⋅∠⋅T⁻²`(this.underlying / that.toDouble())
+    override operator fun rem(that: `L⋅∠⋅T⁻²`) = `L⋅∠⋅T⁻²`(this.underlying % that.underlying)
+
+    override infix fun min(that: `L⋅∠⋅T⁻²`) = if (this < that) this else that
+    override infix fun max(that: `L⋅∠⋅T⁻²`) = if (this > that) this else that
+
+    override val abs get() = `L⋅∠⋅T⁻²`(abs(underlying))
+    override val signum get() = underlying.sign
+    override val isNegative get() = underlying < 0
+    override val isZero get() = underlying == 0.0
+    override val isPositive get() = underlying > 0
+
+    override fun compareTo(other: `L⋅∠⋅T⁻²`) = this.underlying.compareTo(other.underlying)
+
+    override fun toString() = "$underlying $abrev"
+    // override fun equals(other: Any?) = other is `L⋅∠⋅T⁻²` && this.siValue == other.siValue
+}
+
+
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`Dimensionless`>) = `L⋅∠⋅T⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `Dimensionless`) = `L⋅∠⋅T⁻²`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`Dimensionless`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`L⋅∠⋅T⁻²`>) = `Dimensionless`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `L⋅∠⋅T⁻²`) = `Dimensionless`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`L⋅∠⋅T⁻²`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻²`.times(that: Quan<`Dimensionless`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻²`.times(that: `Dimensionless`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`L`>) = `∠⋅T⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `L`) = `∠⋅T⁻²`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`L`>) = thiz.run { `∠⋅T⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`∠`>) = `L⋅T⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `∠`) = `L⋅T⁻²`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`∠`>) = thiz.run { `L⋅T⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`L⋅∠`>) = `T⁻²`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `L⋅∠`) = `T⁻²`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`L⋅∠`>) = thiz.run { `T⁻²`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`L⋅∠⋅T⁻¹`>) = `T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `L⋅∠⋅T⁻¹`) = `T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_generic")
+operator fun `L⋅∠⋅T⁻²`.times(that: Quan<`T`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
+operator fun `L⋅∠⋅T⁻²`.times(that: `T`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: times, that: Quan<`T`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`T⁻¹`>) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `T⁻¹`) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`L⋅T⁻¹`>) = `∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `L⋅T⁻¹`) = `∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`L⋅T⁻¹`>) = thiz.run { `∠⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`L⋅T⁻²`>) = `∠`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `L⋅T⁻²`) = `∠`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L1A0M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`L⋅T⁻²`>) = thiz.run { `∠`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`∠⋅T⁻¹`>) = `L⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `∠⋅T⁻¹`) = `L⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `L⋅T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`∠⋅T⁻²`>) = `L`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `∠⋅T⁻²`) = `L`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`∠⋅T⁻²`>) = thiz.run { `L`(this.siValue / that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_A0M0T0I0Theta0N0J0_per_L1_generic")
+operator fun `L⋅∠⋅T⁻²`.times(that: Quan<`L⁻¹`>) = `∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_A0M0T0I0Theta0N0J0_per_L1_concrete")
+operator fun `L⋅∠⋅T⁻²`.times(that: `L⁻¹`) = `∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Multiply_A0M0T0I0Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: times, that: Quan<`L⁻¹`>) = thiz.run { `∠⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⋅∠⋅T⁻²`.div(that: Quan<`T⁻²`>) = `L⋅∠`(this.siValue / that.siValue)
+// @JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⋅∠⋅T⁻²`.div(that: `T⁻²`) = `L⋅∠`(this.siValue / that.siValue)
+@JvmName("L1A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⋅∠⋅T⁻²`>, op: div, that: Quan<`T⁻²`>) = thiz.run { `L⋅∠`(this.siValue / that.siValue) }
+
+
 typealias `L⁻¹` = A0M0T0I0Theta0N0J0_per_L1
 inline class A0M0T0I0Theta0N0J0_per_L1(internal val underlying: Double) : Quan<`L⁻¹`> {
     override val siValue get() = underlying
@@ -1356,6 +1875,24 @@ operator fun `L⁻¹`.times(that: Quan<`L`>) = `Dimensionless`(this.siValue * th
 operator fun `L⁻¹`.times(that: `L`) = `Dimensionless`(this.siValue * that.siValue)
 @JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`L⁻¹`>, op: times, that: Quan<`L`>) = thiz.run { `Dimensionless`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `L⁻¹`.times(that: Quan<`L⋅∠`>) = `∠`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⁻¹`.times(that: `L⋅∠`) = `∠`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⁻¹`>, op: times, that: Quan<`L⋅∠`>) = thiz.run { `∠`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⁻¹`.times(that: Quan<`L⋅∠⋅T⁻¹`>) = `∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⁻¹`.times(that: `L⋅∠⋅T⁻¹`) = `∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⁻¹`>, op: times, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `L⁻¹`.times(that: Quan<`L⋅∠⋅T⁻²`>) = `∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `L⁻¹`.times(that: `L⋅∠⋅T⁻²`) = `∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`L⁻¹`>, op: times, that: Quan<`L⋅∠⋅T⁻²`>) = thiz.run { `∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L0A0M1T0I0Theta0N0J0_generic")
 operator fun `L⁻¹`.times(that: Quan<`M`>) = `L⁻¹⋅M`(this.siValue * that.siValue)
 // @JvmName("A0M0T0I0Theta0N0J0_per_L1_Multiply_L0A0M1T0I0Theta0N0J0_concrete")
@@ -1910,111 +2447,6 @@ operator fun `L²`.times(that: `L⁻¹⋅∠⁻²⋅M⋅T⁻³`) = `L⋅∠⁻²
 fun p(thiz: Quan<`L²`>, op: times, that: Quan<`L⁻¹⋅∠⁻²⋅M⋅T⁻³`>) = thiz.run { `L⋅∠⁻²⋅M⋅T⁻³`(this.siValue * that.siValue) }
 
 
-typealias `∠` = L0A1M0T0I0Theta0N0J0
-inline class L0A1M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠`> {
-    override val siValue get() = underlying
-    override val abrev get() = "rad"
-
-    override fun new(siValue: Double) = `∠`(siValue)
-
-    override operator fun unaryPlus() = `∠`(+underlying)
-    override operator fun unaryMinus() = `∠`(-underlying)
-
-    override operator fun plus(that: `∠`) = `∠`(this.underlying + that.underlying)
-    override operator fun minus(that: `∠`) = `∠`(this.underlying - that.underlying)
-    override operator fun times(that: Number) = `∠`(this.underlying * that.toDouble())
-    override operator fun div(that: Number) = `∠`(this.underlying / that.toDouble())
-    override operator fun rem(that: `∠`) = `∠`(this.underlying % that.underlying)
-
-    override infix fun min(that: `∠`) = if (this < that) this else that
-    override infix fun max(that: `∠`) = if (this > that) this else that
-
-    override val abs get() = `∠`(abs(underlying))
-    override val signum get() = underlying.sign
-    override val isNegative get() = underlying < 0
-    override val isZero get() = underlying == 0.0
-    override val isPositive get() = underlying > 0
-
-    override fun compareTo(other: `∠`) = this.underlying.compareTo(other.underlying)
-
-    override fun toString() = "$underlying $abrev"
-    // override fun equals(other: Any?) = other is `∠` && this.siValue == other.siValue
-}
-
-inline val Number.`Radian`: `Angle` get() = `∠`(toDouble() * 1.0)
-inline val `∠`.`Radian` get() = siValue * 1.0
-object `Radian` : UomConverter<`∠`>,
-    Quan<`∠`> by box(`∠`(1.0)) {
-    override val unitName = "Radian"
-    override fun invoke(x: Double) = x.`Radian`
-    override fun invoke(x: `∠`) = x.`Radian`
-}
-
-
-typealias `Angle` = `∠`
-
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_generic")
-operator fun `∠`.div(that: Quan<`Dimensionless`>) = `∠`(this.siValue / that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_concrete")
-operator fun `∠`.div(that: `Dimensionless`) = `∠`(this.siValue / that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T0I0Theta0N0J0_proof")
-fun p(thiz: Quan<`∠`>, op: div, that: Quan<`Dimensionless`>) = thiz.run { `∠`(this.siValue / that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_generic")
-operator fun `∠`.div(that: Quan<`∠`>) = `Dimensionless`(this.siValue / that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_concrete")
-operator fun `∠`.div(that: `∠`) = `Dimensionless`(this.siValue / that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_proof")
-fun p(thiz: Quan<`∠`>, op: div, that: Quan<`∠`>) = thiz.run { `Dimensionless`(this.siValue / that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_generic")
-operator fun `∠`.times(that: Quan<`Dimensionless`>) = `∠`(this.siValue * that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_concrete")
-operator fun `∠`.times(that: `Dimensionless`) = `∠`(this.siValue * that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_proof")
-fun p(thiz: Quan<`∠`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `∠`(this.siValue * that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_generic")
-operator fun `∠`.times(that: Quan<`∠`>) = `∠²`(this.siValue * that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_concrete")
-operator fun `∠`.times(that: `∠`) = `∠²`(this.siValue * that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A1M0T0I0Theta0N0J0_proof")
-fun p(thiz: Quan<`∠`>, op: times, that: Quan<`∠`>) = thiz.run { `∠²`(this.siValue * that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_generic")
-operator fun `∠`.div(that: Quan<`T`>) = `∠⋅T⁻¹`(this.siValue / that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_concrete")
-operator fun `∠`.div(that: `T`) = `∠⋅T⁻¹`(this.siValue / that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A0M0T1I0Theta0N0J0_proof")
-fun p(thiz: Quan<`∠`>, op: div, that: Quan<`T`>) = thiz.run { `∠⋅T⁻¹`(this.siValue / that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_generic")
-operator fun `∠`.times(that: Quan<`I`>) = `∠⋅I`(this.siValue * that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_concrete")
-operator fun `∠`.times(that: `I`) = `∠⋅I`(this.siValue * that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_proof")
-fun p(thiz: Quan<`∠`>, op: times, that: Quan<`I`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_generic")
-operator fun `∠`.times(that: Quan<`T⁻¹`>) = `∠⋅T⁻¹`(this.siValue * that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_concrete")
-operator fun `∠`.times(that: `T⁻¹`) = `∠⋅T⁻¹`(this.siValue * that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T1_proof")
-fun p(thiz: Quan<`∠`>, op: times, that: Quan<`T⁻¹`>) = thiz.run { `∠⋅T⁻¹`(this.siValue * that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_generic")
-operator fun `∠`.div(that: Quan<`∠⋅T⁻¹`>) = `T`(this.siValue / that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_concrete")
-operator fun `∠`.div(that: `∠⋅T⁻¹`) = `T`(this.siValue / that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_proof")
-fun p(thiz: Quan<`∠`>, op: div, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `T`(this.siValue / that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L2M1I0Theta0N0J0_per_A1T2_generic")
-operator fun `∠`.times(that: Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L2M1I0Theta0N0J0_per_A1T2_concrete")
-operator fun `∠`.times(that: `L²⋅∠⁻¹⋅M⋅T⁻²`) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L2M1I0Theta0N0J0_per_A1T2_proof")
-fun p(thiz: Quan<`∠`>, op: times, that: Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`>) = thiz.run { `L²⋅M⋅T⁻²`(this.siValue * that.siValue) }
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_generic")
-operator fun `∠`.times(that: Quan<`T⁻²`>) = `∠⋅T⁻²`(this.siValue * that.siValue)
-// @JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_concrete")
-operator fun `∠`.times(that: `T⁻²`) = `∠⋅T⁻²`(this.siValue * that.siValue)
-@JvmName("L0A1M0T0I0Theta0N0J0_Multiply_L0A0M0I0Theta0N0J0_per_T2_proof")
-fun p(thiz: Quan<`∠`>, op: times, that: Quan<`T⁻²`>) = thiz.run { `∠⋅T⁻²`(this.siValue * that.siValue) }
-
-
 typealias `∠²` = L0A2M0T0I0Theta0N0J0
 inline class L0A2M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠²`> {
     override val siValue get() = underlying
@@ -2445,6 +2877,18 @@ operator fun `T`.times(that: Quan<`Dimensionless`>) = `T`(this.siValue * that.si
 operator fun `T`.times(that: `Dimensionless`) = `T`(this.siValue * that.siValue)
 @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`T`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `T`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `T`.times(that: Quan<`L⋅∠⋅T⁻¹`>) = `L⋅∠`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `T`.times(that: `L⋅∠⋅T⁻¹`) = `L⋅∠`(this.siValue * that.siValue)
+@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`T`>, op: times, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `L⋅∠`(this.siValue * that.siValue) }
+@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `T`.times(that: Quan<`L⋅∠⋅T⁻²`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `T`.times(that: `L⋅∠⋅T⁻²`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L1A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`T`>, op: times, that: Quan<`L⋅∠⋅T⁻²`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
 @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_generic")
 operator fun `T`.times(that: Quan<`I`>) = `T⋅I`(this.siValue * that.siValue)
 // @JvmName("L0A0M0T1I0Theta0N0J0_Multiply_L0A0M0T0I1Theta0N0J0_concrete")
@@ -2819,6 +3263,18 @@ operator fun `T⁻¹`.times(that: Quan<`∠`>) = `∠⋅T⁻¹`(this.siValue * t
 operator fun `T⁻¹`.times(that: `∠`) = `∠⋅T⁻¹`(this.siValue * that.siValue)
 @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`T⁻¹`>, op: times, that: Quan<`∠`>) = thiz.run { `∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `T⁻¹`.times(that: Quan<`L⋅∠`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `T⁻¹`.times(that: `L⋅∠`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`T⁻¹`>, op: times, that: Quan<`L⋅∠`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `T⁻¹`.times(that: Quan<`L⋅∠⋅T⁻¹`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `T⁻¹`.times(that: `L⋅∠⋅T⁻¹`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`T⁻¹`>, op: times, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M1T0I0Theta0N0J0_generic")
 operator fun `T⁻¹`.times(that: Quan<`M`>) = `M⋅T⁻¹`(this.siValue * that.siValue)
 // @JvmName("L0A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M1T0I0Theta0N0J0_concrete")
@@ -3935,6 +4391,12 @@ operator fun `T⁻²`.times(that: Quan<`∠`>) = `∠⋅T⁻²`(this.siValue * t
 operator fun `T⁻²`.times(that: `∠`) = `∠⋅T⁻²`(this.siValue * that.siValue)
 @JvmName("L0A0M0I0Theta0N0J0_per_T2_Multiply_L0A1M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`T⁻²`>, op: times, that: Quan<`∠`>) = thiz.run { `∠⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L0A0M0I0Theta0N0J0_per_T2_Multiply_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `T⁻²`.times(that: Quan<`L⋅∠`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A0M0I0Theta0N0J0_per_T2_Multiply_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `T⁻²`.times(that: `L⋅∠`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A0M0I0Theta0N0J0_per_T2_Multiply_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`T⁻²`>, op: times, that: Quan<`L⋅∠`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L0A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M1T0I0Theta0N0J0_generic")
 operator fun `T⁻²`.times(that: Quan<`M`>) = `M⋅T⁻²`(this.siValue * that.siValue)
 // @JvmName("L0A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M1T0I0Theta0N0J0_concrete")
@@ -8352,6 +8814,12 @@ operator fun `L⋅T⁻¹`.times(that: Quan<`L`>) = `L²⋅T⁻¹`(this.siValue *
 operator fun `L⋅T⁻¹`.times(that: `L`) = `L²⋅T⁻¹`(this.siValue * that.siValue)
 @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`L⋅T⁻¹`>, op: times, that: Quan<`L`>) = thiz.run { `L²⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅T⁻¹`.times(that: Quan<`∠`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅T⁻¹`.times(that: `∠`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅T⁻¹`>, op: times, that: Quan<`∠`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
 @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M1T0I0Theta0N0J0_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`M`>) = `L⋅M⋅T⁻¹`(this.siValue * that.siValue)
 // @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A0M1T0I0Theta0N0J0_concrete")
@@ -8442,6 +8910,12 @@ operator fun `L⋅T⁻¹`.times(that: Quan<`L⋅T⁻²`>) = `L²⋅T⁻³`(this.
 operator fun `L⋅T⁻¹`.times(that: `L⋅T⁻²`) = `L²⋅T⁻³`(this.siValue * that.siValue)
 @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T2_proof")
 fun p(thiz: Quan<`L⋅T⁻¹`>, op: times, that: Quan<`L⋅T⁻²`>) = thiz.run { `L²⋅T⁻³`(this.siValue * that.siValue) }
+@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⋅T⁻¹`.times(that: Quan<`∠⋅T⁻¹`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⋅T⁻¹`.times(that: `∠⋅T⁻¹`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L0A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⋅T⁻¹`>, op: times, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M1I0Theta0N0J0_per_T1_generic")
 operator fun `L⋅T⁻¹`.times(that: Quan<`L⋅M⋅T⁻¹`>) = `L²⋅M⋅T⁻²`(this.siValue * that.siValue)
 // @JvmName("L1A0M0I0Theta0N0J0_per_T1_Multiply_L1A0M1I0Theta0N0J0_per_T1_concrete")
@@ -8886,6 +9360,12 @@ operator fun `L⋅T⁻²`.times(that: Quan<`L`>) = `L²⋅T⁻²`(this.siValue *
 operator fun `L⋅T⁻²`.times(that: `L`) = `L²⋅T⁻²`(this.siValue * that.siValue)
 @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L1A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`L⋅T⁻²`>, op: times, that: Quan<`L`>) = thiz.run { `L²⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A1M0T0I0Theta0N0J0_generic")
+operator fun `L⋅T⁻²`.times(that: Quan<`∠`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⋅T⁻²`.times(that: `∠`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⋅T⁻²`>, op: times, that: Quan<`∠`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M1T0I0Theta0N0J0_generic")
 operator fun `L⋅T⁻²`.times(that: Quan<`M`>) = `L⋅M⋅T⁻²`(this.siValue * that.siValue)
 // @JvmName("L1A0M0I0Theta0N0J0_per_T2_Multiply_L0A0M1T0I0Theta0N0J0_concrete")
@@ -9310,12 +9790,24 @@ operator fun `∠⋅T⁻¹`.times(that: Quan<`Dimensionless`>) = `∠⋅T⁻¹`(
 operator fun `∠⋅T⁻¹`.times(that: `Dimensionless`) = `∠⋅T⁻¹`(this.siValue * that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`∠⋅T⁻¹`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `∠⋅T⁻¹`(this.siValue * that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+operator fun `∠⋅T⁻¹`.times(that: Quan<`L`>) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+operator fun `∠⋅T⁻¹`.times(that: `L`) = `L⋅∠⋅T⁻¹`(this.siValue * that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L1A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠⋅T⁻¹`>, op: times, that: Quan<`L`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue * that.siValue) }
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0T0I0Theta0N0J0_generic")
 operator fun `∠⋅T⁻¹`.div(that: Quan<`∠`>) = `T⁻¹`(this.siValue / that.siValue)
 // @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0T0I0Theta0N0J0_concrete")
 operator fun `∠⋅T⁻¹`.div(that: `∠`) = `T⁻¹`(this.siValue / that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`∠⋅T⁻¹`>, op: div, that: Quan<`∠`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `∠⋅T⁻¹`.div(that: Quan<`L⋅∠⋅T⁻¹`>) = `L⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `∠⋅T⁻¹`.div(that: `L⋅∠⋅T⁻¹`) = `L⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`∠⋅T⁻¹`>, op: div, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `L⁻¹`(this.siValue / that.siValue) }
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_generic")
 operator fun `∠⋅T⁻¹`.div(that: Quan<`T`>) = `∠⋅T⁻²`(this.siValue / that.siValue)
 // @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A0M0T1I0Theta0N0J0_concrete")
@@ -9346,6 +9838,12 @@ operator fun `∠⋅T⁻¹`.times(that: Quan<`T⋅I`>) = `∠⋅I`(this.siValue 
 operator fun `∠⋅T⁻¹`.times(that: `T⋅I`) = `∠⋅I`(this.siValue * that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L0A0M0T1I1Theta0N0J0_proof")
 fun p(thiz: Quan<`∠⋅T⁻¹`>, op: times, that: Quan<`T⋅I`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_generic")
+operator fun `∠⋅T⁻¹`.times(that: Quan<`L⋅T⁻¹`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_concrete")
+operator fun `∠⋅T⁻¹`.times(that: `L⋅T⁻¹`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L1A0M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`∠⋅T⁻¹`>, op: times, that: Quan<`L⋅T⁻¹`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0I0Theta0N0J0_per_T2_generic")
 operator fun `∠⋅T⁻¹`.div(that: Quan<`∠⋅T⁻²`>) = `T`(this.siValue / that.siValue)
 // @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_L0A1M0I0Theta0N0J0_per_T2_concrete")
@@ -9358,6 +9856,12 @@ operator fun `∠⋅T⁻¹`.times(that: Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`>) = `
 operator fun `∠⋅T⁻¹`.times(that: `L²⋅∠⁻¹⋅M⋅T⁻²`) = `L²⋅M⋅T⁻³`(this.siValue * that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T1_Multiply_L2M1I0Theta0N0J0_per_A1T2_proof")
 fun p(thiz: Quan<`∠⋅T⁻¹`>, op: times, that: Quan<`L²⋅∠⁻¹⋅M⋅T⁻²`>) = thiz.run { `L²⋅M⋅T⁻³`(this.siValue * that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_A0M0T0I0Theta0N0J0_per_L1_generic")
+operator fun `∠⋅T⁻¹`.div(that: Quan<`L⁻¹`>) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_A0M0T0I0Theta0N0J0_per_L1_concrete")
+operator fun `∠⋅T⁻¹`.div(that: `L⁻¹`) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T1_Divide_A0M0T0I0Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`∠⋅T⁻¹`>, op: div, that: Quan<`L⁻¹`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue / that.siValue) }
 
 
 typealias `∠⋅T⁻²` = L0A1M0I0Theta0N0J0_per_T2
@@ -9412,12 +9916,24 @@ operator fun `∠⋅T⁻²`.times(that: Quan<`Dimensionless`>) = `∠⋅T⁻²`(
 operator fun `∠⋅T⁻²`.times(that: `Dimensionless`) = `∠⋅T⁻²`(this.siValue * that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`∠⋅T⁻²`>, op: times, that: Quan<`Dimensionless`>) = thiz.run { `∠⋅T⁻²`(this.siValue * that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T2_Multiply_L1A0M0T0I0Theta0N0J0_generic")
+operator fun `∠⋅T⁻²`.times(that: Quan<`L`>) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T2_Multiply_L1A0M0T0I0Theta0N0J0_concrete")
+operator fun `∠⋅T⁻²`.times(that: `L`) = `L⋅∠⋅T⁻²`(this.siValue * that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T2_Multiply_L1A0M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠⋅T⁻²`>, op: times, that: Quan<`L`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue * that.siValue) }
 @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0T0I0Theta0N0J0_generic")
 operator fun `∠⋅T⁻²`.div(that: Quan<`∠`>) = `T⁻²`(this.siValue / that.siValue)
 // @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0T0I0Theta0N0J0_concrete")
 operator fun `∠⋅T⁻²`.div(that: `∠`) = `T⁻²`(this.siValue / that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`∠⋅T⁻²`>, op: div, that: Quan<`∠`>) = thiz.run { `T⁻²`(this.siValue / that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T2_generic")
+operator fun `∠⋅T⁻²`.div(that: Quan<`L⋅∠⋅T⁻²`>) = `L⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T2_concrete")
+operator fun `∠⋅T⁻²`.div(that: `L⋅∠⋅T⁻²`) = `L⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L1A1M0I0Theta0N0J0_per_T2_proof")
+fun p(thiz: Quan<`∠⋅T⁻²`>, op: div, that: Quan<`L⋅∠⋅T⁻²`>) = thiz.run { `L⁻¹`(this.siValue / that.siValue) }
 @JvmName("L0A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_generic")
 operator fun `∠⋅T⁻²`.times(that: Quan<`T`>) = `∠⋅T⁻¹`(this.siValue * that.siValue)
 // @JvmName("L0A1M0I0Theta0N0J0_per_T2_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
@@ -9436,6 +9952,12 @@ operator fun `∠⋅T⁻²`.div(that: Quan<`∠⋅T⁻¹`>) = `T⁻¹`(this.siVa
 operator fun `∠⋅T⁻²`.div(that: `∠⋅T⁻¹`) = `T⁻¹`(this.siValue / that.siValue)
 @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L0A1M0I0Theta0N0J0_per_T1_proof")
 fun p(thiz: Quan<`∠⋅T⁻²`>, op: div, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `T⁻¹`(this.siValue / that.siValue) }
+@JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_A0M0T0I0Theta0N0J0_per_L1_generic")
+operator fun `∠⋅T⁻²`.div(that: Quan<`L⁻¹`>) = `L⋅∠⋅T⁻²`(this.siValue / that.siValue)
+// @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_A0M0T0I0Theta0N0J0_per_L1_concrete")
+operator fun `∠⋅T⁻²`.div(that: `L⁻¹`) = `L⋅∠⋅T⁻²`(this.siValue / that.siValue)
+@JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_A0M0T0I0Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`∠⋅T⁻²`>, op: div, that: Quan<`L⁻¹`>) = thiz.run { `L⋅∠⋅T⁻²`(this.siValue / that.siValue) }
 @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T2_generic")
 operator fun `∠⋅T⁻²`.div(that: Quan<`T⁻²`>) = `∠`(this.siValue / that.siValue)
 // @JvmName("L0A1M0I0Theta0N0J0_per_T2_Divide_L0A0M0I0Theta0N0J0_per_T2_concrete")
@@ -14322,6 +14844,12 @@ operator fun `L⁻¹⋅I`.times(that: Quan<`L`>) = `I`(this.siValue * that.siVal
 operator fun `L⁻¹⋅I`.times(that: `L`) = `I`(this.siValue * that.siValue)
 @JvmName("A0M0T0I1Theta0N0J0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`L⁻¹⋅I`>, op: times, that: Quan<`L`>) = thiz.run { `I`(this.siValue * that.siValue) }
+@JvmName("A0M0T0I1Theta0N0J0_per_L1_Multiply_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `L⁻¹⋅I`.times(that: Quan<`L⋅∠`>) = `∠⋅I`(this.siValue * that.siValue)
+// @JvmName("A0M0T0I1Theta0N0J0_per_L1_Multiply_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `L⁻¹⋅I`.times(that: `L⋅∠`) = `∠⋅I`(this.siValue * that.siValue)
+@JvmName("A0M0T0I1Theta0N0J0_per_L1_Multiply_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`L⁻¹⋅I`>, op: times, that: Quan<`L⋅∠`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
 @JvmName("A0M0T0I1Theta0N0J0_per_L1_Multiply_L0A0M0T1I0Theta0N0J0_generic")
 operator fun `L⁻¹⋅I`.times(that: Quan<`T`>) = `L⁻¹⋅T⋅I`(this.siValue * that.siValue)
 // @JvmName("A0M0T0I1Theta0N0J0_per_L1_Multiply_L0A0M0T1I0Theta0N0J0_concrete")
@@ -15330,6 +15858,12 @@ operator fun `L⁻¹⋅T⋅I`.times(that: Quan<`L`>) = `T⋅I`(this.siValue * th
 operator fun `L⁻¹⋅T⋅I`.times(that: `L`) = `T⋅I`(this.siValue * that.siValue)
 @JvmName("A0M0T1I1Theta0N0J0_per_L1_Multiply_L1A0M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`L⁻¹⋅T⋅I`>, op: times, that: Quan<`L`>) = thiz.run { `T⋅I`(this.siValue * that.siValue) }
+@JvmName("A0M0T1I1Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `L⁻¹⋅T⋅I`.times(that: Quan<`L⋅∠⋅T⁻¹`>) = `∠⋅I`(this.siValue * that.siValue)
+// @JvmName("A0M0T1I1Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `L⁻¹⋅T⋅I`.times(that: `L⋅∠⋅T⁻¹`) = `∠⋅I`(this.siValue * that.siValue)
+@JvmName("A0M0T1I1Theta0N0J0_per_L1_Multiply_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`L⁻¹⋅T⋅I`>, op: times, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `∠⋅I`(this.siValue * that.siValue) }
 @JvmName("A0M0T1I1Theta0N0J0_per_L1_Divide_L0A0M0T1I0Theta0N0J0_generic")
 operator fun `L⁻¹⋅T⋅I`.div(that: Quan<`T`>) = `L⁻¹⋅I`(this.siValue / that.siValue)
 // @JvmName("A0M0T1I1Theta0N0J0_per_L1_Divide_L0A0M0T1I0Theta0N0J0_concrete")
@@ -17344,6 +17878,18 @@ operator fun `∠⋅I`.div(that: Quan<`∠`>) = `I`(this.siValue / that.siValue)
 operator fun `∠⋅I`.div(that: `∠`) = `I`(this.siValue / that.siValue)
 @JvmName("L0A1M0T0I1Theta0N0J0_Divide_L0A1M0T0I0Theta0N0J0_proof")
 fun p(thiz: Quan<`∠⋅I`>, op: div, that: Quan<`∠`>) = thiz.run { `I`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_generic")
+operator fun `∠⋅I`.div(that: Quan<`L⋅∠`>) = `L⁻¹⋅I`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I1Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_concrete")
+operator fun `∠⋅I`.div(that: `L⋅∠`) = `L⁻¹⋅I`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_L1A1M0T0I0Theta0N0J0_proof")
+fun p(thiz: Quan<`∠⋅I`>, op: div, that: Quan<`L⋅∠`>) = thiz.run { `L⁻¹⋅I`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_L1A1M0I0Theta0N0J0_per_T1_generic")
+operator fun `∠⋅I`.div(that: Quan<`L⋅∠⋅T⁻¹`>) = `L⁻¹⋅T⋅I`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I1Theta0N0J0_Divide_L1A1M0I0Theta0N0J0_per_T1_concrete")
+operator fun `∠⋅I`.div(that: `L⋅∠⋅T⁻¹`) = `L⁻¹⋅T⋅I`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_L1A1M0I0Theta0N0J0_per_T1_proof")
+fun p(thiz: Quan<`∠⋅I`>, op: div, that: Quan<`L⋅∠⋅T⁻¹`>) = thiz.run { `L⁻¹⋅T⋅I`(this.siValue / that.siValue) }
 @JvmName("L0A1M0T0I1Theta0N0J0_Divide_L0A0M0T0I1Theta0N0J0_generic")
 operator fun `∠⋅I`.div(that: Quan<`I`>) = `∠`(this.siValue / that.siValue)
 // @JvmName("L0A1M0T0I1Theta0N0J0_Divide_L0A0M0T0I1Theta0N0J0_concrete")
@@ -17362,6 +17908,18 @@ operator fun `∠⋅I`.div(that: Quan<`∠⋅T⁻¹`>) = `T⋅I`(this.siValue / 
 operator fun `∠⋅I`.div(that: `∠⋅T⁻¹`) = `T⋅I`(this.siValue / that.siValue)
 @JvmName("L0A1M0T0I1Theta0N0J0_Divide_L0A1M0I0Theta0N0J0_per_T1_proof")
 fun p(thiz: Quan<`∠⋅I`>, op: div, that: Quan<`∠⋅T⁻¹`>) = thiz.run { `T⋅I`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_A0M0T0I1Theta0N0J0_per_L1_generic")
+operator fun `∠⋅I`.div(that: Quan<`L⁻¹⋅I`>) = `L⋅∠`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I1Theta0N0J0_Divide_A0M0T0I1Theta0N0J0_per_L1_concrete")
+operator fun `∠⋅I`.div(that: `L⁻¹⋅I`) = `L⋅∠`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_A0M0T0I1Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`∠⋅I`>, op: div, that: Quan<`L⁻¹⋅I`>) = thiz.run { `L⋅∠`(this.siValue / that.siValue) }
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_A0M0T1I1Theta0N0J0_per_L1_generic")
+operator fun `∠⋅I`.div(that: Quan<`L⁻¹⋅T⋅I`>) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+// @JvmName("L0A1M0T0I1Theta0N0J0_Divide_A0M0T1I1Theta0N0J0_per_L1_concrete")
+operator fun `∠⋅I`.div(that: `L⁻¹⋅T⋅I`) = `L⋅∠⋅T⁻¹`(this.siValue / that.siValue)
+@JvmName("L0A1M0T0I1Theta0N0J0_Divide_A0M0T1I1Theta0N0J0_per_L1_proof")
+fun p(thiz: Quan<`∠⋅I`>, op: div, that: Quan<`L⁻¹⋅T⋅I`>) = thiz.run { `L⋅∠⋅T⁻¹`(this.siValue / that.siValue) }
 
 
 typealias `L²⋅∠⁻²⋅M⋅T⁻³` = L2M1I0Theta0N0J0_per_A2T3

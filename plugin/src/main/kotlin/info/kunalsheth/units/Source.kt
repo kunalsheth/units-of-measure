@@ -128,7 +128,10 @@ val mathDependencies = setOf(
         Dimension(),
         Dimension(L = 1),
         Dimension(A = 1),
-        Dimension(L = 1, A = 1)
+
+        Dimension(L = 1, A = 1),
+        Dimension(L = 1, T = -1, A = 1),
+        Dimension(L = 1, T = -2, A = 1)
 )
 
 fun writeMath(writer: OutputStream) = ::UnitsOfMeasurePlugin::class.java
