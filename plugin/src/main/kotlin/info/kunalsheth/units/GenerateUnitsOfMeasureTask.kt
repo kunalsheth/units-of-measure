@@ -40,13 +40,18 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
         val srcWriter = generatedSrc.outputStream()
         writeBase(srcWriter)
 
-        val allDimensions = (relationships.flatMap { listOf(it.a, it.b, it.result) } +
+        val allRelations = Relation.closedPermute(mathDependencies +
                 quantities.map(Quantity::dimension) +
-                unitsOfMeasure.map(UnitOfMeasure::dimension) +
-                requiredMathUnits)
+                unitsOfMeasure.map(UnitOfMeasure::dimension)
+        ) + relationships
+
+        val allDimensions = (mathDependencies +
+                allRelations.flatMap { listOf(it.a, it.b, it.result) } +
+                quantities.map(Quantity::dimension) +
+                unitsOfMeasure.map(UnitOfMeasure::dimension))
                 .toSet()
 
-        val relationGroups = relationships
+        val relationGroups = allRelations
                 .groupBy { it.a }
                 .mapValues { (_, v) -> v.toSet() }
 
@@ -93,21 +98,23 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
 
     // for Groovy to Kotlin interop
 
-    fun dimension(params: Map<String, Any>?) =
+    fun dimension(params: MutableMap<String, Any>?) =
             if (params != null) Dimension(
-                    L = (params["L"] ?: 0) as Int,
-                    A = (params["A"] ?: 0) as Int,
-                    M = (params["M"] ?: 0) as Int,
-                    T = (params["T"] ?: 0) as Int,
-                    I = (params["I"] ?: 0) as Int,
-                    Theta = (params["Theta"] ?: 0) as Int,
-                    N = (params["N"] ?: 0) as Int,
-                    J = (params["J"] ?: 0) as Int
-            ) else Dimension()
+                    L = (params.remove("L") ?: 0) as Int,
+                    A = (params.remove("A") ?: 0) as Int,
+                    M = (params.remove("M") ?: 0) as Int,
+                    T = (params.remove("T") ?: 0) as Int,
+                    I = (params.remove("I") ?: 0) as Int,
+                    Theta = (params.remove("Theta") ?: 0) as Int,
+                    N = (params.remove("N") ?: 0) as Int,
+                    J = (params.remove("J") ?: 0) as Int
+            ).also {
+                require(params.isEmpty()) { "Unrecognized base dimensions: ${params.keys.joinToString()}" }
+            } else Dimension()
 
-    fun d(params: Map<String, Any>?) = dimension(params)
+    fun d(params: MutableMap<String, Any>?) = dimension(params)
 
-    fun relation(vararg dimensions: Dimension) = Relation(*dimensions)
+    fun relation(vararg dimensions: Dimension) = Relation.openPermute(dimensions.toSet())
     fun r(vararg dimensions: Dimension) = relation(*dimensions)
 
     fun quantity(name: String, dimension: Dimension) = Quantity(name, dimension)

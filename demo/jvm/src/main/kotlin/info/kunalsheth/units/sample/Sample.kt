@@ -52,6 +52,7 @@ fun main(args: Array<String>) {
 
 // these special character identifiers are illegal in Javascript
 inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius) // inlined to prevent boxing
+
 inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius) // inlined to prevent boxing
 typealias `*` = times
 typealias `÷` = div
@@ -63,9 +64,10 @@ data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
 fun timeSeq() = generateSequence(0) { it + 1 }.map { it.Second }
 
 // support for generic programming
-// this will be prettier once KT-26012 is fixed
-fun <Q : Quan<Q>, DQDT : Quan<DQDT>> Sequence<Q>.derivative(p: Q.(`÷`, T) -> DQDT) = timeSeq()
+fun <Q : Quan<Q>, DQDT : Quan<DQDT>> Sequence<Q>.derivative(p: (Q, `÷`, T) -> DQDT) = timeSeq()
         .zip(this)
         .zipWithNext { (x1, y1), (x2, y2) ->
-            (y1 - y2).p(`÷`, (x1 - x2))
+            p(
+                    (y1 - y2), `÷`, (x1 - x2)
+            )
         }

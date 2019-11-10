@@ -124,10 +124,11 @@ object $this : UomConverter<$dimension>,
 }
 """
 
-val requiredMathUnits = setOf(
+val mathDependencies = setOf(
         Dimension(),
         Dimension(L = 1),
-        Dimension(A = 1)
+        Dimension(A = 1),
+        Dimension(L = 1, A = 1)
 )
 
 fun writeMath(writer: OutputStream) = ::UnitsOfMeasurePlugin::class.java

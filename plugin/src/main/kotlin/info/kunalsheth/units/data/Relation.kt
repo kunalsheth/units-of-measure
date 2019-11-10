@@ -27,31 +27,33 @@ data class Relation(val a: Dimension, val f: RelationType, val b: Dimension) : S
     val result = f(a, b)
 
     companion object {
-        operator fun invoke(vararg d: Dimension): Set<Relation> {
-            val inputDimensions = d.toSet()
+        private fun Set<Dimension>.permuteRelations() =
+                flatMap { x ->
+                    flatMap { y ->
+                        listOf(
+                                Relation(x, Divide, x),
+                                Relation(x, Divide, y),
+                                Relation(x, Multiply, x),
+                                Relation(x, Multiply, y),
 
-            fun Set<Dimension>.allRelations() =
-                    flatMap { x ->
-                        flatMap { y ->
-                            listOf(
-                                    Relation(x, Divide, x),
-                                    Relation(x, Divide, y),
-                                    Relation(x, Multiply, x),
-                                    Relation(x, Multiply, y),
-
-                                    Relation(y, Divide, x),
-                                    Relation(y, Divide, y),
-                                    Relation(y, Multiply, x),
-                                    Relation(y, Multiply, y)
-                            )
-                        }
+                                Relation(y, Divide, x),
+                                Relation(y, Divide, y),
+                                Relation(y, Multiply, x),
+                                Relation(y, Multiply, y)
+                        )
                     }
+                }
 
+        fun closedPermute(inputDimensions: Set<Dimension>) = inputDimensions.permuteRelations()
+                .filter { arrayOf(it.a, it.b, it.result).all { it in inputDimensions } }
+                .toSet()
+
+        fun openPermute(inputDimensions: Set<Dimension>): Set<Relation> {
             val newDimensions = inputDimensions +
-                    inputDimensions.allRelations().map(Relation::result)
+                    inputDimensions.permuteRelations().map(Relation::result)
 
             return newDimensions
-                    .allRelations()
+                    .permuteRelations()
                     .filter { arrayOf(it.a, it.b, it.result).all { it in newDimensions } }
                     .toSet()
         }
