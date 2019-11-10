@@ -1,3 +1,5 @@
+@file:Suppress("FunctionName", "NOTHING_TO_INLINE", "NonAsciiCharacters", "unused")
+
 package info.kunalsheth.units.sample
 
 import info.kunalsheth.units.generated.*
