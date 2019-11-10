@@ -74,7 +74,7 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
     }
 
     @Input
-    var relationships: Set<Relation> = emptySet()
+    var relationships: Set<Relation> = InternationalSystemOfUnits.relations
 
     @Input
     var quantities: Set<Quantity> = InternationalSystemOfUnits.quantities
