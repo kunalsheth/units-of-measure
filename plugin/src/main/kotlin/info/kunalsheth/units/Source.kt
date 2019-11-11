@@ -33,6 +33,8 @@ fun writeBase(writer: OutputStream) = ::UnitsOfMeasurePlugin::class.java
 
 private const val underlying = "underlying"
 private const val siValue = "siValue"
+private const val timesOperationProof = "times"
+private const val divOperationProof = "div"
 private fun quan(d: Dimension) = "Quan<$d>"
 
 fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Set<UnitOfMeasure>): String {
@@ -89,8 +91,8 @@ private fun Relation.src(): String {
             operator fun $a.div(that: ${quan(b)}) = $logic
             // ${jvmName("concrete")}
             operator fun $a.div(that: $b) = $logic
-            ${jvmName("nonextension")}
-            fun div(thiz: ${quan(a)}, that: ${quan(b)}) = thiz.run { $logic }
+            ${jvmName("proof")}
+            fun p(thiz: ${quan(a)}, op: $divOperationProof, that: ${quan(b)}) = thiz.run { $logic }
         """.trimIndent()
         }
         Multiply -> {
@@ -100,8 +102,8 @@ private fun Relation.src(): String {
             operator fun $a.times(that: ${quan(b)}) = $logic
             // ${jvmName("concrete")}
             operator fun $a.times(that: $b) = $logic
-            ${jvmName("nonextension")}
-            fun times(thiz: ${quan(a)}, that: ${quan(b)}) = thiz.run { $logic }
+            ${jvmName("proof")}
+            fun p(thiz: ${quan(a)}, op: $timesOperationProof, that: ${quan(b)}) = thiz.run { $logic }
         """.trimIndent()
         }
     }
@@ -122,10 +124,14 @@ object $this : UomConverter<$dimension>,
 }
 """
 
-val requiredMathUnits = setOf(
+val mathDependencies = setOf(
         Dimension(),
         Dimension(L = 1),
-        Dimension(A = 1)
+        Dimension(A = 1),
+
+        Dimension(L = 1, A = 1),
+        Dimension(L = 1, T = -1, A = 1),
+        Dimension(L = 1, T = -2, A = 1)
 )
 
 fun writeMath(writer: OutputStream) = ::UnitsOfMeasurePlugin::class.java

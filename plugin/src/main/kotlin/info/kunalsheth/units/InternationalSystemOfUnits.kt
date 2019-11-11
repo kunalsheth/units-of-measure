@@ -18,7 +18,6 @@ package info.kunalsheth.units
 
 import info.kunalsheth.units.data.Dimension
 import info.kunalsheth.units.data.Quantity
-import info.kunalsheth.units.data.Relation.Companion.permuteRelations
 import info.kunalsheth.units.data.UnitOfMeasure
 
 object InternationalSystemOfUnits {
@@ -333,15 +332,4 @@ object InternationalSystemOfUnits {
             UnitOfMeasure("Sievert", 1.0, EquivalentDose),
             UnitOfMeasure("Katal", 1.0, CatalyticActivity)
     )
-
-    val relations = (setOf(Dimension()) +
-            units.map(UnitOfMeasure::dimension) +
-            quantities.map(Quantity::dimension))
-            .let { ds ->
-                ds.permuteRelations().filter { r ->
-                    r.result in ds &&
-                            r.a in ds &&
-                            r.b in ds
-                }.toSet()
-            }
 }

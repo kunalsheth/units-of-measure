@@ -27,7 +27,7 @@ data class Relation(val a: Dimension, val f: RelationType, val b: Dimension) : S
     val result = f(a, b)
 
     companion object {
-        fun Set<Dimension>.permuteRelations() =
+        private fun Set<Dimension>.permuteRelations() =
                 flatMap { x ->
                     flatMap { y ->
                         listOf(
@@ -44,9 +44,11 @@ data class Relation(val a: Dimension, val f: RelationType, val b: Dimension) : S
                     }
                 }
 
-        operator fun invoke(vararg d: Dimension): Set<Relation> {
-            val inputDimensions = d.toSet()
+        fun closedPermute(inputDimensions: Set<Dimension>) = inputDimensions.permuteRelations()
+                .filter { arrayOf(it.a, it.b, it.result).all { it in inputDimensions } }
+                .toSet()
 
+        fun openPermute(inputDimensions: Set<Dimension>): Set<Relation> {
             val newDimensions = inputDimensions +
                     inputDimensions.permuteRelations().map(Relation::result)
 

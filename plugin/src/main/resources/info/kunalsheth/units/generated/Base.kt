@@ -14,7 +14,7 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-@file:Suppress("NOTHING_TO_INLINE", "EXPERIMENTAL_FEATURE_WARNING")
+@file:Suppress("NOTHING_TO_INLINE", "EXPERIMENTAL_FEATURE_WARNING", "UNUSED_PARAMETER")
 
 package info.kunalsheth.units.generated
 
@@ -53,6 +53,10 @@ This : Quan<This> {
 
     override fun compareTo(other: This): Int
 }
+
+sealed class OperationProof
+object times : OperationProof()
+object div : OperationProof()
 
 interface UomConverter<Q : Quan<Q>> {
     val unitName: String
