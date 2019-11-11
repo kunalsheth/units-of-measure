@@ -1,5 +1,8 @@
 # units-of-measure
-A DSL for type-safe dimensional analysis and unit conversion in Kotlin.
+Type-safe dimensional analysis and unit conversion in Kotlin.
+![demo image](http://units.kunalsheth.info/assets/images/param-align.png)
+
+---
 
 ### Usage
 Take a look at the project website for installation and usage: http://units.kunalsheth.info
