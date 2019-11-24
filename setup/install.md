@@ -53,7 +53,7 @@ Creating a separate Gradle module for {{site.lib}}'s generated code is <em>highl
 </details>
 {% endfor %}
 
-{{site.lib}} comes ready to use with common metric units and quantities.
+{{site.lib}} comes ready to use with common SI units and quantities.
 
 For the following customizations, please edit the `uoms/units-of-measure.gradle` [configuration](configure):
 1. using imperial or non-SI units (e.g. Mile, Degree, Gallon, etc.)
