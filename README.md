@@ -63,11 +63,9 @@ sequenceOf(0, 1, 4, 9, 16, 25).map { it.Foot }
 // support for generic programming
 fun <Q : Quan<Q>, DQDT : Quan<DQDT>> Sequence<Q>.derivative(p: (Q, `÷`, T) -> DQDT) = timeSeq()
         .zip(this)
-        .zipWithNext { (x1, y1), (x2, y2) ->
-            p(
-                    (y1 - y2), `÷`, (x1 - x2)
-            )
-        }
+        .zipWithNext { (x1, y1), (x2, y2) -> p(
+                (y1 - y2), `÷`, (x1 - x2)
+        ) }
 ```
 
 ---
