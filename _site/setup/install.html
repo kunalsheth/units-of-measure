@@ -206,10 +206,10 @@
 <summary><code>uoms/units-of-measure.gradle</code></summary>
 <blockquote>
 
-<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">generateUnitsOfMeasure</span> <span class="o">{</span>
-    <span class="n">relationships</span> <span class="o">+=</span> <span class="c1">// ...</span>
-    <span class="n">quantities</span> <span class="o">+=</span> <span class="c1">// ...</span>
-    <span class="n">unitsOfMeasure</span> <span class="o">+=</span> <span class="c1">// ...</span>
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">generateUnitsOfMeasure</span> <span class="o">{</span> <span class="c1">// see advanced configuration</span>
+    <span class="c1">// relationships += ...</span>
+    <span class="c1">// quantities += ...</span>
+    <span class="c1">// unitsOfMeasure += ...</span>
 <span class="o">}</span></code></pre></figure>
 
 </blockquote>
@@ -235,15 +235,22 @@
 <p><!-- br doesn't work for some reason --></p>
 </details>
 
-<p>Because <em>units-of-measure</em> generates a DSL for you, it does not magically work out of the box.<br />
-You need to tell it <em>what</em> you want it to generate. This is done in the <code class="highlighter-rouge">uoms/units-of-measure.gradle</code> <a href="configure">configuration</a> file.</p>
+<p><em>units-of-measure</em> comes ready to use with common metric units and quantities.</p>
+
+<p>For the following customizations, please edit the <code class="highlighter-rouge">uoms/units-of-measure.gradle</code> <a href="configure">configuration</a>:</p>
+<ol>
+  <li>using imperial or non-SI units (e.g. Mile, Degree, Gallon, etc.)</li>
+  <li>using uncommon quantities (e.g. Absement, VoltageSlewRate, etc.)</li>
+  <li>shrinking size of compiled binary by fine-tuning which definitions are generated</li>
+</ol>
 
 
 <br>
 <a href="/benefits/safe-flexibility" class="soft-btn">&#8249; Benefit: Safe Flexibility</a>
 
 
-<a href="configure" class="juicy-btn right">Configure &#8250;</a>
+<a href="/usage/basic" class="juicy-btn right">Basic Usage &#8250;&#8250;</a>
+<a href="configure" class="soft-btn right">Advanced Configuration &#8250;</a>
 
 
   </div>

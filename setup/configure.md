@@ -73,6 +73,12 @@ For example, `relationships += r(d(L: 1), d(T: 1))` will generate the following 
     - `T²` / `L⁻¹⋅T` ↦ `L⋅T`
     - and many, many more
 
+For ease of use, {{site.lib}} comes bundled with relationships between all derived SI quantities.[^6]  
+(area, volume, velocity, volumetric flow, acceleration, and many, many more.)
+
+These pre-defined relationships are all stored in the `relationships` set.
+One way to delete them is to write `relationships = ...` instead of `relationships += ...` in your configuration.
+
 Using the `r(...)` function sacrifices generated code size for ease of use.  
 To reduce the amount of generated code, individual instances of the [`Relation`](https://github.com/kunalsheth/units-of-measure/blob/master/plugin/src/main/kotlin/info/kunalsheth/units/data/Relation.kt) class can also be added to the `relationships` set.
 

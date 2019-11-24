@@ -9,8 +9,12 @@ previous:
     url:  /benefits/safe-flexibility
 
 next:
-    text: Configure
+    text: Advanced Configuration
     url:  configure
+
+skip:
+    text: Basic Usage
+    url:  /usage/basic
 ---
 # Gradle Plugin Installation
 
@@ -49,5 +53,9 @@ Creating a separate Gradle module for {{site.lib}}'s generated code is <em>highl
 </details>
 {% endfor %}
 
-Because {{site.lib}} generates a DSL for you, it does not magically work out of the box.  
-You need to tell it _what_ you want it to generate. This is done in the `uoms/units-of-measure.gradle` [configuration](configure) file.
+{{site.lib}} comes ready to use with common metric units and quantities.
+
+For the following customizations, please edit the `uoms/units-of-measure.gradle` [configuration](configure):
+1. using imperial or non-SI units (e.g. Mile, Degree, Gallon, etc.)
+2. using uncommon quantities (e.g. Absement, VoltageSlewRate, etc.)
+3. shrinking size of compiled binary by fine-tuning which definitions are generated

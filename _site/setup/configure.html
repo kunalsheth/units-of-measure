@@ -278,6 +278,12 @@ The <code class="highlighter-rouge">r(...)</code> function returns a set contain
   </li>
 </ul>
 
+<p>For ease of use, <em>units-of-measure</em> comes bundled with relationships between all derived SI quantities.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup><br />
+(area, volume, velocity, volumetric flow, acceleration, and many, many more.)</p>
+
+<p>These pre-defined relationships are all stored in the <code class="highlighter-rouge">relationships</code> set.
+One way to delete them is to write <code class="highlighter-rouge">relationships = ...</code> instead of <code class="highlighter-rouge">relationships += ...</code> in your configuration.</p>
+
 <p>Using the <code class="highlighter-rouge">r(...)</code> function sacrifices generated code size for ease of use.<br />
 To reduce the amount of generated code, individual instances of the <a href="https://github.com/kunalsheth/units-of-measure/blob/master/plugin/src/main/kotlin/info/kunalsheth/units/data/Relation.kt"><code class="highlighter-rouge">Relation</code></a> class can also be added to the <code class="highlighter-rouge">relationships</code> set.</p>
 
@@ -333,7 +339,7 @@ Use <code class="highlighter-rouge">quantities</code> to make <em>units-of-measu
 <p>Its not okay to define the same quantity on multiple dimensions.<br />
 (e.g. “rate” in <code class="highlighter-rouge">d(L: 1, T: -1)</code> and “rate” in <code class="highlighter-rouge">d(L: 1, T: -2)</code>)</p>
 
-<p>For ease of use, <em>units-of-measure</em> comes bundled with all derived SI units &amp; quantities.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup><br />
+<p>For ease of use, <em>units-of-measure</em> comes bundled with all derived SI units &amp; quantities.<sup id="fnref:6:1"><a href="#fn:6" class="footnote">6</a></sup><br />
 (area, volume, velocity, volumetric flow, acceleration, and many, many more.)</p>
 
 <p>These pre-defined quantities are all stored in the <code class="highlighter-rouge">quantities</code> set.
@@ -380,7 +386,7 @@ Given <code class="highlighter-rouge">unitsOfMeasure += u("Minute", 60.0, d(T: 1
 <p>Its not okay to define the same unit for multiple dimensions.<br />
 (e.g. “MyUnit” of <code class="highlighter-rouge">d(L: 1, T: -1)</code> and “MyUnit” of <code class="highlighter-rouge">d(L: 1, T: -2)</code>)</p>
 
-<p>For ease of use, <em>units-of-measure</em> comes bundled with all derived SI units &amp; quantities.<sup id="fnref:6:1"><a href="#fn:6" class="footnote">6</a></sup><br />
+<p>For ease of use, <em>units-of-measure</em> comes bundled with all derived SI units &amp; quantities.<sup id="fnref:6:2"><a href="#fn:6" class="footnote">6</a></sup><br />
 (hertz, newton, pascal, joule, watt, coulomb, volt, farad, ohm, and many, many more.)</p>
 
 <p>These pre-defined quantities are all stored in the <code class="highlighter-rouge">unitsOfMeasure</code> set.
@@ -405,7 +411,7 @@ One way to delete them is to write <code class="highlighter-rouge">unitsOfMeasur
       <p><a href="https://en.wikipedia.org/wiki/Dimensional_analysis#Definition">https://en.wikipedia.org/wiki/Dimensional_analysis#Definition</a> <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p><a href="https://en.wikipedia.org/wiki/SI_derived_unit">https://en.wikipedia.org/wiki/SI_derived_unit</a> <a href="#fnref:6" class="reversefootnote">&#8617;</a> <a href="#fnref:6:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+      <p><a href="https://en.wikipedia.org/wiki/SI_derived_unit">https://en.wikipedia.org/wiki/SI_derived_unit</a> <a href="#fnref:6" class="reversefootnote">&#8617;</a> <a href="#fnref:6:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:6:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
     </li>
   </ol>
 </div>
