@@ -4,6 +4,17 @@ Type-safe dimensional analysis and unit conversion in Kotlin.
 
 ![demo image](http://units.kunalsheth.info/assets/images/param-align.png)
 
+---
+
+### Usage
+Take a look at the project website for installation and usage: http://units.kunalsheth.info
+- [Gradle Install](http://units.kunalsheth.info/setup/install)
+- [Configuration](http://units.kunalsheth.info/setup/configure)
+- [Basic Usage](http://units.kunalsheth.info/usage/basic)
+
+You can also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for a complete gradle setup and to learn about some of the more advanced features.
+
+---
 
 [More sample code:](https://github.com/kunalsheth/units-of-measure/blob/master/demo/jvm/src/main/kotlin/info/kunalsheth/units/sample/Sample.kt)
 ```kotlin
@@ -60,14 +71,6 @@ fun <Q : Quan<Q>, DQDT : Quan<DQDT>> Sequence<Q>.derivative(p: (Q, `÷`, T) -> D
 ```
 
 ---
-
-### Usage
-Take a look at the project website for installation and usage: http://units.kunalsheth.info
-- [Gradle Install](http://units.kunalsheth.info/setup/install)
-- [Configuration](http://units.kunalsheth.info/setup/configure)
-- [Basic Usage](http://units.kunalsheth.info/usage/basic)
-
-You can also take a look at this [sample project](https://github.com/kunalsheth/uom-example-project) for a complete gradle setup and to learn about some of the more advanced features.
 
 ### Background
 Type-safe dimensional analysis and unit conversion can be extremely beneficial to a team. From personal experience, using type-safe calculations result in:
