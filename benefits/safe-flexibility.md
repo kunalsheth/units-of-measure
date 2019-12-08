@@ -27,7 +27,7 @@ Lets write a function that uses the law of cosines to solve for **_m∠C_**.
 
 
 # Strong Support for Generic Programming
-{{site.lib}} allows you to define relationships between quantities at the type level. All you have to do is pass a "proof" (`::div` or `::times`).
+{{site.lib}} allows you to define relationships between quantities at the type level. All you have to do is pass a "proof" (`::p`).
 
 > Technical Note:
 "Proof passing" is a technique invented by Kunal Sheth.

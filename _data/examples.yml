@@ -57,7 +57,7 @@ generics:
   - text: Integrator
     function: |-
       fun <Q, SQDT> integrator(
-              times: (Q, Time) -> SQDT,
+              p: (Q, times, Time) -> SQDT,
               x1: Time, y1: Q
       ): (Time, Q) -> SQDT
 
@@ -66,7 +66,7 @@ generics:
           ...
       }
     call: |-
-      val i = integrator(::times, 0.Second, 0.Foot / Second)
+      val i = integrator(::p, 0.Second, 0.Foot / Second)
       var position = i(1.Second, 1.Foot / Second)
       position = i(2.Second, 4.Foot / Second)
       position = i(4.Second, 4.Foot / Second)
@@ -76,7 +76,7 @@ generics:
   - text: Differentiator
     function: |-
       fun <Q, DQDT> differentiator(
-              div: (Q, T) -> DQDT,
+              p: (Q, div, T) -> DQDT,
               x1: Time, y1: Q
       ): (Time, Q) -> DQDT
 
@@ -85,7 +85,7 @@ generics:
           ...
       }
     call: |-
-      val d = differentiator(::div, 0.Second, 0.Foot)
+      val d = differentiator(::p, 0.Second, 0.Foot)
       var velocity = d(2.Second, 3.Foot)
       velocity = d(5.Second, 9.Foot)
       velocity = d(9.Second, 21.Foot)
@@ -95,7 +95,7 @@ generics:
   - text: Standard Deviation Calculator
     function: |-
       fun <Q, Q2> stdev(
-              times: (Q, Q) -> Q2,
+              p: (Q, times, Q) -> Q2,
               init: Q
       ): (Q) -> Q
 
@@ -104,7 +104,7 @@ generics:
           ...
       }
     call: |-
-      val s = stdev(::times, 0.Mole / Litre)
+      val s = stdev(::p, 0.Mole / Litre)
       var stdev = s(0.20.Mole / Litre)
       stdev = s(0.17.Mole / Litre)
       stdev = s(0.22.Mole / Litre)
