@@ -1,7 +1,7 @@
 apply plugin: 'kotlin-platform-jvm'
 repositories.jcenter()
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     expectedBy project(':')
 }
 
