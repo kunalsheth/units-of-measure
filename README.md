@@ -91,7 +91,7 @@ units-of-measure's novel, metaprogramming approach to the problem makes it:
 - [x] Multiplatform.
 - [x] Stronger support for generic use (`Quantity<This, IntegralOfThis, DerivativeOfThis>`)
 - [x] `*` and `÷` singleton types for even safer proof-passing.
-- [ ] Publish on Gradle Plugin Portal.
+- [x] Publish on Gradle Plugin Portal.
 - [ ] Document serialization functionality.
 - [ ] Optimize for faster compilation and runtime.
 - [ ] Benchmark performance hit in contrast to primitives. (Can someone help me with this?)
