@@ -1,21 +1,5 @@
 github_root: 'https://github.com/kunalsheth/uom-example-project/blob/master/'
 
-plugin:
-  - file: build.gradle
-    content: |-
-      buildscript {
-          // ...
-          repositories {
-              // ...
-              maven { url 'http://repo.kunalsheth.info/' }
-          }
-          dependencies {
-              // ...
-              classpath 'info.kunalsheth.units:plugin:VERSION'
-          }
-      }
-      // ...
-
 module:
   - file: settings.gradle
     content: |-
@@ -24,10 +8,12 @@ module:
 
   - file: uoms/build.gradle
     content: |-
-      apply plugin: 'org.jetbrains.kotlin.multiplatform'
-      apply plugin: 'info.kunalsheth.units.gradle'
+      plugins {
+          id 'info.kunalsheth.units' version 'VERSION'
+          id 'org.jetbrains.kotlin.multiplatform'
+      }
 
-      repositories.mavenCentral()
+      repositories.jcenter()
 
       kotlin {
           jvm()
@@ -62,7 +48,7 @@ app:
     content: |-
       // ...
       dependencies {
-          implementation project(':uoms')
+          api project(':uoms')
           // ...
       }
       // ...

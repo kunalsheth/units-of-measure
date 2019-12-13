@@ -18,19 +18,10 @@ skip:
 ---
 # Gradle Plugin Installation
 
-{{site.lib}} is distributed as a Gradle plugin.  
+{{site.lib}} is distributed as a [Gradle plugin](https://plugins.gradle.org/plugin/info.kunalsheth.units).  
 
 Latest version: <code class="libversion"></code>
 <script src="{% link assets/libversion.js %}"></script>
-
-{% for f in site.data.install.plugin %}
-<details open>
-<summary><code>{{ f.file }}</code></summary>
-{% include gradle.html src=f.content %}
-<a href="{{ site.data.install.github_root | append: f.file }}">see full example on GitHub</a>
-<p><!-- br doesn't work for some reason --></p>
-</details>
-{% endfor %}
 
 # Generated Code Module
 Creating a separate Gradle module for {{site.lib}}'s generated code is <em>highly</em> recommended.

@@ -1,4 +1,4 @@
-const pattern = /version\s+"(\d*\.\d*\.\d*)"/g;
+const pattern = /version\s+'(\d*\.\d*\.\d*)' \/\/ do not bump/g;
 
 fetch('https://raw.githubusercontent.com/kunalsheth/units-of-measure/master/plugin/build.gradle')
     .then((response) => response.text())

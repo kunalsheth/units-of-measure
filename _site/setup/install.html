@@ -126,32 +126,10 @@
 
 <h1 id="gradle-plugin-installation">Gradle Plugin Installation</h1>
 
-<p><em>units-of-measure</em> is distributed as a Gradle plugin.</p>
+<p><em>units-of-measure</em> is distributed as a <a href="https://plugins.gradle.org/plugin/info.kunalsheth.units">Gradle plugin</a>.</p>
 
 <p>Latest version: <code class="libversion"></code>
 <script src="/assets/libversion.js"></script></p>
-
-<details open="">
-<summary><code>build.gradle</code></summary>
-<blockquote>
-
-<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="k">buildscript</span> <span class="o">{</span>
-    <span class="c1">// ...</span>
-    <span class="k">repositories</span> <span class="o">{</span>
-        <span class="c1">// ...</span>
-        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">'http://repo.kunalsheth.info/'</span> <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">dependencies</span> <span class="o">{</span>
-        <span class="c1">// ...</span>
-        <span class="n">classpath</span> <span class="s1">'info.kunalsheth.units:plugin:VERSION'</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="c1">// ...</span></code></pre></figure>
-
-</blockquote>
-<a href="https://github.com/kunalsheth/uom-example-project/blob/master/build.gradle">see full example on GitHub</a>
-<p><!-- br doesn't work for some reason --></p>
-</details>
 
 <h1 id="generated-code-module">Generated Code Module</h1>
 <p>Creating a separate Gradle module for <em>units-of-measure</em>’s generated code is <em>highly</em> recommended.</p>
@@ -172,10 +150,12 @@
 <summary><code>uoms/build.gradle</code></summary>
 <blockquote>
 
-<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'org.jetbrains.kotlin.multiplatform'</span>
-<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'info.kunalsheth.units.gradle'</span>
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">plugins</span> <span class="o">{</span>
+    <span class="n">id</span> <span class="s1">'info.kunalsheth.units'</span> <span class="n">version</span> <span class="s1">'VERSION'</span>
+    <span class="n">id</span> <span class="s1">'org.jetbrains.kotlin.multiplatform'</span>
+<span class="o">}</span>
 
-<span class="k">repositories</span><span class="o">.</span><span class="na">mavenCentral</span><span class="o">()</span>
+<span class="k">repositories</span><span class="o">.</span><span class="na">jcenter</span><span class="o">()</span>
 
 <span class="n">kotlin</span> <span class="o">{</span>
     <span class="n">jvm</span><span class="o">()</span>
@@ -225,7 +205,7 @@
 
 <figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="c1">// ...</span>
 <span class="k">dependencies</span> <span class="o">{</span>
-    <span class="n">implementation</span> <span class="nf">project</span><span class="o">(</span><span class="s1">':uoms'</span><span class="o">)</span>
+    <span class="n">api</span> <span class="nf">project</span><span class="o">(</span><span class="s1">':uoms'</span><span class="o">)</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 <span class="c1">// ...</span></code></pre></figure>

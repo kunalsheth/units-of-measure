@@ -23,11 +23,13 @@ basic:
       val distance =    rate * time
       val mySpeed =  65.Mile / Hour
 
-  - text: "You can also create ranges using the <code>..</code> operator or the <code>`±`</code> infix function."
+  - text: "You can also create ranges using the <code>..</code> operator or the <code>plusOrMinus</code> infix function."
     code: |-
-      2.Foot / 1.Metre in 60.Percent `±` 5.Percent   == true
-      420.Degree % 1.Turn in 60.Degree `±` 1.Degree  == true
-      65.Mile / Hour * 27.Minute in 30.Mile..29.Mile == true
+      65.Mile / Hour * 27.Minute in 30.Mile..29.Mile       == true
+      2.Foot / 1.Metre in 60.Percent plusOrMinus 5.Percent == true
+
+      inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this plusOrMinus radius
+      420.Degree % 1.Turn in 60.Degree `±` 1.Degree        == true
 
   - text: "<code>==</code> also works, but it is not recommended since <a href='http://docs.sun.com/source/806-3568/ncg_goldberg.html'>floating point math is not exact</a>."
     code: |-
