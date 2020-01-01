@@ -30,8 +30,8 @@ Lets write a function that uses the law of cosines to solve for **_m∠C_**.
 {{site.lib}} allows you to define relationships between quantities at the type level. All you have to do is pass a "proof" (`::p`).
 
 > Technical Note:
-"Proof passing" is a technique invented by Kunal Sheth.
-It allows dimensional relationships to be used as bounds for UOM type parameters by exploiting Kotlin's type inference and method overloading capabilities.
+"Proof passing" is a novel technique which leverages Kotlin's type inference and method overloading capabilities.
+It allows dimensional relationships to be used as bounds for UOM type parameters.
 
 This means, for example, that we can write generic integration, differentiation, & stdev utilities.
 
