@@ -30,9 +30,6 @@ import java.io.File
 import javax.inject.Inject
 
 open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultTask() {
-    override fun getGroup() = "units-of-measure"
-    override fun getDescription() = "(Re)generate DSL for type-safe dimensional analysis and unit conversion."
-
     @TaskAction
     fun generate() {
         generatedSrcDir.delete()

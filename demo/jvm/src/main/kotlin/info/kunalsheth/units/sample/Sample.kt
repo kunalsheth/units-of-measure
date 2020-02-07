@@ -56,6 +56,7 @@ inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius) // i
 inline fun <Q : Quan<Q>> `±`(radius: Q) = radius.new(0.0).plusOrMinus(radius) // inlined to prevent boxing
 typealias `*` = times
 typealias `÷` = div
+typealias `√` = sqrt
 
 data class Car(val topSpeed: Speed, val floorIt: Acceleration) {
     fun zeroToSixty() = 60.Mile / Hour / floorIt

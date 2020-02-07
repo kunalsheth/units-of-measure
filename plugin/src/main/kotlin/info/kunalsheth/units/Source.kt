@@ -35,6 +35,7 @@ private const val underlying = "underlying"
 private const val siValue = "siValue"
 private const val timesOperationProof = "times"
 private const val divOperationProof = "div"
+private const val sqrtOperationProof = "sqrt"
 private fun quan(d: Dimension) = "Quan<$d>"
 
 fun Dimension.src(relations: Set<Relation>, quantities: Set<Quantity>, units: Set<UnitOfMeasure>): String {
@@ -77,37 +78,50 @@ ${units.joinToString(separator = "") {
     }}
 ${quantities.joinToString(separator = "", transform = Quantity::src)}
 ${relations.joinToString(separator = "\n", transform = Relation::src)}
+${relations.flatMap(Relation::specialFunctions).joinToString(separator = "\n")}
 """
 }
 
-private fun Relation.src(): String {
-    fun jvmName(category: String) = """@JvmName("${a.safeName}_${f.name}_${b.safeName}_$category")"""
+private fun Relation.jvmName(category: String) = """@JvmName("${a.safeName}_${f.name}_${b.safeName}_$category")"""
 
-    return when (f) {
-        Divide -> {
-            val logic = "$result(this.$siValue / that.$siValue)"
-            """
+private fun Relation.src() = when (f) {
+    Divide -> {
+        val logic = "$result(this.$siValue / that.$siValue)"
+        """
             ${jvmName("generic")}
-            operator fun $a.div(that: ${quan(b)}) = $logic
+            inline operator fun $a.div(that: ${quan(b)}) = $logic
             // ${jvmName("concrete")}
-            operator fun $a.div(that: $b) = $logic
+            inline operator fun $a.div(that: $b) = $logic
             ${jvmName("proof")}
             fun p(thiz: ${quan(a)}, op: $divOperationProof, that: ${quan(b)}) = thiz.run { $logic }
         """.trimIndent()
-        }
-        Multiply -> {
-            val logic = "$result(this.$siValue * that.$siValue)"
-            """
+    }
+    Multiply -> {
+        val logic = "$result(this.$siValue * that.$siValue)"
+        """
             ${jvmName("generic")}
-            operator fun $a.times(that: ${quan(b)}) = $logic
+            inline operator fun $a.times(that: ${quan(b)}) = $logic
             // ${jvmName("concrete")}
-            operator fun $a.times(that: $b) = $logic
+            inline operator fun $a.times(that: $b) = $logic
             ${jvmName("proof")}
             fun p(thiz: ${quan(a)}, op: $timesOperationProof, that: ${quan(b)}) = thiz.run { $logic }
         """.trimIndent()
-        }
     }
 }
+
+private fun Relation.specialFunctions() = arrayOf(
+        { f == Divide && b == result } to {
+            val logic = "$result(sqrt(x.$siValue))"
+            """
+                // ${jvmName("concrete")}
+                inline fun sqrt(x: $a) = $logic
+                ${jvmName("proof")}
+                fun p(op: $sqrtOperationProof, x: ${quan(a)}) = $logic
+            """.trimIndent()
+        }
+)
+        .filter { (p, _) -> p() }
+        .map { (_, s) -> s() }
 
 private fun Quantity.src() = """
 typealias $this = $dimension
