@@ -51,8 +51,8 @@ inline val <Q : Quan<Q>> Q.ulp get() = new(siValue.ulp)
 inline fun <Q : Quan<Q>> Q.nextUp() = new(siValue.nextUp())
 inline fun <Q : Quan<Q>> Q.nextDown() = new(siValue.nextDown())
 inline fun <Q : Quan<Q>> Q.nextTowards(to: Q) = new(siValue.nextTowards(to.siValue))
-inline fun <Q : Quan<Q>> Q.roundToInt(q: UomConverter<Q>) = q(q(this).roundToInt().toDouble())
-inline fun <Q : Quan<Q>> Q.roundToLong(q: UomConverter<Q>) = q(q(this).roundToLong().toDouble())
+inline fun <Q : Quan<Q>> Q.roundToInt(q: UomConverter<Q>) = q(this).roundToInt()
+inline fun <Q : Quan<Q>> Q.roundToLong(q: UomConverter<Q>) = q(this).roundToLong()
 
 inline infix fun <Q : Quan<Q>> Q.plusOrMinus(radius: Q) = (this - radius)..(this + radius)
 //@JsName("pm1") inline infix fun <Q : Quan<Q>> Q.`±`(radius: Q) = this.plusOrMinus(radius)    // too many compiler bugs here

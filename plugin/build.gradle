@@ -7,7 +7,7 @@ plugins {
 
 allprojects {
     group 'info.kunalsheth'
-    version '6.0.2' // do not bump without `publishPlugins`, dynamically loaded by website
+    version '6.0.3' // do not bump without `publishPlugins`, dynamically loaded by website
     repositories.jcenter()
 }
 
