@@ -6,6 +6,12 @@ Type-safe dimensional analysis and unit conversion in Kotlin.
 
 ---
 
+### Project Status
+Stable and safe for production.
+
+Building UOMs for the first time is quite slow on the latest Kotlin compiler versions (1.3.70+).
+To improve compile times, UOMs 7.0.0+ will be repackaged as an [Λrrow Meta](https://github.com/arrow-kt/arrow-meta) plugin.
+
 ### Usage
 Take a look at the project website for installation and usage: http://units.kunalsheth.info
 - [Gradle Install](http://units.kunalsheth.info/setup/install)
