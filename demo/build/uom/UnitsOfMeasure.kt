@@ -14,7 +14,7 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-@file:Suppress("NOTHING_TO_INLINE", "EXPERIMENTAL_FEATURE_WARNING", "UNUSED_PARAMETER")
+@file:Suppress("NOTHING_TO_INLINE", "EXPERIMENTAL_FEATURE_WARNING", "UNUSED_PARAMETER", "INAPPLICABLE_JVM_NAME")
 
 package info.kunalsheth.units.generated
 
@@ -104,7 +104,7 @@ inline class L0A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`Dimen
 inline val Number.`Turn`: `Dimensionless` get() = `Dimensionless`(toDouble() * 6.283185307179586)
 inline val `Dimensionless`.`Turn` get() = siValue * 0.15915494309189535
 object `Turn` : UomConverter<`Dimensionless`>,
-    Quan<`Dimensionless`> by box(`Dimensionless`(6.283185307179586)) {
+    Quan<`Dimensionless`> by `Dimensionless`(6.283185307179586) {
     override val unitName = "Turn"
     override fun invoke(x: Double) = x.`Turn`
     override fun invoke(x: `Dimensionless`) = x.`Turn`
@@ -113,7 +113,7 @@ object `Turn` : UomConverter<`Dimensionless`>,
 inline val Number.`Degree`: `Dimensionless` get() = `Dimensionless`(toDouble() * 0.017453292519943295)
 inline val `Dimensionless`.`Degree` get() = siValue * 57.29577951308232
 object `Degree` : UomConverter<`Dimensionless`>,
-    Quan<`Dimensionless`> by box(`Dimensionless`(0.017453292519943295)) {
+    Quan<`Dimensionless`> by `Dimensionless`(0.017453292519943295) {
     override val unitName = "Degree"
     override fun invoke(x: Double) = x.`Degree`
     override fun invoke(x: `Dimensionless`) = x.`Degree`
@@ -122,7 +122,7 @@ object `Degree` : UomConverter<`Dimensionless`>,
 inline val Number.`Percent`: `Dimensionless` get() = `Dimensionless`(toDouble() * 0.01)
 inline val `Dimensionless`.`Percent` get() = siValue * 100.0
 object `Percent` : UomConverter<`Dimensionless`>,
-    Quan<`Dimensionless`> by box(`Dimensionless`(0.01)) {
+    Quan<`Dimensionless`> by `Dimensionless`(0.01) {
     override val unitName = "Percent"
     override fun invoke(x: Double) = x.`Percent`
     override fun invoke(x: `Dimensionless`) = x.`Percent`
@@ -915,7 +915,7 @@ inline class L1A0M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`L`> {
 inline val Number.`Metre`: `Length` get() = `L`(toDouble() * 1.0)
 inline val `L`.`Metre` get() = siValue * 1.0
 object `Metre` : UomConverter<`L`>,
-    Quan<`L`> by box(`L`(1.0)) {
+    Quan<`L`> by `L`(1.0) {
     override val unitName = "Metre"
     override fun invoke(x: Double) = x.`Metre`
     override fun invoke(x: `L`) = x.`Metre`
@@ -924,7 +924,7 @@ object `Metre` : UomConverter<`L`>,
 inline val Number.`Mile`: `Length` get() = `L`(toDouble() * 1609.34)
 inline val `L`.`Mile` get() = siValue * 6.213727366498068E-4
 object `Mile` : UomConverter<`L`>,
-    Quan<`L`> by box(`L`(1609.34)) {
+    Quan<`L`> by `L`(1609.34) {
     override val unitName = "Mile"
     override fun invoke(x: Double) = x.`Mile`
     override fun invoke(x: `L`) = x.`Mile`
@@ -933,7 +933,7 @@ object `Mile` : UomConverter<`L`>,
 inline val Number.`Foot`: `Length` get() = `L`(toDouble() * 0.3048)
 inline val `L`.`Foot` get() = siValue * 3.280839895013123
 object `Foot` : UomConverter<`L`>,
-    Quan<`L`> by box(`L`(0.3048)) {
+    Quan<`L`> by `L`(0.3048) {
     override val unitName = "Foot"
     override fun invoke(x: Double) = x.`Foot`
     override fun invoke(x: `L`) = x.`Foot`
@@ -1350,7 +1350,7 @@ inline class L0A1M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠`>
 inline val Number.`Radian`: `Angle` get() = `∠`(toDouble() * 1.0)
 inline val `∠`.`Radian` get() = siValue * 1.0
 object `Radian` : UomConverter<`∠`>,
-    Quan<`∠`> by box(`∠`(1.0)) {
+    Quan<`∠`> by `∠`(1.0) {
     override val unitName = "Radian"
     override fun invoke(x: Double) = x.`Radian`
     override fun invoke(x: `∠`) = x.`Radian`
@@ -2481,7 +2481,7 @@ inline class L0A2M0T0I0Theta0N0J0(internal val underlying: Double) : Quan<`∠²
 inline val Number.`Steradian`: `SolidAngle` get() = `∠²`(toDouble() * 1.0)
 inline val `∠²`.`Steradian` get() = siValue * 1.0
 object `Steradian` : UomConverter<`∠²`>,
-    Quan<`∠²`> by box(`∠²`(1.0)) {
+    Quan<`∠²`> by `∠²`(1.0) {
     override val unitName = "Steradian"
     override fun invoke(x: Double) = x.`Steradian`
     override fun invoke(x: `∠²`) = x.`Steradian`
@@ -2580,7 +2580,7 @@ inline class L0A0M1T0I0Theta0N0J0(internal val underlying: Double) : Quan<`M`> {
 inline val Number.`Kilogram`: `Mass` get() = `M`(toDouble() * 1.0)
 inline val `M`.`Kilogram` get() = siValue * 1.0
 object `Kilogram` : UomConverter<`M`>,
-    Quan<`M`> by box(`M`(1.0)) {
+    Quan<`M`> by `M`(1.0) {
     override val unitName = "Kilogram"
     override fun invoke(x: Double) = x.`Kilogram`
     override fun invoke(x: `M`) = x.`Kilogram`
@@ -2589,7 +2589,7 @@ object `Kilogram` : UomConverter<`M`>,
 inline val Number.`Ounce`: `Mass` get() = `M`(toDouble() * 0.0283495)
 inline val `M`.`Ounce` get() = siValue * 35.27399072294044
 object `Ounce` : UomConverter<`M`>,
-    Quan<`M`> by box(`M`(0.0283495)) {
+    Quan<`M`> by `M`(0.0283495) {
     override val unitName = "Ounce"
     override fun invoke(x: Double) = x.`Ounce`
     override fun invoke(x: `M`) = x.`Ounce`
@@ -2598,7 +2598,7 @@ object `Ounce` : UomConverter<`M`>,
 inline val Number.`Gram`: `Mass` get() = `M`(toDouble() * 0.001)
 inline val `M`.`Gram` get() = siValue * 1000.0
 object `Gram` : UomConverter<`M`>,
-    Quan<`M`> by box(`M`(0.001)) {
+    Quan<`M`> by `M`(0.001) {
     override val unitName = "Gram"
     override fun invoke(x: Double) = x.`Gram`
     override fun invoke(x: `M`) = x.`Gram`
@@ -2607,7 +2607,7 @@ object `Gram` : UomConverter<`M`>,
 inline val Number.`Pound`: `Mass` get() = `M`(toDouble() * 0.453592)
 inline val `M`.`Pound` get() = siValue * 2.2046244201837775
 object `Pound` : UomConverter<`M`>,
-    Quan<`M`> by box(`M`(0.453592)) {
+    Quan<`M`> by `M`(0.453592) {
     override val unitName = "Pound"
     override fun invoke(x: Double) = x.`Pound`
     override fun invoke(x: `M`) = x.`Pound`
@@ -2832,7 +2832,7 @@ inline class L0A0M0T1I0Theta0N0J0(internal val underlying: Double) : Quan<`T`> {
 inline val Number.`Second`: `Time` get() = `T`(toDouble() * 1.0)
 inline val `T`.`Second` get() = siValue * 1.0
 object `Second` : UomConverter<`T`>,
-    Quan<`T`> by box(`T`(1.0)) {
+    Quan<`T`> by `T`(1.0) {
     override val unitName = "Second"
     override fun invoke(x: Double) = x.`Second`
     override fun invoke(x: `T`) = x.`Second`
@@ -2841,7 +2841,7 @@ object `Second` : UomConverter<`T`>,
 inline val Number.`Hour`: `Time` get() = `T`(toDouble() * 3600.0)
 inline val `T`.`Hour` get() = siValue * 2.777777777777778E-4
 object `Hour` : UomConverter<`T`>,
-    Quan<`T`> by box(`T`(3600.0)) {
+    Quan<`T`> by `T`(3600.0) {
     override val unitName = "Hour"
     override fun invoke(x: Double) = x.`Hour`
     override fun invoke(x: `T`) = x.`Hour`
@@ -2850,7 +2850,7 @@ object `Hour` : UomConverter<`T`>,
 inline val Number.`Minute`: `Time` get() = `T`(toDouble() * 60.0)
 inline val `T`.`Minute` get() = siValue * 0.016666666666666666
 object `Minute` : UomConverter<`T`>,
-    Quan<`T`> by box(`T`(60.0)) {
+    Quan<`T`> by `T`(60.0) {
     override val unitName = "Minute"
     override fun invoke(x: Double) = x.`Minute`
     override fun invoke(x: `T`) = x.`Minute`
@@ -3207,7 +3207,7 @@ inline class L0A0M0I0Theta0N0J0_per_T1(internal val underlying: Double) : Quan<`
 inline val Number.`Hertz`: `T⁻¹` get() = `T⁻¹`(toDouble() * 1.0)
 inline val `T⁻¹`.`Hertz` get() = siValue * 1.0
 object `Hertz` : UomConverter<`T⁻¹`>,
-    Quan<`T⁻¹`> by box(`T⁻¹`(1.0)) {
+    Quan<`T⁻¹`> by `T⁻¹`(1.0) {
     override val unitName = "Hertz"
     override fun invoke(x: Double) = x.`Hertz`
     override fun invoke(x: `T⁻¹`) = x.`Hertz`
@@ -3216,7 +3216,7 @@ object `Hertz` : UomConverter<`T⁻¹`>,
 inline val Number.`Becquerel`: `T⁻¹` get() = `T⁻¹`(toDouble() * 1.0)
 inline val `T⁻¹`.`Becquerel` get() = siValue * 1.0
 object `Becquerel` : UomConverter<`T⁻¹`>,
-    Quan<`T⁻¹`> by box(`T⁻¹`(1.0)) {
+    Quan<`T⁻¹`> by `T⁻¹`(1.0) {
     override val unitName = "Becquerel"
     override fun invoke(x: Double) = x.`Becquerel`
     override fun invoke(x: `T⁻¹`) = x.`Becquerel`
@@ -3599,7 +3599,7 @@ inline class L0A0M0T0I1Theta0N0J0(internal val underlying: Double) : Quan<`I`> {
 inline val Number.`Ampere`: `ElectricCurrent` get() = `I`(toDouble() * 1.0)
 inline val `I`.`Ampere` get() = siValue * 1.0
 object `Ampere` : UomConverter<`I`>,
-    Quan<`I`> by box(`I`(1.0)) {
+    Quan<`I`> by `I`(1.0) {
     override val unitName = "Ampere"
     override fun invoke(x: Double) = x.`Ampere`
     override fun invoke(x: `I`) = x.`Ampere`
@@ -3884,7 +3884,7 @@ inline class L0A0M0T0I0Theta1N0J0(internal val underlying: Double) : Quan<`Θ`> 
 inline val Number.`Kelvin`: `Temperature` get() = `Θ`(toDouble() * 1.0)
 inline val `Θ`.`Kelvin` get() = siValue * 1.0
 object `Kelvin` : UomConverter<`Θ`>,
-    Quan<`Θ`> by box(`Θ`(1.0)) {
+    Quan<`Θ`> by `Θ`(1.0) {
     override val unitName = "Kelvin"
     override fun invoke(x: Double) = x.`Kelvin`
     override fun invoke(x: `Θ`) = x.`Kelvin`
@@ -4097,7 +4097,7 @@ inline class L0A0M0T0I0Theta0N1J0(internal val underlying: Double) : Quan<`N`> {
 inline val Number.`Mole`: `AmountOfSubstance` get() = `N`(toDouble() * 1.0)
 inline val `N`.`Mole` get() = siValue * 1.0
 object `Mole` : UomConverter<`N`>,
-    Quan<`N`> by box(`N`(1.0)) {
+    Quan<`N`> by `N`(1.0) {
     override val unitName = "Mole"
     override fun invoke(x: Double) = x.`Mole`
     override fun invoke(x: `N`) = x.`Mole`
@@ -4232,7 +4232,7 @@ inline class L0A0M0T0I0Theta0N0J1(internal val underlying: Double) : Quan<`J`> {
 inline val Number.`Candela`: `LuminousIntensity` get() = `J`(toDouble() * 1.0)
 inline val `J`.`Candela` get() = siValue * 1.0
 object `Candela` : UomConverter<`J`>,
-    Quan<`J`> by box(`J`(1.0)) {
+    Quan<`J`> by `J`(1.0) {
     override val unitName = "Candela"
     override fun invoke(x: Double) = x.`Candela`
     override fun invoke(x: `J`) = x.`Candela`
@@ -4541,7 +4541,7 @@ inline class L1A0M1I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`
 inline val Number.`Newton`: `L⋅M⋅T⁻²` get() = `L⋅M⋅T⁻²`(toDouble() * 1.0)
 inline val `L⋅M⋅T⁻²`.`Newton` get() = siValue * 1.0
 object `Newton` : UomConverter<`L⋅M⋅T⁻²`>,
-    Quan<`L⋅M⋅T⁻²`> by box(`L⋅M⋅T⁻²`(1.0)) {
+    Quan<`L⋅M⋅T⁻²`> by `L⋅M⋅T⁻²`(1.0) {
     override val unitName = "Newton"
     override fun invoke(x: Double) = x.`Newton`
     override fun invoke(x: `L⋅M⋅T⁻²`) = x.`Newton`
@@ -4828,7 +4828,7 @@ inline class A0M1I0Theta0N0J0_per_L1T2(internal val underlying: Double) : Quan<`
 inline val Number.`Pascal`: `L⁻¹⋅M⋅T⁻²` get() = `L⁻¹⋅M⋅T⁻²`(toDouble() * 1.0)
 inline val `L⁻¹⋅M⋅T⁻²`.`Pascal` get() = siValue * 1.0
 object `Pascal` : UomConverter<`L⁻¹⋅M⋅T⁻²`>,
-    Quan<`L⁻¹⋅M⋅T⁻²`> by box(`L⁻¹⋅M⋅T⁻²`(1.0)) {
+    Quan<`L⁻¹⋅M⋅T⁻²`> by `L⁻¹⋅M⋅T⁻²`(1.0) {
     override val unitName = "Pascal"
     override fun invoke(x: Double) = x.`Pascal`
     override fun invoke(x: `L⁻¹⋅M⋅T⁻²`) = x.`Pascal`
@@ -5237,7 +5237,7 @@ inline class L2A0M1I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`
 inline val Number.`Joule`: `L²⋅M⋅T⁻²` get() = `L²⋅M⋅T⁻²`(toDouble() * 1.0)
 inline val `L²⋅M⋅T⁻²`.`Joule` get() = siValue * 1.0
 object `Joule` : UomConverter<`L²⋅M⋅T⁻²`>,
-    Quan<`L²⋅M⋅T⁻²`> by box(`L²⋅M⋅T⁻²`(1.0)) {
+    Quan<`L²⋅M⋅T⁻²`> by `L²⋅M⋅T⁻²`(1.0) {
     override val unitName = "Joule"
     override fun invoke(x: Double) = x.`Joule`
     override fun invoke(x: `L²⋅M⋅T⁻²`) = x.`Joule`
@@ -5558,7 +5558,7 @@ inline class L2A0M1I0Theta0N0J0_per_T3(internal val underlying: Double) : Quan<`
 inline val Number.`Watt`: `L²⋅M⋅T⁻³` get() = `L²⋅M⋅T⁻³`(toDouble() * 1.0)
 inline val `L²⋅M⋅T⁻³`.`Watt` get() = siValue * 1.0
 object `Watt` : UomConverter<`L²⋅M⋅T⁻³`>,
-    Quan<`L²⋅M⋅T⁻³`> by box(`L²⋅M⋅T⁻³`(1.0)) {
+    Quan<`L²⋅M⋅T⁻³`> by `L²⋅M⋅T⁻³`(1.0) {
     override val unitName = "Watt"
     override fun invoke(x: Double) = x.`Watt`
     override fun invoke(x: `L²⋅M⋅T⁻³`) = x.`Watt`
@@ -5839,7 +5839,7 @@ inline class L0A0M0T1I1Theta0N0J0(internal val underlying: Double) : Quan<`T⋅I
 inline val Number.`Coulomb`: `ElectricCharge` get() = `T⋅I`(toDouble() * 1.0)
 inline val `T⋅I`.`Coulomb` get() = siValue * 1.0
 object `Coulomb` : UomConverter<`T⋅I`>,
-    Quan<`T⋅I`> by box(`T⋅I`(1.0)) {
+    Quan<`T⋅I`> by `T⋅I`(1.0) {
     override val unitName = "Coulomb"
     override fun invoke(x: Double) = x.`Coulomb`
     override fun invoke(x: `T⋅I`) = x.`Coulomb`
@@ -6082,7 +6082,7 @@ inline class L2A0M1Theta0N0J0_per_T3I1(internal val underlying: Double) : Quan<`
 inline val Number.`Volt`: `ElectricalPotential` get() = `L²⋅M⋅T⁻³⋅I⁻¹`(toDouble() * 1.0)
 inline val `L²⋅M⋅T⁻³⋅I⁻¹`.`Volt` get() = siValue * 1.0
 object `Volt` : UomConverter<`L²⋅M⋅T⁻³⋅I⁻¹`>,
-    Quan<`L²⋅M⋅T⁻³⋅I⁻¹`> by box(`L²⋅M⋅T⁻³⋅I⁻¹`(1.0)) {
+    Quan<`L²⋅M⋅T⁻³⋅I⁻¹`> by `L²⋅M⋅T⁻³⋅I⁻¹`(1.0) {
     override val unitName = "Volt"
     override fun invoke(x: Double) = x.`Volt`
     override fun invoke(x: `L²⋅M⋅T⁻³⋅I⁻¹`) = x.`Volt`
@@ -6307,7 +6307,7 @@ inline class A0T4I2Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`
 inline val Number.`Farad`: `ElectricalCapacitance` get() = `L⁻²⋅M⁻¹⋅T⁴⋅I²`(toDouble() * 1.0)
 inline val `L⁻²⋅M⁻¹⋅T⁴⋅I²`.`Farad` get() = siValue * 1.0
 object `Farad` : UomConverter<`L⁻²⋅M⁻¹⋅T⁴⋅I²`>,
-    Quan<`L⁻²⋅M⁻¹⋅T⁴⋅I²`> by box(`L⁻²⋅M⁻¹⋅T⁴⋅I²`(1.0)) {
+    Quan<`L⁻²⋅M⁻¹⋅T⁴⋅I²`> by `L⁻²⋅M⁻¹⋅T⁴⋅I²`(1.0) {
     override val unitName = "Farad"
     override fun invoke(x: Double) = x.`Farad`
     override fun invoke(x: `L⁻²⋅M⁻¹⋅T⁴⋅I²`) = x.`Farad`
@@ -6436,7 +6436,7 @@ inline class L2A0M1Theta0N0J0_per_T3I2(internal val underlying: Double) : Quan<`
 inline val Number.`Ohm`: `L²⋅M⋅T⁻³⋅I⁻²` get() = `L²⋅M⋅T⁻³⋅I⁻²`(toDouble() * 1.0)
 inline val `L²⋅M⋅T⁻³⋅I⁻²`.`Ohm` get() = siValue * 1.0
 object `Ohm` : UomConverter<`L²⋅M⋅T⁻³⋅I⁻²`>,
-    Quan<`L²⋅M⋅T⁻³⋅I⁻²`> by box(`L²⋅M⋅T⁻³⋅I⁻²`(1.0)) {
+    Quan<`L²⋅M⋅T⁻³⋅I⁻²`> by `L²⋅M⋅T⁻³⋅I⁻²`(1.0) {
     override val unitName = "Ohm"
     override fun invoke(x: Double) = x.`Ohm`
     override fun invoke(x: `L²⋅M⋅T⁻³⋅I⁻²`) = x.`Ohm`
@@ -6611,7 +6611,7 @@ inline class A0T3I2Theta0N0J0_per_L2M1(internal val underlying: Double) : Quan<`
 inline val Number.`Siemens`: `ElectricalConductance` get() = `L⁻²⋅M⁻¹⋅T³⋅I²`(toDouble() * 1.0)
 inline val `L⁻²⋅M⁻¹⋅T³⋅I²`.`Siemens` get() = siValue * 1.0
 object `Siemens` : UomConverter<`L⁻²⋅M⁻¹⋅T³⋅I²`>,
-    Quan<`L⁻²⋅M⁻¹⋅T³⋅I²`> by box(`L⁻²⋅M⁻¹⋅T³⋅I²`(1.0)) {
+    Quan<`L⁻²⋅M⁻¹⋅T³⋅I²`> by `L⁻²⋅M⁻¹⋅T³⋅I²`(1.0) {
     override val unitName = "Siemens"
     override fun invoke(x: Double) = x.`Siemens`
     override fun invoke(x: `L⁻²⋅M⁻¹⋅T³⋅I²`) = x.`Siemens`
@@ -6806,7 +6806,7 @@ inline class L2A0M1Theta0N0J0_per_T2I1(internal val underlying: Double) : Quan<`
 inline val Number.`Weber`: `MagneticFlux` get() = `L²⋅M⋅T⁻²⋅I⁻¹`(toDouble() * 1.0)
 inline val `L²⋅M⋅T⁻²⋅I⁻¹`.`Weber` get() = siValue * 1.0
 object `Weber` : UomConverter<`L²⋅M⋅T⁻²⋅I⁻¹`>,
-    Quan<`L²⋅M⋅T⁻²⋅I⁻¹`> by box(`L²⋅M⋅T⁻²⋅I⁻¹`(1.0)) {
+    Quan<`L²⋅M⋅T⁻²⋅I⁻¹`> by `L²⋅M⋅T⁻²⋅I⁻¹`(1.0) {
     override val unitName = "Weber"
     override fun invoke(x: Double) = x.`Weber`
     override fun invoke(x: `L²⋅M⋅T⁻²⋅I⁻¹`) = x.`Weber`
@@ -7049,7 +7049,7 @@ inline class L0A0M1Theta0N0J0_per_T2I1(internal val underlying: Double) : Quan<`
 inline val Number.`Tesla`: `M⋅T⁻²⋅I⁻¹` get() = `M⋅T⁻²⋅I⁻¹`(toDouble() * 1.0)
 inline val `M⋅T⁻²⋅I⁻¹`.`Tesla` get() = siValue * 1.0
 object `Tesla` : UomConverter<`M⋅T⁻²⋅I⁻¹`>,
-    Quan<`M⋅T⁻²⋅I⁻¹`> by box(`M⋅T⁻²⋅I⁻¹`(1.0)) {
+    Quan<`M⋅T⁻²⋅I⁻¹`> by `M⋅T⁻²⋅I⁻¹`(1.0) {
     override val unitName = "Tesla"
     override fun invoke(x: Double) = x.`Tesla`
     override fun invoke(x: `M⋅T⁻²⋅I⁻¹`) = x.`Tesla`
@@ -7456,7 +7456,7 @@ inline class L2A0M1Theta0N0J0_per_T2I2(internal val underlying: Double) : Quan<`
 inline val Number.`Henry`: `ElectricalInductance` get() = `L²⋅M⋅T⁻²⋅I⁻²`(toDouble() * 1.0)
 inline val `L²⋅M⋅T⁻²⋅I⁻²`.`Henry` get() = siValue * 1.0
 object `Henry` : UomConverter<`L²⋅M⋅T⁻²⋅I⁻²`>,
-    Quan<`L²⋅M⋅T⁻²⋅I⁻²`> by box(`L²⋅M⋅T⁻²⋅I⁻²`(1.0)) {
+    Quan<`L²⋅M⋅T⁻²⋅I⁻²`> by `L²⋅M⋅T⁻²⋅I⁻²`(1.0) {
     override val unitName = "Henry"
     override fun invoke(x: Double) = x.`Henry`
     override fun invoke(x: `L²⋅M⋅T⁻²⋅I⁻²`) = x.`Henry`
@@ -7789,7 +7789,7 @@ inline class L0A2M0T0I0Theta0N0J1(internal val underlying: Double) : Quan<`∠²
 inline val Number.`Lumen`: `LuminousFlux` get() = `∠²⋅J`(toDouble() * 1.0)
 inline val `∠²⋅J`.`Lumen` get() = siValue * 1.0
 object `Lumen` : UomConverter<`∠²⋅J`>,
-    Quan<`∠²⋅J`> by box(`∠²⋅J`(1.0)) {
+    Quan<`∠²⋅J`> by `∠²⋅J`(1.0) {
     override val unitName = "Lumen"
     override fun invoke(x: Double) = x.`Lumen`
     override fun invoke(x: `∠²⋅J`) = x.`Lumen`
@@ -7864,7 +7864,7 @@ inline class A0M0T0I0Theta0N0J1_per_L2(internal val underlying: Double) : Quan<`
 inline val Number.`Lux`: `L⁻²⋅J` get() = `L⁻²⋅J`(toDouble() * 1.0)
 inline val `L⁻²⋅J`.`Lux` get() = siValue * 1.0
 object `Lux` : UomConverter<`L⁻²⋅J`>,
-    Quan<`L⁻²⋅J`> by box(`L⁻²⋅J`(1.0)) {
+    Quan<`L⁻²⋅J`> by `L⁻²⋅J`(1.0) {
     override val unitName = "Lux"
     override fun invoke(x: Double) = x.`Lux`
     override fun invoke(x: `L⁻²⋅J`) = x.`Lux`
@@ -7977,7 +7977,7 @@ inline class L2A0M0I0Theta0N0J0_per_T2(internal val underlying: Double) : Quan<`
 inline val Number.`Gray`: `L²⋅T⁻²` get() = `L²⋅T⁻²`(toDouble() * 1.0)
 inline val `L²⋅T⁻²`.`Gray` get() = siValue * 1.0
 object `Gray` : UomConverter<`L²⋅T⁻²`>,
-    Quan<`L²⋅T⁻²`> by box(`L²⋅T⁻²`(1.0)) {
+    Quan<`L²⋅T⁻²`> by `L²⋅T⁻²`(1.0) {
     override val unitName = "Gray"
     override fun invoke(x: Double) = x.`Gray`
     override fun invoke(x: `L²⋅T⁻²`) = x.`Gray`
@@ -7986,7 +7986,7 @@ object `Gray` : UomConverter<`L²⋅T⁻²`>,
 inline val Number.`Sievert`: `L²⋅T⁻²` get() = `L²⋅T⁻²`(toDouble() * 1.0)
 inline val `L²⋅T⁻²`.`Sievert` get() = siValue * 1.0
 object `Sievert` : UomConverter<`L²⋅T⁻²`>,
-    Quan<`L²⋅T⁻²`> by box(`L²⋅T⁻²`(1.0)) {
+    Quan<`L²⋅T⁻²`> by `L²⋅T⁻²`(1.0) {
     override val unitName = "Sievert"
     override fun invoke(x: Double) = x.`Sievert`
     override fun invoke(x: `L²⋅T⁻²`) = x.`Sievert`
@@ -8239,7 +8239,7 @@ inline class L0A0M0I0Theta0N1J0_per_T1(internal val underlying: Double) : Quan<`
 inline val Number.`Katal`: `CatalyticActivity` get() = `T⁻¹⋅N`(toDouble() * 1.0)
 inline val `T⁻¹⋅N`.`Katal` get() = siValue * 1.0
 object `Katal` : UomConverter<`T⁻¹⋅N`>,
-    Quan<`T⁻¹⋅N`> by box(`T⁻¹⋅N`(1.0)) {
+    Quan<`T⁻¹⋅N`> by `T⁻¹⋅N`(1.0) {
     override val unitName = "Katal"
     override fun invoke(x: Double) = x.`Katal`
     override fun invoke(x: `T⁻¹⋅N`) = x.`Katal`

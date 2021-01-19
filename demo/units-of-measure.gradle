@@ -18,5 +18,3 @@ generateUnitsOfMeasure {
             u("Mile", 1609.34, d(L: 1)),
     ].toSet()
 }
-sourceSets.main.kotlin.srcDir generateUnitsOfMeasure.generatedSrcDir
-compileKotlinCommon.dependsOn(generateUnitsOfMeasure)

@@ -3,4 +3,4 @@ script:
   - cd plugin
   - ./gradlew publishToMavenLocal
   - cd ../demo
-  - ./gradlew run
+  - ./gradlew check

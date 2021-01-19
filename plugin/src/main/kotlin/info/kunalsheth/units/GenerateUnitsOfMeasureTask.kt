@@ -30,7 +30,11 @@ import java.io.File
 import javax.inject.Inject
 
 open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultTask() {
+
+    @Input
     override fun getGroup() = "units-of-measure"
+
+    @Input
     override fun getDescription() = "(Re)generate DSL for type-safe dimensional analysis and unit conversion."
 
     @TaskAction
@@ -72,7 +76,7 @@ open class GenerateUnitsOfMeasureTask @Inject constructor(p: Project) : DefaultT
         }
 
         srcWriter.bufferedWriter().use { writer ->
-            generatedSourceCode.forEach { writer.appendln(it) }
+            generatedSourceCode.forEach { writer.appendLine(it) }
         }
 
         mathSrc.outputStream().use(::writeMath)

@@ -117,7 +117,7 @@ private fun UnitOfMeasure.src(quantity: Quantity?) = """
 inline val Number.$this: ${quantity ?: dimension} get() = $dimension(toDouble() * $factorToSI)
 inline val $dimension.$this get() = $siValue * ${1 / factorToSI}
 object $this : UomConverter<$dimension>,
-    ${quan(dimension)} by box($dimension($factorToSI)) {
+    ${quan(dimension)} by $dimension($factorToSI) {
     override val unitName = "$name"
     override fun invoke(x: Double) = x.$this
     override fun invoke(x: $dimension) = x.$this
